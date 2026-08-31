@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Service Details | Fundvexxa</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f5f9ff;
+}
+
+header{
+background:white;
+padding:15px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#0d6efd;
+}
+
+.hero{
+padding:80px 5%;
+background:linear-gradient(135deg,#0d6efd,#5fa8ff);
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px;
+flex-wrap:wrap;
+color:white;
+}
+
+.hero-content{
+flex:1;
+min-width:300px;
+}
+
+.hero-content h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero-content p{
+line-height:1.8;
+font-size:18px;
+}
+
+.hero-image{
+flex:1;
+text-align:center;
+}
+
+.hero-image img{
+width:100%;
+max-width:550px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.section{
+padding:60px 5%;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+margin-bottom:25px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.card img{
+width:100%;
+max-width:700px;
+border-radius:15px;
+margin-bottom:20px;
+}
+
+.card h2{
+color:#0d6efd;
+margin-bottom:15px;
+}
+
+ul{
+padding-left:20px;
+line-height:1.9;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Fundvexxa
+</div>
+
+<a href="services.html"
+style="
+background:#0d6efd;
+color:white;
+padding:10px 18px;
+border-radius:8px;
+text-decoration:none;">
+Back
+</a>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1 id="serviceTitle">
+Business Loan
+</h1>
+
+<p id="serviceDesc">
+Funding solutions for business growth and expansion.
+</p>
+
+</div>
+
+<div class="hero-image">
+
+<img
+src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+alt="Finance">
+
+</div>
+
+</section>
+
+<!-- OVERVIEW -->
+
+<section class="section">
+
+<div class="card">
+
+<img
+src="https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg">
+
+<h2>
+Product Overview
+</h2>
+
+<p id="overviewText">
+
+Business loans help companies manage working capital,
+purchase inventory and expand operations.
+
+</p>
+
+</div>
+
+<!-- ELIGIBILITY -->
+
+<div class="card">
+
+<img
+src="https://images.pexels.com/photos/4386367/pexels-photo-4386367.jpeg">
+
+<h2>
+Eligibility
+</h2>
+
+<ul id="eligibilityList">
+
+<li>Age 21+ Years</li>
+<li>Valid PAN Card</li>
+<li>Business Proof</li>
+<li>Bank Statements</li>
+
+</ul>
+
+</div>
+
+<!-- DOCUMENTS -->
+
+<div class="card">
+
+<img
+src="https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg">
+
+<h2>
+Required Documents
+</h2>
+
+<ul>
+
+<li>PAN Card</li>
+<li>Aadhaar Card</li>
+<li>Bank Statements</li>
+<li>Income Proof</li>
+<li>Business Proof</li>
+
+</ul>
+
+</div>
+<!-- SALES PITCH -->
+
+<div class="card">
+
+<img
+src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
+alt="Sales Pitch">
+
+<h2>
+🎯 Sales Pitch
+</h2>
+
+<p id="salesPitch">
+
+Sir/Madam, aapki requirement ke hisab se suitable financial solution check kiya ja sakta hai.
+Main aapki basic eligibility verify karne me madad kar sakta hoon.
+
+</p>
+
+</div>
+
+<!-- OBJECTION HANDLING -->
+
+<div class="card">
+
+<img
+src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg"
+alt="Objection Handling">
+
+<h2>
+💬 Objection Handling
+</h2>
+
+<ul id="objectionList">
+
+<li>Interest rate final eligibility ke baad confirm hoti hai.</li>
+<li>Documents verification ke baad process aage badhta hai.</li>
+<li>Approval lender ke internal assessment par depend karta hai.</li>
+<li>Processing timeline case-to-case vary kar sakti hai.</li>
+
+</ul>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="card">
+
+<img
+src="https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg"
+alt="FAQ">
+
+<h2>
+❓ Frequently Asked Questions
+</h2>
+
+<ul id="faqList">
+
+<li>Minimum age requirement kya hai?</li>
+<li>Income proof mandatory hai?</li>
+<li>PAN aur Aadhaar required hain?</li>
+<li>Processing kitne din me hoti hai?</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- DYNAMIC SERVICE DATA -->
+
+<script>
+
+const params =
+new URLSearchParams(window.location.search);
+
+const service =
+params.get("service");
+
+const serviceData = {
+
+"business-loan":{
+
+title:"Business Loan",
+
+desc:"Funding solutions for business growth and expansion.",
+
+overview:
+"Business loans can help manage working capital, inventory and expansion requirements."
+
+},
+
+"personal-loan":{
+
+title:"Personal Loan",
+
+desc:"Personal financial assistance for various needs.",
+
+overview:
+"Personal loans can be used for planned expenses and emergency requirements."
+
+},
+
+"home-loan":{
+
+title:"Home Loan",
+
+desc:"Finance options for home purchase and ownership.",
+
+overview:
+"Home loans support purchase, construction and related housing requirements."
+
+},
+
+"credit-card":{
+
+title:"Credit Card",
+
+desc:"Convenient card-based spending solutions.",
+
+overview:
+"Credit cards provide flexibility, rewards and digital payment convenience."
+
+},
+
+"health-insurance":{
+
+title:"Health Insurance",
+
+desc:"Coverage for medical and hospitalization expenses.",
+
+overview:
+"Health insurance helps manage healthcare related financial risks."
+
+},
+
+"life-insurance":{
+
+title:"Life Insurance",
+
+desc:"Long-term financial protection planning.",
+
+overview:
+"Life insurance can provide financial support to dependents based on policy terms."
+
+},
+
+"motor-insurance":{
+
+title:"Motor Insurance",
+
+desc:"Protection for vehicles.",
+
+overview:
+"Motor insurance provides coverage options for vehicles."
+
+},
+
+"gst-registration":{
+
+title:"GST Registration",
+
+desc:"GST compliance and registration support.",
+
+overview:
+"GST registration helps businesses comply with applicable tax requirements."
+
+},
+
+"msme-registration":{
+
+title:"MSME Registration",
+
+desc:"MSME recognition and benefits.",
+
+overview:
+"MSME registration can help eligible businesses access government benefits."
+
+},
+
+"scheme-funding":{
+
+title:"Scheme Funding",
+
+desc:"Funding and business assistance information.",
+
+overview:
+"Explore suitable funding programs and financial assistance opportunities."
+
+}
+
+};
+
+if(serviceData[service]){
+
+document.getElementById("serviceTitle").innerHTML =
+serviceData[service].title;
+
+document.getElementById("serviceDesc").innerHTML =
+serviceData[service].desc;
+
+document.getElementById("overviewText").innerHTML =
+serviceData[service].overview;
+
+}
+
+</script>
+<!-- EMI CALCULATOR -->
+
+<section class="section">
+
+<div class="card">
+
+<img
+src="https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg"
+alt="EMI Calculator">
+
+<h2>📊 EMI Calculator</h2>
+
+<input
+type="number"
+id="loanAmount"
+placeholder="Loan Amount"
+style="width:100%;padding:12px;margin:10px 0;">
+
+<input
+type="number"
+id="loanTenure"
+placeholder="Tenure (Months)"
+style="width:100%;padding:12px;margin:10px 0;">
+
+<button
+onclick="calculateEMI()"
+style="
+background:#0d6efd;
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;">
+Calculate EMI
+</button>
+
+<h3
+id="emiResult"
+style="margin-top:15px;color:#0d6efd;">
+</h3>
+
+</div>
+
+<!-- APPLY FORM -->
+
+<div class="card">
+
+<img
+src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg"
+alt="Apply Now">
+
+<h2>📝 Apply Now</h2>
+
+<form id="leadForm">
+
+<input
+type="text"
+id="customerName"
+placeholder="Customer Name"
+required
+style="width:100%;padding:12px;margin:10px 0;">
+
+<input
+type="tel"
+id="mobile"
+placeholder="Mobile Number"
+required
+style="width:100%;padding:12px;margin:10px 0;">
+
+<input
+type="text"
+id="city"
+placeholder="City"
+required
+style="width:100%;padding:12px;margin:10px 0;">
+
+<input
+type="text"
+id="pan"
+placeholder="PAN Number"
+style="width:100%;padding:12px;margin:10px 0;">
+
+<input
+type="number"
+id="cibil"
+placeholder="CIBIL Score"
+style="width:100%;padding:12px;margin:10px 0;">
+
+<input
+type="number"
+id="income"
+placeholder="Monthly Income"
+style="width:100%;padding:12px;margin:10px 0;">
+
+<input
+type="file"
+id="documents"
+style="width:100%;padding:12px;margin:10px 0;">
+
+<button
+type="submit"
+style="
+background:#0d6efd;
+color:white;
+padding:14px;
+width:100%;
+border:none;
+border-radius:8px;
+font-size:16px;">
+Submit Lead
+</button>
+
+</form>
+
+<p
+id="leadMessage"
+style="
+margin-top:15px;
+font-weight:bold;
+color:green;">
+</p>
+
+</div>
+
+</section>
+
+<script type="module">
+
+import { db } from "./firebase/config.js";
+
+import {
+collection,
+addDoc,
+serverTimestamp
+}
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+window.calculateEMI = function(){
+
+let amount =
+Number(document.getElementById("loanAmount").value);
+
+let tenure =
+Number(document.getElementById("loanTenure").value);
+
+if(!amount || !tenure) return;
+
+let emi =
+(amount / tenure).toFixed(0);
+
+document.getElementById("emiResult").innerHTML =
+"Estimated EMI: ₹" + emi + " / Month";
+};
+
+const form =
+document.getElementById("leadForm");
+
+form.addEventListener("submit", async(e)=>{
+
+e.preventDefault();
+
+try{
+
+await addDoc(
+collection(db,"leads"),
+{
+
+service:
+document.getElementById("serviceTitle").innerText,
+
+customerName:
+document.getElementById("customerName").value,
+
+mobile:
+document.getElementById("mobile").value,
+
+city:
+document.getElementById("city").value,
+
+pan:
+document.getElementById("pan").value,
+
+cibil:
+document.getElementById("cibil").value,
+
+income:
+document.getElementById("income").value,
+
+status:"Pending",
+
+createdAt:
+serverTimestamp()
+
+}
+);
+
+document.getElementById("leadMessage").innerHTML =
+"✅ Lead Submitted Successfully";
+
+form.reset();
+
+}
+catch(error){
+
+document.getElementById("leadMessage").innerHTML =
+error.message;
+
+}
+
+});
+
+</script>
+
+<!-- FOOTER -->
+
+<footer
+style="
+background:#111;
+color:white;
+padding:50px 5%;
+text-align:center;
+">
+
+<img
+src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg"
+style="
+width:100%;
+max-width:500px;
+border-radius:15px;
+margin-bottom:20px;
+">
+
+<h3>Fundvexxa</h3>
+
+<p>
+Loans • Insurance • Credit Cards • GST • MSME
+</p>
+
+<br>
+
+<p>
+WhatsApp: 7290977231
+</p>
+
+<br>
+
+<p>
+© 2026 Fundvexxa
+</p>
+
+</footer>
+
+<a
+href="https://wa.me/917290977231"
+target="_blank"
+style="
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+z-index:9999;">
+WhatsApp
+</a>
+
+</body>
+</html>

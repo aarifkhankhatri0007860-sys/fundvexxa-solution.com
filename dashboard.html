@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Agent Dashboard | Fundvexxa</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f8ff;
+}
+
+header{
+background:#0d6efd;
+color:white;
+padding:15px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+}
+
+.logout-btn{
+background:red;
+color:white;
+padding:10px 15px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+.container{
+padding:30px 5%;
+}
+
+.profile-card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+display:flex;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.profile-card img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.profile-info h2{
+color:#0d6efd;
+margin-bottom:10px;
+}
+
+.badge{
+display:inline-block;
+padding:8px 15px;
+background:gold;
+border-radius:20px;
+font-weight:bold;
+margin-top:10px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.stat-card{
+background:white;
+padding:25px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.stat-card h2{
+color:#0d6efd;
+margin-top:10px;
+}
+
+.section-title{
+margin:40px 0 20px;
+color:#0d6efd;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.service-card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.service-card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.service-content{
+padding:15px;
+}
+
+.service-content h3{
+color:#0d6efd;
+margin-bottom:10px;
+}
+
+.btn{
+display:inline-block;
+padding:10px 15px;
+background:#0d6efd;
+color:white;
+text-decoration:none;
+border-radius:8px;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Fundvexxa
+</div>
+
+<button
+id="logoutBtn"
+class="logout-btn">
+Logout
+</button>
+
+</header>
+
+<div class="container">
+
+<!-- PROFILE -->
+
+<div class="profile-card">
+
+<img
+src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg">
+
+<div class="profile-info">
+
+<h2 id="agentName">
+Loading...
+</h2>
+
+<p id="agentEmail">
+Loading...
+</p>
+
+<p>
+Agent ID:
+<b id="agentId">
+SFS00001
+</b>
+</p>
+
+<div
+class="badge"
+id="membershipBadge">
+
+Free Member
+
+</div>
+
+</div>
+
+</div>
+
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="stat-card">
+<h3>💰 Wallet Balance</h3>
+<h2 id="walletBalance">₹0</h2>
+</div>
+
+<div class="stat-card">
+<h3>📋 Total Leads</h3>
+<h2 id="totalLeads">0</h2>
+</div>
+
+<div class="stat-card">
+<h3>✅ Approved Leads</h3>
+<h2 id="approvedLeads">0</h2>
+</div>
+
+<div class="stat-card">
+<h3>⏳ Pending Leads</h3>
+<h2 id="pendingLeads">0</h2>
+</div>
+
+</div>
+
+<h2 class="section-title">
+🏦 Financial Services
+</h2>
+
+<div class="services-grid">
+<!-- BUSINESS LOAN -->
+
+<div class="service-card">
+
+<img
+src="https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg">
+
+<div class="service-content">
+
+<h3>🏦 Business Loan</h3>
+
+<p>
+Business expansion and working capital funding solutions.
+</p>
+
+<a
+href="service-details.html?service=business-loan"
+class="btn">
+Open
+</a>
+
+</div>
+
+</div>
+
+<!-- PERSONAL LOAN -->
+
+<div class="service-card">
+
+<img
+src="https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg">
+
+<div class="service-content">
+
+<h3>👤 Personal Loan</h3>
+
+<p>
+Quick financial assistance for personal requirements.
+</p>
+
+<a
+href="service-details.html?service=personal-loan"
+class="btn">
+Open
+</a>
+
+</div>
+
+</div>
+
+<!-- HOME LOAN -->
+
+<div class="service-card">
+
+<img
+src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg">
+
+<div class="service-content">
+
+<h3>🏠 Home Loan</h3>
+
+<p>
+Affordable financing for your dream home.
+</p>
+
+<a
+href="service-details.html?service=home-loan"
+class="btn">
+Open
+</a>
+
+</div>
+
+</div>
+
+<!-- CREDIT CARD -->
+
+<div class="service-card">
+
+<img
+src="https://images.pexels.com/photos/4968630/pexels-photo-4968630.jpeg">
+
+<div class="service-content">
+
+<h3>💳 Credit Card</h3>
+
+<p>
+Credit cards with rewards and benefits.
+</p>
+
+<a
+href="service-details.html?service=credit-card"
+class="btn">
+Open
+</a>
+
+</div>
+
+</div>
+
+<!-- HEALTH INSURANCE -->
+
+<div class="service-card">
+
+<img
+src="https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg">
+
+<div class="service-content">
+
+<h3>❤️ Health Insurance</h3>
+
+<p>
+Medical expense protection and coverage.
+</p>
+
+<a
+href="service-details.html?service=health-insurance"
+class="btn">
+Open
+</a>
+
+</div>
+
+</div>
+
+<!-- LIFE INSURANCE -->
+
+<div class="service-card">
+
+<img
+src="https://images.pexels.com/photos/7551664/pexels-photo-7551664.jpeg">
+
+<div class="service-content">
+
+<h3>🛡 Life Insurance</h3>
+
+<p>
+Financial security planning solutions.
+</p>
+
+<a
+href="service-details.html?service=life-insurance"
+class="btn">
+Open
+</a>
+
+</div>
+
+</div>
+
+<!-- MOTOR INSURANCE -->
+
+<div class="service-card">
+
+<img
+src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg">
+
+<div class="service-content">
+
+<h3>🚗 Motor Insurance</h3>
+
+<p>
+Insurance solutions for vehicles.
+</p>
+
+<a
+href="service-details.html?service=motor-insurance"
+class="btn">
+Open
+</a>
+
+</div>
+
+</div>
+
+<!-- GST -->
+
+<div class="service-card">
+
+<img
+src="https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg">
+
+<div class="service-content">
+
+<h3>📄 GST Registration</h3>
+
+<p>
+GST registration and compliance support.
+</p>
+
+<a
+href="service-details.html?service=gst-registration"
+class="btn">
+Open
+</a>
+
+</div>
+
+</div>
+
+<!-- MSME -->
+
+<div class="service-card">
+
+<img
+src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg">
+
+<div class="service-content">
+
+<h3>🏢 MSME Registration</h3>
+
+<p>
+MSME registration and government benefits.
+</p>
+
+<a
+href="service-details.html?service=msme-registration"
+class="btn">
+Open
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- TRAINING CENTER -->
+
+<h2 class="section-title">
+🎓 Training Center
+</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<img
+src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg">
+
+<div class="service-content">
+
+<h3>Product Knowledge</h3>
+
+<p>
+Learn every financial product professionally.
+</p>
+
+</div>
+
+</div>
+
+<div class="service-card">
+
+<img
+src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg">
+
+<div class="service-content">
+
+<h3>Sales Script</h3>
+
+<p>
+Ready-to-use customer sales pitch scripts.
+</p>
+
+</div>
+
+</div>
+
+<div class="service-card">
+
+<img
+src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg">
+
+<div class="service-content">
+
+<h3>Objection Handling</h3>
+
+<p>
+Learn how to answer customer questions.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- NOTIFICATION -->
+
+<h2 class="section-title">
+🔔 Latest Announcements
+</h2>
+
+<div class="stat-card">
+
+<h3>
+Welcome To Fundvexxa CRM
+</h3>
+
+<br>
+
+<p>
+Latest offers, incentives, leaderboard updates and announcements will appear here.
+</p>
+
+</div>
+<!-- LEADERBOARD -->
+
+<h2 class="section-title">
+🏆 Leaderboard
+</h2>
+
+<div class="stats">
+
+<div class="stat-card">
+<h3>🥇 Top Performer</h3>
+<h2>Agent Rank #1</h2>
+</div>
+
+<div class="stat-card">
+<h3>🎯 Monthly Target</h3>
+<h2>0 / 50 Leads</h2>
+</div>
+
+<div class="stat-card">
+<h3>🎁 Incentives</h3>
+<h2>₹0</h2>
+</div>
+
+</div>
+
+<!-- COMMISSION HISTORY -->
+
+<h2 class="section-title">
+💰 Commission History
+</h2>
+
+<div class="stat-card">
+
+<p>
+No commission records available.
+</p>
+
+<p>
+Approved leads commission will appear here.
+</p>
+
+</div>
+
+<!-- OFFER BANNER -->
+
+<h2 class="section-title">
+🔥 Active Offers
+</h2>
+
+<div class="service-card">
+
+<img
+src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg">
+
+<div class="service-content">
+
+<h3>Special Agent Growth Program</h3>
+
+<p>
+Training, support and product updates available through the platform.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<script type="module">
+
+import { auth, db } from "./firebase/config.js";
+
+import {
+onAuthStateChanged,
+signOut
+}
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+import {
+doc,
+getDoc,
+collection,
+getDocs
+}
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+onAuthStateChanged(auth, async(user)=>{
+
+if(!user){
+
+window.location.href="login.html";
+return;
+
+}
+
+document.getElementById("agentEmail").innerHTML =
+user.email;
+
+const userRef =
+doc(db,"users",user.uid);
+
+const userSnap =
+await getDoc(userRef);
+
+if(userSnap.exists()){
+
+const data =
+userSnap.data();
+
+document.getElementById("agentName").innerHTML =
+data.name || "Agent";
+
+document.getElementById("membershipBadge").innerHTML =
+data.membership || "Free";
+
+document.getElementById("walletBalance").innerHTML =
+"₹" + (data.walletBalance || 0);
+
+}
+
+try{
+
+const leadSnapshot =
+await getDocs(collection(db,"leads"));
+
+let total = 0;
+let approved = 0;
+let pending = 0;
+
+leadSnapshot.forEach((doc)=>{
+
+const lead = doc.data();
+
+total++;
+
+if(lead.status === "Approved"){
+approved++;
+}
+
+if(lead.status === "Pending"){
+pending++;
+}
+
+});
+
+document.getElementById("totalLeads").innerHTML =
+total;
+
+document.getElementById("approvedLeads").innerHTML =
+approved;
+
+document.getElementById("pendingLeads").innerHTML =
+pending;
+
+}
+catch(error){
+
+console.log(error);
+
+}
+
+});
+
+document
+.getElementById("logoutBtn")
+.addEventListener("click",async()=>{
+
+await signOut(auth);
+
+window.location.href =
+"login.html";
+
+});
+
+</script>
+
+<!-- FOOTER -->
+
+<footer
+style="
+background:#111;
+color:white;
+padding:50px 5%;
+text-align:center;
+margin-top:50px;
+">
+
+<img
+src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg"
+style="
+width:100%;
+max-width:500px;
+border-radius:15px;
+margin-bottom:20px;
+">
+
+<h3>
+Fundvexxa
+</h3>
+
+<br>
+
+<p>
+Loans • Insurance • Credit Cards • GST • MSME • Funding
+</p>
+
+<br>
+
+<p>
+WhatsApp: 7290977231
+</p>
+
+<br>
+
+<p>
+© 2026 Fundvexxa
+</p>
+
+</footer>
+
+<a
+href="https://wa.me/917290977231"
+target="_blank"
+style="
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+z-index:9999;
+">
+WhatsApp
+</a>
+
+</body>
+</html>

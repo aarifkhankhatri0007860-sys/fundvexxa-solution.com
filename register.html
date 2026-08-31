@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Agent Registration | Fundvexxa</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f5f9ff;
+color:#222;
+}
+
+header{
+background:white;
+padding:15px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 15px rgba(0,0,0,0.08);
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#0d6efd;
+}
+
+.btn{
+background:#0d6efd;
+color:white;
+padding:12px 20px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+display:inline-block;
+}
+
+/* HERO */
+
+.hero{
+padding:70px 5%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px;
+flex-wrap:wrap;
+background:linear-gradient(135deg,#0d6efd,#5fa8ff);
+color:white;
+}
+
+.hero-content{
+flex:1;
+min-width:300px;
+}
+
+.hero-content h1{
+font-size:45px;
+margin-bottom:20px;
+}
+
+.hero-content p{
+font-size:18px;
+line-height:1.8;
+}
+
+.hero-image{
+flex:1;
+text-align:center;
+min-width:300px;
+}
+
+.hero-image img{
+width:100%;
+max-width:500px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* SECTION */
+
+.section{
+padding:70px 5%;
+}
+
+.section-title{
+text-align:center;
+font-size:35px;
+color:#0d6efd;
+margin-bottom:15px;
+}
+
+.section-sub{
+text-align:center;
+color:#666;
+margin-bottom:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.card h3{
+color:#0d6efd;
+margin-bottom:10px;
+}
+
+/* FORM */
+
+.form-box{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+max-width:900px;
+margin:auto;
+}
+
+.form-row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+input,select{
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:8px;
+margin-top:8px;
+margin-bottom:15px;
+}
+
+label{
+font-weight:600;
+}
+
+.submit-btn{
+width:100%;
+padding:14px;
+background:#0d6efd;
+color:white;
+border:none;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.hero{
+text-align:center;
+}
+
+.hero-content h1{
+font-size:32px;
+}
+
+.form-row{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Fundvexxa
+</div>
+
+<a href="index.html" class="btn">
+Home
+</a>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Become A Financial Agent
+</h1>
+
+<p>
+Join Fundvexxa and start your journey in financial services.
+Learn, grow and build opportunities through professional training and support.
+</p>
+
+</div>
+
+<div class="hero-image">
+
+<img
+src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+alt="Financial Agent Training">
+
+</div>
+
+</section>
+
+<!-- BENEFITS -->
+
+<section class="section">
+
+<h2 class="section-title">
+Why Join Us?
+</h2>
+
+<p class="section-sub">
+Everything you need to start and grow
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>💰 Growth Opportunities</h3>
+<p>
+Access multiple financial products and learning resources.
+</p>
+</div>
+
+<div class="card">
+<h3>📊 CRM Dashboard</h3>
+<p>
+Track leads, activities and updates in one place.
+</p>
+</div>
+
+<div class="card">
+<h3>🎓 Training Support</h3>
+<p>
+Product knowledge, communication skills and guidance.
+</p>
+</div>
+
+<div class="card">
+<h3>🏠 Work Flexibility</h3>
+<p>
+Learn and operate from anywhere using mobile or laptop.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- REGISTRATION FORM -->
+
+<section class="section">
+
+<h2 class="section-title">
+Agent Registration Form
+</h2>
+
+<p class="section-sub">
+Complete your application and our team will review it.
+</p>
+
+<div class="form-box">
+
+<form id="registerForm">
+
+<div class="form-row">
+
+<div>
+<label>Full Name *</label>
+<input type="text" id="name" required>
+</div>
+
+<div>
+<label>Mobile Number *</label>
+<input type="tel" id="mobile" required>
+</div>
+
+</div>
+
+<div class="form-row">
+
+<div>
+<label>Email Address *</label>
+<input type="email" id="email" required>
+</div>
+
+<div>
+<label>City *</label>
+<input type="text" id="city" required>
+</div>
+
+</div>
+<div class="form-row">
+
+<div>
+<label>State *</label>
+<input type="text" id="state" required>
+</div>
+
+<div>
+<label>PAN Number *</label>
+<input type="text" id="pan" required>
+</div>
+
+</div>
+
+<div class="form-row">
+
+<div>
+<label>Aadhaar Number *</label>
+<input type="text" id="aadhaar" required>
+</div>
+
+<div>
+<label>Current Occupation *</label>
+<select id="occupation" required>
+
+<option value="">Select</option>
+
+<option>Student</option>
+<option>Working Professional</option>
+<option>Business Owner</option>
+<option>Self Employed</option>
+<option>Housewife</option>
+<option>Other</option>
+
+</select>
+</div>
+
+</div>
+
+<div class="form-row">
+
+<div>
+
+<label>Experience Level *</label>
+
+<select id="experience" required>
+
+<option value="">Select</option>
+
+<option>Fresher</option>
+<option>0-1 Year</option>
+<option>1-3 Years</option>
+<option>3-5 Years</option>
+<option>5+ Years</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>Membership Plan *</label>
+
+<select id="membership" required>
+
+<option value="">Select Plan</option>
+
+<option>Free</option>
+<option>Silver ₹299</option>
+<option>Gold ₹499</option>
+
+</select>
+
+</div>
+
+</div>
+
+<!-- IMAGE SECTION -->
+
+<div style="margin:30px 0;text-align:center;">
+
+<img
+src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg"
+alt="Professional Financial Team"
+style="
+width:100%;
+max-width:700px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+">
+
+</div>
+
+<div class="form-row">
+
+<div>
+<label>Create Password *</label>
+<input type="password" id="password" required>
+</div>
+
+<div>
+<label>Confirm Password *</label>
+<input type="password" id="confirmPassword" required>
+</div>
+
+</div>
+
+<label style="display:flex;gap:10px;align-items:center;margin-bottom:20px;">
+
+<input
+type="checkbox"
+required
+style="width:auto;"
+>
+
+I agree to the Terms & Conditions and Privacy Policy
+
+</label>
+
+<button type="submit" class="submit-btn">
+Submit Registration
+</button>
+
+<p
+id="message"
+style="
+margin-top:20px;
+font-weight:bold;
+text-align:center;
+color:#0d6efd;
+">
+</p>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- TRAINING IMAGE SECTION -->
+
+<section class="section">
+
+<h2 class="section-title">
+Training & Support
+</h2>
+
+<p class="section-sub">
+Learn from experts and grow professionally
+</p>
+
+<div class="grid">
+
+<div class="card">
+
+<img
+src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg"
+style="
+width:100%;
+border-radius:12px;
+margin-bottom:15px;
+">
+
+<h3>🎓 Product Training</h3>
+
+<p>
+Learn loans, insurance, credit cards, GST and business funding products.
+</p>
+
+</div>
+
+<div class="card">
+
+<img
+src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg"
+style="
+width:100%;
+border-radius:12px;
+margin-bottom:15px;
+">
+
+<h3>📊 CRM Dashboard</h3>
+
+<p>
+Track leads, applications and updates from one platform.
+</p>
+
+</div>
+
+<div class="card">
+
+<img
+src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+style="
+width:100%;
+border-radius:12px;
+margin-bottom:15px;
+">
+
+<h3>🤝 Dedicated Support</h3>
+
+<p>
+Get assistance and guidance from our support team.
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- THANK YOU SECTION -->
+
+<section class="section">
+
+<h2 class="section-title">
+What Happens Next?
+</h2>
+
+<p class="section-sub">
+Our team will review your application
+</p>
+
+<div class="grid">
+
+<div class="card">
+
+<img
+src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg"
+style="
+width:100%;
+border-radius:12px;
+margin-bottom:15px;
+">
+
+<h3>📞 Verification Call</h3>
+
+<p>
+Our team may contact you to verify your registration details.
+</p>
+
+</div>
+
+<div class="card">
+
+<img
+src="https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg"
+style="
+width:100%;
+border-radius:12px;
+margin-bottom:15px;
+">
+
+<h3>🔐 Account Approval</h3>
+
+<p>
+After review, approved users can receive platform access.
+</p>
+
+</div>
+
+<div class="card">
+
+<img
+src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg"
+style="
+width:100%;
+border-radius:12px;
+margin-bottom:15px;
+">
+
+<h3>🚀 Start Learning</h3>
+
+<p>
+Access training resources and product information.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer style="
+background:#0d6efd;
+color:white;
+padding:40px 5%;
+text-align:center;
+margin-top:50px;
+">
+
+<h3>Fundvexxa</h3>
+
+<br>
+
+<p>
+Financial Services • Training • CRM Support
+</p>
+
+<br>
+
+<p>
+WhatsApp: 7290977231
+</p>
+
+<br>
+
+<p>
+© 2026 Fundvexxa. All Rights Reserved.
+</p>
+
+</footer>
+
+<!-- WHATSAPP BUTTON -->
+
+<a
+href="https://wa.me/917290977231"
+target="_blank"
+style="
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+z-index:9999;
+">
+WhatsApp
+</a>
+
+<script type="module">
+
+import { auth, db } from "./firebase/config.js";
+
+import {
+createUserWithEmailAndPassword
+}
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+import {
+doc,
+setDoc
+}
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+const form =
+document.getElementById("registerForm");
+
+form.addEventListener("submit", async (e)=>{
+
+e.preventDefault();
+
+const password =
+document.getElementById("password").value;
+
+const confirmPassword =
+document.getElementById("confirmPassword").value;
+
+const message =
+document.getElementById("message");
+
+if(password !== confirmPassword){
+
+message.innerHTML =
+"Passwords do not match ❌";
+
+return;
+
+}
+
+try{
+
+const userCredential =
+await createUserWithEmailAndPassword(
+auth,
+document.getElementById("email").value,
+password
+);
+
+const user = userCredential.user;
+
+await setDoc(
+doc(db,"users",user.uid),
+{
+name:document.getElementById("name").value,
+mobile:document.getElementById("mobile").value,
+email:document.getElementById("email").value,
+city:document.getElementById("city").value,
+state:document.getElementById("state").value,
+pan:document.getElementById("pan").value,
+aadhaar:document.getElementById("aadhaar").value,
+occupation:document.getElementById("occupation").value,
+experience:document.getElementById("experience").value,
+membership:document.getElementById("membership").value,
+
+role:"agent",
+
+status:"Pending Verification",
+
+walletBalance:0,
+
+createdAt:new Date()
+}
+);
+
+message.innerHTML =
+"✅ Registration Submitted Successfully. Our Team Will Contact You Soon.";
+
+form.reset();
+
+}
+catch(error){
+
+message.innerHTML =
+error.message;
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
