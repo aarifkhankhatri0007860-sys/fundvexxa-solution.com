@@ -140,7 +140,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}a{text-decoratio
 <script type="module">
 import {initializeApp} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 import {getAuth,onAuthStateChanged,signInWithEmailAndPassword,signOut} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
-import {getFirestore,collection,onSnapshot,doc,updateDoc,addDoc,serverTimestamp} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+import {getFirestore,collection,onSnapshot,doc,updateDoc,addDoc,serverTimestamp,getDoc} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const firebaseConfig={
  apiKey:"AIzaSyArcvyvNAOKipPZB0YEfSeoeN9_k-8JznQ",
@@ -162,16 +162,18 @@ function statusBadge(s){return `<span class="badge ${statusClass(s)}">${safe(s)}
 function getTimestamp(v){if(!v)return 0;try{return v.toMillis?v.toMillis():new Date(v).getTime()}catch{return 0}}
 function displayDate(v){const t=getTimestamp(v);return t?new Date(t).toLocaleDateString("en-IN"):"—"}
 function normalize(v,a,f){const m=a.find(x=>x.toLowerCase()===String(v||"").toLowerCase());return m||f}
+function normPhone(v){return String(v||"").replace(/\D/g,"").slice(-10)}
 function agentUid(a){return a.uid||a.userId||a.authUid||a.firebaseUid||""}
-function approvedAgents(){return agentApplications.filter(a=>String(a.approvalStatus||a.status||"").toLowerCase()==="approved" && agentUid(a))}
+function resolveAgentUser(reg){
+ const direct=agentUid(reg);
+ if(direct){const u=users.find(x=>x.id===direct&&String(x.role||"").toLowerCase()==="agent");if(u)return u}
+ const email=String(reg.email||"").trim().toLowerCase(),phone=normPhone(reg.mobile||reg.phone);
+ return users.find(u=>String(u.role||"").toLowerCase()==="agent"&&((email&&String(u.email||"").trim().toLowerCase()===email)||(phone&&normPhone(u.mobile||u.phone)===phone)))||null;
+}
+function approvedAgents(){return agentApplications.filter(a=>String(a.approvalStatus||a.status||"").toLowerCase()==="approved").map(reg=>{const u=resolveAgentUser(reg),uid=agentUid(reg)||u?.id||"";return {reg,user:u,uid,name:reg.fullName||u?.name||u?.fullName||reg.name||reg.email||reg.agentId||uid,email:reg.email||u?.email||"",agentId:reg.agentId||u?.agentId||""}}).filter(a=>a.uid)}
 function populateAgentSelect(id,selected=""){
- const el=$(id); if(!el)return;
- el.innerHTML='<option value="">Unassigned</option>';
- approvedAgents().forEach(a=>{
-   const uid=agentUid(a), name=a.fullName||a.name||a.email||a.agentId||uid;
-   const o=document.createElement("option");o.value=uid;o.textContent=(a.agentId? a.agentId+" · ":"")+name;
-   o.dataset.name=name;if(uid===selected)o.selected=true;el.appendChild(o);
- });
+ const el=$(id);if(!el)return;el.innerHTML='<option value="">Unassigned</option>';
+ approvedAgents().forEach(a=>{const uid=a.uid,name=a.name||a.email||a.agentId||uid,o=document.createElement("option");o.value=uid;o.textContent=(a.agentId?a.agentId+" · ":"")+name;o.dataset.name=name;if(uid===selected)o.selected=true;el.appendChild(o)});
 }
 
 /* AUTH: only users with role=admin can enter CRM */
@@ -180,14 +182,21 @@ $("adminLoginForm").addEventListener("submit",async e=>{
  try{await signInWithEmailAndPassword(auth,$("adminEmail").value.trim(),$("adminPassword").value)}
  catch(x){console.error(x);err.textContent="Login failed. Check email/password and make sure this user has role: admin.";err.style.display="block";b.disabled=false;b.textContent="Sign In"}
 });
-onAuthStateChanged(auth,async user=>{
- if(!user){$("authScreen").classList.remove("hidden");return}
+async function verifyAdmin(user){
+ if(!user)return {ok:false,message:"Not signed in."};
  try{
-   const roleDoc=users.find(u=>u.id===user.uid);
-   /* users snapshot may not have loaded yet; admin role is verified by Firestore rules.
-      If a non-admin account logs in, its reads will fail and CRM remains protected. */
-   $("authScreen").classList.add("hidden");$("adminBadge").textContent=user.email||"Admin";startRealtimeCRM();
- }catch(e){console.error(e)}
+  const snap=await getDoc(doc(db,"users",user.uid));
+  if(!snap.exists())return {ok:false,message:`Access denied. users/${user.uid} document not found. Create this document and set role = admin.`};
+  const role=String(snap.data().role||"").trim().toLowerCase();
+  if(role!=="admin")return {ok:false,message:`Access denied. users/${user.uid} has role = "${snap.data().role||"missing"}". It must be exactly "admin".`};
+  return {ok:true};
+ }catch(e){console.error(e);return {ok:false,message:`Access denied. Could not verify users/${user.uid}. ${e.code||e.message}`}}
+}
+onAuthStateChanged(auth,async user=>{
+ if(!user){$("authScreen").classList.remove("hidden");$("loginBtn").disabled=false;$("loginBtn").textContent="Sign In";return}
+ const result=await verifyAdmin(user);
+ if(!result.ok){$("authScreen").classList.remove("hidden");$("loginError").textContent=result.message;$("loginError").style.display="block";await signOut(auth);return}
+ $("loginError").style.display="none";$("authScreen").classList.add("hidden");$("adminBadge").textContent=user.email||"Admin";startRealtimeCRM();
 });
 $("logoutBtn").onclick=()=>signOut(auth);
 
@@ -244,7 +253,7 @@ $("saveAgentBtn").onclick=async()=>{
  if(!currentAgentId)return;let id=$("editAgentId").value.trim(),approval=$("editApprovalStatus").value;if(approval==="Approved"&&!id)id=generateAgentId();
  try{await updateDoc(doc(db,"agent_registrations",currentAgentId),{membership:$("editMembership").value,paymentStatus:$("editPaymentStatus").value,approvalStatus:approval,status:approval,agentId:id,dashboardAccess:approval==="Approved",adminRemark:$("agentAdminRemark").value.trim(),updatedAt:serverTimestamp()});closeModal("agentModal")}
  catch(e){console.error(e);alert("Agent update failed. Check Firebase Rules.")}}
-async function quickApprove(id){const a=agentApplications.find(x=>x.id===id);if(!a)return;if(a.paymentStatus!=="Verified"&&!confirm("Payment is not marked Verified. Approve anyway?"))return;try{await updateDoc(doc(db,"agent_registrations",id),{approvalStatus:"Approved",status:"Approved",agentId:a.agentId||generateAgentId(),dashboardAccess:true,updatedAt:serverTimestamp()})}catch(e){console.error(e);alert("Unable to approve agent.")}}
+async function quickApprove(id){const a=agentApplications.find(x=>x.id===id);if(!a)return;if(a.paymentStatus!=="Verified"&&!confirm("Payment is not marked Verified. Approve anyway?"))return;try{const linked=resolveAgentUser(a),linkedUid=agentUid(a)||linked?.id||"";await updateDoc(doc(db,"agent_registrations",id),{approvalStatus:"Approved",status:"Approved",agentId:a.agentId||generateAgentId(),dashboardAccess:true,...(linkedUid?{uid:linkedUid}:{}),updatedAt:serverTimestamp()})}catch(e){console.error(e);alert("Unable to approve agent.")}}
 async function quickReject(id){const r=prompt("Enter rejection reason:");if(r===null)return;try{await updateDoc(doc(db,"agent_registrations",id),{approvalStatus:"Rejected",status:"Rejected",dashboardAccess:false,adminRemark:r,updatedAt:serverTimestamp()})}catch(e){console.error(e);alert("Unable to reject agent.")}}
 
 /* LEADS + ASSIGNMENT */
@@ -277,7 +286,7 @@ $("saveLeadBtn").onclick=async()=>{
  const sel=$("assignedAgent"),uid=sel.value,name=uid?(sel.options[sel.selectedIndex]?.dataset.name||sel.options[sel.selectedIndex]?.textContent||""):"";
  try{
    const data={status:$("editLeadStatus").value,assignedTo:$("assignedTo").value.trim(),crmRemark:$("leadRemark").value.trim(),updatedAt:serverTimestamp()};
-   if(uid){data.assignedToUid=uid;data.assignedToName=name}else{data.assignedToUid="";data.assignedToName=""}
+   if(uid){data.assignedToUid=uid;data.assignedToName=name;data.assignedAt=serverTimestamp();data.assignedByUid=auth.currentUser.uid}else{data.assignedToUid="";data.assignedToName=""}
    await updateDoc(doc(db,"leads",currentLeadId),data);closeModal("leadModal")
  }catch(e){console.error(e);alert("Lead update failed. Check that your logged-in user has role: admin in users/{UID}.")}
 };
@@ -288,7 +297,7 @@ $("manualLeadForm").addEventListener("submit",async e=>{
  e.preventDefault();const sel=$("manualAgent"),uid=sel.value,name=uid?(sel.options[sel.selectedIndex]?.dataset.name||sel.options[sel.selectedIndex]?.textContent||""):"";
  try{
    const data={name:$("manualName").value.trim(),phone:$("manualPhone").value.trim(),requirement:$("manualProduct").value,amount:$("manualAmount").value?Number($("manualAmount").value):null,city:$("manualCity").value.trim(),assignedTo:$("manualAssignedTo").value.trim(),source:"admin-manual",status:"new",createdByUid:auth.currentUser.uid,createdAt:serverTimestamp(),updatedAt:serverTimestamp(),crmRemark:$("manualRemark").value.trim()};
-   if(uid){data.assignedToUid=uid;data.assignedToName=name}else{data.assignedToUid="";data.assignedToName=""}
+   if(uid){data.assignedToUid=uid;data.assignedToName=name;data.assignedAt=serverTimestamp();data.assignedByUid=auth.currentUser.uid}else{data.assignedToUid="";data.assignedToName=""}
    await addDoc(collection(db,"leads"),data);e.target.reset();closeModal("addLeadModal")
  }catch(x){console.error(x);alert("Unable to create lead. Check Firebase Rules.")}});
 
