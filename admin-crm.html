@@ -1702,9 +1702,7 @@ Save Customer Lead
 
 <script type="module">
 
-import {
-    initializeApp
-}
+import { initializeApp }
 from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 import {
@@ -1727,9 +1725,9 @@ import {
 from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-/* ===============================
-   FIREBASE
-================================ */
+/* =====================================================
+   FIREBASE CONFIG
+===================================================== */
 
 const firebaseConfig = {
 
@@ -1753,9 +1751,12 @@ const firebaseConfig = {
 
     measurementId:
         "G-73WD9V05ZZ"
-
 };
 
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
 
 const app =
     initializeApp(firebaseConfig);
@@ -1767,32 +1768,38 @@ const db =
     getFirestore(app);
 
 
-/* ===============================
+/* =====================================================
    STATE
-================================ */
+===================================================== */
 
 let agentApplications = [];
+
 let customerLeads = [];
 
 let currentAgentId = null;
+
 let currentLeadId = null;
 
+let unsubscribeAgents = null;
 
-/* ===============================
-   HELPERS
-================================ */
+let unsubscribeLeads = null;
+
+
+/* =====================================================
+   HELPER
+===================================================== */
 
 const $ = id =>
     document.getElementById(id);
 
 
-function safe(value){
+function safe(value) {
 
-    if(
+    if (
         value === undefined ||
         value === null ||
         value === ""
-    ){
+    ) {
         return "—";
     }
 
@@ -1800,112 +1807,319 @@ function safe(value){
 }
 
 
-function money(value){
+function escapeHTML(value) {
 
-    const n =
+    return safe(value)
+        .replace(/[&<>"']/g, char => {
+
+            const map = {
+
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#039;"
+
+            };
+
+            return map[char];
+
+        });
+
+}
+
+
+function money(value) {
+
+    if (
+        value === null ||
+        value === undefined ||
+        value === ""
+    ) {
+        return "—";
+    }
+
+    const number =
         Number(value);
 
-    if(!Number.isFinite(n)){
+    if (!Number.isFinite(number)) {
+
         return "—";
+
     }
 
     return "₹" +
-        n.toLocaleString("en-IN");
+        number.toLocaleString("en-IN");
+
 }
 
 
-function statusClass(status){
+function getTimestamp(value) {
 
-    return String(status || "pending")
-        .toLowerCase()
-        .replace(/\s+/g,"-");
-}
+    if (!value) {
 
+        return 0;
 
-function statusBadge(status){
-
-    const text =
-        safe(status);
-
-    return `
-        <span class="badge ${statusClass(text)}">
-            ${text}
-        </span>
-    `;
-}
-
-
-function displayDate(value){
-
-    if(!value){
-        return "—";
     }
 
-    try{
+    try {
 
-        if(value.toDate){
-            return value
-                .toDate()
-                .toLocaleDateString("en-IN");
+        if (
+            typeof value.toMillis ===
+            "function"
+        ) {
+
+            return value.toMillis();
+
         }
 
-        return new Date(value)
-            .toLocaleDateString("en-IN");
+        const time =
+            new Date(value).getTime();
+
+        return Number.isFinite(time)
+            ? time
+            : 0;
 
     }
-    catch{
-        return "—";
+    catch {
+
+        return 0;
+
     }
 
 }
 
 
-/* ===============================
-   AUTH
-================================ */
+function displayDate(value) {
+
+    if (!value) {
+
+        return "—";
+
+    }
+
+    try {
+
+        if (
+            typeof value.toDate ===
+            "function"
+        ) {
+
+            return value
+                .toDate()
+                .toLocaleString("en-IN");
+
+        }
+
+        const date =
+            new Date(value);
+
+        if (
+            Number.isNaN(
+                date.getTime()
+            )
+        ) {
+
+            return "—";
+
+        }
+
+        return date.toLocaleString(
+            "en-IN"
+        );
+
+    }
+    catch {
+
+        return "—";
+
+    }
+
+}
+
+
+function statusClass(status) {
+
+    return String(
+        status || "pending"
+    )
+    .toLowerCase()
+    .replace(/\s+/g, "-");
+
+}
+
+
+function statusBadge(status) {
+
+    return `
+        <span class="badge ${statusClass(status)}">
+            ${escapeHTML(status)}
+        </span>
+    `;
+
+}
+
+
+function detail(
+    label,
+    value,
+    full = false
+) {
+
+    return `
+        <div class="detail ${full ? "full" : ""}">
+
+            <span>
+                ${escapeHTML(label)}
+            </span>
+
+            <strong>
+                ${escapeHTML(value)}
+            </strong>
+
+        </div>
+    `;
+
+}
+
+
+/* =====================================================
+   CONNECTION STATUS
+===================================================== */
+
+function showConnection(
+    type,
+    message
+) {
+
+    let box =
+        $("connectionBox");
+
+    if (!box) {
+
+        box =
+            document.createElement(
+                "div"
+            );
+
+        box.id =
+            "connectionBox";
+
+        box.style.cssText = `
+            margin:15px 27px;
+            padding:12px 15px;
+            border-radius:10px;
+            font-size:11px;
+            font-weight:700;
+        `;
+
+        const content =
+            document.querySelector(
+                ".content"
+            );
+
+        if (content) {
+
+            content.prepend(box);
+
+        }
+
+    }
+
+
+    box.textContent =
+        message;
+
+
+    if (type === "error") {
+
+        box.style.background =
+            "#fff0f1";
+
+        box.style.color =
+            "#c43d43";
+
+    }
+    else {
+
+        box.style.background =
+            "#edf9f2";
+
+        box.style.color =
+            "#16834b";
+
+    }
+
+}
+
+
+/* =====================================================
+   ADMIN LOGIN
+===================================================== */
 
 $("adminLoginForm")
 .addEventListener(
     "submit",
-    async event=>{
+    async event => {
 
         event.preventDefault();
 
-        const btn =
+
+        const button =
             $("loginBtn");
 
         const error =
             $("loginError");
 
-        btn.disabled = true;
-        btn.textContent = "Signing in...";
+
+        button.disabled =
+            true;
+
+        button.textContent =
+            "Signing in...";
+
 
         error.style.display =
             "none";
 
 
-        try{
+        try {
 
             await signInWithEmailAndPassword(
+
                 auth,
-                $("adminEmail").value.trim(),
-                $("adminPassword").value
+
+                $("adminEmail")
+                    .value
+                    .trim(),
+
+                $("adminPassword")
+                    .value
+
             );
 
         }
-        catch(err){
+        catch (err) {
 
-            console.error(err);
+            console.error(
+                "LOGIN ERROR:",
+                err
+            );
+
 
             error.textContent =
-                "Login failed. Please check your admin email and password.";
+                err.message ||
+                "Login failed.";
+
 
             error.style.display =
                 "block";
 
-            btn.disabled = false;
 
-            btn.textContent =
+            button.disabled =
+                false;
+
+            button.textContent =
                 "Sign In";
 
         }
@@ -1914,185 +2128,329 @@ $("adminLoginForm")
 );
 
 
+/* =====================================================
+   AUTH STATE
+===================================================== */
+
 onAuthStateChanged(
     auth,
-    user=>{
+    user => {
 
-        if(user){
+        if (user) {
+
+            console.log(
+                "ADMIN AUTHENTICATED:",
+                user.uid,
+                user.email
+            );
+
 
             $("authScreen")
-            .classList
-            .add("hidden");
+                .classList
+                .add("hidden");
 
-            $("adminBadge").textContent =
-                user.email || "Admin";
+
+            $("adminBadge")
+                .textContent =
+                user.email ||
+                "Admin";
+
+
+            showConnection(
+                "success",
+                "Admin authenticated. Connecting to Firebase..."
+            );
+
 
             startRealtimeCRM();
 
         }
-        else{
+        else {
+
+            console.log(
+                "NO AUTH USER"
+            );
+
 
             $("authScreen")
-            .classList
-            .remove("hidden");
+                .classList
+                .remove("hidden");
+
+
+            if (unsubscribeAgents) {
+
+                unsubscribeAgents();
+
+                unsubscribeAgents =
+                    null;
+
+            }
+
+
+            if (unsubscribeLeads) {
+
+                unsubscribeLeads();
+
+                unsubscribeLeads =
+                    null;
+
+            }
 
         }
 
     }
 );
 
+
+/* =====================================================
+   LOGOUT
+===================================================== */
 
 $("logoutBtn")
 .addEventListener(
     "click",
-    async()=>{
+    async () => {
 
-        await signOut(auth);
+        try {
+
+            await signOut(auth);
+
+        }
+        catch (error) {
+
+            console.error(
+                "Logout error:",
+                error
+            );
+
+        }
 
     }
 );
 
 
-/* ===============================
-   REAL-TIME AGENTS
-================================ */
+/* =====================================================
+   REALTIME CRM
+===================================================== */
 
-let unsubscribeAgents = null;
-let unsubscribeLeads = null;
+function startRealtimeCRM() {
 
 
-function startRealtimeCRM(){
+    if (unsubscribeAgents) {
 
-    if(
-        unsubscribeAgents ||
-        unsubscribeLeads
-    ){
-        return;
+        unsubscribeAgents();
+
     }
 
 
+    if (unsubscribeLeads) {
+
+        unsubscribeLeads();
+
+    }
+
+
+    /* ================= AGENTS ================= */
+
     unsubscribeAgents =
     onSnapshot(
+
         collection(
             db,
             "agent_registrations"
         ),
-        snapshot=>{
 
-            agentApplications = [];
+        snapshot => {
 
-            snapshot.forEach(item=>{
+            console.log(
+                "AGENT SNAPSHOT:",
+                snapshot.size
+            );
 
-                agentApplications.push({
-                    id:item.id,
-                    ...item.data()
-                });
 
-            });
+            agentApplications =
+                snapshot.docs.map(
+                    document => ({
 
-            sortAgents();
+                        id:
+                            document.id,
+
+                        ...document.data()
+
+                    })
+                );
+
+
+            agentApplications.sort(
+                (a, b) =>
+                    getTimestamp(
+                        b.createdAt
+                    ) -
+                    getTimestamp(
+                        a.createdAt
+                    )
+            );
+
 
             renderEverything();
 
+
+            showConnection(
+                "success",
+                `Firebase connected • ${agentApplications.length} agents • ${customerLeads.length} leads`
+            );
+
         },
-        error=>{
+
+        error => {
 
             console.error(
-                "Agent realtime error:",
+                "AGENT FIRESTORE ERROR:",
                 error
             );
 
+
+            showConnection(
+                "error",
+                "Agent data read failed: " +
+                error.message
+            );
+
+
+            $("agentsTable")
+                .innerHTML = `
+
+                <tr>
+
+                    <td colspan="8">
+
+                        <div class="empty">
+
+                            Firebase permission error.
+
+                            <br><br>
+
+                            ${escapeHTML(
+                                error.message
+                            )}
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            `;
+
         }
+
     );
 
 
+    /* ================= LEADS ================= */
+
     unsubscribeLeads =
     onSnapshot(
+
         collection(
             db,
             "leads"
         ),
-        snapshot=>{
 
-            customerLeads = [];
+        snapshot => {
 
-            snapshot.forEach(item=>{
+            console.log(
+                "LEAD SNAPSHOT:",
+                snapshot.size
+            );
 
-                customerLeads.push({
-                    id:item.id,
-                    ...item.data()
-                });
 
-            });
+            customerLeads =
+                snapshot.docs.map(
+                    document => ({
 
-            sortLeads();
+                        id:
+                            document.id,
+
+                        ...document.data()
+
+                    })
+                );
+
+
+            customerLeads.sort(
+                (a, b) =>
+                    getTimestamp(
+                        b.createdAt
+                    ) -
+                    getTimestamp(
+                        a.createdAt
+                    )
+            );
+
 
             renderEverything();
 
+
+            showConnection(
+                "success",
+                `Firebase connected • ${agentApplications.length} agents • ${customerLeads.length} leads`
+            );
+
         },
-        error=>{
+
+        error => {
 
             console.error(
-                "Lead realtime error:",
+                "LEAD FIRESTORE ERROR:",
                 error
             );
 
-        }
-    );
 
-}
-
-
-function sortAgents(){
-
-    agentApplications.sort(
-        (a,b)=>
-            getTimestamp(b.createdAt) -
-            getTimestamp(a.createdAt)
-    );
-
-}
+            showConnection(
+                "error",
+                "Lead data read failed: " +
+                error.message
+            );
 
 
-function sortLeads(){
+            $("leadsTable")
+                .innerHTML = `
 
-    customerLeads.sort(
-        (a,b)=>
-            getTimestamp(b.createdAt) -
-            getTimestamp(a.createdAt)
-    );
+                <tr>
 
-}
+                    <td colspan="8">
 
+                        <div class="empty">
 
-function getTimestamp(value){
+                            Firebase permission error.
 
-    if(!value){
-        return 0;
-    }
+                            <br><br>
 
-    try{
+                            ${escapeHTML(
+                                error.message
+                            )}
 
-        if(value.toMillis){
-            return value.toMillis();
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            `;
+
         }
 
-        return new Date(value)
-            .getTime();
-
-    }
-    catch{
-        return 0;
-    }
+    );
 
 }
 
 
-/* ===============================
-   RENDER ALL
-================================ */
+/* =====================================================
+   RENDER EVERYTHING
+===================================================== */
 
-function renderEverything(){
+function renderEverything() {
 
     renderStats();
 
@@ -2107,84 +2465,101 @@ function renderEverything(){
 }
 
 
-/* ===============================
+/* =====================================================
    STATS
-================================ */
+===================================================== */
 
-function renderStats(){
+function renderStats() {
 
-    const pendingAgents =
-        agentApplications
-        .filter(
+    const pending =
+        agentApplications.filter(
             agent =>
                 String(
                     agent.approvalStatus ||
-                    agent.status
-                ).toLowerCase()
-                === "pending"
+                    agent.status ||
+                    "pending"
+                )
+                .toLowerCase() ===
+                "pending"
         ).length;
 
 
-    const approvedAgents =
-        agentApplications
-        .filter(
+    const approved =
+        agentApplications.filter(
             agent =>
                 String(
                     agent.approvalStatus ||
-                    agent.status
-                ).toLowerCase()
-                === "approved"
+                    agent.status ||
+                    ""
+                )
+                .toLowerCase() ===
+                "approved"
         ).length;
 
 
     const newLeads =
-        customerLeads
-        .filter(
-            lead =>{
+        customerLeads.filter(
+            lead => {
 
-                const s =
+                const status =
                     String(
-                        lead.status || "new"
-                    ).toLowerCase();
+                        lead.status ||
+                        "new"
+                    )
+                    .toLowerCase();
+
 
                 return (
-                    s === "new" ||
-                    s === "pending"
+
+                    status === "new" ||
+
+                    status === "pending"
+
                 );
 
             }
         ).length;
 
 
-    $("statAgents").textContent =
+    $("statAgents")
+        .textContent =
         agentApplications.length;
 
-    $("statPendingAgents").textContent =
-        pendingAgents;
 
-    $("statApprovedAgents").textContent =
-        approvedAgents;
+    $("statPendingAgents")
+        .textContent =
+        pending;
 
-    $("statLeads").textContent =
+
+    $("statApprovedAgents")
+        .textContent =
+        approved;
+
+
+    $("statLeads")
+        .textContent =
         customerLeads.length;
 
-    $("statNewLeads").textContent =
+
+    $("statNewLeads")
+        .textContent =
         newLeads;
 
 }
 
 
-/* ===============================
-   AGENT TABLES
-================================ */
+/* =====================================================
+   AGENTS
+===================================================== */
 
-function getFilteredAgents(){
+function getFilteredAgents() {
 
     const query =
         $("agentSearch")
         ?.value
         .trim()
         .toLowerCase() || "";
+
 
     const status =
         $("agentStatusFilter")
@@ -2193,15 +2568,26 @@ function getFilteredAgents(){
 
 
     return agentApplications.filter(
-        agent=>{
+        agent => {
 
             const text = `
-                ${safe(agent.fullName)}
-                ${safe(agent.mobile)}
-                ${safe(agent.email)}
-                ${safe(agent.city)}
-                ${safe(agent.agentId)}
-            `.toLowerCase();
+
+                ${agent.fullName || ""}
+
+                ${agent.mobile || ""}
+
+                ${agent.phone || ""}
+
+                ${agent.email || ""}
+
+                ${agent.city || ""}
+
+                ${agent.state || ""}
+
+                ${agent.agentId || ""}
+
+            `
+            .toLowerCase();
 
 
             const currentStatus =
@@ -2209,12 +2595,20 @@ function getFilteredAgents(){
                     agent.approvalStatus ||
                     agent.status ||
                     "Pending"
-                ).toLowerCase();
+                )
+                .toLowerCase();
 
 
             return (
-                (!query || text.includes(query)) &&
-                (!status || currentStatus === status)
+
+                (!query ||
+                 text.includes(query))
+
+                &&
+
+                (!status ||
+                 currentStatus === status)
+
             );
 
         }
@@ -2223,7 +2617,7 @@ function getFilteredAgents(){
 }
 
 
-function agentRow(agent){
+function agentRow(agent) {
 
     const status =
         agent.approvalStatus ||
@@ -2240,50 +2634,101 @@ function agentRow(agent){
                 <div class="person">
 
                     <strong>
-                        ${safe(agent.fullName)}
+                        ${escapeHTML(
+                            agent.fullName ||
+                            agent.name
+                        )}
                     </strong>
 
                     <span>
-                        ${safe(agent.mobile)}
+                        ${escapeHTML(
+                            agent.mobile ||
+                            agent.phone
+                        )}
+
                         ·
-                        ${safe(agent.email)}
+
+                        ${escapeHTML(
+                            agent.email
+                        )}
                     </span>
 
                 </div>
 
             </td>
 
-            <td>
-                ${safe(agent.city)}
-                ${agent.state ? " · " + agent.state : ""}
-            </td>
 
             <td>
-                ${safe(agent.experience)}
+
+                ${escapeHTML(
+                    agent.city
+                )}
+
+                ${
+                    agent.state
+                    ? " · " +
+                      escapeHTML(
+                          agent.state
+                      )
+                    : ""
+                }
+
             </td>
 
+
             <td>
-                ${safe(agent.membership)}
+                ${escapeHTML(
+                    agent.experience
+                )}
+            </td>
+
+
+            <td>
+
+                ${escapeHTML(
+                    agent.membership ||
+                    agent.plan
+                )}
+
                 <br>
+
                 <small>
-                    ${money(agent.membershipPrice)}
+                    ${money(
+                        agent.membershipPrice ||
+                        agent.price
+                    )}
                 </small>
+
             </td>
 
+
             <td>
+
                 ${statusBadge(
                     agent.paymentStatus ||
                     "Pending"
                 )}
+
             </td>
 
-            <td>
-                ${statusBadge(status)}
-            </td>
 
             <td>
-                ${safe(agent.agentId)}
+
+                ${statusBadge(
+                    status
+                )}
+
             </td>
+
+
+            <td>
+
+                ${escapeHTML(
+                    agent.agentId
+                )}
+
+            </td>
+
 
             <td>
 
@@ -2295,10 +2740,14 @@ function agentRow(agent){
                         View
                     </button>
 
+
                     ${
-                        String(status).toLowerCase()
+                        String(status)
+                        .toLowerCase()
                         !== "approved"
+
                         ?
+
                         `
                         <button
                             class="small-btn approve-btn"
@@ -2306,14 +2755,20 @@ function agentRow(agent){
                             Approve
                         </button>
                         `
+
                         :
+
                         ""
                     }
 
+
                     ${
-                        String(status).toLowerCase()
+                        String(status)
+                        .toLowerCase()
                         !== "rejected"
+
                         ?
+
                         `
                         <button
                             class="small-btn reject-btn"
@@ -2321,7 +2776,9 @@ function agentRow(agent){
                             Reject
                         </button>
                         `
+
                         :
+
                         ""
                     }
 
@@ -2336,77 +2793,127 @@ function agentRow(agent){
 }
 
 
-function renderAgentTables(){
+function renderAgentTables() {
 
     const filtered =
         getFilteredAgents();
 
 
-    $("agentsTable").innerHTML =
+    $("agentsTable")
+        .innerHTML =
+
         filtered.length
+
         ?
-        filtered.map(agentRow).join("")
+
+        filtered
+            .map(agentRow)
+            .join("")
+
         :
-        `<tr><td colspan="8"><div class="empty">No agent applications found.</div></td></tr>`;
+
+        `
+        <tr>
+            <td colspan="8">
+                <div class="empty">
+                    No agent applications found.
+                </div>
+            </td>
+        </tr>
+        `;
 
 
-    $("recentAgentsTable").innerHTML =
+    $("recentAgentsTable")
+        .innerHTML =
+
         agentApplications
-        .slice(0,5)
-        .map(agent=>{
+            .slice(0, 5)
+            .map(agent => {
 
-            const status =
-                agent.approvalStatus ||
-                agent.status ||
-                "Pending";
+                const status =
+                    agent.approvalStatus ||
+                    agent.status ||
+                    "Pending";
 
-            return `
 
-                <tr>
+                return `
 
-                    <td>
-                        <div class="person">
-                            <strong>
-                                ${safe(agent.fullName)}
-                            </strong>
-                            <span>
-                                ${safe(agent.mobile)}
-                            </span>
-                        </div>
-                    </td>
+                    <tr>
 
-                    <td>
-                        ${safe(agent.membership)}
-                    </td>
+                        <td>
 
-                    <td>
-                        ${statusBadge(
-                            agent.paymentStatus ||
-                            "Pending"
-                        )}
-                    </td>
+                            <div class="person">
 
-                    <td>
-                        ${statusBadge(status)}
-                    </td>
+                                <strong>
+                                    ${escapeHTML(
+                                        agent.fullName ||
+                                        agent.name
+                                    )}
+                                </strong>
 
-                    <td>
+                                <span>
+                                    ${escapeHTML(
+                                        agent.mobile ||
+                                        agent.phone
+                                    )}
+                                </span>
 
-                        <button
-                            class="small-btn view-btn"
-                            data-agent-view="${agent.id}">
-                            Review
-                        </button>
+                            </div>
 
-                    </td>
+                        </td>
 
-                </tr>
 
-            `;
+                        <td>
+                            ${escapeHTML(
+                                agent.membership ||
+                                agent.plan
+                            )}
+                        </td>
 
-        })
-        .join("") ||
-        `<tr><td colspan="5"><div class="empty">No registrations.</div></td></tr>`;
+
+                        <td>
+                            ${statusBadge(
+                                agent.paymentStatus ||
+                                "Pending"
+                            )}
+                        </td>
+
+
+                        <td>
+                            ${statusBadge(
+                                status
+                            )}
+                        </td>
+
+
+                        <td>
+
+                            <button
+                                class="small-btn view-btn"
+                                data-agent-view="${agent.id}">
+                                Review
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                `;
+
+            })
+            .join("")
+
+        ||
+
+        `
+        <tr>
+            <td colspan="5">
+                <div class="empty">
+                    No registrations.
+                </div>
+            </td>
+        </tr>
+        `;
 
 
     attachAgentButtons();
@@ -2414,109 +2921,179 @@ function renderAgentTables(){
 }
 
 
-function attachAgentButtons(){
+function attachAgentButtons() {
 
     document
-    .querySelectorAll(
-        "[data-agent-view]"
-    )
-    .forEach(button=>{
+        .querySelectorAll(
+            "[data-agent-view]"
+        )
+        .forEach(button => {
 
-        button.onclick =
-            ()=>openAgent(
-                button.dataset.agentView
-            );
+            button.onclick =
+                () =>
+                    openAgent(
+                        button.dataset.agentView
+                    );
 
-    });
-
-
-    document
-    .querySelectorAll(
-        "[data-agent-approve]"
-    )
-    .forEach(button=>{
-
-        button.onclick =
-            ()=>quickApprove(
-                button.dataset.agentApprove
-            );
-
-    });
+        });
 
 
     document
-    .querySelectorAll(
-        "[data-agent-reject]"
-    )
-    .forEach(button=>{
+        .querySelectorAll(
+            "[data-agent-approve]"
+        )
+        .forEach(button => {
 
-        button.onclick =
-            ()=>quickReject(
-                button.dataset.agentReject
-            );
+            button.onclick =
+                () =>
+                    quickApprove(
+                        button.dataset.agentApprove
+                    );
 
-    });
+        });
+
+
+    document
+        .querySelectorAll(
+            "[data-agent-reject]"
+        )
+        .forEach(button => {
+
+            button.onclick =
+                () =>
+                    quickReject(
+                        button.dataset.agentReject
+                    );
+
+        });
 
 }
 
 
-/* ===============================
+/* =====================================================
    AGENT MODAL
-================================ */
+===================================================== */
 
 window.openAgent =
-function(id){
+function(id) {
 
     const agent =
         agentApplications.find(
-            item=>item.id === id
+            item =>
+                item.id === id
         );
 
-    if(!agent){
+
+    if (!agent) {
+
         return;
+
     }
+
 
     currentAgentId =
         id;
 
 
-    $("agentModalName").textContent =
+    $("agentModalName")
+        .textContent =
         agent.fullName ||
+        agent.name ||
         "Agent Application";
 
-    $("agentModalId").textContent =
+
+    $("agentModalId")
+        .textContent =
         "Application ID: " +
         id;
 
 
-    $("agentDetails").innerHTML = `
+    $("agentDetails")
+        .innerHTML = `
 
-        ${detail("Mobile",agent.mobile)}
-        ${detail("Email",agent.email)}
-        ${detail("City",agent.city)}
-        ${detail("State",agent.state)}
-        ${detail("Experience",agent.experience)}
-        ${detail("Profession",agent.profession)}
-        ${detail("Work Type",agent.workType)}
-        ${detail("Referral Code",agent.referralCode)}
-        ${detail("Selected Plan",agent.membership)}
-        ${detail("Plan Price",money(agent.membershipPrice))}
-        ${detail("Payment Status",agent.paymentStatus)}
-        ${detail("Current Agent ID",agent.agentId)}
+        ${detail(
+            "Mobile",
+            agent.mobile ||
+            agent.phone
+        )}
+
+        ${detail(
+            "Email",
+            agent.email
+        )}
+
+        ${detail(
+            "City",
+            agent.city
+        )}
+
+        ${detail(
+            "State",
+            agent.state
+        )}
+
+        ${detail(
+            "Experience",
+            agent.experience
+        )}
+
+        ${detail(
+            "Profession",
+            agent.profession
+        )}
+
+        ${detail(
+            "Work Type",
+            agent.workType
+        )}
+
+        ${detail(
+            "Referral Code",
+            agent.referralCode
+        )}
+
+        ${detail(
+            "Selected Plan",
+            agent.membership ||
+            agent.plan
+        )}
+
+        ${detail(
+            "Plan Price",
+            money(
+                agent.membershipPrice ||
+                agent.price
+            )
+        )}
+
+        ${detail(
+            "Payment Status",
+            agent.paymentStatus
+        )}
+
+        ${detail(
+            "Current Agent ID",
+            agent.agentId
+        )}
+
         ${detail(
             "Reason / Goal",
-            agent.reason,
+            agent.reason ||
+            agent.message,
             true
         )}
 
     `;
 
 
-    $("editMembership").value =
+    $("editMembership")
+        .value =
         agent.membership ||
         "Basic";
 
-    $("editPaymentStatus").value =
+
+    $("editPaymentStatus")
+        .value =
         normalizeAdminValue(
             agent.paymentStatus,
             [
@@ -2527,7 +3104,9 @@ function(id){
             "Pending"
         );
 
-    $("editApprovalStatus").value =
+
+    $("editApprovalStatus")
+        .value =
         normalizeAdminValue(
             agent.approvalStatus ||
             agent.status,
@@ -2539,106 +3118,79 @@ function(id){
             "Pending"
         );
 
-    $("editAgentId").value =
-        agent.agentId || "";
 
-    $("agentAdminRemark").value =
-        agent.adminRemark || "";
+    $("editAgentId")
+        .value =
+        agent.agentId ||
+        "";
+
+
+    $("agentAdminRemark")
+        .value =
+        agent.adminRemark ||
+        "";
 
 
     $("agentModal")
-    .classList
-    .add("show");
+        .classList
+        .add("show");
 
 };
-
-
-function detail(label,value,full=false){
-
-    return `
-
-        <div class="detail ${full ? "full" : ""}">
-
-            <span>
-                ${label}
-            </span>
-
-            <strong>
-                ${safe(value)}
-            </strong>
-
-        </div>
-
-    `;
-
-}
 
 
 function normalizeAdminValue(
     value,
     allowed,
     fallback
-){
+) {
 
-    const match =
+    const found =
         allowed.find(
             item =>
                 item.toLowerCase() ===
-                String(value || "")
-                .toLowerCase()
+                String(
+                    value || ""
+                ).toLowerCase()
         );
 
-    return match || fallback;
+
+    return found ||
+        fallback;
 
 }
 
 
-/* ===============================
-   GENERATE AGENT ID
-================================ */
-
-function generateAgentId(){
-
-    const number =
-        String(
-            Date.now()
-        )
-        .slice(-6);
-
-    return "FXV" + number;
-
-}
-
-
-/* ===============================
+/* =====================================================
    SAVE AGENT
-================================ */
+===================================================== */
 
 $("saveAgentBtn")
 .addEventListener(
     "click",
-    async()=>{
+    async () => {
 
-        if(!currentAgentId){
+        if (!currentAgentId) {
+
             return;
+
         }
 
 
         let agentId =
             $("editAgentId")
-            .value
-            .trim();
+                .value
+                .trim();
 
 
         const approval =
             $("editApprovalStatus")
-            .value;
+                .value;
 
 
-        if(
+        if (
             approval === "Approved" &&
             !agentId
-        ){
+        ) {
 
             agentId =
                 generateAgentId();
@@ -2646,21 +3198,25 @@ $("saveAgentBtn")
         }
 
 
-        try{
+        try {
 
             await updateDoc(
+
                 doc(
                     db,
                     "agent_registrations",
                     currentAgentId
                 ),
+
                 {
 
                     membership:
-                        $("editMembership").value,
+                        $("editMembership")
+                        .value,
 
                     paymentStatus:
-                        $("editPaymentStatus").value,
+                        $("editPaymentStatus")
+                        .value,
 
                     approvalStatus:
                         approval,
@@ -2672,7 +3228,8 @@ $("saveAgentBtn")
                         agentId,
 
                     dashboardAccess:
-                        approval === "Approved",
+                        approval ===
+                        "Approved",
 
                     adminRemark:
                         $("agentAdminRemark")
@@ -2683,6 +3240,7 @@ $("saveAgentBtn")
                         serverTimestamp()
 
                 }
+
             );
 
 
@@ -2691,12 +3249,17 @@ $("saveAgentBtn")
             );
 
         }
-        catch(error){
+        catch (error) {
 
-            console.error(error);
+            console.error(
+                "AGENT UPDATE ERROR:",
+                error
+            );
+
 
             alert(
-                "Agent update failed."
+                "Agent update failed:\n\n" +
+                error.message
             );
 
         }
@@ -2705,51 +3268,71 @@ $("saveAgentBtn")
 );
 
 
-/* ===============================
-   QUICK APPROVE
-================================ */
+/* =====================================================
+   GENERATE AGENT ID
+===================================================== */
 
-async function quickApprove(id){
+function generateAgentId() {
+
+    return "FXV" +
+        String(
+            Date.now()
+        )
+        .slice(-6);
+
+}
+
+
+/* =====================================================
+   QUICK APPROVE
+===================================================== */
+
+async function quickApprove(id) {
 
     const agent =
         agentApplications.find(
-            item=>item.id === id
+            item =>
+                item.id === id
         );
 
-    if(!agent){
+
+    if (!agent) {
+
         return;
+
     }
 
 
-    if(
-        agent.paymentStatus !== "Verified"
-    ){
+    if (
+        agent.paymentStatus !==
+        "Verified"
+    ) {
 
         const proceed =
             confirm(
                 "Payment is not marked Verified. Approve anyway?"
             );
 
-        if(!proceed){
+
+        if (!proceed) {
+
             return;
+
         }
 
     }
 
 
-    const agentId =
-        agent.agentId ||
-        generateAgentId();
-
-
-    try{
+    try {
 
         await updateDoc(
+
             doc(
                 db,
                 "agent_registrations",
                 id
             ),
+
             {
 
                 approvalStatus:
@@ -2759,7 +3342,8 @@ async function quickApprove(id){
                     "Approved",
 
                 agentId:
-                    agentId,
+                    agent.agentId ||
+                    generateAgentId(),
 
                 dashboardAccess:
                     true,
@@ -2768,15 +3352,20 @@ async function quickApprove(id){
                     serverTimestamp()
 
             }
+
         );
 
     }
-    catch(error){
+    catch (error) {
 
-        console.error(error);
+        console.error(
+            error
+        );
+
 
         alert(
-            "Unable to approve agent."
+            "Unable to approve agent:\n\n" +
+            error.message
         );
 
     }
@@ -2784,26 +3373,35 @@ async function quickApprove(id){
 }
 
 
-async function quickReject(id){
+/* =====================================================
+   QUICK REJECT
+===================================================== */
+
+async function quickReject(id) {
 
     const reason =
         prompt(
             "Enter rejection reason:"
         );
 
-    if(reason === null){
+
+    if (reason === null) {
+
         return;
+
     }
 
 
-    try{
+    try {
 
         await updateDoc(
+
             doc(
                 db,
                 "agent_registrations",
                 id
             ),
+
             {
 
                 approvalStatus:
@@ -2822,15 +3420,20 @@ async function quickReject(id){
                     serverTimestamp()
 
             }
+
         );
 
     }
-    catch(error){
+    catch (error) {
 
-        console.error(error);
+        console.error(
+            error
+        );
+
 
         alert(
-            "Unable to reject agent."
+            "Unable to reject agent:\n\n" +
+            error.message
         );
 
     }
@@ -2838,17 +3441,18 @@ async function quickReject(id){
 }
 
 
-/* ===============================
+/* =====================================================
    CUSTOMER LEADS
-================================ */
+===================================================== */
 
-function getFilteredLeads(){
+function getFilteredLeads() {
 
     const query =
         $("leadSearch")
         ?.value
         .trim()
         .toLowerCase() || "";
+
 
     const status =
         $("leadStatusFilter")
@@ -2857,45 +3461,56 @@ function getFilteredLeads(){
 
 
     return customerLeads.filter(
-        lead=>{
+        lead => {
 
             const text = `
 
-                ${safe(
-                    lead.name ||
-                    lead.customer ||
-                    lead.customerName
-                )}
+                ${lead.name || ""}
 
-                ${safe(
-                    lead.phone ||
-                    lead.mobile
-                )}
+                ${lead.customer || ""}
 
-                ${safe(
-                    lead.requirement ||
-                    lead.product
-                )}
+                ${lead.customerName || ""}
 
-                ${safe(lead.company)}
+                ${lead.phone || ""}
 
-                ${safe(lead.agentId)}
+                ${lead.mobile || ""}
 
-                ${safe(lead.agentName)}
+                ${lead.requirement || ""}
 
-            `.toLowerCase();
+                ${lead.product || ""}
+
+                ${lead.company || ""}
+
+                ${lead.city || ""}
+
+                ${lead.agentId || ""}
+
+                ${lead.agentName || ""}
+
+                ${lead.source || ""}
+
+            `
+            .toLowerCase();
 
 
             const currentStatus =
                 String(
                     lead.status ||
                     "new"
-                ).toLowerCase();
+                )
+                .toLowerCase();
 
 
             return (
-                (!query || text.includes(query)) &&
-                (!status || currentStatus === status)
+
+                (!query ||
+                 text.includes(query))
+
+                &&
+
+                (!status ||
+                 currentStatus === status)
+
             );
 
         }
@@ -2904,7 +3519,7 @@ function getFilteredLeads(){
 }
 
 
-function leadRow(lead){
+function leadRow(lead) {
 
     const customer =
         lead.name ||
@@ -2930,11 +3545,18 @@ function leadRow(lead){
         lead.agentId ||
         (
             String(
-                lead.source || ""
-            ).includes("website")
+                lead.source ||
+                ""
+            )
+            .toLowerCase()
+            .includes("website")
+
             ?
+
             "Direct Website"
+
             :
+
             "—"
         );
 
@@ -2953,37 +3575,72 @@ function leadRow(lead){
                 <div class="person">
 
                     <strong>
-                        ${safe(customer)}
+                        ${escapeHTML(
+                            customer
+                        )}
                     </strong>
 
                     <span>
-                        ${safe(phone)}
+                        ${escapeHTML(
+                            phone
+                        )}
                     </span>
 
                 </div>
 
             </td>
 
-            <td>
-                ${safe(product)}
-            </td>
 
             <td>
-                ${money(lead.amount)}
+                ${escapeHTML(
+                    product
+                )}
             </td>
 
-            <td>
-                ${safe(lead.company)}
-                ${lead.city ? "<br>" + safe(lead.city) : ""}
-            </td>
 
             <td>
-                ${safe(agent)}
+                ${money(
+                    lead.amount
+                )}
             </td>
 
+
             <td>
-                ${statusBadge(status)}
+
+                ${escapeHTML(
+                    lead.company
+                )}
+
+                ${
+                    lead.city
+                    ?
+
+                    "<br>" +
+                    escapeHTML(
+                        lead.city
+                    )
+
+                    :
+
+                    ""
+                }
+
             </td>
+
+
+            <td>
+                ${escapeHTML(
+                    agent
+                )}
+            </td>
+
+
+            <td>
+                ${statusBadge(
+                    status
+                )}
+            </td>
+
 
             <td>
                 ${displayDate(
@@ -2991,14 +3648,13 @@ function leadRow(lead){
                 )}
             </td>
 
+
             <td>
 
                 <button
                     class="small-btn view-btn"
                     data-lead-view="${lead.id}">
-
                     Open
-
                 </button>
 
             </td>
@@ -3010,99 +3666,136 @@ function leadRow(lead){
 }
 
 
-function renderLeadTables(){
+function renderLeadTables() {
 
     const filtered =
         getFilteredLeads();
 
 
-    $("leadsTable").innerHTML =
+    $("leadsTable")
+        .innerHTML =
+
         filtered.length
+
         ?
-        filtered.map(leadRow).join("")
+
+        filtered
+            .map(leadRow)
+            .join("")
+
         :
-        `<tr><td colspan="8"><div class="empty">No customer leads found.</div></td></tr>`;
+
+        `
+        <tr>
+            <td colspan="8">
+                <div class="empty">
+                    No customer leads found.
+                </div>
+            </td>
+        </tr>
+        `;
 
 
-    $("recentLeadsTable").innerHTML =
+    $("recentLeadsTable")
+        .innerHTML =
+
         customerLeads
-        .slice(0,5)
-        .map(lead=>{
+            .slice(0, 5)
+            .map(lead => {
 
-            const customer =
-                lead.name ||
-                lead.customer ||
-                lead.customerName ||
-                "Customer";
+                const customer =
+                    lead.name ||
+                    lead.customer ||
+                    lead.customerName ||
+                    "Customer";
 
-            return `
 
-                <tr>
+                return `
 
-                    <td>
+                    <tr>
 
-                        <div class="person">
+                        <td>
 
-                            <strong>
-                                ${safe(customer)}
-                            </strong>
+                            <div class="person">
 
-                            <span>
-                                ${safe(
-                                    lead.phone ||
-                                    lead.mobile
-                                )}
-                            </span>
+                                <strong>
+                                    ${escapeHTML(
+                                        customer
+                                    )}
+                                </strong>
 
-                        </div>
+                                <span>
+                                    ${escapeHTML(
+                                        lead.phone ||
+                                        lead.mobile
+                                    )}
+                                </span>
 
-                    </td>
+                            </div>
 
-                    <td>
-                        ${safe(
-                            lead.requirement ||
-                            lead.product
-                        )}
-                    </td>
+                        </td>
 
-                    <td>
-                        ${money(lead.amount)}
-                    </td>
 
-                    <td>
-                        ${safe(
-                            lead.agentName ||
-                            lead.agentId ||
-                            lead.source
-                        )}
-                    </td>
+                        <td>
+                            ${escapeHTML(
+                                lead.requirement ||
+                                lead.product
+                            )}
+                        </td>
 
-                    <td>
-                        ${statusBadge(
-                            lead.status ||
-                            "new"
-                        )}
-                    </td>
 
-                    <td>
+                        <td>
+                            ${money(
+                                lead.amount
+                            )}
+                        </td>
 
-                        <button
-                            class="small-btn view-btn"
-                            data-lead-view="${lead.id}">
 
-                            Open
+                        <td>
+                            ${escapeHTML(
+                                lead.agentName ||
+                                lead.agentId ||
+                                lead.source
+                            )}
+                        </td>
 
-                        </button>
 
-                    </td>
+                        <td>
+                            ${statusBadge(
+                                lead.status ||
+                                "new"
+                            )}
+                        </td>
 
-                </tr>
 
-            `;
+                        <td>
 
-        })
-        .join("") ||
-        `<tr><td colspan="6"><div class="empty">No customer leads.</div></td></tr>`;
+                            <button
+                                class="small-btn view-btn"
+                                data-lead-view="${lead.id}">
+                                Open
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                `;
+
+            })
+            .join("")
+
+        ||
+
+        `
+        <tr>
+            <td colspan="6">
+                <div class="empty">
+                    No customer leads.
+                </div>
+            </td>
+        </tr>
+        `;
 
 
     attachLeadButtons();
@@ -3110,38 +3803,43 @@ function renderLeadTables(){
 }
 
 
-function attachLeadButtons(){
+function attachLeadButtons() {
 
     document
-    .querySelectorAll(
-        "[data-lead-view]"
-    )
-    .forEach(button=>{
+        .querySelectorAll(
+            "[data-lead-view]"
+        )
+        .forEach(button => {
 
-        button.onclick =
-            ()=>openLead(
-                button.dataset.leadView
-            );
+            button.onclick =
+                () =>
+                    openLead(
+                        button.dataset.leadView
+                    );
 
-    });
+        });
 
 }
 
 
-/* ===============================
+/* =====================================================
    LEAD MODAL
-================================ */
+===================================================== */
 
 window.openLead =
-function(id){
+function(id) {
 
     const lead =
         customerLeads.find(
-            item=>item.id === id
+            item =>
+                item.id === id
         );
 
-    if(!lead){
+
+    if (!lead) {
+
         return;
+
     }
 
 
@@ -3156,15 +3854,19 @@ function(id){
         "Customer";
 
 
-    $("leadModalName").textContent =
+    $("leadModalName")
+        .textContent =
         customer;
 
 
-    $("leadModalId").textContent =
-        "Lead ID: " + id;
+    $("leadModalId")
+        .textContent =
+        "Lead ID: " +
+        id;
 
 
-    $("leadDetails").innerHTML = `
+    $("leadDetails")
+        .innerHTML = `
 
         ${detail(
             "Mobile",
@@ -3185,7 +3887,9 @@ function(id){
 
         ${detail(
             "Amount",
-            money(lead.amount)
+            money(
+                lead.amount
+            )
         )}
 
         ${detail(
@@ -3223,40 +3927,47 @@ function(id){
         ${detail(
             "Customer Message",
             lead.message ||
-            lead.purpose,
+            lead.purpose ||
+            lead.remark,
             true
         )}
 
     `;
 
 
-    $("editLeadStatus").value =
+    $("editLeadStatus")
+        .value =
         normalizeLeadStatus(
             lead.status
         );
 
 
-    $("assignedTo").value =
+    $("assignedTo")
+        .value =
         lead.assignedTo ||
         "";
 
 
-    $("leadRemark").value =
+    $("leadRemark")
+        .value =
         lead.crmRemark ||
         lead.remark ||
         "";
 
 
     $("leadModal")
-    .classList
-    .add("show");
+        .classList
+        .add("show");
 
 };
 
 
-function normalizeLeadStatus(value){
+function normalizeLeadStatus(
+    value
+) {
 
     const allowed = [
+
         "new",
         "contacted",
         "documents pending",
@@ -3267,44 +3978,59 @@ function normalizeLeadStatus(value){
         "approved",
         "disbursed",
         "rejected"
+
     ];
 
 
     const current =
         String(
-            value || "new"
-        ).toLowerCase();
+            value ||
+            "new"
+        )
+        .toLowerCase();
 
 
-    return allowed.includes(current)
-        ? current
-        : "new";
+    return allowed.includes(
+        current
+    )
+
+        ?
+
+        current
+
+        :
+
+        "new";
 
 }
 
 
-/* ===============================
+/* =====================================================
    SAVE LEAD
-================================ */
+===================================================== */
 
 $("saveLeadBtn")
 .addEventListener(
     "click",
-    async()=>{
+    async () => {
 
-        if(!currentLeadId){
+        if (!currentLeadId) {
+
             return;
+
         }
 
 
-        try{
+        try {
 
             await updateDoc(
+
                 doc(
                     db,
                     "leads",
                     currentLeadId
                 ),
+
                 {
 
                     status:
@@ -3325,6 +4051,7 @@ $("saveLeadBtn")
                         serverTimestamp()
 
                 }
+
             );
 
 
@@ -3333,12 +4060,17 @@ $("saveLeadBtn")
             );
 
         }
-        catch(error){
+        catch (error) {
 
-            console.error(error);
+            console.error(
+                "LEAD UPDATE ERROR:",
+                error
+            );
+
 
             alert(
-                "Lead update failed."
+                "Lead update failed:\n\n" +
+                error.message
             );
 
         }
@@ -3347,18 +4079,18 @@ $("saveLeadBtn")
 );
 
 
-/* ===============================
+/* =====================================================
    MANUAL LEAD
-================================ */
+===================================================== */
 
 $("addLeadBtn")
 .addEventListener(
     "click",
-    ()=>{
+    () => {
 
         $("addLeadModal")
-        .classList
-        .add("show");
+            .classList
+            .add("show");
 
     }
 );
@@ -3367,18 +4099,20 @@ $("addLeadBtn")
 $("manualLeadForm")
 .addEventListener(
     "submit",
-    async event=>{
+    async event => {
 
         event.preventDefault();
 
 
-        try{
+        try {
 
             await addDoc(
+
                 collection(
                     db,
                     "leads"
                 ),
+
                 {
 
                     name:
@@ -3396,12 +4130,18 @@ $("manualLeadForm")
                         .value,
 
                     amount:
-                        $("manualAmount").value
+                        $("manualAmount")
+                        .value
+
                         ?
+
                         Number(
-                            $("manualAmount").value
+                            $("manualAmount")
+                            .value
                         )
+
                         :
+
                         null,
 
                     city:
@@ -3432,6 +4172,7 @@ $("manualLeadForm")
                         serverTimestamp()
 
                 }
+
             );
 
 
@@ -3443,12 +4184,17 @@ $("manualLeadForm")
             );
 
         }
-        catch(error){
+        catch (error) {
 
-            console.error(error);
+            console.error(
+                "MANUAL LEAD ERROR:",
+                error
+            );
+
 
             alert(
-                "Unable to create lead."
+                "Unable to create lead:\n\n" +
+                error.message
             );
 
         }
@@ -3457,77 +4203,110 @@ $("manualLeadForm")
 );
 
 
-/* ===============================
-   MEMBERSHIP TABLE
-================================ */
+/* =====================================================
+   MEMBERSHIPS
+===================================================== */
 
-function renderMemberships(){
+function renderMemberships() {
 
-    $("membershipTable").innerHTML =
+    $("membershipTable")
+        .innerHTML =
+
         agentApplications
-        .map(agent=>{
+            .map(agent => {
 
-            const approval =
-                agent.approvalStatus ||
-                agent.status ||
-                "Pending";
+                const approval =
+                    agent.approvalStatus ||
+                    agent.status ||
+                    "Pending";
 
-            return `
 
-                <tr>
+                return `
 
-                    <td>
+                    <tr>
 
-                        <div class="person">
+                        <td>
 
-                            <strong>
-                                ${safe(agent.fullName)}
-                            </strong>
+                            <div class="person">
 
-                            <span>
-                                ${safe(agent.mobile)}
-                            </span>
+                                <strong>
+                                    ${escapeHTML(
+                                        agent.fullName ||
+                                        agent.name
+                                    )}
+                                </strong>
 
-                        </div>
+                                <span>
+                                    ${escapeHTML(
+                                        agent.mobile ||
+                                        agent.phone
+                                    )}
+                                </span>
 
-                    </td>
+                            </div>
 
-                    <td>
-                        ${safe(agent.membership)}
-                    </td>
+                        </td>
 
-                    <td>
-                        ${money(agent.membershipPrice)}
-                    </td>
 
-                    <td>
-                        ${statusBadge(
-                            agent.paymentStatus ||
-                            "Pending"
-                        )}
-                    </td>
+                        <td>
+                            ${escapeHTML(
+                                agent.membership ||
+                                agent.plan
+                            )}
+                        </td>
 
-                    <td>
-                        ${statusBadge(approval)}
-                    </td>
 
-                    <td>
+                        <td>
+                            ${money(
+                                agent.membershipPrice ||
+                                agent.price
+                            )}
+                        </td>
 
-                        <button
-                            class="small-btn view-btn"
-                            data-agent-view="${agent.id}">
-                            Manage
-                        </button>
 
-                    </td>
+                        <td>
+                            ${statusBadge(
+                                agent.paymentStatus ||
+                                "Pending"
+                            )}
+                        </td>
 
-                </tr>
 
-            `;
+                        <td>
+                            ${statusBadge(
+                                approval
+                            )}
+                        </td>
 
-        })
-        .join("") ||
-        `<tr><td colspan="6"><div class="empty">No membership records.</div></td></tr>`;
+
+                        <td>
+
+                            <button
+                                class="small-btn view-btn"
+                                data-agent-view="${agent.id}">
+                                Manage
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                `;
+
+            })
+            .join("")
+
+        ||
+
+        `
+        <tr>
+            <td colspan="6">
+                <div class="empty">
+                    No membership records.
+                </div>
+            </td>
+        </tr>
+        `;
 
 
     attachAgentButtons();
@@ -3535,99 +4314,128 @@ function renderMemberships(){
 }
 
 
-/* ===============================
-   PAYMENT TABLE
-================================ */
+/* =====================================================
+   PAYMENTS
+===================================================== */
 
-function renderPayments(){
+function renderPayments() {
 
-    $("paymentTable").innerHTML =
+    $("paymentTable")
+        .innerHTML =
+
         agentApplications
-        .map(agent=>{
+            .map(agent => {
 
-            return `
+                return `
 
-                <tr>
+                    <tr>
 
-                    <td>
+                        <td>
 
-                        <div class="person">
+                            <div class="person">
 
-                            <strong>
-                                ${safe(agent.fullName)}
-                            </strong>
+                                <strong>
+                                    ${escapeHTML(
+                                        agent.fullName ||
+                                        agent.name
+                                    )}
+                                </strong>
 
-                            <span>
-                                ${safe(agent.mobile)}
-                            </span>
+                                <span>
+                                    ${escapeHTML(
+                                        agent.mobile ||
+                                        agent.phone
+                                    )}
+                                </span>
 
-                        </div>
+                            </div>
 
-                    </td>
+                        </td>
 
-                    <td>
-                        ${safe(agent.membership)}
-                    </td>
 
-                    <td>
-                        ${money(agent.membershipPrice)}
-                    </td>
+                        <td>
+                            ${escapeHTML(
+                                agent.membership ||
+                                agent.plan
+                            )}
+                        </td>
 
-                    <td>
-                        ${safe(
-                            agent.utrNumber ||
-                            agent.paymentReference
-                        )}
-                    </td>
 
-                    <td>
-                        ${statusBadge(
-                            agent.paymentStatus ||
-                            "Pending"
-                        )}
-                    </td>
+                        <td>
+                            ${money(
+                                agent.membershipPrice ||
+                                agent.price
+                            )}
+                        </td>
 
-                    <td>
 
-                        <button
-                            class="small-btn verify-btn"
-                            data-payment-verify="${agent.id}">
+                        <td>
+                            ${escapeHTML(
+                                agent.utrNumber ||
+                                agent.paymentReference ||
+                                agent.utr ||
+                                agent.transactionId
+                            )}
+                        </td>
 
-                            Verify
 
-                        </button>
+                        <td>
+                            ${statusBadge(
+                                agent.paymentStatus ||
+                                "Pending"
+                            )}
+                        </td>
 
-                        <button
-                            class="small-btn view-btn"
-                            data-agent-view="${agent.id}">
 
-                            Open
+                        <td>
 
-                        </button>
+                            <button
+                                class="small-btn verify-btn"
+                                data-payment-verify="${agent.id}">
+                                Verify
+                            </button>
 
-                    </td>
+                            <button
+                                class="small-btn view-btn"
+                                data-agent-view="${agent.id}">
+                                Open
+                            </button>
 
-                </tr>
+                        </td>
 
-            `;
+                    </tr>
 
-        })
-        .join("") ||
-        `<tr><td colspan="6"><div class="empty">No payment records.</div></td></tr>`;
+                `;
+
+            })
+            .join("")
+
+        ||
+
+        `
+        <tr>
+            <td colspan="6">
+                <div class="empty">
+                    No payment records.
+                </div>
+            </td>
+        </tr>
+        `;
 
 
     document
-    .querySelectorAll(
-        "[data-payment-verify]"
-    )
-    .forEach(button=>{
+        .querySelectorAll(
+            "[data-payment-verify]"
+        )
+        .forEach(button => {
 
-        button.onclick =
-            ()=>verifyPayment(
-                button.dataset.paymentVerify
-            );
+            button.onclick =
+                () =>
+                    verifyPayment(
+                        button.dataset.paymentVerify
+                    );
 
-    });
+        });
 
 
     attachAgentButtons();
@@ -3635,26 +4443,29 @@ function renderPayments(){
 }
 
 
-async function verifyPayment(id){
+async function verifyPayment(id) {
 
-    const confirmed =
-        confirm(
+    if (
+        !confirm(
             "Mark this membership payment as Verified?"
-        );
+        )
+    ) {
 
-    if(!confirmed){
         return;
+
     }
 
 
-    try{
+    try {
 
         await updateDoc(
+
             doc(
                 db,
                 "agent_registrations",
                 id
             ),
+
             {
 
                 paymentStatus:
@@ -3667,15 +4478,20 @@ async function verifyPayment(id){
                     serverTimestamp()
 
             }
+
         );
 
     }
-    catch(error){
+    catch (error) {
 
-        console.error(error);
+        console.error(
+            error
+        );
+
 
         alert(
-            "Payment update failed."
+            "Payment update failed:\n\n" +
+            error.message
         );
 
     }
@@ -3683,9 +4499,9 @@ async function verifyPayment(id){
 }
 
 
-/* ===============================
-   FILTER LISTENERS
-================================ */
+/* =====================================================
+   FILTERS
+===================================================== */
 
 $("agentSearch")
 .addEventListener(
@@ -3715,46 +4531,49 @@ $("leadStatusFilter")
 );
 
 
-/* ===============================
+/* =====================================================
    NAVIGATION
-================================ */
+===================================================== */
 
 window.openScreen =
-function(name){
+function(name) {
 
     document
-    .querySelectorAll(".screen")
-    .forEach(screen=>{
-
-        screen.classList.remove(
-            "active"
+        .querySelectorAll(
+            ".screen"
+        )
+        .forEach(
+            screen =>
+                screen.classList
+                .remove("active")
         );
-
-    });
 
 
     const target =
         $("screen-" + name);
 
-    if(target){
 
-        target.classList.add(
-            "active"
-        );
+    if (target) {
+
+        target.classList
+            .add("active");
 
     }
 
 
     document
-    .querySelectorAll(".menu-item")
-    .forEach(item=>{
+        .querySelectorAll(
+            ".menu-item"
+        )
+        .forEach(item => {
 
-        item.classList.toggle(
-            "active",
-            item.dataset.screen === name
-        );
+            item.classList.toggle(
+                "active",
+                item.dataset.screen ===
+                name
+            );
 
-    });
+        });
 
 
     const titles = {
@@ -3777,7 +4596,8 @@ function(name){
     };
 
 
-    $("screenTitle").textContent =
+    $("screenTitle")
+        .textContent =
         titles[name] ||
         "Fundvexxa CRM";
 
@@ -3788,62 +4608,65 @@ function(name){
 
 
 document
-.querySelectorAll(".menu-item")
-.forEach(button=>{
+    .querySelectorAll(
+        ".menu-item"
+    )
+    .forEach(button => {
 
-    button.addEventListener(
-        "click",
-        ()=>{
+        button.addEventListener(
+            "click",
+            () =>
+                openScreen(
+                    button.dataset.screen
+                )
+        );
 
-            openScreen(
-                button.dataset.screen
-            );
-
-        }
-    );
-
-});
+    });
 
 
-/* ===============================
+/* =====================================================
    MODALS
-================================ */
+===================================================== */
 
 window.closeModal =
-function(id){
+function(id) {
 
     $(id)
-    .classList
-    .remove("show");
+        .classList
+        .remove("show");
 
 };
 
 
 document
-.querySelectorAll(".modal")
-.forEach(modal=>{
+    .querySelectorAll(
+        ".modal"
+    )
+    .forEach(modal => {
 
-    modal.addEventListener(
-        "click",
-        event=>{
+        modal.addEventListener(
+            "click",
+            event => {
 
-            if(event.target === modal){
+                if (
+                    event.target ===
+                    modal
+                ) {
 
-                modal.classList.remove(
-                    "show"
-                );
+                    modal.classList
+                        .remove("show");
+
+                }
 
             }
+        );
 
-        }
-    );
-
-});
+    });
 
 
-/* ===============================
+/* =====================================================
    MOBILE
-================================ */
+===================================================== */
 
 const sidebar =
     $("sidebar");
@@ -3855,15 +4678,13 @@ const overlay =
 $("mobileMenu")
 .addEventListener(
     "click",
-    ()=>{
+    () => {
 
-        sidebar.classList.add(
-            "open"
-        );
+        sidebar.classList
+            .add("open");
 
-        overlay.classList.add(
-            "show"
-        );
+        overlay.classList
+            .add("show");
 
     }
 );
@@ -3875,19 +4696,18 @@ overlay.addEventListener(
 );
 
 
-function closeSidebar(){
+function closeSidebar() {
 
-    sidebar.classList.remove(
-        "open"
-    );
+    sidebar.classList
+        .remove("open");
 
-    overlay.classList.remove(
-        "show"
-    );
+    overlay.classList
+        .remove("show");
 
 }
-
 </script>
 
 </body>
 </html>
+
+</script>
