@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -8,171 +7,1450 @@
 
 <title>Agent Dashboard | Fundvexxa</title>
 
+<meta
+name="description"
+content="Fundvexxa Agent Dashboard - manage leads, financial products, commissions and agent services."
+>
+
 <style>
 
+/* =========================================================
+   RESET
+========================================================= */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --primary:#0d6efd;
+    --primary-dark:#084db7;
+    --navy:#10243e;
+    --navy-2:#173b62;
+    --gold:#c99a43;
+    --text:#172235;
+    --muted:#6b7a90;
+    --bg:#f5f8fc;
+    --white:#ffffff;
+    --border:#e3e9f1;
+    --green:#16834b;
+    --red:#d9363e;
+    --orange:#c47a00;
+    --shadow:0 12px 35px rgba(16,36,62,.07);
+    --radius:18px;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-background:#f4f8ff;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.5;
 }
 
-header{
-background:#0d6efd;
-color:white;
-padding:15px 5%;
-display:flex;
-justify-content:space-between;
-align-items:center;
+button,
+input,
+select{
+    font:inherit;
 }
 
-.logo{
-font-size:24px;
-font-weight:bold;
+button{
+    cursor:pointer;
 }
 
-.logout-btn{
-background:red;
-color:white;
-padding:10px 15px;
-border:none;
-border-radius:8px;
-cursor:pointer;
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
-.container{
-padding:30px 5%;
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.app{
+    min-height:100vh;
+    display:flex;
 }
 
-.profile-card{
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-display:flex;
-align-items:center;
-gap:20px;
-flex-wrap:wrap;
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar{
+    width:260px;
+    background:
+        linear-gradient(
+            180deg,
+            #0d1d31 0%,
+            #102943 100%
+        );
+    color:white;
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    z-index:2000;
+    display:flex;
+    flex-direction:column;
+    padding:24px 16px;
+    transition:.3s ease;
 }
 
-.profile-card img{
-width:120px;
-height:120px;
-border-radius:50%;
-object-fit:cover;
+.brand{
+    padding:5px 12px 25px;
+    border-bottom:1px solid rgba(255,255,255,.1);
 }
 
-.profile-info h2{
-color:#0d6efd;
-margin-bottom:10px;
+.brand-name{
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:-1px;
 }
 
-.badge{
-display:inline-block;
-padding:8px 15px;
-background:gold;
-border-radius:20px;
-font-weight:bold;
-margin-top:10px;
+.brand-name span{
+    color:#d2a65b;
 }
 
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-margin-top:30px;
+.brand-subtitle{
+    color:#93a8bf;
+    font-size:11px;
+    margin-top:4px;
 }
 
-.stat-card{
-background:white;
-padding:25px;
-border-radius:15px;
-text-align:center;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
+.sidebar-label{
+    color:#6f879f;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    padding:25px 12px 10px;
 }
 
-.stat-card h2{
-color:#0d6efd;
-margin-top:10px;
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
 }
 
-.section-title{
-margin:40px 0 20px;
-color:#0d6efd;
+.menu a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px 13px;
+    border-radius:11px;
+    color:#b9c8d8;
+    font-size:13px;
+    font-weight:600;
+    transition:.2s ease;
 }
 
-.services-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.menu a:hover,
+.menu a.active{
+    background:rgba(255,255,255,.09);
+    color:white;
 }
 
-.service-card{
-background:white;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
+.menu-icon{
+    width:27px;
+    height:27px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,.07);
+    font-size:13px;
 }
 
-.service-card img{
-width:100%;
-height:180px;
-object-fit:cover;
+.sidebar-bottom{
+    margin-top:auto;
 }
 
-.service-content{
-padding:15px;
+.support-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:14px;
+    padding:15px;
 }
 
-.service-content h3{
-color:#0d6efd;
-margin-bottom:10px;
+.support-card small{
+    color:#8ea4ba;
+    font-size:10px;
+}
+
+.support-card strong{
+    display:block;
+    margin-top:5px;
+    font-size:13px;
+}
+
+.support-card a{
+    display:block;
+    margin-top:9px;
+    color:#d9b56d;
+    font-size:12px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    min-width:0;
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar{
+    height:76px;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 32px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.mobile-menu{
+    display:none;
+    border:0;
+    background:#eef4fb;
+    width:40px;
+    height:40px;
+    border-radius:10px;
+    font-size:20px;
+}
+
+.page-title h1{
+    font-size:20px;
+    color:var(--navy);
+}
+
+.page-title p{
+    font-size:11px;
+    color:var(--muted);
+    margin-top:2px;
+}
+
+.top-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.notification{
+    width:40px;
+    height:40px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    background:white;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.notification-dot{
+    width:7px;
+    height:7px;
+    background:#e34a50;
+    border-radius:50%;
+    position:absolute;
+    top:8px;
+    right:8px;
+}
+
+.top-profile{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding-left:10px;
+    border-left:1px solid var(--border);
+}
+
+.avatar{
+    width:38px;
+    height:38px;
+    border-radius:11px;
+    background:
+        linear-gradient(
+            135deg,
+            #0d6efd,
+            #183c68
+        );
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    font-size:13px;
+}
+
+.top-profile-info strong{
+    display:block;
+    font-size:12px;
+    color:var(--navy);
+}
+
+.top-profile-info span{
+    display:block;
+    font-size:10px;
+    color:var(--muted);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content{
+    padding:30px 32px 50px;
+    max-width:1500px;
+}
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+.welcome{
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(255,255,255,.13),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #10243e,
+            #1b416b
+        );
+    color:white;
+    border-radius:22px;
+    padding:28px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+    overflow:hidden;
+}
+
+.welcome h2{
+    font-size:25px;
+    letter-spacing:-.5px;
+}
+
+.welcome p{
+    margin-top:7px;
+    color:#c8d5e3;
+    font-size:13px;
+    max-width:650px;
+}
+
+.welcome-actions{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
 }
 
 .btn{
-display:inline-block;
-padding:10px 15px;
-background:#0d6efd;
-color:white;
-text-decoration:none;
-border-radius:8px;
-margin-top:10px;
+    min-height:43px;
+    padding:0 17px;
+    border-radius:9px;
+    border:0;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    font-weight:800;
+    transition:.2s ease;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:white;
+}
+
+.btn-primary:hover{
+    background:var(--primary-dark);
+    transform:translateY(-1px);
+}
+
+.btn-light{
+    background:white;
+    color:var(--navy);
+}
+
+.btn-outline{
+    background:transparent;
+    color:var(--navy);
+    border:1px solid var(--border);
+}
+
+.btn-danger{
+    background:#fff1f1;
+    color:var(--red);
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+    gap:17px;
+    margin-top:22px;
+}
+
+.stat-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:17px;
+    padding:21px;
+    box-shadow:var(--shadow);
+}
+
+.stat-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.stat-icon{
+    width:40px;
+    height:40px;
+    border-radius:11px;
+    background:#edf5ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:17px;
+}
+
+.stat-change{
+    font-size:10px;
+    font-weight:800;
+    color:var(--green);
+    background:#edf9f2;
+    padding:5px 8px;
+    border-radius:20px;
+}
+
+.stat-card p{
+    color:var(--muted);
+    font-size:11px;
+    margin-top:15px;
+}
+
+.stat-card h3{
+    color:var(--navy);
+    font-size:24px;
+    margin-top:3px;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+    margin-top:35px;
+}
+
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:15px;
+    margin-bottom:16px;
+}
+
+.section-header h2{
+    font-size:19px;
+    color:var(--navy);
+}
+
+.section-header p{
+    color:var(--muted);
+    font-size:11px;
+    margin-top:3px;
+}
+
+.view-link{
+    color:var(--primary);
+    font-size:11px;
+    font-weight:800;
+}
+
+
+/* =========================================================
+   PROFILE CARD
+========================================================= */
+
+.profile-card{
+    margin-top:22px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:19px;
+    padding:23px;
+    box-shadow:var(--shadow);
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.profile-avatar{
+    width:76px;
+    height:76px;
+    border-radius:18px;
+    background:
+        linear-gradient(
+            135deg,
+            #0d6efd,
+            #173d66
+        );
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:24px;
+    font-weight:800;
+}
+
+.profile-details{
+    flex:1;
+}
+
+.profile-details h2{
+    color:var(--navy);
+    font-size:19px;
+}
+
+.profile-details p{
+    color:var(--muted);
+    font-size:11px;
+    margin-top:2px;
+}
+
+.profile-meta{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:9px;
+}
+
+.badge{
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:800;
+}
+
+.badge-gold{
+    background:#fff6df;
+    color:#9a6b17;
+}
+
+.badge-blue{
+    background:#edf5ff;
+    color:var(--primary);
+}
+
+.profile-actions{
+    display:flex;
+    gap:8px;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services{
+    display:grid;
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+    gap:16px;
+}
+
+.service-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:17px;
+    padding:20px;
+    box-shadow:var(--shadow);
+    transition:.2s ease;
+}
+
+.service-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 40px rgba(16,36,62,.11);
+}
+
+.service-icon{
+    width:45px;
+    height:45px;
+    border-radius:12px;
+    background:#edf5ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    margin-bottom:15px;
+}
+
+.service-card h3{
+    color:var(--navy);
+    font-size:15px;
+}
+
+.service-card p{
+    color:var(--muted);
+    font-size:11px;
+    min-height:38px;
+    margin-top:6px;
+}
+
+.service-btn{
+    display:inline-flex;
+    margin-top:14px;
+    color:var(--primary);
+    font-size:11px;
+    font-weight:800;
+}
+
+
+/* =========================================================
+   TWO COLUMN
+========================================================= */
+
+.two-column{
+    display:grid;
+    grid-template-columns:
+        1.4fr .8fr;
+    gap:20px;
+}
+
+
+/* =========================================================
+   ANNOUNCEMENT
+========================================================= */
+
+.announcement{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:17px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+}
+
+.announcement-item{
+    padding:18px 20px;
+    display:flex;
+    gap:14px;
+    border-bottom:1px solid var(--border);
+}
+
+.announcement-item:last-child{
+    border-bottom:0;
+}
+
+.announcement-icon{
+    width:38px;
+    height:38px;
+    flex:0 0 38px;
+    border-radius:10px;
+    background:#edf5ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.announcement-content h3{
+    font-size:13px;
+    color:var(--navy);
+}
+
+.announcement-content p{
+    color:var(--muted);
+    font-size:11px;
+    margin-top:3px;
+}
+
+.announcement-date{
+    color:#98a4b3;
+    font-size:9px;
+    margin-top:5px;
+}
+
+
+/* =========================================================
+   LEADERBOARD
+========================================================= */
+
+.leaderboard{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:17px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+}
+
+.rank-row{
+    padding:14px 17px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    border-bottom:1px solid var(--border);
+}
+
+.rank-row:last-child{
+    border-bottom:0;
+}
+
+.rank{
+    width:30px;
+    font-weight:800;
+    color:var(--muted);
+    text-align:center;
+}
+
+.rank-avatar{
+    width:35px;
+    height:35px;
+    border-radius:10px;
+    background:#edf5ff;
+    color:var(--primary);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    font-weight:800;
+}
+
+.rank-info{
+    flex:1;
+}
+
+.rank-info strong{
+    display:block;
+    color:var(--navy);
+    font-size:11px;
+}
+
+.rank-info span{
+    color:var(--muted);
+    font-size:9px;
+}
+
+.rank-score{
+    font-size:11px;
+    font-weight:800;
+    color:var(--primary);
+}
+
+
+/* =========================================================
+   COMMISSION
+========================================================= */
+
+.commission-box{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:17px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+}
+
+.commission-row{
+    display:grid;
+    grid-template-columns:
+        1.4fr 1fr 1fr 1fr;
+    align-items:center;
+    gap:10px;
+    padding:15px 18px;
+    border-bottom:1px solid var(--border);
+    font-size:11px;
+}
+
+.commission-row:last-child{
+    border-bottom:0;
+}
+
+.commission-head{
+    background:#f8fafc;
+    color:#748399;
+    font-size:9px;
+    font-weight:800;
+    text-transform:uppercase;
+}
+
+.status{
+    display:inline-block;
+    width:max-content;
+    padding:5px 8px;
+    border-radius:20px;
+    font-size:9px;
+    font-weight:800;
+}
+
+.status-approved{
+    background:#edf9f2;
+    color:var(--green);
+}
+
+.status-pending{
+    background:#fff7e7;
+    color:var(--orange);
+}
+
+.status-rejected{
+    background:#fff0f1;
+    color:var(--red);
+}
+
+
+/* =========================================================
+   OFFER
+========================================================= */
+
+.offer{
+    background:
+        radial-gradient(
+            circle at 100% 0,
+            rgba(201,154,67,.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #10243e,
+            #183d63
+        );
+    border-radius:19px;
+    color:white;
+    padding:26px;
+    position:relative;
+    overflow:hidden;
+}
+
+.offer-label{
+    color:#dfbd7c;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.12em;
+}
+
+.offer h2{
+    margin-top:9px;
+    font-size:22px;
+}
+
+.offer p{
+    margin-top:7px;
+    color:#c4d1df;
+    font-size:11px;
+    max-width:650px;
+}
+
+.offer .btn{
+    margin-top:18px;
+}
+
+
+/* =========================================================
+   TRAINING
+========================================================= */
+
+.training{
+    display:grid;
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+    gap:16px;
+}
+
+.training-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:17px;
+    padding:20px;
+    box-shadow:var(--shadow);
+}
+
+.training-number{
+    width:35px;
+    height:35px;
+    background:#10243e;
+    color:white;
+    border-radius:9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    font-weight:800;
+}
+
+.training-card h3{
+    color:var(--navy);
+    margin-top:14px;
+    font-size:14px;
+}
+
+.training-card p{
+    color:var(--muted);
+    font-size:11px;
+    margin-top:5px;
+}
+
+.training-card a{
+    display:inline-block;
+    color:var(--primary);
+    font-size:10px;
+    font-weight:800;
+    margin-top:13px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+    margin-top:45px;
+    background:#0d1b2c;
+    color:#9eb0c4;
+    padding:30px;
+    border-radius:17px;
+}
+
+.footer-top{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.footer strong{
+    color:white;
+}
+
+.footer p{
+    font-size:10px;
+    margin-top:4px;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.08);
+    margin-top:20px;
+    padding-top:15px;
+    text-align:center;
+    font-size:9px;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading{
+    color:#8b99aa;
+    font-size:12px;
+}
+
+.error-message{
+    background:#fff1f1;
+    border:1px solid #ffd6d8;
+    color:#b82e35;
+    padding:12px 15px;
+    border-radius:10px;
+    font-size:11px;
+    margin-top:15px;
+    display:none;
+}
+
+
+/* =========================================================
+   MOBILE OVERLAY
+========================================================= */
+
+.overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(5,15,25,.5);
+    z-index:1500;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1200px){
+
+    .services{
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+    }
+
+}
+
+@media(max-width:1000px){
+
+    .sidebar{
+        transform:translateX(-100%);
+    }
+
+    .sidebar.open{
+        transform:translateX(0);
+    }
+
+    .overlay.show{
+        display:block;
+    }
+
+    .main{
+        margin-left:0;
+        width:100%;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .topbar{
+        padding:0 20px;
+    }
+
+    .content{
+        padding:25px 20px 40px;
+    }
+
+    .stats{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .services{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .two-column{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .topbar{
+        height:68px;
+    }
+
+    .page-title h1{
+        font-size:16px;
+    }
+
+    .page-title p{
+        display:none;
+    }
+
+    .top-profile-info{
+        display:none;
+    }
+
+    .top-profile{
+        border-left:0;
+        padding-left:0;
+    }
+
+    .content{
+        padding:18px 13px 30px;
+    }
+
+    .welcome{
+        padding:22px;
+        display:block;
+    }
+
+    .welcome h2{
+        font-size:21px;
+    }
+
+    .welcome-actions{
+        margin-top:17px;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .stat-card{
+        padding:16px;
+    }
+
+    .stat-card h3{
+        font-size:19px;
+    }
+
+    .stat-change{
+        display:none;
+    }
+
+    .profile-card{
+        align-items:flex-start;
+        flex-wrap:wrap;
+    }
+
+    .profile-actions{
+        width:100%;
+    }
+
+    .profile-actions .btn{
+        flex:1;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    .training{
+        grid-template-columns:1fr;
+    }
+
+    .commission-row{
+        grid-template-columns:
+            1fr 1fr;
+        gap:7px;
+    }
+
+    .commission-head{
+        display:none;
+    }
+
+    .footer{
+        padding:22px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL
+========================================================= */
+
+@media(max-width:390px){
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .welcome-actions .btn{
+        width:100%;
+    }
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
-<header>
+<div class="app">
 
-<div class="logo">
-Fundvexxa
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar" id="sidebar">
+
+<div class="brand">
+
+<div class="brand-name">
+Fund<span>vexxa</span>
 </div>
+
+<div class="brand-subtitle">
+Agent Partner Portal
+</div>
+
+</div>
+
+
+<div class="sidebar-label">
+Workspace
+</div>
+
+<nav class="menu">
+
+<a href="dashboard.html" class="active">
+<span class="menu-icon">⌂</span>
+Dashboard
+</a>
+
+<a href="admin-crm.html">
+<span class="menu-icon">▣</span>
+Customer CRM
+</a>
+
+<a href="#services">
+<span class="menu-icon">◈</span>
+Financial Products
+</a>
+
+<a href="#training">
+<span class="menu-icon">▤</span>
+Training Center
+</a>
+
+<a href="#commission">
+<span class="menu-icon">₹</span>
+Commission
+</a>
+
+<a href="#offers">
+<span class="menu-icon">★</span>
+Offers
+</a>
+
+</nav>
+
+
+<div class="sidebar-label">
+Account
+</div>
+
+<nav class="menu">
+
+<a href="#profile">
+<span class="menu-icon">●</span>
+My Profile
+</a>
+
+<a href="contact.html">
+<span class="menu-icon">?</span>
+Support
+</a>
+
+</nav>
+
+
+<div class="sidebar-bottom">
+
+<div class="support-card">
+
+<small>Agent Support</small>
+
+<strong>Need assistance?</strong>
+
+<a
+href="https://wa.me/917290977231"
+target="_blank"
+rel="noopener">
+
+WhatsApp Support →
+
+</a>
+
+</div>
+
+<br>
 
 <button
 id="logoutBtn"
-class="logout-btn">
+class="btn btn-danger"
+style="width:100%;">
+
 Logout
+
 </button>
+
+</div>
+
+</aside>
+
+
+<div
+class="overlay"
+id="overlay">
+</div>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+
+<!-- TOPBAR -->
+
+<header class="topbar">
+
+<div style="display:flex;align-items:center;gap:12px;">
+
+<button
+class="mobile-menu"
+id="mobileMenu">
+
+☰
+
+</button>
+
+<div class="page-title">
+
+<h1>Agent Dashboard</h1>
+
+<p>
+Manage your financial business from one place
+</p>
+
+</div>
+
+</div>
+
+
+<div class="top-actions">
+
+<div class="notification">
+
+🔔
+
+<span class="notification-dot"></span>
+
+</div>
+
+
+<div class="top-profile">
+
+<div
+class="avatar"
+id="topAvatar">
+
+A
+
+</div>
+
+<div class="top-profile-info">
+
+<strong id="topName">
+Loading...
+</strong>
+
+<span id="topMembership">
+Agent
+</span>
+
+</div>
+
+</div>
+
+</div>
 
 </header>
 
-<div class="container">
 
-<!-- PROFILE -->
+<!-- CONTENT -->
 
-<div class="profile-card">
+<div class="content">
 
-<img
-src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg">
 
-<div class="profile-info">
+<!-- =====================================================
+     WELCOME
+===================================================== -->
+
+<section class="welcome">
+
+<div>
+
+<h2>
+Welcome back, <span id="welcomeName">Agent</span>
+</h2>
+
+<p>
+Track your leads, explore financial products, access training
+and monitor your agent performance from your dashboard.
+</p>
+
+</div>
+
+
+<div class="welcome-actions">
+
+<a
+href="admin-crm.html"
+class="btn btn-light">
+
+Open Customer CRM
+
+</a>
+
+<a
+href="#services"
+class="btn"
+style="
+background:rgba(255,255,255,.1);
+color:white;
+border:1px solid rgba(255,255,255,.15);
+">
+
+Explore Products
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PROFILE
+===================================================== -->
+
+<section
+class="profile-card"
+id="profile">
+
+<div
+class="profile-avatar"
+id="profileAvatar">
+
+A
+
+</div>
+
+
+<div class="profile-details">
 
 <h2 id="agentName">
 Loading...
@@ -182,601 +1460,1388 @@ Loading...
 Loading...
 </p>
 
-<p>
-Agent ID:
-<b id="agentId">
-SFS00001
-</b>
-</p>
+<div class="profile-meta">
 
-<div
-class="badge"
+<span
+class="badge badge-blue">
+
+Agent ID:
+<span id="agentId">
+SFS00001
+</span>
+
+</span>
+
+<span
+class="badge badge-gold"
 id="membershipBadge">
 
 Free Member
 
-</div>
+</span>
 
 </div>
 
 </div>
 
-<!-- STATS -->
 
-<div class="stats">
+<div class="profile-actions">
+
+<a
+href="admin-crm.html"
+class="btn btn-primary">
+
+Manage Leads
+
+</a>
+
+</div>
+
+</section>
+
+
+<div
+class="error-message"
+id="firebaseError">
+
+Unable to load some dashboard data. Please refresh the page or contact support.
+
+</div>
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats">
+
 
 <div class="stat-card">
-<h3>💰 Wallet Balance</h3>
-<h2 id="walletBalance">₹0</h2>
+
+<div class="stat-top">
+
+<div class="stat-icon">
+₹
 </div>
+
+<span class="stat-change">
+Wallet
+</span>
+
+</div>
+
+<p>Available Wallet Balance</p>
+
+<h3 id="walletBalance">
+₹0
+</h3>
+
+</div>
+
 
 <div class="stat-card">
-<h3>📋 Total Leads</h3>
-<h2 id="totalLeads">0</h2>
+
+<div class="stat-top">
+
+<div class="stat-icon">
+▣
 </div>
+
+<span class="stat-change">
+All Leads
+</span>
+
+</div>
+
+<p>Total My Leads</p>
+
+<h3 id="totalLeads">
+0
+</h3>
+
+</div>
+
 
 <div class="stat-card">
-<h3>✅ Approved Leads</h3>
-<h2 id="approvedLeads">0</h2>
+
+<div class="stat-top">
+
+<div class="stat-icon">
+✓
 </div>
+
+<span class="stat-change">
+Success
+</span>
+
+</div>
+
+<p>Approved Leads</p>
+
+<h3 id="approvedLeads">
+0
+</h3>
+
+</div>
+
 
 <div class="stat-card">
-<h3>⏳ Pending Leads</h3>
-<h2 id="pendingLeads">0</h2>
+
+<div class="stat-top">
+
+<div class="stat-icon">
+◷
 </div>
+
+<span class="stat-change">
+Follow-up
+</span>
 
 </div>
 
-<h2 class="section-title">
-🏦 Financial Services
+<p>Pending Leads</p>
+
+<h3 id="pendingLeads">
+0
+</h3>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section
+class="section"
+id="services">
+
+<div class="section-header">
+
+<div>
+
+<h2>
+Financial Products
 </h2>
 
-<div class="services-grid">
-<!-- BUSINESS LOAN -->
+<p>
+Products and services available for customer assistance.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="services">
+
+
+<!-- BUSINESS -->
 
 <div class="service-card">
 
-<img
-src="https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg">
+<div class="service-icon">
+🏦
+</div>
 
-<div class="service-content">
-
-<h3>🏦 Business Loan</h3>
+<h3>
+Business Loan
+</h3>
 
 <p>
-Business expansion and working capital funding solutions.
+Funding for expansion, working capital and business requirements.
 </p>
 
 <a
 href="service-details.html?service=business-loan"
-class="btn">
-Open
+class="service-btn">
+
+View Product →
+
 </a>
 
 </div>
 
-</div>
 
-<!-- PERSONAL LOAN -->
+<!-- PERSONAL -->
 
 <div class="service-card">
 
-<img
-src="https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg">
+<div class="service-icon">
+👤
+</div>
 
-<div class="service-content">
-
-<h3>👤 Personal Loan</h3>
+<h3>
+Personal Loan
+</h3>
 
 <p>
-Quick financial assistance for personal requirements.
+Personal funding solutions based on applicant eligibility.
 </p>
 
 <a
 href="service-details.html?service=personal-loan"
-class="btn">
-Open
+class="service-btn">
+
+View Product →
+
 </a>
 
 </div>
 
-</div>
 
-<!-- HOME LOAN -->
+<!-- HOME -->
 
 <div class="service-card">
 
-<img
-src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg">
+<div class="service-icon">
+🏠
+</div>
 
-<div class="service-content">
-
-<h3>🏠 Home Loan</h3>
+<h3>
+Home Loan
+</h3>
 
 <p>
-Affordable financing for your dream home.
+Financing support for home purchase and related requirements.
 </p>
 
 <a
 href="service-details.html?service=home-loan"
-class="btn">
-Open
+class="service-btn">
+
+View Product →
+
 </a>
 
 </div>
 
-</div>
 
 <!-- CREDIT CARD -->
 
 <div class="service-card">
 
-<img
-src="https://images.pexels.com/photos/4968630/pexels-photo-4968630.jpeg">
+<div class="service-icon">
+💳
+</div>
 
-<div class="service-content">
-
-<h3>💳 Credit Card</h3>
+<h3>
+Credit Card
+</h3>
 
 <p>
-Credit cards with rewards and benefits.
+Explore available credit card products and customer benefits.
 </p>
 
 <a
 href="service-details.html?service=credit-card"
-class="btn">
-Open
+class="service-btn">
+
+View Product →
+
 </a>
 
 </div>
 
-</div>
 
-<!-- HEALTH INSURANCE -->
+<!-- HEALTH -->
 
 <div class="service-card">
 
-<img
-src="https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg">
+<div class="service-icon">
+❤️
+</div>
 
-<div class="service-content">
-
-<h3>❤️ Health Insurance</h3>
+<h3>
+Health Insurance
+</h3>
 
 <p>
-Medical expense protection and coverage.
+Insurance support for medical and health-related protection.
 </p>
 
 <a
 href="service-details.html?service=health-insurance"
-class="btn">
-Open
+class="service-btn">
+
+View Product →
+
 </a>
 
 </div>
 
-</div>
 
-<!-- LIFE INSURANCE -->
+<!-- LIFE -->
 
 <div class="service-card">
 
-<img
-src="https://images.pexels.com/photos/7551664/pexels-photo-7551664.jpeg">
+<div class="service-icon">
+🛡
+</div>
 
-<div class="service-content">
-
-<h3>🛡 Life Insurance</h3>
+<h3>
+Life Insurance
+</h3>
 
 <p>
-Financial security planning solutions.
+Financial protection and long-term security solutions.
 </p>
 
 <a
 href="service-details.html?service=life-insurance"
-class="btn">
-Open
+class="service-btn">
+
+View Product →
+
 </a>
 
 </div>
 
-</div>
 
-<!-- MOTOR INSURANCE -->
+<!-- MOTOR -->
 
 <div class="service-card">
 
-<img
-src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg">
+<div class="service-icon">
+🚗
+</div>
 
-<div class="service-content">
-
-<h3>🚗 Motor Insurance</h3>
+<h3>
+Motor Insurance
+</h3>
 
 <p>
-Insurance solutions for vehicles.
+Vehicle insurance assistance for eligible customers.
 </p>
 
 <a
 href="service-details.html?service=motor-insurance"
-class="btn">
-Open
+class="service-btn">
+
+View Product →
+
 </a>
 
 </div>
 
-</div>
 
 <!-- GST -->
 
 <div class="service-card">
 
-<img
-src="https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg">
+<div class="service-icon">
+📄
+</div>
 
-<div class="service-content">
-
-<h3>📄 GST Registration</h3>
+<h3>
+GST Registration
+</h3>
 
 <p>
-GST registration and compliance support.
+GST registration and compliance assistance for businesses.
 </p>
 
 <a
 href="service-details.html?service=gst-registration"
-class="btn">
-Open
+class="service-btn">
+
+View Service →
+
 </a>
 
 </div>
 
-</div>
 
 <!-- MSME -->
 
 <div class="service-card">
 
-<img
-src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg">
+<div class="service-icon">
+🏢
+</div>
 
-<div class="service-content">
-
-<h3>🏢 MSME Registration</h3>
+<h3>
+MSME Registration
+</h3>
 
 <p>
-MSME registration and government benefits.
+MSME registration and related business support services.
 </p>
 
 <a
 href="service-details.html?service=msme-registration"
-class="btn">
-Open
+class="service-btn">
+
+View Service →
+
 </a>
 
 </div>
 
-</div>
 
 </div>
 
-<!-- TRAINING CENTER -->
+</section>
 
-<h2 class="section-title">
-🎓 Training Center
+
+<!-- =====================================================
+     ANNOUNCEMENT + LEADERBOARD
+===================================================== -->
+
+<section class="section">
+
+<div class="two-column">
+
+
+<div>
+
+<div class="section-header">
+
+<div>
+
+<h2>
+Latest Announcements
 </h2>
 
-<div class="services-grid">
-
-<div class="service-card">
-
-<img
-src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg">
-
-<div class="service-content">
-
-<h3>Product Knowledge</h3>
-
 <p>
-Learn every financial product professionally.
+Important updates for Fundvexxa agents.
 </p>
 
 </div>
 
 </div>
 
-<div class="service-card">
 
-<img
-src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg">
+<div class="announcement">
 
-<div class="service-content">
+<div class="announcement-item">
 
-<h3>Sales Script</h3>
-
-<p>
-Ready-to-use customer sales pitch scripts.
-</p>
-
+<div class="announcement-icon">
+📢
 </div>
 
-</div>
-
-<div class="service-card">
-
-<img
-src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg">
-
-<div class="service-content">
-
-<h3>Objection Handling</h3>
-
-<p>
-Learn how to answer customer questions.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- NOTIFICATION -->
-
-<h2 class="section-title">
-🔔 Latest Announcements
-</h2>
-
-<div class="stat-card">
+<div class="announcement-content">
 
 <h3>
-Welcome To Fundvexxa CRM
+Welcome to Fundvexxa Agent Portal
 </h3>
 
-<br>
-
 <p>
-Latest offers, incentives, leaderboard updates and announcements will appear here.
+Your dashboard is ready. Manage customer enquiries,
+products and lead activity from one place.
 </p>
 
+<div class="announcement-date">
+Platform Update
 </div>
+
+</div>
+
+</div>
+
+
+<div class="announcement-item">
+
+<div class="announcement-icon">
+🎯
+</div>
+
+<div class="announcement-content">
+
+<h3>
+Focus on quality leads
+</h3>
+
+<p>
+Complete customer information accurately to improve
+the quality of your lead submissions.
+</p>
+
+<div class="announcement-date">
+Agent Guidance
+</div>
+
+</div>
+
+</div>
+
+
+<div class="announcement-item">
+
+<div class="announcement-icon">
+🎓
+</div>
+
+<div class="announcement-content">
+
+<h3>
+Training resources available
+</h3>
+
+<p>
+Use the training section to improve product knowledge
+and customer communication.
+</p>
+
+<div class="announcement-date">
+Training Center
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
 <!-- LEADERBOARD -->
 
-<h2 class="section-title">
-🏆 Leaderboard
+<div>
+
+<div class="section-header">
+
+<div>
+
+<h2>
+Leaderboard
 </h2>
 
-<div class="stats">
-
-<div class="stat-card">
-<h3>🥇 Top Performer</h3>
-<h2>Agent Rank #1</h2>
-</div>
-
-<div class="stat-card">
-<h3>🎯 Monthly Target</h3>
-<h2>0 / 50 Leads</h2>
-</div>
-
-<div class="stat-card">
-<h3>🎁 Incentives</h3>
-<h2>₹0</h2>
-</div>
-
-</div>
-
-<!-- COMMISSION HISTORY -->
-
-<h2 class="section-title">
-💰 Commission History
-</h2>
-
-<div class="stat-card">
-
 <p>
-No commission records available.
-</p>
-
-<p>
-Approved leads commission will appear here.
-</p>
-
-</div>
-
-<!-- OFFER BANNER -->
-
-<h2 class="section-title">
-🔥 Active Offers
-</h2>
-
-<div class="service-card">
-
-<img
-src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg">
-
-<div class="service-content">
-
-<h3>Special Agent Growth Program</h3>
-
-<p>
-Training, support and product updates available through the platform.
+Current performance view.
 </p>
 
 </div>
 
 </div>
 
+
+<div class="leaderboard">
+
+<div class="rank-row">
+
+<div class="rank">
+🥇
 </div>
 
-<script type="module">
+<div class="rank-avatar">
+#1
+</div>
 
-import { auth, db } from "./firebase/config.js";
+<div class="rank-info">
 
-import {
-onAuthStateChanged,
-signOut
-}
-from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+<strong>
+Top Performer
+</strong>
 
-import {
-doc,
-getDoc,
-collection,
-getDocs
-}
-from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+<span>
+Monthly performance
+</span>
 
-onAuthStateChanged(auth, async(user)=>{
+</div>
 
-if(!user){
+<div class="rank-score">
+0 leads
+</div>
 
-window.location.href="login.html";
-return;
+</div>
 
-}
 
-document.getElementById("agentEmail").innerHTML =
-user.email;
+<div class="rank-row">
 
-const userRef =
-doc(db,"users",user.uid);
+<div class="rank">
+🥈
+</div>
 
-const userSnap =
-await getDoc(userRef);
+<div class="rank-avatar">
+#2
+</div>
 
-if(userSnap.exists()){
+<div class="rank-info">
 
-const data =
-userSnap.data();
+<strong>
+Agent Rank #2
+</strong>
 
-document.getElementById("agentName").innerHTML =
-data.name || "Agent";
+<span>
+Monthly performance
+</span>
 
-document.getElementById("membershipBadge").innerHTML =
-data.membership || "Free";
+</div>
 
-document.getElementById("walletBalance").innerHTML =
-"₹" + (data.walletBalance || 0);
+<div class="rank-score">
+0 leads
+</div>
 
-}
+</div>
 
-try{
 
-const leadSnapshot =
-await getDocs(collection(db,"leads"));
+<div class="rank-row">
 
-let total = 0;
-let approved = 0;
-let pending = 0;
+<div class="rank">
+🥉
+</div>
 
-leadSnapshot.forEach((doc)=>{
+<div class="rank-avatar">
+#3
+</div>
 
-const lead = doc.data();
+<div class="rank-info">
 
-total++;
+<strong>
+Agent Rank #3
+</strong>
 
-if(lead.status === "Approved"){
-approved++;
-}
+<span>
+Monthly performance
+</span>
 
-if(lead.status === "Pending"){
-pending++;
-}
+</div>
 
-});
+<div class="rank-score">
+0 leads
+</div>
 
-document.getElementById("totalLeads").innerHTML =
-total;
+</div>
 
-document.getElementById("approvedLeads").innerHTML =
-approved;
 
-document.getElementById("pendingLeads").innerHTML =
-pending;
+</div>
 
-}
-catch(error){
+</div>
 
-console.log(error);
+</div>
 
-}
+</section>
 
-});
 
-document
-.getElementById("logoutBtn")
-.addEventListener("click",async()=>{
+<!-- =====================================================
+     TRAINING
+===================================================== -->
 
-await signOut(auth);
+<section
+class="section"
+id="training">
 
-window.location.href =
-"login.html";
+<div class="section-header">
 
-});
+<div>
 
-</script>
+<h2>
+Training Center
+</h2>
 
-<!-- FOOTER -->
+<p>
+Improve your product knowledge and sales skills.
+</p>
 
-<footer
-style="
-background:#111;
-color:white;
-padding:50px 5%;
-text-align:center;
-margin-top:50px;
-">
+</div>
 
-<img
-src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg"
-style="
-width:100%;
-max-width:500px;
-border-radius:15px;
-margin-bottom:20px;
-">
+</div>
+
+
+<div class="training">
+
+
+<div class="training-card">
+
+<div class="training-number">
+01
+</div>
 
 <h3>
-Fundvexxa
+Product Knowledge
 </h3>
 
-<br>
-
 <p>
-Loans • Insurance • Credit Cards • GST • MSME • Funding
+Understand financial products, basic eligibility
+and customer requirements.
 </p>
 
-<br>
+<a href="#">
+Start Learning →
+
+</a>
+
+</div>
+
+
+<div class="training-card">
+
+<div class="training-number">
+02
+</div>
+
+<h3>
+Customer Sales Script
+</h3>
 
 <p>
-WhatsApp: 7290977231
+Use professional conversation structures for
+customer calls and enquiries.
 </p>
 
-<br>
+<a href="#">
+View Sales Script →
+
+</a>
+
+</div>
+
+
+<div class="training-card">
+
+<div class="training-number">
+03
+</div>
+
+<h3>
+Objection Handling
+</h3>
 
 <p>
-© 2026 Fundvexxa
+Learn practical ways to respond to common
+customer questions and concerns.
 </p>
+
+<a href="#">
+Learn More →
+
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     COMMISSION
+===================================================== -->
+
+<section
+class="section"
+id="commission">
+
+<div class="section-header">
+
+<div>
+
+<h2>
+Commission History
+</h2>
+
+<p>
+Track your lead status and commission activity.
+</p>
+
+</div>
+
+<a
+href="admin-crm.html"
+class="view-link">
+
+View CRM →
+
+</a>
+
+</div>
+
+
+<div class="commission-box">
+
+<div class="commission-row commission-head">
+
+<div>Product</div>
+<div>Lead</div>
+<div>Status</div>
+<div>Commission</div>
+
+</div>
+
+
+<div
+class="commission-row"
+id="commissionEmpty">
+
+<div>
+No commission records
+</div>
+
+<div>
+—
+</div>
+
+<div>
+<span class="status status-pending">
+No Data
+</span>
+</div>
+
+<div>
+₹0
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     OFFER
+===================================================== -->
+
+<section
+class="section"
+id="offers">
+
+<div class="offer">
+
+<div class="offer-label">
+AGENT PROGRAM
+</div>
+
+<h2>
+Grow your financial distribution business
+</h2>
+
+<p>
+Access financial products, customer lead management,
+training resources and platform support from your
+Fundvexxa Agent Portal.
+</p>
+
+<a
+href="admin-crm.html"
+class="btn"
+style="
+background:#c99a43;
+color:#10243e;
+">
+
+Open Customer CRM
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+<div class="footer-top">
+
+<div>
+
+<strong>
+Fundvexxa
+</strong>
+
+<p>
+Financial products • Insurance • Business Services
+</p>
+
+</div>
+
+<div>
+
+<p>
+Agent Support:
+<strong>7290977231</strong>
+</p>
+
+<p>
+smilefinacialsolutions@gmail.com
+</p>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+© 2026 Fundvexxa. All Rights Reserved.
+<br>
+Agent dashboard information is subject to platform records,
+product availability and applicable partner policies.
+
+</div>
 
 </footer>
 
-<a
-href="https://wa.me/917290977231"
-target="_blank"
-style="
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px 18px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-box-shadow:0 5px 15px rgba(0,0,0,.3);
-z-index:9999;
-">
-WhatsApp
-</a>
 
-<a href="admin-crm.html" style="position:fixed;right:20px;bottom:20px;z-index:999;background:#c99a43;color:#0b1f3a;padding:12px 16px;border-radius:9px;font-weight:800;text-decoration:none">Customer CRM</a></body>
+</div>
+
+</main>
+
+</div>
+
+
+<!-- =====================================================
+     FIREBASE
+===================================================== -->
+
+<script type="module">
+
+import { auth, db }
+from "./firebase/config.js";
+
+
+import {
+    onAuthStateChanged,
+    signOut
+}
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+
+import {
+    doc,
+    getDoc,
+    collection,
+    getDocs
+}
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+
+/* =========================================================
+   ELEMENT HELPERS
+========================================================= */
+
+const $ = (id) =>
+    document.getElementById(id);
+
+
+/* =========================================================
+   INITIALS
+========================================================= */
+
+function getInitials(name){
+
+    if(!name){
+        return "A";
+    }
+
+    return name
+        .trim()
+        .split(/\s+/)
+        .slice(0,2)
+        .map(word => word.charAt(0).toUpperCase())
+        .join("");
+
+}
+
+
+/* =========================================================
+   MONEY
+========================================================= */
+
+function money(value){
+
+    const number =
+        Number(value) || 0;
+
+    return "₹" +
+        number.toLocaleString("en-IN");
+
+}
+
+
+/* =========================================================
+   LOAD AGENT
+========================================================= */
+
+async function loadAgent(user){
+
+    try{
+
+        const userRef =
+            doc(db,"users",user.uid);
+
+        const userSnap =
+            await getDoc(userRef);
+
+
+        if(!userSnap.exists()){
+
+            $("agentName").textContent =
+                user.displayName || "Agent";
+
+            $("agentEmail").textContent =
+                user.email || "";
+
+            $("welcomeName").textContent =
+                user.displayName || "Agent";
+
+            $("topName").textContent =
+                user.displayName || "Agent";
+
+            $("topMembership").textContent =
+                "Agent";
+
+            const initials =
+                getInitials(
+                    user.displayName ||
+                    user.email ||
+                    "Agent"
+                );
+
+            $("profileAvatar").textContent =
+                initials;
+
+            $("topAvatar").textContent =
+                initials;
+
+            return;
+
+        }
+
+
+        const data =
+            userSnap.data();
+
+
+        const name =
+            data.name ||
+            data.fullName ||
+            user.displayName ||
+            "Agent";
+
+
+        const email =
+            data.email ||
+            user.email ||
+            "";
+
+
+        const membership =
+            data.membership ||
+            data.plan ||
+            "Free Member";
+
+
+        const wallet =
+            data.walletBalance ||
+            data.wallet ||
+            0;
+
+
+        const agentId =
+            data.agentId ||
+            data.agentCode ||
+            ("SFS-" + user.uid.slice(0,6).toUpperCase());
+
+
+        $("agentName").textContent =
+            name;
+
+        $("agentEmail").textContent =
+            email;
+
+        $("welcomeName").textContent =
+            name.split(" ")[0];
+
+        $("topName").textContent =
+            name;
+
+        $("topMembership").textContent =
+            membership;
+
+        $("membershipBadge").textContent =
+            membership;
+
+        $("agentId").textContent =
+            agentId;
+
+        $("walletBalance").textContent =
+            money(wallet);
+
+
+        const initials =
+            getInitials(name);
+
+        $("profileAvatar").textContent =
+            initials;
+
+        $("topAvatar").textContent =
+            initials;
+
+    }
+    catch(error){
+
+        console.error(
+            "Agent profile error:",
+            error
+        );
+
+        $("firebaseError").style.display =
+            "block";
+
+    }
+
+}
+
+
+/* =========================================================
+   LOAD LEADS
+========================================================= */
+
+async function loadAgentLeads(user){
+
+    try{
+
+        const leadSnapshot =
+            await getDocs(
+                collection(db,"leads")
+            );
+
+
+        let total = 0;
+        let approved = 0;
+        let pending = 0;
+
+
+        leadSnapshot.forEach(
+            (leadDoc)=>{
+
+                const lead =
+                    leadDoc.data();
+
+
+                /*
+                 IMPORTANT:
+
+                 Only count leads belonging
+                 to the currently logged-in agent.
+
+                 Supports both:
+                 agentId
+                 agentUid
+                */
+
+                const belongsToAgent =
+                    lead.agentUid === user.uid ||
+                    lead.agentId === user.uid ||
+                    lead.userId === user.uid ||
+                    lead.agentUID === user.uid;
+
+
+                if(!belongsToAgent){
+                    return;
+                }
+
+
+                total++;
+
+
+                const status =
+                    String(
+                        lead.status || ""
+                    ).toLowerCase();
+
+
+                if(
+                    status === "approved" ||
+                    status === "approve"
+                ){
+
+                    approved++;
+
+                }
+
+
+                if(
+                    status === "pending" ||
+                    status === "new" ||
+                    status === "follow-up" ||
+                    status === "followup"
+                ){
+
+                    pending++;
+
+                }
+
+            }
+        );
+
+
+        $("totalLeads").textContent =
+            total;
+
+        $("approvedLeads").textContent =
+            approved;
+
+        $("pendingLeads").textContent =
+            pending;
+
+
+    }
+    catch(error){
+
+        console.error(
+            "Lead loading error:",
+            error
+        );
+
+        $("firebaseError").style.display =
+            "block";
+
+    }
+
+}
+
+
+/* =========================================================
+   AUTH STATE
+========================================================= */
+
+onAuthStateChanged(
+    auth,
+    async(user)=>{
+
+        if(!user){
+
+            window.location.href =
+                "login.html";
+
+            return;
+
+        }
+
+
+        await loadAgent(user);
+
+        await loadAgentLeads(user);
+
+    }
+);
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+$("logoutBtn")
+    .addEventListener(
+        "click",
+        async()=>{
+
+            const button =
+                $("logoutBtn");
+
+            button.disabled =
+                true;
+
+            button.textContent =
+                "Logging out...";
+
+
+            try{
+
+                await signOut(auth);
+
+                window.location.href =
+                    "login.html";
+
+            }
+            catch(error){
+
+                console.error(error);
+
+                button.disabled =
+                    false;
+
+                button.textContent =
+                    "Logout";
+
+                alert(
+                    "Logout nahi ho paaya. Please try again."
+                );
+
+            }
+
+        }
+    );
+
+
+/* =========================================================
+   MOBILE SIDEBAR
+========================================================= */
+
+const sidebar =
+    $("sidebar");
+
+const overlay =
+    $("overlay");
+
+const mobileMenu =
+    $("mobileMenu");
+
+
+function closeSidebar(){
+
+    sidebar.classList.remove("open");
+
+    overlay.classList.remove("show");
+
+}
+
+
+mobileMenu.addEventListener(
+    "click",
+    ()=>{
+
+        sidebar.classList.add("open");
+
+        overlay.classList.add("show");
+
+    }
+);
+
+
+overlay.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+/* =========================================================
+   CLOSE MOBILE MENU AFTER LINK
+========================================================= */
+
+document
+    .querySelectorAll(".sidebar a")
+    .forEach(link=>{
+
+        link.addEventListener(
+            "click",
+            ()=>{
+
+                if(
+                    window.innerWidth <= 1000
+                ){
+
+                    closeSidebar();
+
+                }
+
+            }
+        );
+
+    });
+
+</script>
+
+</body>
 </html>
