@@ -1,1720 +1,3030 @@
-<!-- CALCULATOR PAGE INTRO -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<section id="calculator-tools"
-style="
-padding:100px 0;
-background:#ffffff;
-">
+<title>Financial Calculators & Loan Eligibility | Fundvexxa</title>
 
-<div class="container">
+<meta name="description"
+content="Calculate EMI, estimate loan affordability and explore personalised financial options with Fundvexxa.">
 
-<div class="section-title">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<span style="
-color:#0d6efd;
-font-weight:700;
-">
-SMART FINANCIAL TOOLS
-</span>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
 
-<h2 style="
-font-size:42px;
-margin:15px 0;
-">
-Financial Calculators
-</h2>
+<style>
 
-<p style="
-max-width:800px;
-margin:auto;
-line-height:1.9;
-color:#666;
-">
-Use advanced financial calculators to estimate EMI, loan affordability, interest costs and repayment schedules before applying for any financial product.
-</p>
-
-</div>
-
-<div
-style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-margin-top:60px;
-">
-
-<div style="
-background:#fff;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-
-<h3>EMI Calculator</h3>
-
-<p style="
-margin-top:15px;
-line-height:1.8;
-color:#555;
-">
-Calculate monthly EMI, total repayment amount and total interest payable.
-</p>
-
-</div>
-
-<div style="
-background:#fff;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-
-<h3>Loan Eligibility Calculator</h3>
-
-<p style="
-margin-top:15px;
-line-height:1.8;
-color:#555;
-">
-Estimate loan eligibility based on income, obligations and repayment capacity.
-</p>
-
-</div>
-
-<div style="
-background:#fff;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-
-<h3>Interest Calculator</h3>
-
-<p style="
-margin-top:15px;
-line-height:1.8;
-color:#555;
-">
-Estimate interest payable on different loan products and repayment periods.
-</p>
-
-</div>
-
-<div style="
-background:#fff;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-
-<h3>Business Loan Calculator</h3>
-
-<p style="
-margin-top:15px;
-line-height:1.8;
-color:#555;
-">
-Understand repayment planning and financing requirements for business growth.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- EMI CALCULATOR SECTION -->
-
-<section
-style="
-padding:100px 0;
-background:#f8fbff;
-">
-
-<div class="container">
-
-<div class="section-title">
-
-<span
-style="
-color:#0d6efd;
-font-weight:700;
-">
-EMI CALCULATOR
-</span>
-
-<h2
-style="
-font-size:42px;
-margin:15px 0;
-">
-Loan EMI Calculator
-</h2>
-
-<p
-style="
-max-width:800px;
-margin:auto;
-line-height:1.9;
-color:#666;
-">
-Calculate monthly EMI, total interest payable and total repayment amount instantly.
-</p>
-
-</div>
-
-<div
-style="
-max-width:900px;
-margin:auto;
-background:#fff;
-padding:40px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-">
-
-<div
-style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-">
-
-<div>
-<label>Loan Amount (₹)</label>
-<input
-type="number"
-id="loanAmount"
-placeholder="500000"
-style="
-width:100%;
-padding:15px;
-margin-top:8px;
-border:1px solid #ddd;
-border-radius:10px;">
-</div>
-
-<div>
-<label>Interest Rate (%)</label>
-<input
-type="number"
-id="interestRate"
-placeholder="12"
-style="
-width:100%;
-padding:15px;
-margin-top:8px;
-border:1px solid #ddd;
-border-radius:10px;">
-</div>
-
-<div>
-<label>Tenure (Years)</label>
-<input
-type="number"
-id="loanYears"
-placeholder="5"
-style="
-width:100%;
-padding:15px;
-margin-top:8px;
-border:1px solid #ddd;
-border-radius:10px;">
-</div>
-
-</div>
-
-<div style="text-align:center;margin-top:30px;">
-
-<button
-onclick="calculateEMI()"
-style="
-background:#0d6efd;
-color:white;
-border:none;
-padding:15px 35px;
-font-size:16px;
-font-weight:600;
-border-radius:10px;
-cursor:pointer;">
-Calculate EMI
-</button>
-
-</div>
-
-<div
-id="emiResult"
-style="
-margin-top:40px;
-display:none;
-">
-
-<div
-style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-">
-
-<div style="
-background:#eef5ff;
-padding:25px;
-border-radius:15px;
-text-align:center;">
-<h4>Monthly EMI</h4>
-<h2 id="monthlyEMI">₹0</h2>
-</div>
-
-<div style="
-background:#eef5ff;
-padding:25px;
-border-radius:15px;
-text-align:center;">
-<h4>Total Interest</h4>
-<h2 id="totalInterest">₹0</h2>
-</div>
-
-<div style="
-background:#eef5ff;
-padding:25px;
-border-radius:15px;
-text-align:center;">
-<h4>Total Payment</h4>
-<h2 id="totalPayment">₹0</h2>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<script>
-
-function calculateEMI(){
-
-let P=parseFloat(document.getElementById("loanAmount").value);
-
-let annualRate=parseFloat(document.getElementById("interestRate").value);
-
-let years=parseFloat(document.getElementById("loanYears").value);
-
-let R=annualRate/12/100;
-
-let N=years*12;
-
-let EMI=(P*R*Math.pow(1+R,N))/
-(Math.pow(1+R,N)-1);
-
-let totalPayment=EMI*N;
-
-let totalInterest=totalPayment-P;
-
-document.getElementById("emiResult").style.display="block";
-
-document.getElementById("monthlyEMI").innerHTML=
-"₹"+EMI.toFixed(0);
-
-document.getElementById("totalInterest").innerHTML=
-"₹"+totalInterest.toFixed(0);
-
-document.getElementById("totalPayment").innerHTML=
-"₹"+totalPayment.toFixed(0);
-
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-</script>
-
-<!-- LOAN CALCULATOR CATEGORIES -->
-
-<section
-style="
-padding:100px 0;
-background:#ffffff;
-">
-
-<div class="container">
-
-<div class="section-title">
-
-<span
-style="
-color:#0d6efd;
-font-weight:700;
-">
-ADVANCED CALCULATORS
-</span>
-
-<h2
-style="
-font-size:42px;
-margin:15px 0;
-">
-Specialized Loan Calculators
-</h2>
-
-<p
-style="
-max-width:850px;
-margin:auto;
-line-height:1.9;
-color:#666;
-">
-Calculate estimated EMI, repayment planning and loan affordability for different financial products.
-</p>
-
-</div>
-
-<div
-style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-margin-top:60px;
-">
-
-<div
-style="
-background:#fff;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-
-<h3>🏠 Home Loan Calculator</h3>
-
-<p style="
-line-height:1.8;
-color:#555;
-margin-top:15px;
-">
-Estimate EMI for home purchase, construction and renovation financing.
-</p>
-
-<ul style="
-margin-top:15px;
-padding-left:20px;
-line-height:2;
-color:#666;
-">
-<li>Property Purchase</li>
-<li>Home Construction</li>
-<li>Home Renovation</li>
-<li>Balance Transfer</li>
-</ul>
-
-</div>
-
-<div
-style="
-background:#fff;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-
-<h3>👤 Personal Loan Calculator</h3>
-
-<p style="
-line-height:1.8;
-color:#555;
-margin-top:15px;
-">
-Calculate repayment obligations for personal financial requirements.
-</p>
-
-<ul style="
-margin-top:15px;
-padding-left:20px;
-line-height:2;
-color:#666;
-">
-<li>Medical Expenses</li>
-<li>Travel Planning</li>
-<li>Education Costs</li>
-<li>Personal Needs</li>
-</ul>
-
-</div>
-
-<div
-style="
-background:#fff;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-
-<h3>🏢 Business Loan Calculator</h3>
-
-<p style="
-line-height:1.8;
-color:#555;
-margin-top:15px;
-">
-Business expansion and working capital repayment estimation.
-</p>
-
-<ul style="
-margin-top:15px;
-padding-left:20px;
-line-height:2;
-color:#666;
-">
-<li>Working Capital</li>
-<li>Machinery Purchase</li>
-<li>Inventory Finance</li>
-<li>Business Expansion</li>
-</ul>
-
-</div>
-
-<div
-style="
-background:#fff;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-
-<h3>🏠 Loan Against Property</h3>
-
-<p style="
-line-height:1.8;
-color:#555;
-margin-top:15px;
-">
-Estimate funding eligibility using residential or commercial property.
-</p>
-
-<ul style="
-margin-top:15px;
-padding-left:20px;
-line-height:2;
-color:#666;
-">
-<li>Residential Property</li>
-<li>Commercial Property</li>
-<li>Business Expansion</li>
-<li>Debt Consolidation</li>
-</ul>
-
-</div>
-
-<div
-style="
-background:#fff;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-
-<h3>🎓 Education Loan Calculator</h3>
-
-<p style="
-line-height:1.8;
-color:#555;
-margin-top:15px;
-">
-Estimate education financing requirements for India and abroad studies.
-</p>
-
-<ul style="
-margin-top:15px;
-padding-left:20px;
-line-height:2;
-color:#666;
-">
-<li>India Studies</li>
-<li>Study Abroad</li>
-<li>Professional Courses</li>
-<li>Skill Programs</li>
-</ul>
-
-</div>
-
-<div
-style="
-background:#fff;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-
-<h3>🚗 Vehicle Loan Calculator</h3>
-
-<p style="
-line-height:1.8;
-color:#555;
-margin-top:15px;
-">
-Calculate financing costs for cars, commercial vehicles and two-wheelers.
-</p>
-
-<ul style="
-margin-top:15px;
-padding-left:20px;
-line-height:2;
-color:#666;
-">
-<li>New Car Loan</li>
-<li>Used Car Loan</li>
-<li>Commercial Vehicle</li>
-<li>Bike Loan</li>
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- FINANCIAL FACTORS -->
-
-<section
-style="
-padding:100px 0;
-background:#f8fbff;
-">
-
-<div class="container">
-
-<div class="section-title">
-
-<span
-style="
-color:#0d6efd;
-font-weight:700;
-">
-IMPORTANT FACTORS
-</span>
-
-<h2
-style="
-font-size:42px;
-margin:15px 0;
-">
-What Affects Your EMI?
-</h2>
-
-</div>
-
-<div
-style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-">
-
-<div style="
-background:white;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-<h3>Loan Amount</h3>
-<p>The higher the loan amount, the higher the EMI obligation.</p>
-</div>
-
-<div style="
-background:white;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-<h3>Interest Rate</h3>
-<p>Lower interest rates reduce total repayment burden.</p>
-</div>
-
-<div style="
-background:white;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-<h3>Loan Tenure</h3>
-<p>Longer tenure lowers EMI but increases total interest cost.</p>
-</div>
-
-<div style="
-background:white;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-<h3>Credit Profile</h3>
-<p>Better credit profiles often receive better loan offers.</p>
-</div>
-
-</div>
-
-</div>
-
-</section> 
-
-<!-- LOAN ELIGIBILITY CALCULATOR -->
-
-<section
-style="
-padding:100px 0;
-background:#ffffff;
-">
-
-<div class="container">
-
-<div class="section-title">
-
-<span
-style="
-color:#0d6efd;
-font-weight:700;
-">
-LOAN ELIGIBILITY
-</span>
-
-<h2
-style="
-font-size:42px;
-margin:15px 0;
-">
-Loan Eligibility Calculator
-</h2>
-
-<p
-style="
-max-width:850px;
-margin:auto;
-line-height:1.9;
-color:#666;
-">
-Estimate your loan eligibility based on monthly income, obligations and repayment capacity.
-</p>
-
-</div>
-
-<div
-style="
-max-width:900px;
-margin:auto;
-background:#fff;
-padding:40px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-">
-
-<div
-style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-">
-
-<div>
-
-<label>Monthly Income (₹)</label>
-
-<input
-type="number"
-id="monthlyIncome"
-placeholder="50000"
-style="
-width:100%;
-padding:15px;
-margin-top:8px;
-border:1px solid #ddd;
-border-radius:10px;">
-
-</div>
-
-<div>
-
-<label>Monthly EMI / Obligations (₹)</label>
-
-<input
-type="number"
-id="monthlyObligation"
-placeholder="10000"
-style="
-width:100%;
-padding:15px;
-margin-top:8px;
-border:1px solid #ddd;
-border-radius:10px;">
-
-</div>
-
-</div>
-
-<div style="text-align:center;margin-top:30px;">
-
-<button
-onclick="checkEligibility()"
-style="
-background:#0d6efd;
-color:white;
-border:none;
-padding:15px 35px;
-border-radius:10px;
-font-weight:600;
-cursor:pointer;">
+:root{
+    --primary:#0d6efd;
+    --primary-dark:#084db7;
+    --navy:#10243e;
+    --text:#172235;
+    --muted:#68778b;
+    --bg:#f5f8fc;
+    --border:#e3e9f1;
+    --white:#fff;
+    --success:#16834b;
+    --warning:#a66b00;
+    --shadow:0 15px 45px rgba(16,36,62,.08);
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+    color:var(--text);
+    background:var(--white);
+    line-height:1.6;
+}
+
+button,
+input,
+select{
+    font:inherit;
+}
+
+a{
+    text-decoration:none;
+}
+
+.container{
+    width:min(1180px,calc(100% - 34px));
+    margin:auto;
+}
+
+/* HEADER */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+}
+
+.navbar{
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    color:var(--navy);
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:-.8px;
+}
+
+.logo span{
+    color:#c89b50;
+}
+
+.nav{
+    display:flex;
+    gap:25px;
+}
+
+.nav a{
+    color:#405066;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav a:hover{
+    color:var(--primary);
+}
+
+.nav-cta{
+    background:var(--navy);
+    color:white !important;
+    padding:10px 17px;
+    border-radius:8px;
+}
+
+/* HERO */
+
+.hero{
+    background:
+        radial-gradient(circle at 80% 20%,rgba(13,110,253,.13),transparent 30%),
+        linear-gradient(135deg,#f3f8ff,#fff);
+    padding:85px 0 100px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:65px;
+    align-items:center;
+}
+
+.eyebrow{
+    color:var(--primary);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    margin-top:14px;
+    font-size:clamp(38px,5vw,62px);
+    line-height:1.08;
+    letter-spacing:-2.8px;
+    color:var(--navy);
+}
+
+.hero p{
+    margin-top:22px;
+    color:var(--muted);
+    font-size:17px;
+    max-width:680px;
+}
+
+.hero-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.btn{
+    border:0;
+    cursor:pointer;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    min-height:48px;
+    padding:0 22px;
+    border-radius:9px;
+    font-weight:700;
+    transition:.2s ease;
+}
+
+.btn-primary{
+    color:white;
+    background:var(--primary);
+}
+
+.btn-primary:hover{
+    background:var(--primary-dark);
+    transform:translateY(-1px);
+}
+
+.btn-outline{
+    color:var(--navy);
+    background:white;
+    border:1px solid var(--border);
+}
+
+.hero-visual{
+    position:relative;
+}
+
+.hero-visual img{
+    width:100%;
+    min-height:400px;
+    object-fit:cover;
+    border-radius:24px;
+    box-shadow:0 25px 70px rgba(16,36,62,.18);
+}
+
+/* TRUST STRIP */
+
+.trust-strip{
+    margin-top:-35px;
+    position:relative;
+    z-index:3;
+}
+
+.trust-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    background:white;
+    border:1px solid var(--border);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+}
+
+.trust-item{
+    padding:24px;
+    text-align:center;
+    border-right:1px solid var(--border);
+}
+
+.trust-item:last-child{
+    border-right:0;
+}
+
+.trust-item strong{
+    display:block;
+    font-size:21px;
+    color:var(--navy);
+}
+
+.trust-item span{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* SECTIONS */
+
+.section{
+    padding:90px 0;
+}
+
+.section-alt{
+    background:var(--bg);
+}
+
+.section-heading{
+    text-align:center;
+    max-width:800px;
+    margin:0 auto 45px;
+}
+
+.section-heading .eyebrow{
+    display:block;
+    margin-bottom:9px;
+}
+
+.section-heading h2{
+    font-size:clamp(30px,4vw,44px);
+    letter-spacing:-1.5px;
+    color:var(--navy);
+}
+
+.section-heading p{
+    margin-top:14px;
+    color:var(--muted);
+}
+
+/* CALCULATOR */
+
+.calculator-box{
+    max-width:1050px;
+    margin:auto;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:22px;
+    box-shadow:var(--shadow);
+    padding:35px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.form-group label{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:8px;
+    color:#334257;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    height:50px;
+    padding:0 14px;
+    border:1px solid #d8e0ea;
+    border-radius:9px;
+    outline:none;
+    background:white;
+    color:var(--text);
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:var(--primary);
+    box-shadow:0 0 0 3px rgba(13,110,253,.09);
+}
+
+.form-help{
+    font-size:11px;
+    color:#8995a5;
+    margin-top:5px;
+}
+
+.calculate-wrap{
+    text-align:center;
+    margin-top:28px;
+}
+
+/* RESULT */
+
+.result{
+    display:none;
+    margin-top:35px;
+    border-top:1px solid var(--border);
+    padding-top:35px;
+}
+
+.result.show{
+    display:block;
+}
+
+.result-top{
+    background:linear-gradient(135deg,#10243e,#173c66);
+    color:white;
+    padding:28px;
+    border-radius:17px;
+}
+
+.result-top h3{
+    font-size:14px;
+    opacity:.8;
+}
+
+.result-top .amount{
+    font-size:39px;
+    font-weight:800;
+    margin-top:4px;
+}
+
+.result-top p{
+    color:#d8e3ef;
+    font-size:13px;
+    margin-top:6px;
+}
+
+.metrics{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.metric{
+    background:#f7faff;
+    border:1px solid #e1e9f4;
+    padding:20px;
+    border-radius:14px;
+}
+
+.metric span{
+    color:var(--muted);
+    display:block;
+    font-size:12px;
+}
+
+.metric strong{
+    display:block;
+    font-size:20px;
+    margin-top:4px;
+    color:var(--navy);
+}
+
+/* OFFERS */
+
+.offer-section{
+    display:none;
+    margin-top:45px;
+}
+
+.offer-section.show{
+    display:block;
+}
+
+.offer-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:20px;
+    margin-bottom:20px;
+}
+
+.offer-heading h3{
+    font-size:26px;
+    color:var(--navy);
+}
+
+.offer-heading p{
+    font-size:13px;
+    color:var(--muted);
+}
+
+.offers{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.offer-card{
+    position:relative;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:17px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(16,36,62,.06);
+}
+
+.offer-card.best{
+    border:2px solid var(--primary);
+}
+
+.best-badge{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:#eaf3ff;
+    color:var(--primary);
+    font-size:10px;
+    font-weight:800;
+    padding:6px 9px;
+    border-radius:20px;
+}
+
+.offer-card h4{
+    font-size:20px;
+    color:var(--navy);
+}
+
+.offer-card .offer-range{
+    color:var(--primary);
+    font-weight:800;
+    font-size:23px;
+    margin:12px 0;
+}
+
+.offer-card p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+.offer-points{
+    margin:17px 0;
+    padding-left:18px;
+    color:#4f6074;
+    font-size:13px;
+}
+
+.offer-points li{
+    margin:6px 0;
+}
+
+.offer-card .btn{
+    width:100%;
+}
+
+/* PROFILE */
+
+.profile-score{
+    margin-top:25px;
+    padding:22px;
+    background:#f8fbff;
+    border:1px solid var(--border);
+    border-radius:15px;
+}
+
+.score-line{
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-weight:700;
+}
+
+.score-bar{
+    height:9px;
+    background:#e6edf5;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+.score-fill{
+    height:100%;
+    width:0;
+    background:var(--primary);
+    transition:width .5s;
+}
+
+/* INFO CARDS */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.info-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:17px;
+    padding:25px;
+}
+
+.info-icon{
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:11px;
+    background:#edf5ff;
+    color:var(--primary);
+    font-weight:800;
+    margin-bottom:18px;
+}
+
+.info-card h3{
+    color:var(--navy);
+    font-size:18px;
+}
+
+.info-card p{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:8px;
+}
+
+/* OTHER CALCULATORS */
+
+.mini-calculators{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.mini-box{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:19px;
+    padding:28px;
+    box-shadow:0 8px 28px rgba(16,36,62,.05);
+}
+
+.mini-box h3{
+    color:var(--navy);
+    margin-bottom:20px;
+}
+
+.mini-result{
+    margin-top:20px;
+    background:#f1f7ff;
+    padding:20px;
+    border-radius:12px;
+}
+
+.mini-result strong{
+    color:var(--primary);
+    font-size:24px;
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(7,18,31,.7);
+    z-index:5000;
+    padding:20px;
+    overflow:auto;
+}
+
+.modal.show{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.modal-box{
+    width:min(650px,100%);
+    background:white;
+    border-radius:20px;
+    padding:32px;
+    position:relative;
+    box-shadow:0 25px 80px rgba(0,0,0,.25);
+}
+
+.modal-close{
+    position:absolute;
+    top:15px;
+    right:17px;
+    border:0;
+    background:#f1f4f8;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:20px;
+}
+
+.modal-box h2{
+    color:var(--navy);
+}
+
+.modal-box>p{
+    color:var(--muted);
+    font-size:13px;
+    margin:7px 0 25px;
+}
+
+.application-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.application-grid .full{
+    grid-column:1/-1;
+}
+
+.application-grid input,
+.application-grid select,
+.application-grid textarea{
+    width:100%;
+    border:1px solid #d8e0ea;
+    border-radius:9px;
+    padding:13px;
+    outline:none;
+}
+
+.application-grid textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.application-grid label{
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:6px;
+}
+
+.application-message{
+    display:none;
+    margin-top:20px;
+    padding:16px;
+    background:#edf9f2;
+    color:var(--success);
+    border-radius:10px;
+    font-size:13px;
+}
+
+.application-message.show{
+    display:block;
+}
+
+/* FOOTER */
+
+.footer{
+    background:#0f1d2e;
+    color:#d4deea;
+    padding:65px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:45px;
+}
+
+.footer h3{
+    color:white;
+    margin-bottom:15px;
+}
+
+.footer p,
+.footer a{
+    color:#aebdcd;
+    font-size:13px;
+}
+
+.footer a{
+    display:block;
+    margin:7px 0;
+}
+
+.footer-bottom{
+    border-top:1px solid #29394d;
+    margin-top:35px;
+    padding-top:20px;
+    text-align:center;
+    color:#7f91a6;
+    font-size:11px;
+}
+
+/* FLOATING */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:900;
+    background:#25d366;
+    color:white;
+    padding:13px 18px;
+    border-radius:40px;
+    font-size:13px;
+    font-weight:800;
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-visual{
+        max-width:700px;
+        margin:auto;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .trust-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .trust-item:nth-child(2){
+        border-right:0;
+    }
+
+    .trust-item{
+        border-bottom:1px solid var(--border);
+    }
+
+    .offers,
+    .info-grid,
+    .mini-calculators{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .container{
+        width:min(100% - 24px,1180px);
+    }
+
+    .nav{
+        display:none;
+    }
+
+    .hero{
+        padding:55px 0 75px;
+    }
+
+    .hero h1{
+        font-size:38px;
+        letter-spacing:-1.8px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .hero-visual img{
+        min-height:280px;
+    }
+
+    .trust-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .trust-item{
+        padding:18px 10px;
+    }
+
+    .calculator-box{
+        padding:20px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .metrics{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:65px 0;
+    }
+
+    .application-grid{
+        grid-template-columns:1fr;
+    }
+
+    .application-grid .full{
+        grid-column:auto;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+<div class="container navbar">
+
+<a href="index.html" class="logo">
+Fund<span>vexxa</span>
+</a>
+
+<nav class="nav">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="blog.html">Insights</a>
+<a href="contact.html">Contact</a>
+
+<a href="#assessment" class="nav-cta">
 Check Eligibility
-</button>
+</a>
+
+</nav>
 
 </div>
 
-<div
-id="eligibilityResult"
-style="
-display:none;
-margin-top:30px;
-background:#eef5ff;
-padding:25px;
-border-radius:15px;
-text-align:center;
-">
+</header>
 
-<h3>Estimated Loan Eligibility</h3>
 
-<h2
-id="eligibleAmount"
-style="
-color:#0d6efd;
-margin-top:15px;">
-₹0
-</h2>
+<!-- HERO -->
 
-</div>
+<section class="hero">
 
-</div>
+<div class="container hero-grid">
 
-</div>
+<div>
 
-</section>
-
-<!-- FINANCIAL HEALTH DASHBOARD -->
-
-<section
-style="
-padding:100px 0;
-background:#f8fbff;
-">
-
-<div class="container">
-
-<div class="section-title">
-
-<span
-style="
-color:#0d6efd;
-font-weight:700;
-">
-FINANCIAL HEALTH
+<span class="eyebrow">
+Financial Planning Tools
 </span>
 
-<h2
-style="
-font-size:42px;
-margin:15px 0;
-">
-Financial Readiness Dashboard
-</h2>
-
-</div>
-
-<div
-style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-">
-
-<div
-style="
-background:white;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-text-align:center;
-">
-
-<h3>Income Stability</h3>
+<h1>
+Understand your borrowing capacity before you apply.
+</h1>
 
 <p>
-Consistent monthly income improves loan approval chances.
+Use our calculators to estimate EMI, repayment costs and financial affordability.
+Then receive an indicative funding match based on the information you provide.
 </p>
 
-</div>
+<div class="hero-actions">
 
-<div
-style="
-background:white;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-text-align:center;
-">
+<a href="#assessment" class="btn btn-primary">
+Start Financial Assessment
+</a>
 
-<h3>Credit Profile</h3>
-
-<p>
-Strong credit history may help secure better financing terms.
-</p>
-
-</div>
-
-<div
-style="
-background:white;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-text-align:center;
-">
-
-<h3>Repayment Capacity</h3>
-
-<p>
-Lower obligations generally improve borrowing capacity.
-</p>
-
-</div>
-
-<div
-style="
-background:white;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-text-align:center;
-">
-
-<h3>Financial Planning</h3>
-
-<p>
-Proper planning helps manage debt responsibly.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<script>
-
-function checkEligibility(){
-
-let income =
-parseFloat(document.getElementById("monthlyIncome").value) || 0;
-
-let obligation =
-parseFloat(document.getElementById("monthlyObligation").value) || 0;
-
-let eligibility =
-(income - obligation) * 60;
-
-document.getElementById("eligibilityResult").style.display = "block";
-
-document.getElementById("eligibleAmount").innerHTML =
-"₹" + eligibility.toLocaleString();
-
-}
-
-</script>
-
-<!-- INVESTMENT CALCULATORS -->
-
-<section
-style="
-padding:100px 0;
-background:#ffffff;
-">
-
-<div class="container">
-
-<div class="section-title">
-
-<span
-style="
-color:#0d6efd;
-font-weight:700;
-">
-INVESTMENT TOOLS
-</span>
-
-<h2
-style="
-font-size:42px;
-margin:15px 0;
-">
-Investment & Wealth Planning
-</h2>
-
-<p
-style="
-max-width:850px;
-margin:auto;
-line-height:1.9;
-color:#666;
-">
-Explore calculators designed for long-term wealth creation, retirement planning and investment growth estimation.
-</p>
-
-</div>
-
-<div
-style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-margin-top:50px;
-">
-
-<div style="
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-<h3>📈 SIP Calculator</h3>
-<p style="line-height:1.8;color:#555;">
-Estimate future value of monthly SIP investments and long-term wealth creation.
-</p>
-</div>
-
-<div style="
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-<h3>🏦 FD Calculator</h3>
-<p style="line-height:1.8;color:#555;">
-Calculate maturity amount and interest earned on fixed deposits.
-</p>
-</div>
-
-<div style="
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-<h3>💹 Compound Interest Calculator</h3>
-<p style="line-height:1.8;color:#555;">
-Understand how investments grow through compounding over time.
-</p>
-</div>
-
-<div style="
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-<h3>👴 Retirement Planner</h3>
-<p style="line-height:1.8;color:#555;">
-Estimate retirement corpus requirements and future financial goals.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- FINANCIAL TIPS -->
-
-<section
-style="
-padding:100px 0;
-background:#f8fbff;
-">
-
-<div class="container">
-
-<div class="section-title">
-
-<span
-style="
-color:#0d6efd;
-font-weight:700;
-">
-FINANCIAL INSIGHTS
-</span>
-
-<h2
-style="
-font-size:42px;
-margin:15px 0;
-">
-Smart Borrowing Tips
-</h2>
-
-</div>
-
-<div
-style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-">
-
-<div style="
-background:white;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-<h3>Maintain Credit Health</h3>
-<p>Strong repayment history may improve financing opportunities.</p>
-</div>
-
-<div style="
-background:white;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-<h3>Compare Options</h3>
-<p>Evaluate multiple products before making a financial decision.</p>
-</div>
-
-<div style="
-background:white;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-<h3>Borrow Responsibly</h3>
-<p>Choose EMIs that comfortably fit within your monthly budget.</p>
-</div>
-
-<div style="
-background:white;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-">
-<h3>Plan Long Term</h3>
-<p>Financial planning supports stability and future growth.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CALL TO ACTION -->
-
-<section
-style="
-padding:100px 0;
-background:#0d6efd;
-color:white;
-text-align:center;
-">
-
-<div class="container">
-
-<h2
-style="
-font-size:48px;
-margin-bottom:20px;
-">
-Need Professional Financial Guidance?
-</h2>
-
-<p
-style="
-max-width:800px;
-margin:auto;
-line-height:2;
-margin-bottom:35px;
-">
-Our team can help you understand loan options, repayment planning, business funding and financial growth opportunities.
-</p>
-
-<a
-href="contact.html"
-style="
-display:inline-block;
-padding:15px 35px;
-background:white;
-color:#0d6efd;
-font-weight:700;
-text-decoration:none;
-border-radius:10px;
-">
-Contact Us
+<a href="#emi" class="btn btn-outline">
+Calculate EMI
 </a>
 
 </div>
 
+</div>
+
+<div class="hero-visual">
+
+<img
+src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200"
+alt="Financial planning meeting">
+
+</div>
+
+</div>
+
 </section>
 
-<!-- FOOTER -->
 
-<footer
-style="
-background:#111827;
-color:white;
-padding:70px 0 30px;
-">
+<!-- TRUST -->
+
+<section class="trust-strip">
+
+<div class="container trust-grid">
+
+<div class="trust-item">
+<strong>Instant</strong>
+<span>Calculator results</span>
+</div>
+
+<div class="trust-item">
+<strong>Multiple</strong>
+<span>Funding categories</span>
+</div>
+
+<div class="trust-item">
+<strong>Digital</strong>
+<span>Application process</span>
+</div>
+
+<div class="trust-item">
+<strong>India</strong>
+<span>Wide assistance</span>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ASSESSMENT -->
+
+<section class="section" id="assessment">
 
 <div class="container">
 
+<div class="section-heading">
+
+<span class="eyebrow">
+Personalised Financial Assessment
+</span>
+
+<h2>
+Find financing options that may fit your profile
+</h2>
+
+<p>
+Enter basic financial information. Our calculator will analyse the information
+and show indicative funding categories. This is not a sanction or guarantee of approval.
+</p>
+
+</div>
+
+
+<div class="calculator-box">
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label for="profileType">
+Applicant Profile
+</label>
+
+<select id="profileType">
+
+<option value="">Select profile</option>
+<option value="salaried">Salaried Professional</option>
+<option value="self-employed">Self Employed</option>
+<option value="business">Business Owner / MSME</option>
+<option value="startup">Startup / Entrepreneur</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="income">
+Monthly Income / Business Income (₹)
+</label>
+
+<input
+type="number"
+id="income"
+min="0"
+placeholder="50000">
+
+</div>
+
+
+<div class="form-group">
+
+<label for="obligations">
+Existing Monthly EMIs (₹)
+</label>
+
+<input
+type="number"
+id="obligations"
+min="0"
+placeholder="10000">
+
+</div>
+
+
+<div class="form-group">
+
+<label for="requiredAmount">
+Funding Required (₹)
+</label>
+
+<input
+type="number"
+id="requiredAmount"
+min="0"
+placeholder="1000000">
+
+</div>
+
+
+<div class="form-group">
+
+<label for="cibil">
+Credit Score / CIBIL
+</label>
+
+<input
+type="number"
+id="cibil"
+min="300"
+max="900"
+placeholder="700">
+
+<div class="form-help">
+If unknown, leave blank.
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="businessVintage">
+Business Vintage
+</label>
+
+<select id="businessVintage">
+
+<option value="na">Not Applicable</option>
+<option value="0">Less than 1 year</option>
+<option value="1">1–2 years</option>
+<option value="3">3–5 years</option>
+<option value="5">5+ years</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="gst">
+GST / Business Registration
+</label>
+
+<select id="gst">
+
+<option value="unknown">Not Applicable / Unknown</option>
+<option value="yes">Yes</option>
+<option value="no">No</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="itr">
+ITR / Financial Records</label>
+
+<select id="itr">
+
+<option value="unknown">Not Available / Unknown</option>
+<option value="yes">Available</option>
+<option value="no">Not Available</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="collateral">
+Collateral Available</label>
+
+<select id="collateral">
+
+<option value="no">No</option>
+<option value="yes">Yes</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="calculate-wrap">
+
+<button
+class="btn btn-primary"
+id="analyseBtn">
+
+Calculate & Analyse My Profile
+
+</button>
+
+</div>
+
+
+<!-- RESULT -->
+
+<div class="result" id="assessmentResult">
+
+<div class="result-top">
+
+<h3>Estimated borrowing capacity</h3>
+
+<div class="amount" id="estimatedEligibility">
+₹0
+</div>
+
+<p>
+Indicative estimate based on the information entered.
+Actual eligibility can vary by lender and product.
+</p>
+
+</div>
+
+
+<div class="metrics">
+
+<div class="metric">
+
+<span>Estimated EMI Capacity</span>
+
+<strong id="emiCapacity">
+₹0
+</strong>
+
+</div>
+
+<div class="metric">
+
+<span>Existing Obligations</span>
+
+<strong id="existingEMI">
+₹0
+</strong>
+
+</div>
+
+<div class="metric">
+
+<span>Profile Score</span>
+
+<strong id="profileScore">
+0/100
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="profile-score">
+
+<div class="score-line">
+
+<span>Financial Readiness</span>
+
+<span id="scoreLabel">
+Assessment
+</span>
+
+</div>
+
+<div class="score-bar">
+
 <div
-style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:40px;
-margin-bottom:40px;
-">
+class="score-fill"
+id="scoreFill">
+</div>
+
+</div>
+
+</div>
+
+
+<!-- OFFERS -->
+
+<div class="offer-section" id="offerSection">
+
+<div class="offer-heading">
 
 <div>
 
-<h3 style="margin-bottom:15px;">
-Fundvexxa
-</h3>
+<h3>Potential funding options</h3>
 
-<p style="line-height:1.9;color:#d1d5db;">
-Professional financial services, funding support, registrations and business growth solutions.
+<p>
+Based on your inputs, these categories may be worth exploring.
+</p>
+
+</div>
+
+</div>
+
+<div class="offers" id="offersContainer"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EMI -->
+
+<section class="section section-alt" id="emi">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+EMI Calculator
+</span>
+
+<h2>
+Calculate your monthly repayment
+</h2>
+
+<p>
+Estimate monthly EMI, total interest and total repayment.
+</p>
+
+</div>
+
+
+<div class="calculator-box">
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label>Loan Amount (₹)</label>
+
+<input
+type="number"
+id="emiAmount"
+placeholder="1000000">
+
+</div>
+
+<div class="form-group">
+
+<label>Interest Rate (% p.a.)</label>
+
+<input
+type="number"
+id="emiRate"
+placeholder="12"
+step="0.01">
+
+</div>
+
+<div class="form-group">
+
+<label>Tenure (Years)</label>
+
+<input
+type="number"
+id="emiYears"
+placeholder="5">
+
+</div>
+
+</div>
+
+<div class="calculate-wrap">
+
+<button
+class="btn btn-primary"
+id="emiBtn">
+
+Calculate EMI
+
+</button>
+
+</div>
+
+<div class="result" id="emiResult">
+
+<div class="metrics">
+
+<div class="metric">
+<span>Monthly EMI</span>
+<strong id="monthlyEMI">₹0</strong>
+</div>
+
+<div class="metric">
+<span>Total Interest</span>
+<strong id="totalInterest">₹0</strong>
+</div>
+
+<div class="metric">
+<span>Total Payment</span>
+<strong id="totalPayment">₹0</strong>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHY -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+How It Works
+</span>
+
+<h2>
+From calculation to application
+</h2>
+
+<p>
+A simple digital journey designed to help you understand your options before
+sharing your application with our team.
+</p>
+
+</div>
+
+
+<div class="info-grid">
+
+<div class="info-card">
+
+<div class="info-icon">01</div>
+
+<h3>Enter your details</h3>
+
+<p>
+Provide basic income, obligations, credit and business information.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="info-icon">02</div>
+
+<h3>Get analysed</h3>
+
+<p>
+The system calculates indicative affordability and matches relevant funding categories.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="info-icon">03</div>
+
+<h3>Choose an option</h3>
+
+<p>
+Review potential options and submit an application only if you want assistance.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SIP / FD -->
+
+<section class="section section-alt">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+Additional Tools
+</span>
+
+<h2>
+Plan your money beyond borrowing
+</h2>
+
+<p>
+Use simple investment calculators for long-term financial planning.
+</p>
+
+</div>
+
+
+<div class="mini-calculators">
+
+
+<!-- SIP -->
+
+<div class="mini-box">
+
+<h3>SIP Calculator</h3>
+
+<div class="form-grid" style="grid-template-columns:1fr;">
+
+<div class="form-group">
+
+<label>Monthly SIP (₹)</label>
+
+<input
+type="number"
+id="sipAmount"
+placeholder="5000">
+
+</div>
+
+<div class="form-group">
+
+<label>Expected Return (% p.a.)</label>
+
+<input
+type="number"
+id="sipRate"
+placeholder="12"
+step=".1">
+
+</div>
+
+<div class="form-group">
+
+<label>Investment Period (Years)</label>
+
+<input
+type="number"
+id="sipYears"
+placeholder="10">
+
+</div>
+
+</div>
+
+<button
+class="btn btn-primary"
+id="sipBtn"
+style="width:100%;margin-top:20px;">
+
+Calculate SIP
+
+</button>
+
+<div class="mini-result" id="sipResult" style="display:none;">
+
+<p>Total Investment</p>
+<strong id="sipInvested">₹0</strong>
+
+<br><br>
+
+<p>Estimated Future Value</p>
+<strong id="sipFuture">₹0</strong>
+
+<br><br>
+
+<p>Estimated Returns</p>
+<strong id="sipReturns">₹0</strong>
+
+</div>
+
+</div>
+
+
+<!-- FD -->
+
+<div class="mini-box">
+
+<h3>Fixed Deposit Calculator</h3>
+
+<div class="form-grid" style="grid-template-columns:1fr;">
+
+<div class="form-group">
+
+<label>Investment Amount (₹)</label>
+
+<input
+type="number"
+id="fdAmount"
+placeholder="100000">
+
+</div>
+
+<div class="form-group">
+
+<label>Interest Rate (% p.a.)</label>
+
+<input
+type="number"
+id="fdRate"
+placeholder="7"
+step=".1">
+
+</div>
+
+<div class="form-group">
+
+<label>Tenure (Years)</label>
+
+<input
+type="number"
+id="fdYears"
+placeholder="5">
+
+</div>
+
+</div>
+
+<button
+class="btn btn-primary"
+id="fdBtn"
+style="width:100%;margin-top:20px;">
+
+Calculate FD
+
+</button>
+
+<div class="mini-result" id="fdResult" style="display:none;">
+
+<p>Investment</p>
+<strong id="fdInvested">₹0</strong>
+
+<br><br>
+
+<p>Interest</p>
+<strong id="fdInterest">₹0</strong>
+
+<br><br>
+
+<p>Maturity Amount</p>
+<strong id="fdMaturity">₹0</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DISCLAIMER CTA -->
+
+<section class="section">
+
+<div class="container">
+
+<div style="
+background:linear-gradient(135deg,#10243e,#183e68);
+border-radius:25px;
+padding:55px 30px;
+text-align:center;
+color:white;
+">
+
+<span class="eyebrow" style="color:#dcb875;">
+READY TO EXPLORE?
+</span>
+
+<h2 style="
+font-size:clamp(30px,4vw,45px);
+margin:12px 0;
+">
+
+Get your indicative funding options
+
+</h2>
+
+<p style="
+max-width:700px;
+margin:auto;
+color:#d6e0eb;
+font-size:14px;
+">
+
+Complete the assessment above and review the options that may fit your profile.
+Final approval, rate, tenure and amount are subject to the relevant institution's
+policies and credit assessment.
+
+</p>
+
+<a
+href="#assessment"
+class="btn btn-primary"
+style="margin-top:25px;">
+
+Check My Options
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- APPLY MODAL -->
+
+<div class="modal" id="applyModal">
+
+<div class="modal-box">
+
+<button
+class="modal-close"
+id="closeModal">
+×
+</button>
+
+<h2>
+Apply for this option
+</h2>
+
+<p id="selectedOfferText">
+Complete your details and our team can review your request.
+</p>
+
+
+<form id="applicationForm">
+
+<div class="application-grid">
+
+<div>
+
+<label>Full Name *</label>
+
+<input
+type="text"
+id="appName"
+required
+placeholder="Your full name">
+
+</div>
+
+
+<div>
+
+<label>Mobile Number *</label>
+
+<input
+type="tel"
+id="appMobile"
+required
+pattern="[0-9]{10}"
+maxlength="10"
+placeholder="10 digit mobile">
+
+</div>
+
+
+<div>
+
+<label>Email</label>
+
+<input
+type="email"
+id="appEmail"
+placeholder="you@example.com">
+
+</div>
+
+
+<div>
+
+<label>City</label>
+
+<input
+type="text"
+id="appCity"
+placeholder="Delhi">
+
+</div>
+
+
+<div>
+
+<label>Selected Product</label>
+
+<input
+type="text"
+id="appProduct"
+readonly>
+
+</div>
+
+
+<div>
+
+<label>Requested Amount</label>
+
+<input
+type="number"
+id="appAmount"
+readonly>
+
+</div>
+
+
+<div class="full">
+
+<label>Requirement / Purpose</label>
+
+<textarea
+id="appPurpose"
+placeholder="Tell us briefly about your requirement"></textarea>
+
+</div>
+
+<div class="full">
+
+<label style="display:flex;gap:8px;align-items:flex-start;font-weight:500;">
+
+<input
+type="checkbox"
+id="consent"
+required
+style="width:auto;margin-top:4px;">
+
+<span>
+I agree to be contacted regarding my enquiry and understand that
+this application does not guarantee loan approval.
+</span>
+
+</label>
+
+</div>
+
+</div>
+
+
+<button
+class="btn btn-primary"
+id="submitApplication"
+type="submit"
+style="width:100%;margin-top:22px;">
+
+Submit Application
+
+</button>
+
+</form>
+
+
+<div
+class="application-message"
+id="applicationMessage">
+
+Application submitted successfully.
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>Fundvexxa</h3>
+
+<p>
+Financial assistance, business funding support and digital financial solutions
+for individuals, entrepreneurs and businesses.
 </p>
 
 </div>
 
 <div>
 
-<h3 style="margin-bottom:15px;">
-Quick Links
-</h3>
+<h3>Quick Links</h3>
 
-<p><a href="index.html" style="color:#d1d5db;text-decoration:none;">Home</a></p>
-<p><a href="about.html" style="color:#d1d5db;text-decoration:none;">About</a></p>
-<p><a href="services.html" style="color:#d1d5db;text-decoration:none;">Services</a></p>
-<p><a href="contact.html" style="color:#d1d5db;text-decoration:none;">Contact</a></p>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="blog.html">Insights</a>
+<a href="contact.html">Contact</a>
 
 </div>
 
 <div>
 
-<h3 style="margin-bottom:15px;">
-Contact Information
-</h3>
+<h3>Contact</h3>
 
-<p>Director: Mohammad Aarif</p>
-<p>Mobile: 7290977231</p>
+<p>Phone: +91 7290977231</p>
 <p>Email: smilefinacialsolutions@gmail.com</p>
 
 </div>
 
 </div>
 
-<hr style="border-color:#374151;margin-bottom:25px;">
 
-<p style="text-align:center;color:#9ca3af;">
+<div class="footer-bottom">
+
 © 2026 Fundvexxa. All Rights Reserved.
-</p>
+<br><br>
+Calculations and funding matches shown on this page are indicative only.
+Loan approval, amount, interest rate and other terms are subject to the
+relevant lender/institution and applicant eligibility.
+
+</div>
 
 </div>
 
 </footer>
 
-<!-- SIP CALCULATOR -->
 
-<section
-style="
-padding:100px 0;
-background:#ffffff;
-">
+<a
+class="whatsapp"
+href="https://wa.me/917290977231"
+target="_blank"
+rel="noopener">
 
-<div class="container">
+WhatsApp
 
-<div class="section-title">
+</a>
 
-<span
-style="
-color:#0d6efd;
-font-weight:700;
-">
-SIP CALCULATOR
-</span>
 
-<h2
-style="
-font-size:42px;
-margin:15px 0;
-">
-Systematic Investment Plan Calculator
-</h2>
+<!-- FIREBASE + APPLICATION LOGIC -->
 
-<p
-style="
-max-width:850px;
-margin:auto;
-line-height:1.9;
-color:#666;
-">
-Estimate future wealth creation through disciplined monthly SIP investments.
-</p>
+<script type="module">
 
-</div>
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
-<div
-style="
-max-width:950px;
-margin:auto;
-background:#fff;
-padding:40px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-">
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-<div
-style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-">
 
-<div>
-<label>Monthly SIP Amount (₹)</label>
-<input
-type="number"
-id="sipAmount"
-placeholder="5000"
-style="
-width:100%;
-padding:15px;
-margin-top:8px;
-border:1px solid #ddd;
-border-radius:10px;">
-</div>
+/* =====================================================
+   FIREBASE CONFIG
+   =====================================================
 
-<div>
-<label>Expected Return (% p.a.)</label>
-<input
-type="number"
-id="sipRate"
-placeholder="12"
-style="
-width:100%;
-padding:15px;
-margin-top:8px;
-border:1px solid #ddd;
-border-radius:10px;">
-</div>
+   YAHAN APNE EXISTING FIREBASE PROJECT KA CONFIG PASTE KAREIN.
 
-<div>
-<label>Investment Period (Years)</label>
-<input
-type="number"
-id="sipYears"
-placeholder="10"
-style="
-width:100%;
-padding:15px;
-margin-top:8px;
-border:1px solid #ddd;
-border-radius:10px;">
-</div>
+   Firebase Console
+   → Project Settings
+   → Your Apps
+   → Web App
+   → Firebase SDK snippet
 
-</div>
+===================================================== */
 
-<div style="text-align:center;margin-top:30px;">
+const firebaseConfig = {
 
-<button
-onclick="calculateSIP()"
-style="
-background:#0d6efd;
-color:white;
-border:none;
-padding:15px 35px;
-font-weight:600;
-border-radius:10px;
-cursor:pointer;">
-Calculate SIP
-</button>
+    apiKey: "YOUR_API_KEY",
 
-</div>
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
 
-<div
-id="sipResult"
-style="
-display:none;
-margin-top:40px;
-">
+    projectId: "YOUR_PROJECT_ID",
 
-<div
-style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-">
+    storageBucket: "YOUR_PROJECT.firebasestorage.app",
 
-<div
-style="
-background:#eef5ff;
-padding:25px;
-border-radius:15px;
-text-align:center;
-">
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
 
-<h4>Total Investment</h4>
-<h2 id="totalInvested">₹0</h2>
+    appId: "YOUR_APP_ID"
 
-</div>
+};
 
-<div
-style="
-background:#eef5ff;
-padding:25px;
-border-radius:15px;
-text-align:center;
-">
 
-<h4>Estimated Returns</h4>
-<h2 id="estimatedReturns">₹0</h2>
+const app = initializeApp(firebaseConfig);
 
-</div>
+const db = getFirestore(app);
 
-<div
-style="
-background:#eef5ff;
-padding:25px;
-border-radius:15px;
-text-align:center;
-">
 
-<h4>Future Value</h4>
-<h2 id="futureValue">₹0</h2>
+/* =====================================================
+   GLOBAL STATE
+===================================================== */
 
-</div>
+let latestAssessment = null;
+let selectedOffer = null;
 
-</div>
 
-</div>
+/* =====================================================
+   FORMAT MONEY
+===================================================== */
 
-</div>
+function money(value){
 
-</div>
+    if(!Number.isFinite(value)){
+        return "₹0";
+    }
 
-</section>
-
-<script>
-
-function calculateSIP(){
-
-let monthly =
-parseFloat(document.getElementById("sipAmount").value) || 0;
-
-let annualRate =
-parseFloat(document.getElementById("sipRate").value) || 0;
-
-let years =
-parseFloat(document.getElementById("sipYears").value) || 0;
-
-let r = annualRate/12/100;
-
-let n = years*12;
-
-let future =
-monthly *
-((Math.pow(1+r,n)-1)/r) *
-(1+r);
-
-let invested =
-monthly*n;
-
-let returns =
-future-invested;
-
-document.getElementById("sipResult").style.display="block";
-
-document.getElementById("totalInvested").innerHTML=
-"₹"+Math.round(invested).toLocaleString();
-
-document.getElementById("estimatedReturns").innerHTML=
-"₹"+Math.round(returns).toLocaleString();
-
-document.getElementById("futureValue").innerHTML=
-"₹"+Math.round(future).toLocaleString();
+    return "₹" + Math.round(value).toLocaleString("en-IN");
 
 }
 
-</script>
 
-<!-- FD CALCULATOR -->
+/* =====================================================
+   VALIDATION
+===================================================== */
 
-<section
-style="
-padding:100px 0;
-background:#f8fbff;
-">
+function numberValue(id){
 
-<div class="container">
+    const value =
+        parseFloat(document.getElementById(id).value);
 
-<div class="section-title">
-
-<span
-style="
-color:#0d6efd;
-font-weight:700;
-">
-FD CALCULATOR
-</span>
-
-<h2
-style="
-font-size:42px;
-margin:15px 0;
-">
-Fixed Deposit Calculator
-</h2>
-
-<p
-style="
-max-width:850px;
-margin:auto;
-line-height:1.9;
-color:#666;
-">
-Calculate maturity amount, interest earned and total wealth generated through Fixed Deposits.
-</p>
-
-</div>
-
-<div
-style="
-max-width:1000px;
-margin:auto;
-background:#fff;
-padding:50px;
-border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-">
-
-<div
-style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-">
-
-<div>
-
-<label style="font-weight:600;">
-Investment Amount (₹)
-</label>
-
-<input
-type="number"
-id="fdAmount"
-placeholder="100000"
-style="
-width:100%;
-padding:18px;
-font-size:17px;
-margin-top:8px;
-border:1px solid #ddd;
-border-radius:12px;">
-
-</div>
-
-<div>
-
-<label style="font-weight:600;">
-Interest Rate (%)
-</label>
-
-<input
-type="number"
-id="fdRate"
-placeholder="7"
-style="
-width:100%;
-padding:18px;
-font-size:17px;
-margin-top:8px;
-border:1px solid #ddd;
-border-radius:12px;">
-
-</div>
-
-<div>
-
-<label style="font-weight:600;">
-Tenure (Years)
-</label>
-
-<input
-type="number"
-id="fdYears"
-placeholder="5"
-style="
-width:100%;
-padding:18px;
-font-size:17px;
-margin-top:8px;
-border:1px solid #ddd;
-border-radius:12px;">
-
-</div>
-
-</div>
-
-<div
-style="
-text-align:center;
-margin-top:35px;
-">
-
-<button
-onclick="calculateFD()"
-style="
-background:#0d6efd;
-color:white;
-border:none;
-padding:18px 50px;
-font-size:18px;
-font-weight:700;
-border-radius:12px;
-cursor:pointer;">
-Calculate FD
-</button>
-
-</div>
-
-<div
-id="fdResult"
-style="
-display:none;
-margin-top:45px;
-">
-
-<div
-style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-">
-
-<div
-style="
-background:#eef5ff;
-padding:35px;
-border-radius:18px;
-text-align:center;
-">
-
-<h4>Total Investment</h4>
-
-<h2
-id="fdInvested"
-style="
-margin-top:15px;
-font-size:32px;
-color:#0d6efd;">
-₹0
-</h2>
-
-</div>
-
-<div
-style="
-background:#eef5ff;
-padding:35px;
-border-radius:18px;
-text-align:center;
-">
-
-<h4>Interest Earned</h4>
-
-<h2
-id="fdInterest"
-style="
-margin-top:15px;
-font-size:32px;
-color:#0d6efd;">
-₹0
-</h2>
-
-</div>
-
-<div
-style="
-background:#eef5ff;
-padding:35px;
-border-radius:18px;
-text-align:center;
-">
-
-<h4>Maturity Amount</h4>
-
-<h2
-id="fdMaturity"
-style="
-margin-top:15px;
-font-size:32px;
-color:#0d6efd;">
-₹0
-</h2>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<script>
-
-function calculateFD(){
-
-let P =
-parseFloat(document.getElementById("fdAmount").value) || 0;
-
-let R =
-parseFloat(document.getElementById("fdRate").value) || 0;
-
-let T =
-parseFloat(document.getElementById("fdYears").value) || 0;
-
-let maturity =
-P * Math.pow((1 + R/100), T);
-
-let interest =
-maturity - P;
-
-document.getElementById("fdResult").style.display="block";
-
-document.getElementById("fdInvested").innerHTML =
-"₹" + Math.round(P).toLocaleString();
-
-document.getElementById("fdInterest").innerHTML =
-"₹" + Math.round(interest).toLocaleString();
-
-document.getElementById("fdMaturity").innerHTML =
-"₹" + Math.round(maturity).toLocaleString();
+    return Number.isFinite(value) && value >= 0
+        ? value
+        : 0;
 
 }
 
+
+/* =====================================================
+   EMI CALCULATION
+===================================================== */
+
+function calculateEMIValue(principal, annualRate, years){
+
+    if(
+        principal <= 0 ||
+        years <= 0
+    ){
+        return 0;
+    }
+
+    const months = years * 12;
+
+    if(annualRate <= 0){
+
+        return principal / months;
+
+    }
+
+    const monthlyRate =
+        annualRate / 12 / 100;
+
+    const factor =
+        Math.pow(1 + monthlyRate, months);
+
+    return (
+        principal *
+        monthlyRate *
+        factor
+    ) / (
+        factor - 1
+    );
+
+}
+
+
+/* =====================================================
+   PROFILE ANALYSIS
+===================================================== */
+
+function analyseProfile(){
+
+    const profile =
+        document.getElementById("profileType").value;
+
+    const income =
+        numberValue("income");
+
+    const obligations =
+        numberValue("obligations");
+
+    const required =
+        numberValue("requiredAmount");
+
+    const cibilInput =
+        parseFloat(
+            document.getElementById("cibil").value
+        );
+
+    const cibil =
+        Number.isFinite(cibilInput)
+            ? cibilInput
+            : null;
+
+    const vintage =
+        document.getElementById("businessVintage").value;
+
+    const gst =
+        document.getElementById("gst").value;
+
+    const itr =
+        document.getElementById("itr").value;
+
+    const collateral =
+        document.getElementById("collateral").value;
+
+
+    if(!profile){
+
+        alert("Please select your applicant profile.");
+
+        return;
+
+    }
+
+    if(income <= 0){
+
+        alert("Please enter your monthly income or business income.");
+
+        return;
+
+    }
+
+
+    /* ---------------------------------------------
+       REPAYMENT CAPACITY
+    --------------------------------------------- */
+
+    const netIncome =
+        Math.max(income - obligations,0);
+
+    const safeEMI =
+        Math.max(netIncome * .45,0);
+
+
+    /*
+       Indicative multiplier.
+
+       This is only a website estimation,
+       not a lender underwriting formula.
+    */
+
+    let multiplier = 48;
+
+    if(profile === "business"){
+        multiplier = 60;
+    }
+
+    if(profile === "startup"){
+        multiplier = 42;
+    }
+
+    const estimatedEligibility =
+        Math.max(safeEMI * multiplier,0);
+
+
+    /* ---------------------------------------------
+       PROFILE SCORE
+    --------------------------------------------- */
+
+    let score = 40;
+
+    if(cibil !== null){
+
+        if(cibil >= 750){
+            score += 25;
+        }
+        else if(cibil >= 700){
+            score += 20;
+        }
+        else if(cibil >= 650){
+            score += 12;
+        }
+        else if(cibil >= 600){
+            score += 5;
+        }
+        else{
+            score -= 10;
+        }
+
+    }
+
+    if(obligations <= income * .25){
+        score += 10;
+    }
+
+    if(profile === "business"){
+
+        if(vintage === "3"){
+            score += 8;
+        }
+
+        if(vintage === "5"){
+            score += 12;
+        }
+
+        if(gst === "yes"){
+            score += 5;
+        }
+
+        if(itr === "yes"){
+            score += 5;
+        }
+
+    }
+
+    if(profile === "self-employed"){
+
+        if(itr === "yes"){
+            score += 7;
+        }
+
+    }
+
+    score =
+        Math.max(0,Math.min(score,100));
+
+
+    let scoreLabel = "Needs Review";
+
+    if(score >= 80){
+        scoreLabel = "Strong";
+    }
+    else if(score >= 65){
+        scoreLabel = "Good";
+    }
+    else if(score >= 50){
+        scoreLabel = "Moderate";
+    }
+
+
+    /* ---------------------------------------------
+       SHOW RESULT
+    --------------------------------------------- */
+
+    document
+        .getElementById("assessmentResult")
+        .classList.add("show");
+
+    document
+        .getElementById("estimatedEligibility")
+        .textContent =
+        money(estimatedEligibility);
+
+    document
+        .getElementById("emiCapacity")
+        .textContent =
+        money(safeEMI);
+
+    document
+        .getElementById("existingEMI")
+        .textContent =
+        money(obligations);
+
+    document
+        .getElementById("profileScore")
+        .textContent =
+        score + "/100";
+
+    document
+        .getElementById("scoreLabel")
+        .textContent =
+        scoreLabel;
+
+    document
+        .getElementById("scoreFill")
+        .style.width =
+        score + "%";
+
+
+    /* ---------------------------------------------
+       GENERATE OFFERS
+    --------------------------------------------- */
+
+    const offers = [];
+
+
+    /* BUSINESS / MSME */
+
+    if(
+        profile === "business" ||
+        profile === "self-employed"
+    ){
+
+        if(
+            score >= 55 &&
+            income >= 25000
+        ){
+
+            offers.push({
+
+                product:"Business / MSME Loan",
+
+                range:
+                    Math.min(
+                        estimatedEligibility,
+                        Math.max(required,500000)
+                    ),
+
+                description:
+                    "Suitable for business expansion, working capital, inventory or operational requirements.",
+
+                points:[
+                    "Business funding category",
+                    "Working capital or expansion use",
+                    "Final eligibility depends on lender assessment"
+                ]
+
+            });
+
+        }
+
+    }
+
+
+    /* WORKING CAPITAL */
+
+    if(
+        profile === "business" &&
+        income >= 30000 &&
+        gst === "yes"
+    ){
+
+        offers.push({
+
+            product:"Working Capital Funding",
+
+            range:
+                Math.min(
+                    estimatedEligibility,
+                    Math.max(required,300000)
+                ),
+
+            description:
+                "Potential option for inventory, cash-flow and day-to-day business requirements.",
+
+            points:[
+                "Useful for operating cash flow",
+                "Suitable for established businesses",
+                "Financial documents may be required"
+            ]
+
+        });
+
+    }
+
+
+    /* PERSONAL LOAN */
+
+    if(
+        (
+            profile === "salaried" ||
+            profile === "self-employed"
+        ) &&
+        income >= 25000 &&
+        score >= 50
+    ){
+
+        offers.push({
+
+            product:"Personal Loan",
+
+            range:
+                Math.min(
+                    estimatedEligibility,
+                    Math.max(required,100000)
+                ),
+
+            description:
+                "Potential unsecured funding category for eligible personal requirements.",
+
+            points:[
+                "Income-based assessment",
+                "Generally no collateral requirement",
+                "Credit profile can affect terms"
+            ]
+
+        });
+
+    }
+
+
+    /* LAP */
+
+    if(
+        collateral === "yes" &&
+        income >= 30000
+    ){
+
+        offers.push({
+
+            product:"Loan Against Property",
+
+            range:
+                Math.min(
+                    Math.max(required,1000000),
+                    Math.max(estimatedEligibility * 2,1000000)
+                ),
+
+            description:
+                "Secured funding category where eligible residential or commercial property may be considered.",
+
+            points:[
+                "Property-backed funding",
+                "Potentially higher funding capacity",
+                "Property and legal verification required"
+            ]
+
+        });
+
+    }
+
+
+    /* STARTUP */
+
+    if(profile === "startup"){
+
+        offers.push({
+
+            product:"Startup / Business Funding",
+
+            range:
+                Math.min(
+                    Math.max(required,200000),
+                    Math.max(estimatedEligibility,200000)
+                ),
+
+            description:
+                "Funding assistance category for entrepreneurs depending on business stage and documentation.",
+
+            points:[
+                "Business plan may be required",
+                "Funding depends on profile and institution",
+                "Startup stage can affect available options"
+            ]
+
+        });
+
+    }
+
+
+    /* FALLBACK */
+
+    if(offers.length === 0){
+
+        offers.push({
+
+            product:"Financial Profile Review",
+
+            range:estimatedEligibility,
+
+            description:
+                "Your current inputs do not clearly match a specific funding category. A detailed review may help identify suitable options.",
+
+            points:[
+                "Additional profile information may be required",
+                "Credit and income documents may be reviewed",
+                "No guaranteed approval"
+            ]
+
+        });
+
+    }
+
+
+    latestAssessment = {
+
+        profile,
+        income,
+        obligations,
+        required,
+        cibil,
+        businessVintage:vintage,
+        gst,
+        itr,
+        collateral,
+        safeEMI,
+        estimatedEligibility,
+        score,
+        scoreLabel,
+        offers:offers.map(o => ({
+            product:o.product,
+            range:o.range
+        }))
+
+    };
+
+
+    renderOffers(offers);
+
+
+    /* ---------------------------------------------
+       SAVE ASSESSMENT TO FIRESTORE
+    --------------------------------------------- */
+
+    try{
+
+        await addDoc(
+            collection(db,"financial_assessments"),
+            {
+
+                ...latestAssessment,
+
+                createdAt:serverTimestamp(),
+
+                source:"financial-calculator",
+
+                status:"assessment_completed"
+
+            }
+        );
+
+    }
+    catch(error){
+
+        console.error(
+            "Assessment Firestore error:",
+            error
+        );
+
+        /*
+           Calculator still works if Firestore
+           is not configured correctly.
+        */
+
+    }
+
+
+    document
+        .getElementById("offerSection")
+        .classList.add("show");
+
+    document
+        .getElementById("assessmentResult")
+        .scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+}
+
+
+/* =====================================================
+   RENDER OFFERS
+===================================================== */
+
+function renderOffers(offers){
+
+    const container =
+        document.getElementById("offersContainer");
+
+    container.innerHTML = "";
+
+    offers.forEach((offer,index)=>{
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            "offer-card" +
+            (index === 0 ? " best" : "");
+
+        card.innerHTML = `
+
+            ${
+                index === 0
+                ? `<span class="best-badge">RECOMMENDED</span>`
+                : ""
+            }
+
+            <h4>${offer.product}</h4>
+
+            <div class="offer-range">
+                ${money(offer.range)}
+            </div>
+
+            <p>
+                ${offer.description}
+            </p>
+
+            <ul class="offer-points">
+
+                ${offer.points
+                    .map(point=>`<li>${point}</li>`)
+                    .join("")}
+
+            </ul>
+
+            <button
+                class="btn btn-primary apply-offer"
+                data-product="${offer.product}"
+                data-amount="${Math.round(offer.range)}">
+
+                Apply Now
+
+            </button>
+
+        `;
+
+        container.appendChild(card);
+
+    });
+
+
+    document
+        .querySelectorAll(".apply-offer")
+        .forEach(button=>{
+
+            button.addEventListener(
+                "click",
+                ()=>{
+
+                    openApplication(
+                        button.dataset.product,
+                        button.dataset.amount
+                    );
+
+                }
+            );
+
+        });
+
+}
+
+
+/* =====================================================
+   OPEN APPLICATION
+===================================================== */
+
+function openApplication(product,amount){
+
+    selectedOffer = {
+
+        product,
+        amount
+
+    };
+
+    document
+        .getElementById("appProduct")
+        .value = product;
+
+    document
+        .getElementById("appAmount")
+        .value = amount;
+
+    document
+        .getElementById("selectedOfferText")
+        .textContent =
+        `You selected ${product}. Submit your details for a review of this requirement.`;
+
+    document
+        .getElementById("applyModal")
+        .classList.add("show");
+
+}
+
+
+/* =====================================================
+   CLOSE MODAL
+===================================================== */
+
+document
+    .getElementById("closeModal")
+    .addEventListener(
+        "click",
+        ()=>{
+            document
+                .getElementById("applyModal")
+                .classList.remove("show");
+        }
+    );
+
+
+/* =====================================================
+   APPLY FORM
+===================================================== */
+
+document
+    .getElementById("applicationForm")
+    .addEventListener(
+        "submit",
+        async function(event){
+
+            event.preventDefault();
+
+
+            const submitButton =
+                document.getElementById(
+                    "submitApplication"
+                );
+
+            submitButton.disabled = true;
+
+            submitButton.textContent =
+                "Submitting...";
+
+
+            const application = {
+
+                name:
+                    document
+                    .getElementById("appName")
+                    .value
+                    .trim(),
+
+                mobile:
+                    document
+                    .getElementById("appMobile")
+                    .value
+                    .trim(),
+
+                email:
+                    document
+                    .getElementById("appEmail")
+                    .value
+                    .trim(),
+
+                city:
+                    document
+                    .getElementById("appCity")
+                    .value
+                    .trim(),
+
+                product:
+                    selectedOffer?.product || "",
+
+                requestedAmount:
+                    Number(
+                        document
+                        .getElementById("appAmount")
+                        .value
+                    ) || 0,
+
+                purpose:
+                    document
+                    .getElementById("appPurpose")
+                    .value
+                    .trim(),
+
+                assessment:
+                    latestAssessment,
+
+                source:
+                    "financial-calculator",
+
+                status:
+                    "new",
+
+                createdAt:
+                    serverTimestamp()
+
+            };
+
+
+            try{
+
+                const docRef =
+                    await addDoc(
+                        collection(
+                            db,
+                            "loan_applications"
+                        ),
+                        application
+                    );
+
+
+                document
+                    .getElementById(
+                        "applicationMessage"
+                    )
+                    .innerHTML = `
+
+                        <strong>
+                        Application submitted successfully.
+                        </strong>
+                        <br>
+                        Application ID:
+                        ${docRef.id}
+
+                    `;
+
+
+                document
+                    .getElementById(
+                        "applicationMessage"
+                    )
+                    .classList.add("show");
+
+
+                document
+                    .getElementById(
+                        "applicationForm"
+                    )
+                    .reset();
+
+
+                submitButton.textContent =
+                    "Submitted";
+
+
+            }
+            catch(error){
+
+                console.error(error);
+
+                alert(
+                    "Application submit nahi ho paayi. Firebase configuration aur Firestore rules check karein."
+                );
+
+                submitButton.disabled = false;
+
+                submitButton.textContent =
+                    "Submit Application";
+
+            }
+
+        }
+    );
+
+
+/* =====================================================
+   EMI CALCULATOR
+===================================================== */
+
+document
+    .getElementById("emiBtn")
+    .addEventListener(
+        "click",
+        ()=>{
+
+            const P =
+                numberValue("emiAmount");
+
+            const rate =
+                numberValue("emiRate");
+
+            const years =
+                numberValue("emiYears");
+
+
+            if(P <= 0 || years <= 0){
+
+                alert(
+                    "Please enter loan amount and tenure."
+                );
+
+                return;
+
+            }
+
+
+            const emi =
+                calculateEMIValue(
+                    P,
+                    rate,
+                    years
+                );
+
+            const total =
+                emi * years * 12;
+
+            const interest =
+                Math.max(total - P,0);
+
+
+            document
+                .getElementById("monthlyEMI")
+                .textContent =
+                money(emi);
+
+            document
+                .getElementById("totalInterest")
+                .textContent =
+                money(interest);
+
+            document
+                .getElementById("totalPayment")
+                .textContent =
+                money(total);
+
+            document
+                .getElementById("emiResult")
+                .classList.add("show");
+
+        }
+    );
+
+
+/* =====================================================
+   SIP
+===================================================== */
+
+document
+    .getElementById("sipBtn")
+    .addEventListener(
+        "click",
+        ()=>{
+
+            const monthly =
+                numberValue("sipAmount");
+
+            const rate =
+                numberValue("sipRate");
+
+            const years =
+                numberValue("sipYears");
+
+
+            if(monthly <= 0 || years <= 0){
+
+                alert(
+                    "Please enter SIP amount and period."
+                );
+
+                return;
+
+            }
+
+
+            const n =
+                years * 12;
+
+            const r =
+                rate / 12 / 100;
+
+
+            let future;
+
+
+            if(r === 0){
+
+                future =
+                    monthly * n;
+
+            }
+            else{
+
+                future =
+                    monthly *
+                    (
+                        (Math.pow(1+r,n)-1) / r
+                    ) *
+                    (1+r);
+
+            }
+
+
+            const invested =
+                monthly * n;
+
+            const returns =
+                Math.max(
+                    future-invested,
+                    0
+                );
+
+
+            document
+                .getElementById("sipInvested")
+                .textContent =
+                money(invested);
+
+            document
+                .getElementById("sipFuture")
+                .textContent =
+                money(future);
+
+            document
+                .getElementById("sipReturns")
+                .textContent =
+                money(returns);
+
+            document
+                .getElementById("sipResult")
+                .style.display =
+                "block";
+
+        }
+    );
+
+
+/* =====================================================
+   FD
+===================================================== */
+
+document
+    .getElementById("fdBtn")
+    .addEventListener(
+        "click",
+        ()=>{
+
+            const P =
+                numberValue("fdAmount");
+
+            const rate =
+                numberValue("fdRate");
+
+            const years =
+                numberValue("fdYears");
+
+
+            if(P <= 0 || years <= 0){
+
+                alert(
+                    "Please enter investment amount and tenure."
+                );
+
+                return;
+
+            }
+
+
+            const maturity =
+                P *
+                Math.pow(
+                    1 + rate/100,
+                    years
+                );
+
+            const interest =
+                Math.max(
+                    maturity-P,
+                    0
+                );
+
+
+            document
+                .getElementById("fdInvested")
+                .textContent =
+                money(P);
+
+            document
+                .getElementById("fdInterest")
+                .textContent =
+                money(interest);
+
+            document
+                .getElementById("fdMaturity")
+                .textContent =
+                money(maturity);
+
+            document
+                .getElementById("fdResult")
+                .style.display =
+                "block";
+
+        }
+    );
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+document
+    .getElementById("analyseBtn")
+    .addEventListener(
+        "click",
+        analyseProfile
+    );
+
+
 </script>
+
+</body>
+</html>
