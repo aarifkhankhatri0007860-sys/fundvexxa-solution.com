@@ -4,2402 +4,2509 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Become a Fundvexxa Agent | Business Partner Program</title>
+<title>Become a Financial Partner | Fundvexxa</title>
 
 <meta name="description"
-content="Become a Fundvexxa Agent and build your financial services business with professional support, training, technology and CRM solutions.">
+content="Join Fundvexxa as a financial partner and access training, digital tools, multiple financial products and your own partner dashboard.">
 
-<meta name="theme-color" content="#126abe">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
 
 <style>
+
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --navy:#10243e;
+    --navy2:#173b63;
+    --blue:#0d6efd;
+    --blue2:#084db7;
+    --gold:#c89b50;
+    --text:#172235;
+    --muted:#66768a;
+    --bg:#f5f8fc;
+    --border:#e2e9f1;
+    --white:#fff;
+    --green:#16834b;
+    --danger:#c0392b;
+    --shadow:0 18px 55px rgba(16,36,62,.09);
 }
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  font-family:
-  Inter,
-  ui-sans-serif,
-  system-ui,
-  -apple-system,
-  BlinkMacSystemFont,
-  "Segoe UI",
-  Arial,
-  sans-serif;
-  color:#172b43;
-  background:#ffffff;
-  line-height:1.6;
-}
-
-a{
-  text-decoration:none;
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+    color:var(--text);
+    background:#fff;
+    line-height:1.6;
 }
 
 button,
 input,
 select,
 textarea{
-  font:inherit;
+    font:inherit;
 }
 
+button{
+    cursor:pointer;
+}
 
-/* =========================================
+a{
+    text-decoration:none;
+}
+
+.container{
+    width:min(1180px,calc(100% - 34px));
+    margin:auto;
+}
+
+/* =========================
    HEADER
-========================================= */
+========================= */
 
-.site-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(255,255,255,.96);
-  border-bottom:1px solid #e8eef5;
-  backdrop-filter:blur(12px);
+.header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
 }
 
-.header-inner{
-  max-width:1180px;
-  margin:auto;
-  min-height:72px;
-  padding:0 22px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:25px;
+.navbar{
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
 }
 
 .logo{
-  color:#10243e;
-  font-size:24px;
-  font-weight:800;
-  letter-spacing:-.7px;
+    font-size:25px;
+    font-weight:800;
+    color:var(--navy);
+    letter-spacing:-1px;
 }
 
 .logo span{
-  color:#126abe;
+    color:var(--gold);
 }
 
-.header-nav{
-  display:flex;
-  align-items:center;
-  gap:25px;
+.nav{
+    display:flex;
+    align-items:center;
+    gap:24px;
 }
 
-.header-nav a{
-  color:#526579;
-  font-size:14px;
-  font-weight:600;
+.nav a{
+    font-size:14px;
+    font-weight:600;
+    color:#405066;
 }
 
-.header-nav a:hover{
-  color:#126abe;
+.nav a:hover{
+    color:var(--blue);
 }
 
-.header-apply{
-  background:#126abe !important;
-  color:#fff !important;
-  padding:11px 18px;
-  border-radius:7px;
+.nav .nav-btn{
+    background:var(--navy);
+    color:#fff;
+    padding:10px 17px;
+    border-radius:8px;
 }
 
-
-/* =========================================
+/* =========================
    HERO
-========================================= */
+========================= */
 
-.agent-hero{
-  max-width:1180px;
-  margin:auto;
-  padding:75px 25px 70px;
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  gap:60px;
-  align-items:center;
+.hero{
+    background:
+        radial-gradient(circle at 85% 20%,rgba(13,110,253,.15),transparent 30%),
+        linear-gradient(135deg,#f2f7ff,#fff);
+    padding:82px 0 90px;
 }
 
-.hero-copy{
-  max-width:650px;
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:65px;
+    align-items:center;
 }
 
-.hero-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 15px;
-  border:1px solid #d8e7f5;
-  border-radius:30px;
-  background:#f5faff;
-  color:#126abe;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.8px;
+.eyebrow{
+    display:inline-block;
+    color:var(--blue);
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.13em;
 }
 
-.hero-copy h1{
-  margin-top:20px;
-  color:#10243e;
-  font-size:50px;
-  line-height:1.1;
-  letter-spacing:-2px;
+.hero h1{
+    color:var(--navy);
+    font-size:clamp(38px,5vw,61px);
+    line-height:1.07;
+    letter-spacing:-2.8px;
+    margin-top:14px;
 }
 
-.hero-copy h1 span{
-  color:#126abe;
+.hero h1 span{
+    color:var(--blue);
 }
 
-.hero-copy p{
-  max-width:610px;
-  margin-top:22px;
-  color:#647589;
-  font-size:17px;
-  line-height:1.85;
+.hero p{
+    color:var(--muted);
+    font-size:17px;
+    max-width:680px;
+    margin-top:22px;
 }
 
-.hero-buttons{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:30px;
+.hero-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.btn{
+    border:0;
+    min-height:48px;
+    padding:0 22px;
+    border-radius:9px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    transition:.2s ease;
 }
 
 .btn-primary{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  min-height:48px;
-  padding:0 23px;
-  background:#126abe;
-  color:#fff;
-  border-radius:7px;
-  font-size:14px;
-  font-weight:700;
-  border:1px solid #126abe;
-  cursor:pointer;
-  transition:.2s;
+    background:var(--blue);
+    color:#fff;
 }
 
 .btn-primary:hover{
-  background:#0d5ba5;
+    background:var(--blue2);
+    transform:translateY(-1px);
 }
 
 .btn-outline{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  min-height:48px;
-  padding:0 23px;
-  background:#fff;
-  color:#126abe;
-  border:1px solid #cbddec;
-  border-radius:7px;
-  font-size:14px;
-  font-weight:700;
-}
-
-.hero-stats{
-  display:flex;
-  flex-wrap:wrap;
-  gap:28px;
-  margin-top:38px;
-  padding-top:25px;
-  border-top:1px solid #e7edf3;
-}
-
-.hero-stat{
-  display:flex;
-  flex-direction:column;
-}
-
-.hero-stat strong{
-  color:#10243e;
-  font-size:20px;
-}
-
-.hero-stat span{
-  color:#7a8898;
-  font-size:12px;
-  margin-top:2px;
-}
-
-
-/* =========================================
-   HERO IMAGE
-========================================= */
-
-.hero-image-wrap{
-  position:relative;
+    background:#fff;
+    color:var(--navy);
+    border:1px solid var(--border);
 }
 
 .hero-image{
-  width:100%;
-  height:470px;
-  object-fit:cover;
-  display:block;
-  border-radius:12px;
+    position:relative;
 }
 
-.hero-image-card{
-  position:absolute;
-  left:-22px;
-  bottom:25px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:15px 18px;
-  background:#fff;
-  border:1px solid #e8eef4;
-  border-radius:9px;
-  box-shadow:0 15px 40px rgba(22,57,90,.14);
+.hero-image img{
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    border-radius:25px;
+    box-shadow:0 25px 75px rgba(16,36,62,.18);
 }
 
-.check-circle{
-  width:36px;
-  height:36px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#eaf5ff;
-  color:#126abe;
-  font-weight:800;
+.floating-card{
+    position:absolute;
+    left:-25px;
+    bottom:25px;
+    background:#fff;
+    padding:18px 20px;
+    border-radius:14px;
+    box-shadow:var(--shadow);
+    border:1px solid var(--border);
 }
 
-.hero-image-card strong{
-  display:block;
-  color:#172b43;
-  font-size:14px;
+.floating-card strong{
+    display:block;
+    color:var(--navy);
+    font-size:18px;
 }
 
-.hero-image-card small{
-  display:block;
-  color:#788797;
-  font-size:12px;
+.floating-card span{
+    color:var(--muted);
+    font-size:12px;
 }
 
+/* =========================
+   TRUST
+========================= */
 
-/* =========================================
-   COMMON SECTIONS
-========================================= */
+.trust{
+    margin-top:-35px;
+    position:relative;
+    z-index:3;
+}
+
+.trust-grid{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    overflow:hidden;
+}
+
+.trust-item{
+    padding:23px;
+    text-align:center;
+    border-right:1px solid var(--border);
+}
+
+.trust-item:last-child{
+    border-right:0;
+}
+
+.trust-item strong{
+    display:block;
+    color:var(--navy);
+    font-size:20px;
+}
+
+.trust-item span{
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* =========================
+   SECTION
+========================= */
 
 .section{
-  padding:80px 22px;
+    padding:90px 0;
 }
 
-.section-light{
-  background:#f7fafc;
-}
-
-.section-white{
-  background:#fff;
+.section-alt{
+    background:var(--bg);
 }
 
 .section-heading{
-  max-width:720px;
-  margin:0 auto 45px;
-  text-align:center;
-}
-
-.section-heading span{
-  color:#126abe;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:1px;
+    max-width:800px;
+    text-align:center;
+    margin:0 auto 45px;
 }
 
 .section-heading h2{
-  margin-top:10px;
-  color:#12263f;
-  font-size:36px;
-  line-height:1.2;
-  letter-spacing:-1px;
+    color:var(--navy);
+    font-size:clamp(30px,4vw,44px);
+    line-height:1.15;
+    letter-spacing:-1.7px;
+    margin-top:10px;
 }
 
 .section-heading p{
-  margin-top:14px;
-  color:#6d7d8e;
-  font-size:15px;
+    color:var(--muted);
+    margin-top:14px;
+    font-size:14px;
 }
 
-
-/* =========================================
+/* =========================
    BENEFITS
-========================================= */
+========================= */
 
 .benefit-grid{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.benefit-card{
-  padding:27px 23px;
-  background:#fff;
-  border:1px solid #e4ebf2;
-  border-radius:10px;
+.benefit{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:17px;
+    padding:27px;
+    transition:.2s;
 }
 
-.benefit-number{
-  color:#126abe;
-  font-size:12px;
-  font-weight:800;
+.benefit:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--shadow);
 }
 
-.benefit-card h3{
-  margin-top:20px;
-  color:#182d45;
-  font-size:18px;
+.icon{
+    width:46px;
+    height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    background:#edf5ff;
+    color:var(--blue);
+    font-weight:800;
+    margin-bottom:18px;
 }
 
-.benefit-card p{
-  margin-top:9px;
-  color:#718093;
-  font-size:14px;
-  line-height:1.7;
+.benefit h3{
+    color:var(--navy);
+    font-size:18px;
 }
 
-
-/* =========================================
-   PRODUCTS
-========================================= */
-
-.product-grid{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+.benefit p{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:8px;
 }
 
-.product-card{
-  padding:25px;
-  border:1px solid #e2e9f0;
-  border-radius:10px;
-  background:#fff;
-  transition:.2s;
+/* =========================
+   SERVICES
+========================= */
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
 }
 
-.product-card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 30px rgba(20,60,100,.08);
+.service{
+    background:#fff;
+    border:1px solid var(--border);
+    padding:18px;
+    border-radius:14px;
 }
 
-.product-card h3{
-  color:#182d45;
-  font-size:18px;
+.service strong{
+    display:block;
+    color:var(--navy);
+    font-size:14px;
 }
 
-.product-card p{
-  margin-top:8px;
-  color:#718093;
-  font-size:14px;
-  line-height:1.65;
+.service span{
+    color:var(--muted);
+    font-size:11px;
 }
 
-.product-link{
-  display:inline-block;
-  margin-top:15px;
-  color:#126abe;
-  font-size:13px;
-  font-weight:700;
+/* =========================
+   PLANS
+========================= */
+
+.plan-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    align-items:stretch;
 }
 
+.plan{
+    position:relative;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:28px;
+    display:flex;
+    flex-direction:column;
+    box-shadow:0 8px 30px rgba(16,36,62,.04);
+}
 
-/* =========================================
+.plan.featured{
+    border:2px solid var(--blue);
+    transform:translateY(-6px);
+}
+
+.plan-badge{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:#eaf3ff;
+    color:var(--blue);
+    font-size:10px;
+    font-weight:800;
+    padding:6px 9px;
+    border-radius:20px;
+}
+
+.plan h3{
+    color:var(--navy);
+    font-size:21px;
+}
+
+.plan-price{
+    font-size:30px;
+    color:var(--blue);
+    font-weight:800;
+    margin:12px 0 20px;
+}
+
+.plan ul{
+    padding-left:18px;
+    color:#536276;
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+.plan li{
+    margin:8px 0;
+}
+
+.plan button{
+    width:100%;
+    margin-top:auto;
+}
+
+/* =========================
    PROCESS
-========================================= */
+========================= */
 
 .process-grid{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
 }
 
-.process-card{
-  position:relative;
-  padding:27px;
-  background:#fff;
-  border:1px solid #e3ebf2;
-  border-radius:10px;
+.process{
+    text-align:center;
 }
 
-.process-card strong{
-  color:#126abe;
-  font-size:13px;
+.process-number{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:var(--navy);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 13px;
+    font-weight:800;
 }
 
-.process-card h3{
-  margin-top:15px;
-  color:#182d45;
-  font-size:18px;
+.process h3{
+    font-size:15px;
+    color:var(--navy);
 }
 
-.process-card p{
-  margin-top:8px;
-  color:#718093;
-  font-size:14px;
+.process p{
+    color:var(--muted);
+    font-size:11px;
+    margin-top:5px;
 }
 
+/* =========================
+   REGISTRATION
+========================= */
 
-/* =========================================
-   APPLICATION AREA
-========================================= */
-
-.application-section{
-  padding:85px 22px;
-  background:#f5f9fc;
+.registration{
+    background:
+        radial-gradient(circle at 0 0,rgba(13,110,253,.08),transparent 30%),
+        #fff;
 }
 
-.application-wrapper{
-  max-width:1120px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:.78fr 1.22fr;
-  gap:30px;
-  align-items:start;
+.registration-wrapper{
+    display:grid;
+    grid-template-columns:.72fr 1.28fr;
+    gap:30px;
+    align-items:start;
 }
 
-
-/* LEFT INFO */
-
-.application-info{
-  position:sticky;
-  top:95px;
+.registration-info{
+    background:linear-gradient(145deg,var(--navy),var(--navy2));
+    color:#fff;
+    border-radius:22px;
+    padding:35px;
+    position:sticky;
+    top:100px;
 }
 
-.application-info-badge{
-  color:#126abe;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:1px;
+.registration-info h2{
+    font-size:31px;
+    line-height:1.15;
 }
 
-.application-info h2{
-  margin-top:12px;
-  color:#10243e;
-  font-size:36px;
-  line-height:1.2;
-  letter-spacing:-1px;
-}
-
-.application-info > p{
-  margin-top:15px;
-  color:#6b7c8e;
-  font-size:15px;
-  line-height:1.8;
+.registration-info p{
+    color:#cbd8e7;
+    font-size:13px;
+    margin-top:12px;
 }
 
 .info-list{
-  margin-top:25px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+    margin-top:28px;
 }
 
-.info-item{
-  display:flex;
-  align-items:flex-start;
-  gap:12px;
+.info-list div{
+    display:flex;
+    gap:12px;
+    margin:15px 0;
+    color:#d9e4ef;
+    font-size:13px;
 }
 
-.info-icon{
-  flex:0 0 28px;
-  width:28px;
-  height:28px;
-  border-radius:50%;
-  background:#e8f3fc;
-  color:#126abe;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:12px;
-  font-weight:800;
+.tick{
+    color:#dcb875;
+    font-weight:800;
 }
 
-.info-item strong{
-  display:block;
-  color:#24384e;
-  font-size:14px;
+.form-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:22px;
+    box-shadow:var(--shadow);
+    padding:32px;
 }
 
-.info-item span{
-  display:block;
-  margin-top:2px;
-  color:#788797;
-  font-size:12px;
+.form-title{
+    margin-bottom:25px;
 }
 
-.application-note{
-  margin-top:25px;
-  padding:17px;
-  border-left:3px solid #126abe;
-  background:#fff;
-  color:#657588;
-  border-radius:5px;
-  font-size:13px;
-  line-height:1.7;
+.form-title h2{
+    color:var(--navy);
+    font-size:25px;
 }
 
-
-/* FORM */
-
-.application-form-box{
-  background:#fff;
-  border:1px solid #e1e9f0;
-  border-radius:12px;
-  padding:32px;
-  box-shadow:0 15px 40px rgba(24,61,95,.06);
-}
-
-.form-top{
-  padding-bottom:20px;
-  border-bottom:1px solid #e9eef3;
-  margin-bottom:25px;
-}
-
-.form-top h3{
-  color:#172b43;
-  font-size:23px;
-}
-
-.form-top p{
-  margin-top:5px;
-  color:#758496;
-  font-size:13px;
-}
-
-.form-section-title{
-  margin:25px 0 15px;
-  color:#126abe;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.7px;
-  text-transform:uppercase;
+.form-title p{
+    color:var(--muted);
+    font-size:12px;
+    margin-top:5px;
 }
 
 .form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:17px;
-}
-
-.form-group{
-  display:flex;
-  flex-direction:column;
-}
-
-.form-group.full{
-  grid-column:1/-1;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
 }
 
 .form-group label{
-  margin-bottom:7px;
-  color:#31465c;
-  font-size:13px;
-  font-weight:700;
-}
-
-.required{
-  color:#d84a4a;
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    color:#344358;
+    margin-bottom:7px;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea{
-  width:100%;
-  border:1px solid #d7e1ea;
-  border-radius:6px;
-  background:#fff;
-  color:#24384d;
-  outline:none;
-  padding:12px 13px;
-  font-size:14px;
-  transition:.2s;
+    width:100%;
+    border:1px solid #d8e0ea;
+    border-radius:9px;
+    padding:13px 14px;
+    outline:none;
+    background:#fff;
+    color:var(--text);
+}
+
+.form-group input,
+.form-group select{
+    height:48px;
 }
 
 .form-group textarea{
-  min-height:105px;
-  resize:vertical;
+    min-height:95px;
+    resize:vertical;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus{
-  border-color:#126abe;
-  box-shadow:0 0 0 3px rgba(18,106,190,.08);
+    border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(13,110,253,.08);
 }
 
-.form-help{
-  margin-top:5px;
-  color:#8a96a3;
-  font-size:11px;
+.full{
+    grid-column:1/-1;
 }
+
+.form-note{
+    color:#8995a5;
+    font-size:10px;
+    margin-top:5px;
+}
+
+/* PLAN SELECT */
+
+.plan-selection{
+    margin-top:25px;
+}
+
+.plan-selection-title{
+    font-size:13px;
+    font-weight:800;
+    color:var(--navy);
+    margin-bottom:12px;
+}
+
+.plan-options{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+.plan-option{
+    position:relative;
+}
+
+.plan-option input{
+    position:absolute;
+    opacity:0;
+}
+
+.plan-label{
+    display:block;
+    padding:15px;
+    border:1px solid var(--border);
+    border-radius:11px;
+    cursor:pointer;
+    height:100%;
+}
+
+.plan-label strong{
+    display:block;
+    color:var(--navy);
+    font-size:14px;
+}
+
+.plan-label span{
+    display:block;
+    color:var(--blue);
+    font-size:12px;
+    font-weight:800;
+    margin-top:3px;
+}
+
+.plan-label small{
+    display:block;
+    color:var(--muted);
+    font-size:10px;
+    margin-top:5px;
+}
+
+.plan-option input:checked + .plan-label{
+    border:2px solid var(--blue);
+    background:#f4f9ff;
+}
+
+/* CHECKBOX */
 
 .consent{
-  margin-top:22px;
-  display:flex;
-  align-items:flex-start;
-  gap:9px;
+    display:flex;
+    gap:9px;
+    align-items:flex-start;
+    margin-top:20px;
+    color:#5e6d80;
+    font-size:11px;
 }
 
 .consent input{
-  width:16px;
-  height:16px;
-  margin-top:3px;
-  accent-color:#126abe;
+    margin-top:4px;
 }
 
-.consent label{
-  color:#68788a;
-  font-size:12px;
-  line-height:1.6;
-}
+/* SUBMIT */
 
 .submit-btn{
-  width:100%;
-  margin-top:23px;
-  min-height:50px;
-  border:0;
-  border-radius:7px;
-  background:#126abe;
-  color:#fff;
-  font-weight:800;
-  font-size:14px;
-  cursor:pointer;
-  transition:.2s;
+    width:100%;
+    margin-top:20px;
+    min-height:52px;
+    font-size:15px;
 }
 
-.submit-btn:hover{
-  background:#0d5ba5;
+/* SUCCESS */
+
+.success{
+    display:none;
+    margin-top:20px;
+    background:#edf9f2;
+    border:1px solid #c8ead5;
+    color:var(--green);
+    border-radius:12px;
+    padding:18px;
+    font-size:13px;
 }
 
-.submit-btn:disabled{
-  opacity:.65;
-  cursor:not-allowed;
+.success.show{
+    display:block;
 }
 
-.form-security{
-  margin-top:12px;
-  text-align:center;
-  color:#8995a2;
-  font-size:11px;
+.success-id{
+    display:block;
+    margin-top:6px;
+    font-weight:800;
 }
 
+/* =========================
+   FAQ
+========================= */
 
-/* =========================================
-   SUCCESS MESSAGE
-========================================= */
-
-.success-box{
-  display:none;
-  padding:35px 25px;
-  text-align:center;
-  border:1px solid #dcebe3;
-  background:#f5fbf7;
-  border-radius:10px;
+.faq{
+    max-width:850px;
+    margin:auto;
 }
 
-.success-box.show{
-  display:block;
+details{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:12px;
+    margin-bottom:10px;
+    padding:18px 20px;
 }
 
-.success-icon{
-  width:55px;
-  height:55px;
-  margin:0 auto 15px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#e0f4e8;
-  color:#198754;
-  font-size:25px;
-  font-weight:800;
+summary{
+    cursor:pointer;
+    font-weight:700;
+    color:var(--navy);
+    font-size:14px;
 }
 
-.success-box h3{
-  color:#173d2a;
-  font-size:24px;
+details p{
+    color:var(--muted);
+    font-size:12px;
+    margin-top:12px;
 }
 
-.success-box p{
-  max-width:550px;
-  margin:10px auto 0;
-  color:#61766a;
-  font-size:14px;
-  line-height:1.7;
-}
-
-.success-actions{
-  margin-top:22px;
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-
-/* =========================================
-   CTA
-========================================= */
-
-.final-cta{
-  max-width:1120px;
-  margin:75px auto;
-  padding:60px 30px;
-  border-radius:12px;
-  background:#edf6fd;
-  text-align:center;
-}
-
-.final-cta span{
-  color:#126abe;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:1px;
-}
-
-.final-cta h2{
-  margin-top:10px;
-  color:#12263f;
-  font-size:36px;
-}
-
-.final-cta p{
-  max-width:650px;
-  margin:12px auto 0;
-  color:#6c7c8e;
-  font-size:15px;
-}
-
-.whatsapp-btn{
-  display:inline-flex;
-  margin-top:25px;
-  padding:13px 23px;
-  background:#1b9c59;
-  color:#fff;
-  border-radius:7px;
-  font-size:14px;
-  font-weight:700;
-}
-
-
-/* =========================================
+/* =========================
    FOOTER
-========================================= */
+========================= */
 
-footer{
-  background:#10243e;
-  color:#fff;
-  padding:30px 22px;
+.footer{
+    background:#0f1d2e;
+    color:#fff;
+    padding:60px 0 25px;
 }
 
-.footer-inner{
-  max-width:1120px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:40px;
 }
 
-.footer-logo{
-  font-size:21px;
-  font-weight:800;
+.footer h3{
+    margin-bottom:14px;
 }
 
-.footer-logo span{
-  color:#69b7f5;
+.footer p,
+.footer a{
+    color:#aebdcd;
+    font-size:12px;
 }
 
-.footer-contact{
-  color:#c7d3df;
-  font-size:13px;
+.footer a{
+    display:block;
+    margin:7px 0;
 }
 
 .footer-bottom{
-  max-width:1120px;
-  margin:20px auto 0;
-  padding-top:18px;
-  border-top:1px solid rgba(255,255,255,.1);
-  color:#91a1b2;
-  font-size:11px;
+    border-top:1px solid #29394d;
+    margin-top:35px;
+    padding-top:20px;
+    text-align:center;
+    color:#7f91a6;
+    font-size:10px;
 }
 
+/* =========================
+   WHATSAPP
+========================= */
 
-/* =========================================
-   TOAST
-========================================= */
-
-.toast{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  z-index:3000;
-  max-width:330px;
-  padding:13px 17px;
-  border-radius:7px;
-  color:#fff;
-  background:#172b43;
-  box-shadow:0 12px 30px rgba(0,0,0,.2);
-  font-size:13px;
-  transform:translateY(120px);
-  opacity:0;
-  pointer-events:none;
-  transition:.3s;
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:999;
+    background:#25d366;
+    color:#fff;
+    padding:13px 18px;
+    border-radius:40px;
+    font-size:12px;
+    font-weight:800;
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
 }
 
-.toast.show{
-  transform:translateY(0);
-  opacity:1;
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-image{
+        max-width:720px;
+        margin:auto;
+    }
+
+    .benefit-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .service-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .plan-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .process-grid{
+        grid-template-columns:repeat(3,1fr);
+        row-gap:30px;
+    }
+
+    .registration-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .registration-info{
+        position:static;
+    }
+
 }
-
-.toast.error{
-  background:#b93838;
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media(max-width:950px){
-
-  .header-nav{
-    display:none;
-  }
-
-  .agent-hero{
-    grid-template-columns:1fr;
-    gap:40px;
-    padding-top:55px;
-  }
-
-  .hero-copy{
-    max-width:100%;
-  }
-
-  .benefit-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .product-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .process-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .application-wrapper{
-    grid-template-columns:1fr;
-  }
-
-  .application-info{
-    position:static;
-  }
-}
-
 
 @media(max-width:650px){
 
-  .header-inner{
-    min-height:65px;
-  }
+    .container{
+        width:min(100% - 24px,1180px);
+    }
 
-  .logo{
-    font-size:21px;
-  }
+    .nav{
+        display:none;
+    }
 
-  .header-apply{
-    padding:9px 13px;
-    font-size:12px !important;
-  }
+    .hero{
+        padding:55px 0 70px;
+    }
 
-  .agent-hero{
-    padding:45px 17px 50px;
-  }
+    .hero h1{
+        font-size:38px;
+        letter-spacing:-1.8px;
+    }
 
-  .hero-copy h1{
-    font-size:35px;
-    letter-spacing:-1px;
-  }
+    .hero p{
+        font-size:15px;
+    }
 
-  .hero-copy p{
-    font-size:15px;
-  }
+    .hero-image img{
+        height:280px;
+    }
 
-  .hero-image{
-    height:300px;
-  }
+    .floating-card{
+        left:10px;
+        bottom:10px;
+    }
 
-  .hero-image-card{
-    left:10px;
-    bottom:15px;
-  }
+    .trust-grid{
+        grid-template-columns:1fr 1fr;
+    }
 
-  .hero-stats{
-    gap:18px;
-  }
+    .trust-item{
+        padding:18px 10px;
+    }
 
-  .section,
-  .application-section{
-    padding:60px 17px;
-  }
+    .trust-item:nth-child(2){
+        border-right:0;
+    }
 
-  .section-heading h2,
-  .application-info h2,
-  .final-cta h2{
-    font-size:29px;
-  }
+    .trust-item{
+        border-bottom:1px solid var(--border);
+    }
 
-  .benefit-grid,
-  .product-grid,
-  .process-grid{
-    grid-template-columns:1fr;
-  }
+    .section{
+        padding:65px 0;
+    }
 
-  .application-form-box{
-    padding:22px 17px;
-  }
+    .benefit-grid,
+    .service-grid,
+    .plan-grid{
+        grid-template-columns:1fr;
+    }
 
-  .form-grid{
-    grid-template-columns:1fr;
-  }
+    .plan.featured{
+        transform:none;
+    }
 
-  .form-group.full{
-    grid-column:auto;
-  }
+    .process-grid{
+        grid-template-columns:1fr 1fr;
+    }
 
-  .final-cta{
-    margin:45px 17px;
-    padding:45px 20px;
-  }
+    .form-card{
+        padding:20px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+    .plan-options{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
 
 }
+
 </style>
 </head>
 
-
 <body>
 
+<!-- =========================
+HEADER
+========================= -->
 
-<!-- =========================================
-     HEADER
-========================================= -->
+<header class="header">
 
-<header class="site-header">
+<div class="container navbar">
 
-  <div class="header-inner">
+<a href="index.html" class="logo">
+Fund<span>vexxa</span>
+</a>
 
-    <a href="index.html" class="logo">
-      Fund<span>vexxa</span>
-    </a>
+<nav class="nav">
 
-    <nav class="header-nav">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="blog.html">Insights</a>
+<a href="contact.html">Contact</a>
 
-      <a href="index.html">Home</a>
+<a href="#register" class="nav-btn">
+Become a Partner
+</a>
 
-      <a href="services.html">Services</a>
+</nav>
 
-      <a href="about.html">About Us</a>
-
-      <a href="#agent-application" class="header-apply">
-        Become an Agent
-      </a>
-
-    </nav>
-
-  </div>
+</div>
 
 </header>
 
 
-<!-- =========================================
-     HERO
-========================================= -->
+<!-- =========================
+HERO
+========================= -->
 
-<main>
+<section class="hero">
 
-<section class="agent-hero">
+<div class="container hero-grid">
 
-  <div class="hero-copy">
+<div>
 
-    <div class="hero-badge">
-      FUNDVEXXA PARTNER PROGRAM
-    </div>
+<span class="eyebrow">
+Fundvexxa Partner Network
+</span>
 
-    <h1>
-      Build Your Financial
-      Services Business With
-      <span>Fundvexxa</span>
-    </h1>
+<h1>
+Build your own <span>financial business</span> with Fundvexxa.
+</h1>
 
-    <p>
-      Become a Fundvexxa Agent and build your customer network
-      with access to financial products, business support,
-      technology, training and professional lead management.
-    </p>
+<p>
+Join our partner network and get access to financial products,
+digital lead management, training resources, customer support and
+your own professional partner dashboard.
+</p>
 
-    <div class="hero-buttons">
+<div class="hero-actions">
 
-      <a href="#agent-application" class="btn-primary">
-        Apply as an Agent
-      </a>
+<a href="#register" class="btn btn-primary">
+Become an Agent
+</a>
 
-      <a href="#how-it-works" class="btn-outline">
-        How It Works
-      </a>
+<a href="#benefits" class="btn btn-outline">
+Explore Benefits
+</a>
 
-    </div>
+</div>
 
-    <div class="hero-stats">
-
-      <div class="hero-stat">
-        <strong>6+ Years</strong>
-        <span>Business Support Experience</span>
-      </div>
-
-      <div class="hero-stat">
-        <strong>1M+</strong>
-        <span>Customer Network</span>
-      </div>
-
-      <div class="hero-stat">
-        <strong>Pan India</strong>
-        <span>Service Coverage</span>
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 
-  <div class="hero-image-wrap">
+<div class="hero-image">
 
-    <img
-      class="hero-image"
-      src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85"
-      alt="Business professionals working together"
-      loading="eager"
-    >
+<img
+src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200"
+alt="Financial business partners meeting">
 
-    <div class="hero-image-card">
+<div class="floating-card">
 
-      <div class="check-circle">
-        ✓
-      </div>
+<strong>One Dashboard</strong>
+<span>Leads • Products • Training • Earnings</span>
 
-      <div>
-        <strong>Professional Business Support</strong>
-        <small>Technology • Training • CRM</small>
-      </div>
+</div>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
 </section>
 
 
-<!-- =========================================
-     BENEFITS
-========================================= -->
+<!-- =========================
+TRUST
+========================= -->
 
-<section class="section section-light">
+<section class="trust">
 
-  <div class="section-heading">
+<div class="container trust-grid">
 
-    <span>WHY BECOME AN AGENT</span>
+<div class="trust-item">
+<strong>Multiple</strong>
+<span>Financial Products</span>
+</div>
 
-    <h2>
-      More Than Just Lead Generation
-    </h2>
+<div class="trust-item">
+<strong>Digital</strong>
+<span>Partner Dashboard</span>
+</div>
 
-    <p>
-      Build a structured financial services business with
-      tools and support designed for customer acquisition
-      and relationship management.
-    </p>
+<div class="trust-item">
+<strong>Professional</strong>
+<span>Training Resources</span>
+</div>
 
-  </div>
+<div class="trust-item">
+<strong>Flexible</strong>
+<span>Partner Model</span>
+</div>
 
-
-  <div class="benefit-grid">
-
-    <div class="benefit-card">
-
-      <div class="benefit-number">01</div>
-
-      <h3>Multiple Products</h3>
-
-      <p>
-        Access a broad range of financial and business
-        support solutions based on customer requirements
-        and eligibility.
-      </p>
-
-    </div>
-
-
-    <div class="benefit-card">
-
-      <div class="benefit-number">02</div>
-
-      <h3>CRM Support</h3>
-
-      <p>
-        Manage customer enquiries, follow-ups, remarks
-        and case progress through a structured system.
-      </p>
-
-    </div>
-
-
-    <div class="benefit-card">
-
-      <div class="benefit-number">03</div>
-
-      <h3>Training & Guidance</h3>
-
-      <p>
-        Learn product basics, documentation requirements,
-        customer handling and the case submission process.
-      </p>
-
-    </div>
-
-
-    <div class="benefit-card">
-
-      <div class="benefit-number">04</div>
-
-      <h3>Business Technology</h3>
-
-      <p>
-        Get access to digital tools that can help you
-        manage your business and customer relationships.
-      </p>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- =========================================
-     PRODUCTS
-========================================= -->
+<!-- =========================
+BENEFITS
+========================= -->
 
-<section class="section section-white">
+<section class="section" id="benefits">
 
-  <div class="section-heading">
+<div class="container">
 
-    <span>PRODUCT PORTFOLIO</span>
+<div class="section-heading">
 
-    <h2>
-      Solutions You Can Offer
-    </h2>
+<span class="eyebrow">
+Why Become A Fundvexxa Partner
+</span>
 
-    <p>
-      Help customers explore suitable solutions according
-      to their requirements and eligibility.
-    </p>
+<h2>
+Everything you need to build your financial distribution business.
+</h2>
 
-  </div>
+<p>
+A structured digital ecosystem designed to help partners manage
+customers, products, applications and business activity from one place.
+</p>
 
-
-  <div class="product-grid">
-
-    <div class="product-card">
-      <h3>Business Loan</h3>
-      <p>
-        Funding options for eligible businesses and
-        entrepreneurs.
-      </p>
-      <a class="product-link" href="#agent-application">
-        Apply as Agent →
-      </a>
-    </div>
+</div>
 
 
-    <div class="product-card">
-      <h3>Personal Loan</h3>
-      <p>
-        Personal funding solutions subject to lender
-        eligibility and approval.
-      </p>
-      <a class="product-link" href="#agent-application">
-        Apply as Agent →
-      </a>
-    </div>
+<div class="benefit-grid">
+
+<div class="benefit">
+
+<div class="icon">01</div>
+
+<h3>Personal Partner Dashboard</h3>
+
+<p>
+Track leads, application status, approvals, wallet information,
+announcements and partner activity from your dashboard.
+</p>
+
+</div>
 
 
-    <div class="product-card">
-      <h3>MSME Funding</h3>
-      <p>
-        Funding and business support solutions for
-        eligible MSMEs.
-      </p>
-      <a class="product-link" href="#agent-application">
-        Apply as Agent →
-      </a>
-    </div>
+<div class="benefit">
+
+<div class="icon">02</div>
+
+<h3>Multiple Products</h3>
+
+<p>
+Work across loans, insurance, credit products, business funding
+and other financial assistance categories.
+</p>
+
+</div>
 
 
-    <div class="product-card">
-      <h3>Mudra Loan</h3>
-      <p>
-        Support for eligible micro and small business
-        funding requirements.
-      </p>
-      <a class="product-link" href="#agent-application">
-        Apply as Agent →
-      </a>
-    </div>
+<div class="benefit">
+
+<div class="icon">03</div>
+
+<h3>Lead Management</h3>
+
+<p>
+Submit customer requirements digitally and track the progress of
+your submitted leads.
+</p>
+
+</div>
 
 
-    <div class="product-card">
-      <h3>Working Capital</h3>
-      <p>
-        Working capital and business finance options
-        for eligible applicants.
-      </p>
-      <a class="product-link" href="#agent-application">
-        Apply as Agent →
-      </a>
-    </div>
+<div class="benefit">
+
+<div class="icon">04</div>
+
+<h3>Training Center</h3>
+
+<p>
+Access product knowledge, sales scripts, customer communication
+and objection-handling resources.
+</p>
+
+</div>
 
 
-    <div class="product-card">
-      <h3>CC / OD</h3>
-      <p>
-        Credit facility solutions for eligible business
-        requirements.
-      </p>
-      <a class="product-link" href="#agent-application">
-        Apply as Agent →
-      </a>
-    </div>
+<div class="benefit">
 
-  </div>
+<div class="icon">05</div>
 
-</section>
+<h3>Team Building</h3>
+
+<p>
+Eligible partners can build and manage their own referral or
+partner network according to applicable program rules.
+</p>
+
+</div>
 
 
-<!-- =========================================
-     HOW IT WORKS
-========================================= -->
+<div class="benefit">
 
-<section id="how-it-works" class="section section-light">
+<div class="icon">06</div>
 
-  <div class="section-heading">
+<h3>Digital Support</h3>
 
-    <span>AGENT JOURNEY</span>
+<p>
+Get access to partner resources, product updates, announcements
+and application support.
+</p>
 
-    <h2>
-      Simple Onboarding Process
-    </h2>
+</div>
 
-    <p>
-      Your application is reviewed first. Membership and
-      dashboard access come after the onboarding process.
-    </p>
+</div>
 
-  </div>
-
-
-  <div class="process-grid">
-
-    <div class="process-card">
-
-      <strong>STEP 01</strong>
-
-      <h3>Submit Application</h3>
-
-      <p>
-        Complete the detailed Fundvexxa Agent Registration
-        Form with your professional information.
-      </p>
-
-    </div>
-
-
-    <div class="process-card">
-
-      <strong>STEP 02</strong>
-
-      <h3>Application Review</h3>
-
-      <p>
-        Our team reviews the information submitted through
-        the agent application.
-      </p>
-
-    </div>
-
-
-    <div class="process-card">
-
-      <strong>STEP 03</strong>
-
-      <h3>Team Contact</h3>
-
-      <p>
-        Our team can contact you to understand your
-        experience, requirements and onboarding details.
-      </p>
-
-    </div>
-
-
-    <div class="process-card">
-
-      <strong>STEP 04</strong>
-
-      <h3>Agent Onboarding</h3>
-
-      <p>
-        Approved applicants can proceed with the applicable
-        agent code, membership and dashboard onboarding.
-      </p>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- =========================================
-     AGENT APPLICATION
-========================================= -->
+<!-- =========================
+PRODUCTS
+========================= -->
+
+<section class="section section-alt">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+Partner Product Basket
+</span>
+
+<h2>
+Multiple customer requirements. One platform.
+</h2>
+
+<p>
+Customers can submit requirements according to their actual
+financial needs and profile.
+</p>
+
+</div>
+
+
+<div class="service-grid">
+
+<div class="service">
+<strong>Personal Loan</strong>
+<span>Personal financial requirements</span>
+</div>
+
+<div class="service">
+<strong>Home Loan</strong>
+<span>Home purchase and finance</span>
+</div>
+
+<div class="service">
+<strong>Loan Against Property</strong>
+<span>Property-backed funding</span>
+</div>
+
+<div class="service">
+<strong>Business Loan</strong>
+<span>Business expansion funding</span>
+</div>
+
+<div class="service">
+<strong>Startup Funding</strong>
+<span>Entrepreneur funding assistance</span>
+</div>
+
+<div class="service">
+<strong>MSME Funding</strong>
+<span>Business finance solutions</span>
+</div>
+
+<div class="service">
+<strong>Grant Funding</strong>
+<span>Funding opportunity assistance</span>
+</div>
+
+<div class="service">
+<strong>Credit Card</strong>
+<span>Card product opportunities</span>
+</div>
+
+<div class="service">
+<strong>Credit Line</strong>
+<span>Flexible credit solutions</span>
+</div>
+
+<div class="service">
+<strong>Used Car Loan</strong>
+<span>Vehicle financing</span>
+</div>
+
+<div class="service">
+<strong>Life Insurance</strong>
+<span>Protection solutions</span>
+</div>
+
+<div class="service">
+<strong>Health Insurance</strong>
+<span>Health protection solutions</span>
+</div>
+
+<div class="service">
+<strong>Motor Insurance</strong>
+<span>Vehicle insurance solutions</span>
+</div>
+
+<div class="service">
+<strong>GST Services</strong>
+<span>Business registration support</span>
+</div>
+
+<div class="service">
+<strong>MSME Registration</strong>
+<span>MSME assistance</span>
+</div>
 
-<section id="agent-application" class="application-section">
+<div class="service">
+<strong>Website Services</strong>
+<span>Digital business solutions</span>
+</div>
 
-  <div class="application-wrapper">
+</div>
 
-
-    <!-- LEFT -->
-
-    <div class="application-info">
-
-      <div class="application-info-badge">
-        AGENT REGISTRATION
-      </div>
-
-      <h2>
-        Tell Us About Yourself
-      </h2>
-
-      <p>
-        Submit your details to express your interest in
-        becoming a Fundvexxa Agent. This is an agent
-        application — it is not a customer loan enquiry.
-      </p>
-
-
-      <div class="info-list">
-
-        <div class="info-item">
-
-          <div class="info-icon">✓</div>
-
-          <div>
-            <strong>Detailed Profile</strong>
-            <span>
-              Share your education, occupation and experience.
-            </span>
-          </div>
-
-        </div>
-
-
-        <div class="info-item">
-
-          <div class="info-icon">✓</div>
-
-          <div>
-            <strong>Application Review</strong>
-            <span>
-              Your information is stored for agent onboarding.
-            </span>
-          </div>
-
-        </div>
-
-
-        <div class="info-item">
-
-          <div class="info-icon">✓</div>
-
-          <div>
-            <strong>Team Contact</strong>
-            <span>
-              Our team can contact you regarding your application.
-            </span>
-          </div>
-
-        </div>
-
-
-        <div class="info-item">
-
-          <div class="info-icon">✓</div>
-
-          <div>
-            <strong>Future Agent Dashboard</strong>
-            <span>
-              Eligible onboarded agents can receive account access.
-            </span>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="application-note">
-        <strong>Important:</strong>
-        Submitting this form does not automatically make you
-        an agent or guarantee any loan, income or approval.
-        Membership and onboarding are subject to the applicable
-        Fundvexxa process and terms.
-      </div>
-
-    </div>
-
-
-    <!-- FORM -->
-
-    <div class="application-form-box">
-
-
-      <div id="formArea">
-
-        <div class="form-top">
-
-          <h3>
-            Agent Registration Form
-          </h3>
-
-          <p>
-            Please provide accurate information so our team
-            can understand your profile.
-          </p>
-
-        </div>
-
-
-        <form id="agentForm">
-
-
-          <!-- PERSONAL -->
-
-          <div class="form-section-title">
-            Personal Information
-          </div>
-
-
-          <div class="form-grid">
-
-
-            <div class="form-group">
-
-              <label>
-                Full Name <span class="required">*</span>
-              </label>
-
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your full name"
-                autocomplete="name"
-                required
-              >
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label>
-                Mobile Number <span class="required">*</span>
-              </label>
-
-              <input
-                type="tel"
-                id="mobile"
-                name="mobile"
-                placeholder="10 digit mobile number"
-                inputmode="numeric"
-                maxlength="10"
-                required
-              >
-
-              <div class="form-help">
-                Please provide an active mobile number.
-              </div>
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label>
-                Email Address
-              </label>
-
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="your@email.com"
-                autocomplete="email"
-              >
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label>
-                City
-              </label>
-
-              <input
-                type="text"
-                id="city"
-                name="city"
-                placeholder="Your city"
-                autocomplete="address-level2"
-              >
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label>
-                Age
-              </label>
-
-              <input
-                type="number"
-                id="age"
-                name="age"
-                min="18"
-                max="80"
-                placeholder="Enter age"
-              >
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label>
-                Qualification
-              </label>
-
-              <select id="qualification" name="qualification">
-
-                <option value="">
-                  Select qualification
-                </option>
-
-                <option>8th Pass</option>
-                <option>10th Pass</option>
-                <option>12th Pass</option>
-                <option>Graduate</option>
-                <option>Post Graduate</option>
-                <option>Professional Qualification</option>
-                <option>Other</option>
-
-              </select>
-
-            </div>
-
-          </div>
-
-
-          <!-- PROFESSIONAL -->
-
-          <div class="form-section-title">
-            Professional Profile
-          </div>
-
-
-          <div class="form-grid">
-
-
-            <div class="form-group">
-
-              <label>
-                Experience Type <span class="required">*</span>
-              </label>
-
-              <select
-                id="experienceType"
-                name="experienceType"
-                required
-              >
-
-                <option value="">
-                  Select one
-                </option>
-
-                <option value="Fresher">
-                  Fresher
-                </option>
-
-                <option value="Experienced">
-                  Experienced
-                </option>
-
-                <option value="Business Owner">
-                  Business Owner
-                </option>
-
-                <option value="Self Employed">
-                  Self Employed
-                </option>
-
-                <option value="Consultant">
-                  Consultant
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label>
-                Current Occupation
-              </label>
-
-              <input
-                type="text"
-                id="occupation"
-                name="occupation"
-                placeholder="Job / Business / Consultant etc."
-              >
-
-            </div>
-
-
-            <div class="form-group full">
-
-              <label>
-                Previous Work / Business Experience
-              </label>
-
-              <textarea
-                id="experienceDetails"
-                name="experienceDetails"
-                placeholder="Tell us about your previous work, business or professional experience..."
-              ></textarea>
-
-            </div>
-
-
-            <div class="form-group full">
-
-              <label>
-                Financial / Loan Industry Experience
-              </label>
-
-              <textarea
-                id="industryExperience"
-                name="industryExperience"
-                placeholder="Have you worked in loans, finance, insurance, banking, DSA, sales or any related field?"
-              ></textarea>
-
-            </div>
-
-
-            <div class="form-group full">
-
-              <label>
-                Why do you want to become a Fundvexxa Agent?
-              </label>
-
-              <textarea
-                id="reasonToJoin"
-                name="reasonToJoin"
-                placeholder="Tell us briefly about your goals and why you are interested in the agent program..."
-              ></textarea>
-
-            </div>
-
-          </div>
-
-
-          <!-- PREFERENCE -->
-
-          <div class="form-section-title">
-            Work Preference
-          </div>
-
-
-          <div class="form-grid">
-
-
-            <div class="form-group">
-
-              <label>
-                Preferred Work Type
-              </label>
-
-              <select
-                id="preferredWork"
-                name="preferredWork"
-              >
-
-                <option value="">
-                  Select preference
-                </option>
-
-                <option>
-                  Full Time
-                </option>
-
-                <option>
-                  Part Time
-                </option>
-
-                <option>
-                  Work From Home
-                </option>
-
-                <option>
-                  Office / Field
-                </option>
-
-                <option>
-                  Flexible
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label>
-                How did you hear about Fundvexxa?
-              </label>
-
-              <select
-                id="source"
-                name="source"
-              >
-
-                <option value="">
-                  Select one
-                </option>
-
-                <option>Google</option>
-                <option>Facebook</option>
-                <option>Instagram</option>
-                <option>YouTube</option>
-                <option>WhatsApp</option>
-                <option>Friend / Referral</option>
-                <option>Other</option>
-
-              </select>
-
-            </div>
-
-          </div>
-
-
-          <!-- CONSENT -->
-
-          <div class="consent">
-
-            <input
-              type="checkbox"
-              id="consent"
-              required
-            >
-
-            <label for="consent">
-
-              I confirm that the information provided by me
-              is accurate and I consent to Fundvexxa contacting
-              me regarding my Agent application.
-
-            </label>
-
-          </div>
-
-
-          <button
-            type="submit"
-            class="submit-btn"
-            id="submitBtn"
-          >
-            Submit Agent Application
-          </button>
-
-
-          <div class="form-security">
-            Your application is submitted securely to the
-            Fundvexxa agent application system.
-          </div>
-
-
-        </form>
-
-      </div>
-
-
-      <!-- SUCCESS -->
-
-      <div id="successBox" class="success-box">
-
-        <div class="success-icon">
-          ✓
-        </div>
-
-        <h3>
-          Application Received
-        </h3>
-
-        <p>
-          Thank you for your interest in becoming a
-          Fundvexxa Agent. Your application has been
-          submitted successfully. Our team can contact
-          you on your registered mobile number regarding
-          the next steps.
-        </p>
-
-
-        <div class="success-actions">
-
-          <a
-            href="index.html"
-            class="btn-outline"
-          >
-            Back to Home
-          </a>
-
-          <a
-            href="https://wa.me/917290977231"
-            target="_blank"
-            rel="noopener"
-            class="btn-primary"
-          >
-            WhatsApp Fundvexxa
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- =========================================
-     FINAL CTA
-========================================= -->
+<!-- =========================
+PLANS
+========================= -->
 
-<section class="final-cta">
+<section class="section">
 
-  <span>
-    FUNDVEXXA AGENT PROGRAM
-  </span>
+<div class="container">
 
-  <h2>
-    Ready To Start Your Agent Journey?
-  </h2>
+<div class="section-heading">
 
-  <p>
-    Submit your profile today. Our team will review
-    your application and guide you through the applicable
-    onboarding process.
-  </p>
+<span class="eyebrow">
+Partner Plans
+</span>
 
-  <a
-    href="https://wa.me/917290977231"
-    target="_blank"
-    rel="noopener"
-    class="whatsapp-btn"
-  >
-    WhatsApp: 7290977231
-  </a>
+<h2>
+Choose the membership that fits your business.
+</h2>
+
+<p>
+Membership benefits, access levels and partner privileges are
+subject to Fundvexxa program terms and approval.
+</p>
+
+</div>
+
+
+<div class="plan-grid">
+
+
+<div class="plan">
+
+<h3>Basic</h3>
+
+<div class="plan-price">
+₹999
+</div>
+
+<ul>
+
+<li>Partner registration</li>
+<li>Digital partner profile</li>
+<li>Basic product access</li>
+<li>Training resources</li>
+<li>Partner dashboard</li>
+
+</ul>
+
+<button
+class="btn btn-outline select-plan"
+data-plan="Basic"
+data-price="999">
+
+Select Basic
+
+</button>
+
+</div>
+
+
+<div class="plan featured">
+
+<span class="plan-badge">
+POPULAR
+</span>
+
+<h3>Gold</h3>
+
+<div class="plan-price">
+₹1,499
+</div>
+
+<ul>
+
+<li>Everything in Basic</li>
+<li>Extended product access</li>
+<li>Advanced training resources</li>
+<li>Lead management tools</li>
+<li>Partner growth resources</li>
+
+</ul>
+
+<button
+class="btn btn-primary select-plan"
+data-plan="Gold"
+data-price="1499">
+
+Select Gold
+
+</button>
+
+</div>
+
+
+<div class="plan">
+
+<h3>Premium</h3>
+
+<div class="plan-price">
+₹3,499
+</div>
+
+<ul>
+
+<li>Everything in Gold</li>
+<li>Premium partner resources</li>
+<li>Advanced business support</li>
+<li>Growth & team resources</li>
+<li>Priority partner assistance</li>
+
+</ul>
+
+<button
+class="btn btn-outline select-plan"
+data-plan="Premium"
+data-price="3499">
+
+Select Premium
+
+</button>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
-</main>
+
+<!-- =========================
+PROCESS
+========================= -->
+
+<section class="section section-alt">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+How It Works
+</span>
+
+<h2>
+From registration to your partner dashboard.
+</h2>
+
+</div>
 
 
-<!-- =========================================
-     FOOTER
-========================================= -->
+<div class="process-grid">
 
-<footer>
+<div class="process">
 
-  <div class="footer-inner">
+<div class="process-number">1</div>
 
-    <div class="footer-logo">
-      Fund<span>vexxa</span>
-    </div>
+<h3>Register</h3>
 
-    <div class="footer-contact">
-      Business Support • Financial Solutions • Technology Support
-      <br>
-      WhatsApp: 7290977231
-      <br>
-      Email: fundvexxasupport@gmail.com
-    </div>
+<p>
+Submit your partner application.
+</p>
 
-  </div>
+</div>
 
-  <div class="footer-bottom">
-    © 2026 Fundvexxa. All rights reserved.
-    Financial products and funding solutions are subject to
-    eligibility, documentation, lender/institution policies
-    and applicable terms.
-  </div>
+
+<div class="process">
+
+<div class="process-number">2</div>
+
+<h3>Select Plan</h3>
+
+<p>
+Choose the applicable membership.
+</p>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-number">3</div>
+
+<h3>Verification</h3>
+
+<p>
+Our team reviews your application.
+</p>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-number">4</div>
+
+<h3>Approval</h3>
+
+<p>
+Approved partners receive access.
+</p>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-number">5</div>
+
+<h3>Start</h3>
+
+<p>
+Access your dashboard and resources.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+REGISTRATION
+========================= -->
+
+<section class="section registration" id="register">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+Partner Registration
+</span>
+
+<h2>
+Take the first step toward becoming a Fundvexxa Partner.
+</h2>
+
+<p>
+Complete the registration form below. Your application will be
+submitted for review.
+</p>
+
+</div>
+
+
+<div class="registration-wrapper">
+
+
+<div class="registration-info">
+
+<h2>
+Build. Connect. Grow.
+</h2>
+
+<p>
+Your partner journey starts with a simple registration.
+After verification and approval, eligible partners can access
+the Fundvexxa partner ecosystem.
+</p>
+
+
+<div class="info-list">
+
+<div>
+<span class="tick">✓</span>
+<span>Personal partner dashboard</span>
+</div>
+
+<div>
+<span class="tick">✓</span>
+<span>Multiple financial product categories</span>
+</div>
+
+<div>
+<span class="tick">✓</span>
+<span>Lead management & application tracking</span>
+</div>
+
+<div>
+<span class="tick">✓</span>
+<span>Training and sales resources</span>
+</div>
+
+<div>
+<span class="tick">✓</span>
+<span>Partner announcements and offers</span>
+</div>
+
+<div>
+<span class="tick">✓</span>
+<span>Eligible team-building opportunities</span>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="form-card">
+
+<div class="form-title">
+
+<h2>Partner Registration Form</h2>
+
+<p>
+All fields marked with * are required.
+</p>
+
+</div>
+
+
+<form id="agentForm">
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>Full Name *</label>
+
+<input
+type="text"
+id="fullName"
+required
+placeholder="Enter your full name">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Mobile Number *</label>
+
+<input
+type="tel"
+id="mobile"
+required
+maxlength="10"
+pattern="[0-9]{10}"
+placeholder="10 digit mobile number">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Email Address *</label>
+
+<input
+type="email"
+id="email"
+required
+placeholder="you@example.com">
+
+</div>
+
+
+<div class="form-group">
+
+<label>City *</label>
+
+<input
+type="text"
+id="city"
+required
+placeholder="Enter your city">
+
+</div>
+
+
+<div class="form-group">
+
+<label>State *</label>
+
+<select id="state" required>
+
+<option value="">Select State</option>
+
+<option>Delhi</option>
+<option>Haryana</option>
+<option>Uttar Pradesh</option>
+<option>Rajasthan</option>
+<option>Maharashtra</option>
+<option>Gujarat</option>
+<option>Madhya Pradesh</option>
+<option>Bihar</option>
+<option>Punjab</option>
+<option>Uttarakhand</option>
+<option>West Bengal</option>
+<option>Karnataka</option>
+<option>Tamil Nadu</option>
+<option>Telangana</option>
+<option>Andhra Pradesh</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Experience *</label>
+
+<select id="experience" required>
+
+<option value="">Select experience</option>
+<option>Fresher</option>
+<option>Less than 1 year</option>
+<option>1–3 years</option>
+<option>3–5 years</option>
+<option>5+ years</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Current Profession *</label>
+
+<select id="profession" required>
+
+<option value="">Select profession</option>
+<option>Student</option>
+<option>Sales Professional</option>
+<option>Financial Services</option>
+<option>Insurance</option>
+<option>Banking</option>
+<option>DSA / Loan Agent</option>
+<option>Business Owner</option>
+<option>Self Employed</option>
+<option>Job Seeker</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Preferred Work Type *</label>
+
+<select id="workType" required>
+
+<option value="">Select option</option>
+<option>Full Time</option>
+<option>Part Time</option>
+<option>Both</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>Why do you want to become a Fundvexxa Partner?</label>
+
+<textarea
+id="reason"
+placeholder="Tell us briefly about your goal or experience"></textarea>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>How did you hear about us?</label>
+
+<select id="source">
+
+<option value="">Select source</option>
+<option>Google</option>
+<option>Facebook</option>
+<option>Instagram</option>
+<option>YouTube</option>
+<option>WhatsApp</option>
+<option>Friend / Referral</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<!-- PLAN -->
+
+<div class="plan-selection">
+
+<div class="plan-selection-title">
+Select Membership Plan *
+</div>
+
+
+<div class="plan-options">
+
+
+<div class="plan-option">
+
+<input
+type="radio"
+name="membership"
+id="planBasic"
+value="Basic"
+data-price="999"
+required>
+
+<label
+for="planBasic"
+class="plan-label">
+
+<strong>Basic</strong>
+<span>₹999</span>
+<small>Starter partner access</small>
+
+</label>
+
+</div>
+
+
+<div class="plan-option">
+
+<input
+type="radio"
+name="membership"
+id="planGold"
+value="Gold"
+data-price="1499">
+
+<label
+for="planGold"
+class="plan-label">
+
+<strong>Gold</strong>
+<span>₹1,499</span>
+<small>Popular partner plan</small>
+
+</label>
+
+</div>
+
+
+<div class="plan-option">
+
+<input
+type="radio"
+name="membership"
+id="planPremium"
+value="Premium"
+data-price="3499">
+
+<label
+for="planPremium"
+class="plan-label">
+
+<strong>Premium</strong>
+<span>₹3,499</span>
+<small>Advanced partner access</small>
+
+</label>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="form-group" style="margin-top:18px;">
+
+<label>Referral Code (Optional)</label>
+
+<input
+type="text"
+id="referralCode"
+placeholder="Enter referral / partner code">
+
+<div class="form-note">
+If someone referred you, enter their partner code.
+</div>
+
+</div>
+
+
+<label class="consent">
+
+<input
+type="checkbox"
+id="consent"
+required>
+
+<span>
+I confirm that the information provided by me is accurate and
+I agree to be contacted regarding my Fundvexxa partner application.
+I understand that registration does not automatically guarantee
+approval or income.
+</span>
+
+</label>
+
+
+<button
+type="submit"
+id="submitBtn"
+class="btn btn-primary submit-btn">
+
+Submit Partner Registration
+
+</button>
+
+
+<div
+class="success"
+id="successMessage">
+
+<strong>
+Registration submitted successfully.
+</strong>
+
+<br>
+
+Your partner application has been received and will be reviewed
+by the Fundvexxa team.
+
+<span
+class="success-id"
+id="registrationId">
+Registration ID: —
+</span>
+
+</div>
+
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+FAQ
+========================= -->
+
+<section class="section section-alt">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+Partner FAQ
+</span>
+
+<h2>
+Frequently asked questions
+</h2>
+
+</div>
+
+
+<div class="faq">
+
+
+<details>
+
+<summary>
+Who can become a Fundvexxa Partner?
+</summary>
+
+<p>
+Individuals, sales professionals, business owners and other eligible
+persons interested in financial product distribution or customer
+assistance can apply. Final approval is subject to program requirements.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Do I get a personal dashboard?
+</summary>
+
+<p>
+Approved partners can receive access to a personal dashboard where
+available features may include leads, products, application status,
+training resources and partner information.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Can I build my own team?
+</summary>
+
+<p>
+Eligible partners may participate in referral or team-building programs
+where such features are enabled and subject to applicable program terms.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Will registration guarantee income?
+</summary>
+
+<p>
+No. Registration or membership does not guarantee leads, approvals,
+commissions or income. Earnings depend on actual business activity,
+product eligibility and applicable program terms.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+What happens after I submit the form?
+</summary>
+
+<p>
+Your application is stored for review. The Fundvexxa team can verify
+your details and membership selection before activating partner access.
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer class="footer">
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>Fundvexxa</h3>
+
+<p>
+Financial assistance, business funding support and digital financial
+solutions for individuals, entrepreneurs and businesses.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Quick Links</h3>
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="blog.html">Insights</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+
+<div>
+
+<h3>Partner</h3>
+
+<a href="#register">Become a Partner</a>
+<a href="login.html">Partner Login</a>
+
+<p style="margin-top:12px;">
+WhatsApp: 7290977231
+</p>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+© 2026 Fundvexxa. All Rights Reserved.
+
+<br><br>
+
+Partner registration is subject to verification and approval.
+Membership or registration does not guarantee leads, approvals,
+commission or income.
+
+</div>
+
+</div>
 
 </footer>
 
 
-<!-- TOAST -->
+<!-- =========================
+WHATSAPP
+========================= -->
 
-<div id="toast" class="toast"></div>
+<a
+class="whatsapp"
+href="https://wa.me/917290977231?text=Hello%20Fundvexxa%2C%20I%20want%20to%20become%20a%20partner."
+target="_blank"
+rel="noopener">
+
+WhatsApp
+
+</a>
 
 
-<!-- =========================================
-     FIREBASE
-========================================= -->
+<!-- =========================
+FIREBASE
+========================= -->
 
 <script type="module">
 
-import {
-  initializeApp
-} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 import {
-  getFirestore,
-  collection,
-  addDoc,
-  query,
-  where,
-  getDocs,
-  serverTimestamp
-} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-/* =========================================
+/* ==========================================
    FIREBASE CONFIG
-========================================= */
+========================================== */
 
 const firebaseConfig = {
 
-  apiKey:
-    "AIzaSyArcvyvNAOKipPZB0YEfSeoeN9_k-8JznQ",
+    apiKey: "AIzaSyArcvyvNAOKipPZB0YEfSeoeN9_k-8JznQ",
 
-  authDomain:
-    "smile-business-os.firebaseapp.com",
+    authDomain:
+        "smile-business-os.firebaseapp.com",
 
-  projectId:
-    "smile-business-os",
+    projectId:
+        "smile-business-os",
 
-  storageBucket:
-    "smile-business-os.firebasestorage.app",
+    storageBucket:
+        "smile-business-os.firebasestorage.app",
 
-  messagingSenderId:
-    "114356400630",
+    messagingSenderId:
+        "114356400630",
 
-  appId:
-    "1:114356400630:web:96fc9d07baaf3a504c17d7",
+    appId:
+        "1:114356400630:web:96fc9d07baaf3a504c17d7",
 
-  measurementId:
-    "G-73WD9V05ZZ"
+    measurementId:
+        "G-73WD9V05ZZ"
 
 };
 
 
-/* =========================================
-   INITIALIZE
-========================================= */
+const app =
+    initializeApp(firebaseConfig);
 
-const app = initializeApp(firebaseConfig);
+const db =
+    getFirestore(app);
 
-const db = getFirestore(app);
 
+/* ==========================================
+   PLAN BUTTONS
+========================================== */
 
-/* =========================================
-   ELEMENTS
-========================================= */
+document
+.querySelectorAll(".select-plan")
+.forEach(button => {
 
-const agentForm =
-  document.getElementById("agentForm");
+    button.addEventListener("click", () => {
 
-const submitBtn =
-  document.getElementById("submitBtn");
+        const plan =
+            button.dataset.plan;
 
-const formArea =
-  document.getElementById("formArea");
+        const radio =
+            document.querySelector(
+                `input[name="membership"][value="${plan}"]`
+            );
 
-const successBox =
-  document.getElementById("successBox");
+        if(radio){
 
-const toast =
-  document.getElementById("toast");
+            radio.checked = true;
 
+        }
 
-/* =========================================
-   TOAST
-========================================= */
-
-function showToast(message, error = false){
-
-  toast.textContent = message;
-
-  toast.classList.toggle("error", error);
-
-  toast.classList.add("show");
-
-  setTimeout(() => {
-
-    toast.classList.remove("show");
-
-  }, 3500);
-
-}
-
-
-/* =========================================
-   CLEAN TEXT
-========================================= */
-
-function cleanText(value){
-
-  return String(value || "")
-    .trim()
-    .replace(/\s+/g, " ");
-
-}
-
-
-/* =========================================
-   MOBILE VALIDATION
-========================================= */
-
-function validMobile(mobile){
-
-  return /^[6-9][0-9]{9}$/.test(mobile);
-
-}
-
-
-/* =========================================
-   FORM SUBMIT
-========================================= */
-
-agentForm.addEventListener("submit", async function(event){
-
-  event.preventDefault();
-
-
-  /* ==============================
-     GET VALUES
-  ============================== */
-
-  const name =
-    cleanText(document.getElementById("name").value);
-
-  const mobile =
-    cleanText(document.getElementById("mobile").value);
-
-  const email =
-    cleanText(document.getElementById("email").value);
-
-  const city =
-    cleanText(document.getElementById("city").value);
-
-  const age =
-    cleanText(document.getElementById("age").value);
-
-  const qualification =
-    cleanText(document.getElementById("qualification").value);
-
-  const experienceType =
-    cleanText(document.getElementById("experienceType").value);
-
-  const occupation =
-    cleanText(document.getElementById("occupation").value);
-
-  const experienceDetails =
-    cleanText(document.getElementById("experienceDetails").value);
-
-  const industryExperience =
-    cleanText(document.getElementById("industryExperience").value);
-
-  const reasonToJoin =
-    cleanText(document.getElementById("reasonToJoin").value);
-
-  const preferredWork =
-    cleanText(document.getElementById("preferredWork").value);
-
-  const source =
-    cleanText(document.getElementById("source").value);
-
-
-  /* ==============================
-     VALIDATION
-  ============================== */
-
-  if(!name){
-
-    showToast(
-      "Please enter your full name.",
-      true
-    );
-
-    return;
-
-  }
-
-
-  if(!validMobile(mobile)){
-
-    showToast(
-      "Please enter a valid 10 digit mobile number.",
-      true
-    );
-
-    return;
-
-  }
-
-
-  if(!experienceType){
-
-    showToast(
-      "Please select your experience type.",
-      true
-    );
-
-    return;
-
-  }
-
-
-  if(
-    age &&
-    (
-      Number(age) < 18 ||
-      Number(age) > 80
-    )
-  ){
-
-    showToast(
-      "Please enter a valid age.",
-      true
-    );
-
-    return;
-
-  }
-
-
-  /* ==============================
-     DISABLE BUTTON
-  ============================== */
-
-  submitBtn.disabled = true;
-
-  submitBtn.textContent =
-    "Submitting Application...";
-
-
-  try{
-
-
-    /* ==============================
-       CHECK DUPLICATE MOBILE
-       agentApplications ONLY
-    ============================== */
-
-    const applicationsRef =
-      collection(db, "agentApplications");
-
-    const duplicateQuery =
-      query(
-        applicationsRef,
-        where("mobile", "==", mobile)
-      );
-
-    const duplicateSnapshot =
-      await getDocs(duplicateQuery);
-
-
-    if(!duplicateSnapshot.empty){
-
-      showToast(
-        "An agent application with this mobile number already exists.",
-        true
-      );
-
-      submitBtn.disabled = false;
-
-      submitBtn.textContent =
-        "Submit Agent Application";
-
-      return;
-
-    }
-
-
-    /* ==============================
-       APPLICATION DATA
-    ============================== */
-
-    const applicationData = {
-
-      name: name,
-
-      mobile: mobile,
-
-      email: email,
-
-      city: city,
-
-      age: age,
-
-      qualification: qualification,
-
-      experienceType: experienceType,
-
-      occupation: occupation,
-
-      experienceDetails: experienceDetails,
-
-      industryExperience: industryExperience,
-
-      reasonToJoin: reasonToJoin,
-
-      preferredWork: preferredWork,
-
-      source: source,
-
-      status: "New",
-
-      applicationType: "Agent",
-
-      agentCode: "",
-
-      membershipStatus: "Not Active",
-
-      createdAt: serverTimestamp(),
-
-      updatedAt: serverTimestamp()
-
-    };
-
-
-    /* ==============================
-       SAVE TO FIRESTORE
-    ============================== */
-
-    const docRef =
-      await addDoc(
-        applicationsRef,
-        applicationData
-      );
-
-
-    console.log(
-      "Agent application submitted:",
-      docRef.id
-    );
-
-
-    /* ==============================
-       SUCCESS
-    ============================== */
-
-    formArea.style.display =
-      "none";
-
-    successBox.classList.add("show");
-
-    window.scrollTo({
-
-      top:
-        document.getElementById(
-          "agent-application"
-        ).offsetTop - 80,
-
-      behavior:
-        "smooth"
+        document
+            .getElementById("register")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
 
     });
-
-
-  }catch(error){
-
-    console.error(
-      "Agent application error:",
-      error
-    );
-
-
-    showToast(
-      "Application submit nahi ho payi. Please try again.",
-      true
-    );
-
-
-    submitBtn.disabled = false;
-
-    submitBtn.textContent =
-      "Submit Agent Application";
-
-  }
 
 });
 
 
-/* =========================================
-   MOBILE INPUT - NUMBERS ONLY
-========================================= */
+/* ==========================================
+   FORM
+========================================== */
 
-document
-  .getElementById("mobile")
-  .addEventListener("input", function(){
+const form =
+    document.getElementById("agentForm");
 
-    this.value =
-      this.value
-      .replace(/\D/g, "")
-      .slice(0, 10);
 
-  });
+form.addEventListener(
+    "submit",
+    async function(event){
+
+        event.preventDefault();
+
+
+        const submitBtn =
+            document.getElementById("submitBtn");
+
+        const success =
+            document.getElementById("successMessage");
+
+
+        /* -------------------------------
+           GET SELECTED PLAN
+        -------------------------------- */
+
+        const selectedMembership =
+            document.querySelector(
+                'input[name="membership"]:checked'
+            );
+
+
+        if(!selectedMembership){
+
+            alert("Please select a membership plan.");
+
+            return;
+
+        }
+
+
+        /* -------------------------------
+           MOBILE VALIDATION
+        -------------------------------- */
+
+        const mobile =
+            document
+                .getElementById("mobile")
+                .value
+                .trim();
+
+
+        if(!/^[0-9]{10}$/.test(mobile)){
+
+            alert(
+                "Please enter a valid 10 digit mobile number."
+            );
+
+            return;
+
+        }
+
+
+        /* -------------------------------
+           PLAN
+        -------------------------------- */
+
+        const membership =
+            selectedMembership.value;
+
+        const membershipPrice =
+            Number(
+                selectedMembership.dataset.price
+            ) || 0;
+
+
+        /* -------------------------------
+           DATA
+        -------------------------------- */
+
+        const agentData = {
+
+            fullName:
+                document
+                .getElementById("fullName")
+                .value
+                .trim(),
+
+            mobile:
+
+                mobile,
+
+            email:
+                document
+                .getElementById("email")
+                .value
+                .trim()
+                .toLowerCase(),
+
+            city:
+                document
+                .getElementById("city")
+                .value
+                .trim(),
+
+            state:
+                document
+                .getElementById("state")
+                .value,
+
+            experience:
+                document
+                .getElementById("experience")
+                .value,
+
+            profession:
+                document
+                .getElementById("profession")
+                .value,
+
+            workType:
+                document
+                .getElementById("workType")
+                .value,
+
+            reason:
+                document
+                .getElementById("reason")
+                .value
+                .trim(),
+
+            source:
+                document
+                .getElementById("source")
+                .value,
+
+            membership:
+                membership,
+
+            membershipPrice:
+                membershipPrice,
+
+            referralCode:
+                document
+                .getElementById("referralCode")
+                .value
+                .trim(),
+
+            status:
+                "Pending",
+
+            approvalStatus:
+                "Pending",
+
+            paymentStatus:
+                "Pending",
+
+            agentId:
+                "",
+
+            dashboardAccess:
+                false,
+
+            walletBalance:
+                0,
+
+            teamEnabled:
+                false,
+
+            createdAt:
+                serverTimestamp(),
+
+            updatedAt:
+                serverTimestamp(),
+
+            sourcePage:
+                "become-agent.html"
+
+        };
+
+
+        /* -------------------------------
+           BUTTON
+        -------------------------------- */
+
+        submitBtn.disabled = true;
+
+        submitBtn.textContent =
+            "Submitting Registration...";
+
+
+        try{
+
+
+            /* -------------------------------
+               FIRESTORE
+            -------------------------------- */
+
+            const docRef =
+                await addDoc(
+
+                    collection(
+                        db,
+                        "agent_registrations"
+                    ),
+
+                    agentData
+
+                );
+
+
+            /* -------------------------------
+               SUCCESS
+            -------------------------------- */
+
+            document
+                .getElementById(
+                    "registrationId"
+                )
+                .textContent =
+                "Registration ID: " + docRef.id;
+
+
+            success.classList.add("show");
+
+
+            form.reset();
+
+
+            submitBtn.disabled = false;
+
+            submitBtn.textContent =
+                "Registration Submitted";
+
+
+            success.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+
+        }
+        catch(error){
+
+            console.error(
+                "Agent registration error:",
+                error
+            );
+
+
+            alert(
+                "Registration submit nahi ho paayi. Please try again."
+            );
+
+
+            submitBtn.disabled = false;
+
+            submitBtn.textContent =
+                "Submit Partner Registration";
+
+        }
+
+    }
+);
 
 </script>
-
 
 </body>
 </html>
