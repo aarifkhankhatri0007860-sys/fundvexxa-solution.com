@@ -4,598 +4,740 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Fundvexxa CRM | Admin</title>
+<title>Fundvexxa Admin CRM</title>
 
 <style>
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --navy:#10243e;
+    --navy2:#173b61;
+    --blue:#0d6efd;
+    --blue2:#0957c5;
+    --bg:#f4f7fb;
+    --white:#fff;
+    --text:#172235;
+    --muted:#6c7b8e;
+    --border:#e1e8f0;
+    --green:#16834b;
+    --red:#c43d43;
+    --orange:#c47b12;
+    --gold:#c99a43;
+    --shadow:0 12px 35px rgba(16,36,62,.07);
 }
 
 body{
-  font-family:Inter,Arial,sans-serif;
-  background:#f3f7fb;
-  color:#172536;
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
 }
 
 button,input,select,textarea{
-  font:inherit;
+    font:inherit;
 }
 
 button{
-  cursor:pointer;
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
 }
 
 .app{
-  display:flex;
-  min-height:100vh;
+    min-height:100vh;
+    display:flex;
 }
 
 /* SIDEBAR */
 
 .sidebar{
-  width:245px;
-  background:#073b63;
-  color:#fff;
-  position:fixed;
-  left:0;
-  top:0;
-  bottom:0;
-  padding:22px 15px;
-  z-index:100;
+    width:250px;
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    z-index:1000;
+    background:linear-gradient(180deg,#0d1d31,#112c49);
+    color:#fff;
+    padding:22px 15px;
+    display:flex;
+    flex-direction:column;
 }
 
-.logo{
-  font-size:23px;
-  font-weight:800;
-  padding:0 10px 25px;
+.brand{
+    padding:5px 10px 23px;
+    border-bottom:1px solid rgba(255,255,255,.1);
 }
 
-.logo span{
-  color:#63b2df;
+.brand h2{
+    font-size:24px;
+    letter-spacing:-1px;
 }
 
-.admin-label{
-  font-size:10px;
-  color:#a9c7db;
-  letter-spacing:.12em;
-  margin:0 10px 10px;
-  text-transform:uppercase;
+.brand h2 span{
+    color:#d6ab60;
+}
+
+.brand p{
+    color:#869db5;
+    font-size:10px;
+    margin-top:4px;
+}
+
+.menu-label{
+    color:#6f879f;
+    font-size:9px;
+    letter-spacing:.13em;
+    font-weight:800;
+    text-transform:uppercase;
+    margin:24px 10px 9px;
 }
 
 .menu{
-  display:grid;
-  gap:5px;
+    display:grid;
+    gap:4px;
 }
 
 .menu button{
-  border:0;
-  background:transparent;
-  color:#d6e6f1;
-  padding:12px;
-  border-radius:8px;
-  text-align:left;
-  font-size:13px;
+    border:0;
+    background:transparent;
+    color:#b9c8d8;
+    display:flex;
+    gap:11px;
+    align-items:center;
+    padding:12px;
+    border-radius:10px;
+    font-size:12px;
+    text-align:left;
 }
 
 .menu button:hover,
 .menu button.active{
-  background:rgba(255,255,255,.11);
-  color:#fff;
+    background:rgba(255,255,255,.09);
+    color:#fff;
+}
+
+.sidebar-bottom{
+    margin-top:auto;
+}
+
+.sidebar-bottom a,
+.sidebar-bottom button{
+    width:100%;
+    min-height:42px;
+    border-radius:9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    font-weight:800;
+}
+
+.sidebar-bottom a{
+    color:#10243e;
+    background:#d3aa60;
+}
+
+.sidebar-bottom button{
+    margin-top:8px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.05);
+    color:#fff;
 }
 
 /* MAIN */
 
 .main{
-  margin-left:245px;
-  width:calc(100% - 245px);
+    margin-left:250px;
+    width:calc(100% - 250px);
 }
 
 .topbar{
-  height:70px;
-  background:#fff;
-  border-bottom:1px solid #dce6ee;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 25px;
-  position:sticky;
-  top:0;
-  z-index:50;
+    height:72px;
+    background:rgba(255,255,255,.97);
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:800;
+    padding:0 27px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
-.page-title h1{
-  font-size:20px;
-  color:#073b63;
+.top-title h1{
+    color:var(--navy);
+    font-size:19px;
 }
 
-.page-title p{
-  font-size:11px;
-  color:#758696;
-  margin-top:2px;
+.top-title p{
+    color:var(--muted);
+    font-size:10px;
+    margin-top:2px;
 }
 
-.live{
-  display:flex;
-  align-items:center;
-  gap:7px;
-  font-size:11px;
-  color:#23834a;
-  font-weight:700;
+.admin-badge{
+    padding:8px 12px;
+    background:#edf5ff;
+    color:var(--blue);
+    border-radius:20px;
+    font-size:10px;
+    font-weight:800;
 }
 
-.live-dot{
-  width:8px;
-  height:8px;
-  background:#22a75a;
-  border-radius:50%;
-  box-shadow:0 0 0 4px #e3f5eb;
+.mobile-menu{
+    display:none;
+    width:38px;
+    height:38px;
+    border:0;
+    background:#edf4fb;
+    border-radius:9px;
 }
-
-/* CONTENT */
 
 .content{
-  padding:22px;
+    padding:27px;
+    max-width:1600px;
 }
 
+/* STATS */
+
 .stats{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:13px;
-  margin-bottom:18px;
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:14px;
 }
 
 .stat{
-  background:#fff;
-  border:1px solid #dfe8ef;
-  border-radius:11px;
-  padding:17px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:19px;
+    box-shadow:var(--shadow);
 }
 
-.stat small{
-  color:#788998;
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:.06em;
+.stat-top{
+    display:flex;
+    justify-content:space-between;
+}
+
+.stat-icon{
+    width:37px;
+    height:37px;
+    border-radius:10px;
+    background:#edf5ff;
+    display:grid;
+    place-items:center;
+}
+
+.stat span{
+    display:block;
+    color:var(--muted);
+    font-size:10px;
+    margin-top:12px;
 }
 
 .stat strong{
-  display:block;
-  color:#073b63;
-  font-size:25px;
-  margin-top:5px;
+    display:block;
+    color:var(--navy);
+    font-size:23px;
+    margin-top:2px;
 }
 
-/* TOOLBAR */
+/* PANEL */
 
-.toolbar{
-  background:#fff;
-  border:1px solid #dfe8ef;
-  border-radius:11px;
-  padding:13px;
-  display:flex;
-  gap:9px;
-  flex-wrap:wrap;
-  margin-bottom:15px;
+.panel{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:17px;
+    box-shadow:var(--shadow);
+    margin-top:20px;
+    overflow:hidden;
+}
+
+.panel-head{
+    padding:19px 20px;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.panel-head h2{
+    color:var(--navy);
+    font-size:17px;
+}
+
+.panel-head p{
+    color:var(--muted);
+    font-size:10px;
+    margin-top:3px;
+}
+
+.tools{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.search,
+.filter{
+    border:1px solid var(--border);
+    background:#fff;
+    border-radius:8px;
+    min-height:38px;
+    padding:0 11px;
+    outline:none;
+    font-size:11px;
 }
 
 .search{
-  flex:1;
-  min-width:220px;
-  height:40px;
-  border:1px solid #d5e0e8;
-  border-radius:7px;
-  padding:0 12px;
-  outline:none;
-  font-size:12px;
+    min-width:220px;
 }
 
-.filter{
-  height:40px;
-  border:1px solid #d5e0e8;
-  border-radius:7px;
-  padding:0 10px;
-  background:#fff;
-  font-size:12px;
-  color:#34495a;
-}
-
-/* TABLE */
-
-.card{
-  background:#fff;
-  border:1px solid #dfe8ef;
-  border-radius:11px;
-  overflow:hidden;
-}
-
-.card-header{
-  padding:16px 18px;
-  border-bottom:1px solid #e7edf2;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.card-header h2{
-  font-size:15px;
-  color:#073b63;
-}
-
-.card-header span{
-  color:#81909c;
-  font-size:11px;
+.action-btn{
+    border:0;
+    border-radius:8px;
+    min-height:38px;
+    padding:0 13px;
+    background:var(--navy);
+    color:#fff;
+    font-size:10px;
+    font-weight:800;
 }
 
 .table-wrap{
-  overflow-x:auto;
+    width:100%;
+    overflow:auto;
 }
 
 table{
-  width:100%;
-  border-collapse:collapse;
-  min-width:1050px;
+    width:100%;
+    border-collapse:collapse;
+    min-width:950px;
 }
 
 th{
-  background:#f8fafc;
-  color:#657787;
-  text-align:left;
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:.04em;
-  padding:11px 12px;
-  white-space:nowrap;
+    background:#f8fafc;
+    color:#758399;
+    text-align:left;
+    padding:12px 15px;
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    border-bottom:1px solid var(--border);
 }
 
 td{
-  padding:12px;
-  border-top:1px solid #edf1f4;
-  font-size:12px;
-  vertical-align:middle;
+    padding:13px 15px;
+    border-bottom:1px solid var(--border);
+    font-size:11px;
+    vertical-align:middle;
 }
 
 tr:hover td{
-  background:#fbfdff;
+    background:#fbfdff;
 }
 
-.customer{
-  font-weight:700;
-  color:#173f5f;
+.person strong{
+    display:block;
+    color:var(--navy);
+    font-size:11px;
 }
 
-.phone{
-  color:#4b6476;
-  font-size:11px;
+.person span{
+    display:block;
+    color:var(--muted);
+    font-size:9px;
+    margin-top:2px;
 }
-
-.product{
-  font-size:11px;
-  color:#536a7b;
-}
-
-/* BADGES */
 
 .badge{
-  display:inline-block;
-  padding:5px 8px;
-  border-radius:20px;
-  font-size:10px;
-  font-weight:700;
-  white-space:nowrap;
+    display:inline-flex;
+    padding:5px 8px;
+    border-radius:20px;
+    font-size:9px;
+    font-weight:800;
 }
 
-.new{
-  background:#e8f3fb;
-  color:#14618e;
+.badge.pending,
+.badge.new{
+    background:#fff5e3;
+    color:#a56400;
 }
 
-.follow{
-  background:#fff3d9;
-  color:#946000;
+.badge.approved,
+.badge.active,
+.badge.verified,
+.badge.disbursed{
+    background:#edf9f2;
+    color:var(--green);
 }
 
-.interested{
-  background:#e8f7ef;
-  color:#147340;
+.badge.rejected{
+    background:#fff0f1;
+    color:var(--red);
 }
 
-.not-interested{
-  background:#fcecec;
-  color:#a33b3b;
+.badge.contacted,
+.badge.processing,
+.badge.documents-received,
+.badge.submitted,
+.badge.under-review{
+    background:#edf5ff;
+    color:var(--blue);
 }
 
-.closed{
-  background:#e9edf1;
-  color:#586773;
+.badge.suspended{
+    background:#eef0f3;
+    color:#5a6573;
 }
-
-.pending{
-  background:#fff3d9;
-  color:#946000;
-}
-
-/* ACTIONS */
 
 .actions{
-  display:flex;
-  gap:5px;
-  flex-wrap:wrap;
+    display:flex;
+    gap:5px;
+    flex-wrap:wrap;
 }
 
-.action{
-  border:1px solid #d8e2e9;
-  background:#fff;
-  color:#33566f;
-  border-radius:6px;
-  padding:6px 8px;
-  font-size:10px;
-  font-weight:700;
+.small-btn{
+    border:0;
+    border-radius:6px;
+    padding:7px 9px;
+    font-size:9px;
+    font-weight:800;
 }
 
-.action:hover{
-  background:#f0f7fb;
+.view-btn{
+    background:#edf5ff;
+    color:var(--blue);
 }
 
-.call{
-  color:#137441;
+.approve-btn{
+    background:#edf9f2;
+    color:var(--green);
 }
 
-.whatsapp{
-  color:#168348;
+.reject-btn{
+    background:#fff0f1;
+    color:var(--red);
 }
 
-/* MODAL */
-
-.modal-bg{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(3,28,46,.48);
-  z-index:1000;
-  padding:20px;
-  overflow:auto;
-}
-
-.modal-bg.show{
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-}
-
-.modal{
-  width:min(850px,100%);
-  background:#fff;
-  border-radius:14px;
-  margin:25px auto;
-  overflow:hidden;
-  box-shadow:0 25px 70px rgba(0,0,0,.2);
-}
-
-.modal-head{
-  background:#073b63;
-  color:#fff;
-  padding:18px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.modal-head h2{
-  font-size:17px;
-}
-
-.close{
-  border:0;
-  background:transparent;
-  color:#fff;
-  font-size:22px;
-}
-
-.modal-body{
-  padding:20px;
-}
-
-.detail-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-}
-
-.detail{
-  border:1px solid #e0e8ee;
-  border-radius:8px;
-  padding:12px;
-}
-
-.detail small{
-  display:block;
-  color:#7b8b98;
-  font-size:9px;
-  text-transform:uppercase;
-}
-
-.detail strong{
-  display:block;
-  color:#173f5f;
-  margin-top:4px;
-  font-size:12px;
-  word-break:break-word;
-}
-
-.section-title{
-  color:#073b63;
-  font-size:14px;
-  margin:22px 0 10px;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-
-.field label{
-  display:block;
-  font-size:10px;
-  color:#6f8190;
-  margin-bottom:5px;
-}
-
-.field input,
-.field select,
-.field textarea{
-  width:100%;
-  border:1px solid #d5e0e8;
-  border-radius:7px;
-  padding:9px;
-  outline:none;
-  font-size:12px;
-}
-
-.field textarea{
-  min-height:75px;
-  resize:vertical;
-}
-
-.full{
-  grid-column:1/-1;
-}
-
-.save-row{
-  margin-top:14px;
-  display:flex;
-  justify-content:flex-end;
-}
-
-.save-btn{
-  border:0;
-  background:#073b63;
-  color:#fff;
-  border-radius:7px;
-  padding:10px 17px;
-  font-size:11px;
-  font-weight:700;
-}
-
-/* CALL HISTORY */
-
-.history{
-  display:grid;
-  gap:8px;
-}
-
-.history-item{
-  border-left:3px solid #2688c7;
-  background:#f6f9fb;
-  padding:10px;
-  border-radius:0 7px 7px 0;
-}
-
-.history-item strong{
-  color:#173f5f;
-  font-size:11px;
-}
-
-.history-item small{
-  display:block;
-  color:#7a8a96;
-  font-size:9px;
-  margin-top:3px;
-}
-
-.history-item p{
-  margin-top:5px;
-  font-size:11px;
-  color:#536675;
+.verify-btn{
+    background:#fff5e1;
+    color:#976000;
 }
 
 /* EMPTY */
 
 .empty{
-  text-align:center;
-  padding:45px 20px;
-  color:#81909c;
-  font-size:12px;
+    padding:40px 20px;
+    text-align:center;
+    color:var(--muted);
+    font-size:12px;
 }
 
-/* MOBILE */
+/* TAB */
 
-.mobile-menu{
-  display:none;
-  border:1px solid #d8e2e9;
-  background:#fff;
-  border-radius:7px;
-  padding:7px 9px;
-}
-
-@media(max-width:1050px){
-
-  .stats{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-}
-
-@media(max-width:800px){
-
-  .sidebar{
-    width:220px;
-    transform:translateX(-100%);
-    transition:.2s;
-  }
-
-  .sidebar.open{
-    transform:translateX(0);
-  }
-
-  .main{
-    margin-left:0;
-    width:100%;
-  }
-
-  .mobile-menu{
-    display:block;
-  }
-
-  .topbar{
-    padding:0 14px;
-  }
-
-  .content{
-    padding:14px;
-  }
-
-  .stats{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .detail-grid,
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .full{
-    grid-column:auto;
-  }
-
-}
-
-@media(max-width:480px){
-
-  .stats{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .stat strong{
-    font-size:20px;
-  }
-
-  .live{
+.screen{
     display:none;
-  }
+}
 
+.screen.active{
+    display:block;
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:5000;
+    background:rgba(5,15,27,.7);
+    padding:20px;
+    overflow:auto;
+}
+
+.modal.show{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.modal-box{
+    width:min(760px,100%);
+    max-height:92vh;
+    overflow:auto;
+    background:#fff;
+    border-radius:18px;
+    padding:26px;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:15px;
+    top:15px;
+    border:0;
+    width:34px;
+    height:34px;
+    background:#edf1f5;
+    border-radius:50%;
+}
+
+.modal-box h2{
+    color:var(--navy);
+    font-size:22px;
+    padding-right:45px;
+}
+
+.modal-sub{
+    color:var(--muted);
+    font-size:10px;
+    margin-top:4px;
+}
+
+.detail-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:20px;
+}
+
+.detail{
+    background:#f8fafc;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:13px;
+}
+
+.detail.full{
+    grid-column:1/-1;
+}
+
+.detail span{
+    color:var(--muted);
+    font-size:9px;
+    display:block;
+}
+
+.detail strong{
+    color:var(--navy);
+    font-size:11px;
+    display:block;
+    margin-top:3px;
+    word-break:break-word;
+}
+
+.modal-section{
+    margin-top:22px;
+    border-top:1px solid var(--border);
+    padding-top:18px;
+}
+
+.modal-section h3{
+    color:var(--navy);
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.field label{
+    display:block;
+    color:#4b5a6d;
+    font-size:10px;
+    font-weight:800;
+    margin-bottom:6px;
+}
+
+.field input,
+.field select,
+.field textarea{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:11px;
+    outline:none;
+    font-size:11px;
+}
+
+.field textarea{
+    min-height:80px;
+    resize:vertical;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+.save-btn{
+    width:100%;
+    margin-top:14px;
+    min-height:43px;
+    border:0;
+    border-radius:8px;
+    background:var(--blue);
+    color:#fff;
+    font-size:11px;
+    font-weight:800;
+}
+
+/* LOGIN */
+
+.auth-screen{
+    position:fixed;
+    inset:0;
+    z-index:10000;
+    background:#f4f7fb;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.auth-screen.hidden{
+    display:none;
+}
+
+.auth-box{
+    width:min(420px,100%);
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:19px;
+    padding:30px;
+    box-shadow:var(--shadow);
+}
+
+.auth-brand{
+    color:var(--navy);
+    font-size:25px;
+    font-weight:800;
+}
+
+.auth-brand span{
+    color:var(--gold);
+}
+
+.auth-box h2{
+    margin-top:20px;
+    color:var(--navy);
+}
+
+.auth-box p{
+    color:var(--muted);
+    font-size:11px;
+    margin:5px 0 20px;
+}
+
+.auth-error{
+    color:var(--red);
+    background:#fff1f1;
+    border-radius:8px;
+    padding:10px;
+    font-size:10px;
+    margin-top:10px;
+    display:none;
+}
+
+/* OVERLAY */
+
+.overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:900;
+    background:rgba(0,0,0,.45);
+}
+
+.overlay.show{
+    display:block;
+}
+
+@media(max-width:1200px){
+    .stats{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+@media(max-width:900px){
+
+    .sidebar{
+        transform:translateX(-100%);
+        transition:.3s;
+    }
+
+    .sidebar.open{
+        transform:translateX(0);
+    }
+
+    .main{
+        margin-left:0;
+        width:100%;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    .topbar{
+        padding:0 13px;
+    }
+
+    .top-title p{
+        display:none;
+    }
+
+    .content{
+        padding:14px;
+    }
+
+    .stats{
+        gap:9px;
+    }
+
+    .stat{
+        padding:15px;
+    }
+
+    .panel-head{
+        display:block;
+    }
+
+    .tools{
+        margin-top:12px;
+    }
+
+    .search{
+        min-width:100%;
+        width:100%;
+    }
+
+    .detail-grid,
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .detail.full,
+    .full{
+        grid-column:auto;
+    }
 }
 
 </style>
@@ -603,80 +745,176 @@ tr:hover td{
 
 <body>
 
+<!-- ADMIN LOGIN -->
+
+<div class="auth-screen" id="authScreen">
+
+<div class="auth-box">
+
+<div class="auth-brand">
+Fund<span>vexxa</span>
+</div>
+
+<h2>Admin CRM Login</h2>
+
+<p>
+Sign in with your authorized Fundvexxa admin account.
+</p>
+
+<form id="adminLoginForm">
+
+<div class="field">
+<label>Email</label>
+<input
+id="adminEmail"
+type="email"
+required
+placeholder="admin@fundvexxa.com">
+</div>
+
+<div class="field" style="margin-top:12px;">
+<label>Password</label>
+<input
+id="adminPassword"
+type="password"
+required
+placeholder="Password">
+</div>
+
+<button
+class="save-btn"
+id="loginBtn"
+type="submit">
+Sign In
+</button>
+
+<div
+class="auth-error"
+id="loginError">
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+
 <div class="app">
 
-<!-- ================= SIDEBAR ================= -->
+<!-- SIDEBAR -->
 
 <aside class="sidebar" id="sidebar">
 
-  <div class="logo">
-    Fund<span>vexxa</span>
-  </div>
+<div class="brand">
 
-  <div class="admin-label">
-    Administration
-  </div>
+<h2>
+Fund<span>vexxa</span>
+</h2>
 
-  <div class="menu">
+<p>Admin CRM & Operations</p>
 
-    <button class="active" onclick="showSection('leads')">
-      ▣ Leads CRM
-    </button>
+</div>
 
-    <button onclick="showSection('agents')">
-      ◉ Agents
-    </button>
 
-    <button onclick="showSection('withdrawals')">
-      ₹ Withdrawals
-    </button>
+<div class="menu-label">
+CRM
+</div>
 
-    <button onclick="showSection('dashboard')">
-      ◈ Dashboard
-    </button>
+<div class="menu">
 
-  </div>
+<button class="menu-item active" data-screen="overview">
+<span>▦</span>
+Overview
+</button>
+
+<button class="menu-item" data-screen="agents">
+<span>👤</span>
+Agent Applications
+</button>
+
+<button class="menu-item" data-screen="leads">
+<span>▣</span>
+Customer Leads
+</button>
+
+</div>
+
+
+<div class="menu-label">
+Operations
+</div>
+
+<div class="menu">
+
+<button class="menu-item" data-screen="memberships">
+<span>💳</span>
+Memberships
+</button>
+
+<button class="menu-item" data-screen="payments">
+<span>₹</span>
+Payments
+</button>
+
+</div>
+
+
+<div class="sidebar-bottom">
+
+<a
+href="index.html"
+target="_blank">
+Open Website
+</a>
+
+<button id="logoutBtn">
+Logout
+</button>
+
+</div>
 
 </aside>
 
 
-<!-- ================= MAIN ================= -->
+<div class="overlay" id="overlay"></div>
+
+
+<!-- MAIN -->
 
 <main class="main">
 
 <header class="topbar">
 
-  <div style="display:flex;align-items:center;gap:12px">
+<div style="display:flex;align-items:center;gap:12px;">
 
-    <button
-      class="mobile-menu"
-      onclick="toggleSidebar()"
-    >
-      ☰
-    </button>
+<button
+class="mobile-menu"
+id="mobileMenu">
+☰
+</button>
 
-    <div class="page-title">
+<div class="top-title">
 
-      <h1>
-        Fundvexxa CRM
-      </h1>
+<h1 id="screenTitle">
+CRM Overview
+</h1>
 
-      <p>
-        Customer & Lead Management
-      </p>
+<p>
+Fundvexxa Agent & Customer Management
+</p>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
+<div
+class="admin-badge"
+id="adminBadge">
 
-  <div class="live">
+Admin
 
-    <span class="live-dot"></span>
-
-    Firebase Live
-
-  </div>
+</div>
 
 </header>
 
@@ -684,300 +922,432 @@ tr:hover td{
 <div class="content">
 
 
-<!-- ================= STATS ================= -->
+<!-- OVERVIEW -->
+
+<section
+class="screen active"
+id="screen-overview">
+
 
 <div class="stats">
 
-  <div class="stat">
-    <small>Total Leads</small>
-    <strong id="totalLeads">0</strong>
-  </div>
+<div class="stat">
 
-  <div class="stat">
-    <small>New Leads</small>
-    <strong id="newLeads">0</strong>
-  </div>
+<div class="stat-top">
+<div class="stat-icon">👤</div>
+</div>
 
-  <div class="stat">
-    <small>Follow Up</small>
-    <strong id="followLeads">0</strong>
-  </div>
+<span>Total Agent Applications</span>
 
-  <div class="stat">
-    <small>Interested</small>
-    <strong id="interestedLeads">0</strong>
-  </div>
-
-  <div class="stat">
-    <small>Agents</small>
-    <strong id="totalAgents">0</strong>
-  </div>
+<strong id="statAgents">
+0
+</strong>
 
 </div>
 
 
-<!-- ================= LEADS ================= -->
+<div class="stat">
 
-<section id="leadsSection">
+<div class="stat-top">
+<div class="stat-icon">⏳</div>
+</div>
 
-  <div class="toolbar">
+<span>Pending Agents</span>
 
-    <input
-      id="searchInput"
-      class="search"
-      type="search"
-      placeholder="Search customer, mobile, email, requirement..."
-    >
+<strong id="statPendingAgents">
+0
+</strong>
 
-    <select id="statusFilter" class="filter">
-
-      <option value="all">
-        All Status
-      </option>
-
-      <option value="New">
-        New
-      </option>
-
-      <option value="Follow Up">
-        Follow Up
-      </option>
-
-      <option value="Interested">
-        Interested
-      </option>
-
-      <option value="Not Interested">
-        Not Interested
-      </option>
-
-      <option value="Closed">
-        Closed
-      </option>
-
-    </select>
-
-    <button
-      class="action"
-      onclick="loadCurrentLeads()"
-    >
-      ↻ Refresh View
-    </button>
-
-  </div>
+</div>
 
 
-  <div class="card">
+<div class="stat">
 
-    <div class="card-header">
+<div class="stat-top">
+<div class="stat-icon">✓</div>
+</div>
 
-      <h2>
-        Customer Leads
-      </h2>
+<span>Approved Agents</span>
 
-      <span id="leadCount">
-        0 records
-      </span>
+<strong id="statApprovedAgents">
+0
+</strong>
 
-    </div>
+</div>
 
 
-    <div class="table-wrap">
+<div class="stat">
 
-      <table>
+<div class="stat-top">
+<div class="stat-icon">▣</div>
+</div>
 
-        <thead>
+<span>Total Customer Leads</span>
 
-          <tr>
+<strong id="statLeads">
+0
+</strong>
 
-            <th>Customer</th>
+</div>
 
-            <th>Mobile</th>
 
-            <th>Requirement</th>
+<div class="stat">
 
-            <th>Amount</th>
+<div class="stat-top">
+<div class="stat-icon">🔥</div>
+</div>
 
-            <th>Source</th>
+<span>New Leads</span>
 
-            <th>Status</th>
+<strong id="statNewLeads">
+0
+</strong>
 
-            <th>Call Status</th>
+</div>
 
-            <th>Date</th>
+</div>
 
-            <th>Actions</th>
 
-          </tr>
+<!-- RECENT AGENTS -->
 
-        </thead>
+<div class="panel">
 
-        <tbody id="leadsTable">
+<div class="panel-head">
 
-        </tbody>
+<div>
+<h2>Recent Agent Applications</h2>
+<p>Latest partner registrations.</p>
+</div>
 
-      </table>
+<button
+class="action-btn"
+onclick="openScreen('agents')">
+View All
+</button>
 
-    </div>
+</div>
 
-  </div>
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Applicant</th>
+<th>Plan</th>
+<th>Payment</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+</thead>
+
+<tbody id="recentAgentsTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- RECENT LEADS -->
+
+<div class="panel">
+
+<div class="panel-head">
+
+<div>
+<h2>Recent Customer Leads</h2>
+<p>Website and agent generated enquiries.</p>
+</div>
+
+<button
+class="action-btn"
+onclick="openScreen('leads')">
+View All
+</button>
+
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Customer</th>
+<th>Requirement</th>
+<th>Amount</th>
+<th>Source / Agent</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+</thead>
+
+<tbody id="recentLeadsTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= AGENTS ================= -->
+<!-- AGENTS -->
 
 <section
-  id="agentsSection"
-  style="display:none"
->
+class="screen"
+id="screen-agents">
 
-  <div class="card">
+<div class="panel" style="margin-top:0;">
 
-    <div class="card-header">
+<div class="panel-head">
 
-      <h2>
-        Registered Agents
-      </h2>
+<div>
 
-      <span id="agentCount">
-        0 records
-      </span>
+<h2>Agent Applications</h2>
 
-    </div>
+<p>
+Review registrations, membership, payment and approval.
+</p>
 
-    <div class="table-wrap">
+</div>
 
-      <table>
+<div class="tools">
 
-        <thead>
+<input
+class="search"
+id="agentSearch"
+placeholder="Search name, mobile, email...">
 
-          <tr>
-            <th>Name</th>
-            <th>Mobile</th>
-            <th>Email</th>
-            <th>Membership</th>
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
+<select
+class="filter"
+id="agentStatusFilter">
 
-        </thead>
+<option value="">All Status</option>
+<option value="Pending">Pending</option>
+<option value="Approved">Approved</option>
+<option value="Rejected">Rejected</option>
 
-        <tbody id="agentsTable">
+</select>
 
-        </tbody>
+</div>
 
-      </table>
+</div>
 
-    </div>
 
-  </div>
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Applicant</th>
+<th>Location</th>
+<th>Experience</th>
+<th>Plan</th>
+<th>Payment</th>
+<th>Status</th>
+<th>Agent ID</th>
+<th>Actions</th>
+</tr>
+
+</thead>
+
+<tbody id="agentsTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= WITHDRAWALS ================= -->
+<!-- CUSTOMER LEADS -->
 
 <section
-  id="withdrawalsSection"
-  style="display:none"
->
+class="screen"
+id="screen-leads">
 
-  <div class="card">
+<div class="panel" style="margin-top:0;">
 
-    <div class="card-header">
+<div class="panel-head">
 
-      <h2>
-        Withdrawal Requests
-      </h2>
+<div>
 
-      <span id="withdrawCount">
-        0 records
-      </span>
+<h2>Customer Leads</h2>
 
-    </div>
+<p>
+Website enquiries and agent submitted customer cases.
+</p>
 
-    <div class="table-wrap">
+</div>
 
-      <table>
+<div class="tools">
 
-        <thead>
+<input
+class="search"
+id="leadSearch"
+placeholder="Search customer, number, product...">
 
-          <tr>
-            <th>Agent</th>
-            <th>Amount</th>
-            <th>Status</th>
-            <th>Date</th>
-            <th>Action</th>
-          </tr>
+<select
+class="filter"
+id="leadStatusFilter">
 
-        </thead>
+<option value="">All Status</option>
+<option value="new">New</option>
+<option value="contacted">Contacted</option>
+<option value="documents pending">Documents Pending</option>
+<option value="documents received">Documents Received</option>
+<option value="processing">Processing</option>
+<option value="submitted">Submitted</option>
+<option value="under review">Under Review</option>
+<option value="approved">Approved</option>
+<option value="disbursed">Disbursed</option>
+<option value="rejected">Rejected</option>
 
-        <tbody id="withdrawTable">
+</select>
 
-        </tbody>
+<button
+class="action-btn"
+id="addLeadBtn">
 
-      </table>
++ Add Lead
 
-    </div>
+</button>
 
-  </div>
+</div>
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Customer</th>
+<th>Product</th>
+<th>Amount</th>
+<th>Company / City</th>
+<th>Agent</th>
+<th>Status</th>
+<th>Created</th>
+<th>Action</th>
+</tr>
+
+</thead>
+
+<tbody id="leadsTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= DASHBOARD ================= -->
+<!-- MEMBERSHIPS -->
 
 <section
-  id="dashboardSection"
-  style="display:none"
->
+class="screen"
+id="screen-memberships">
 
-  <div class="card">
+<div class="panel" style="margin-top:0;">
 
-    <div class="card-header">
+<div class="panel-head">
 
-      <h2>
-        CRM Overview
-      </h2>
+<div>
+<h2>Membership Overview</h2>
+<p>Agent membership selections and status.</p>
+</div>
 
-    </div>
+</div>
 
-    <div style="padding:25px">
+<div class="table-wrap">
 
-      <p style="font-size:13px;color:#607383">
-        Fundvexxa CRM is connected with Firebase Firestore.
-        Customer enquiries, agents and withdrawal records
-        are monitored in real time.
-      </p>
+<table>
 
-      <div style="
-        margin-top:20px;
-        background:#f4f8fb;
-        padding:18px;
-        border-radius:9px;
-        font-size:12px;
-        line-height:2;
-      ">
+<thead>
 
-        <b>Lead Collection:</b> leads<br>
+<tr>
+<th>Agent</th>
+<th>Selected Plan</th>
+<th>Price</th>
+<th>Payment</th>
+<th>Approval</th>
+<th>Actions</th>
+</tr>
 
-        <b>Agent Collection:</b> users<br>
+</thead>
 
-        <b>Withdrawal Collection:</b> withdrawals<br>
+<tbody id="membershipTable"></tbody>
 
-        <b>Lead Updates:</b> Real-time<br>
+</table>
 
-        <b>Call Logs:</b> leads/{leadId}/callLogs
+</div>
 
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
+
+<!-- PAYMENTS -->
+
+<section
+class="screen"
+id="screen-payments">
+
+<div class="panel" style="margin-top:0;">
+
+<div class="panel-head">
+
+<div>
+<h2>Agent Payments</h2>
+<p>Verify membership payment status.</p>
+</div>
+
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Agent</th>
+<th>Plan</th>
+<th>Amount</th>
+<th>UTR / Reference</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+</thead>
+
+<tbody id="paymentTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
 
 </div>
 
@@ -986,1832 +1356,2536 @@ tr:hover td{
 </div>
 
 
-<!-- ================= LEAD MODAL ================= -->
+<!-- AGENT MODAL -->
 
 <div
-  class="modal-bg"
-  id="leadModal"
->
+class="modal"
+id="agentModal">
 
-  <div class="modal">
+<div class="modal-box">
 
-    <div class="modal-head">
+<button
+class="close"
+onclick="closeModal('agentModal')">
+×
+</button>
 
-      <h2>
-        Customer Details
-      </h2>
+<h2 id="agentModalName">
+Agent Details
+</h2>
 
-      <button
-        class="close"
-        onclick="closeModal()"
-      >
-        ×
-      </button>
+<p
+class="modal-sub"
+id="agentModalId">
+Application
+</p>
 
-    </div>
+<div
+class="detail-grid"
+id="agentDetails">
+</div>
 
 
-    <div class="modal-body">
+<div class="modal-section">
 
-      <div class="detail-grid">
+<h3>Admin Controls</h3>
 
-        <div class="detail">
-          <small>Name</small>
-          <strong id="dName">-</strong>
-        </div>
+<div class="form-grid">
 
-        <div class="detail">
-          <small>Mobile</small>
-          <strong id="dPhone">-</strong>
-        </div>
 
-        <div class="detail">
-          <small>Email</small>
-          <strong id="dEmail">-</strong>
-        </div>
+<div class="field">
 
-        <div class="detail">
-          <small>Requirement</small>
-          <strong id="dRequirement">-</strong>
-        </div>
+<label>Membership Plan</label>
 
-        <div class="detail">
-          <small>Amount</small>
-          <strong id="dAmount">-</strong>
-        </div>
+<select id="editMembership">
 
-        <div class="detail">
-          <small>Source</small>
-          <strong id="dSource">-</strong>
-        </div>
+<option>Basic</option>
+<option>Gold</option>
+<option>Premium</option>
 
-      </div>
-
-
-      <h3 class="section-title">
-        CRM Update
-      </h3>
-
-
-      <div class="form-grid">
-
-        <div class="field">
-
-          <label>
-            Lead Status
-          </label>
-
-          <select id="editStatus">
-
-            <option value="New">
-              New
-            </option>
-
-            <option value="Follow Up">
-              Follow Up
-            </option>
-
-            <option value="Interested">
-              Interested
-            </option>
-
-            <option value="Not Interested">
-              Not Interested
-            </option>
-
-            <option value="Closed">
-              Closed
-            </option>
-
-          </select>
-
-        </div>
-
-
-        <div class="field">
-
-          <label>
-            Call Status
-          </label>
-
-          <select id="editCallStatus">
-
-            <option value="Not Called">
-              Not Called
-            </option>
-
-            <option value="Called">
-              Called
-            </option>
-
-            <option value="Connected">
-              Connected
-            </option>
-
-            <option value="No Answer">
-              No Answer
-            </option>
-
-            <option value="Busy">
-              Busy
-            </option>
-
-            <option value="Callback">
-              Callback
-            </option>
-
-          </select>
-
-        </div>
-
-
-        <div class="field">
-
-          <label>
-            Assigned Agent
-          </label>
-
-          <input
-            id="editAgent"
-            placeholder="Agent name / ID"
-          >
-
-        </div>
-
-
-        <div class="field">
-
-          <label>
-            Next Follow-up
-          </label>
-
-          <input
-            id="editFollowup"
-            type="datetime-local"
-          >
-
-        </div>
-
-
-        <div class="field full">
-
-          <label>
-            Remarks
-          </label>
-
-          <textarea
-            id="editRemarks"
-            placeholder="Enter customer conversation / remarks..."
-          ></textarea>
-
-        </div>
-
-      </div>
-
-
-      <div class="save-row">
-
-        <button
-          class="save-btn"
-          onclick="saveLeadUpdate()"
-        >
-          Save CRM Update
-        </button>
-
-      </div>
-
-
-      <h3 class="section-title">
-        Call History
-      </h3>
-
-
-      <div
-        class="history"
-        id="callHistory"
-      >
-
-        <div class="empty">
-          Loading call history...
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
+</select>
 
 </div>
 
 
+<div class="field">
+
+<label>Payment Status</label>
+
+<select id="editPaymentStatus">
+
+<option>Pending</option>
+<option>Verified</option>
+<option>Rejected</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>Approval Status</label>
+
+<select id="editApprovalStatus">
+
+<option>Pending</option>
+<option>Approved</option>
+<option>Rejected</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>Agent ID</label>
+
+<input
+id="editAgentId"
+placeholder="FXV000001">
+
+</div>
+
+
+<div class="field full">
+
+<label>Admin Remark</label>
+
+<textarea
+id="agentAdminRemark"
+placeholder="Internal remark..."></textarea>
+
+</div>
+
+</div>
+
+<button
+class="save-btn"
+id="saveAgentBtn">
+Save Agent Changes
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- LEAD MODAL -->
+
+<div
+class="modal"
+id="leadModal">
+
+<div class="modal-box">
+
+<button
+class="close"
+onclick="closeModal('leadModal')">
+×
+</button>
+
+<h2 id="leadModalName">
+Customer Lead
+</h2>
+
+<p
+class="modal-sub"
+id="leadModalId">
+Lead Details
+</p>
+
+
+<div
+class="detail-grid"
+id="leadDetails">
+</div>
+
+
+<div class="modal-section">
+
+<h3>Lead Management</h3>
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label>Status</label>
+
+<select id="editLeadStatus">
+
+<option value="new">New</option>
+<option value="contacted">Contacted</option>
+<option value="documents pending">Documents Pending</option>
+<option value="documents received">Documents Received</option>
+<option value="processing">Processing</option>
+<option value="submitted">Submitted</option>
+<option value="under review">Under Review</option>
+<option value="approved">Approved</option>
+<option value="disbursed">Disbursed</option>
+<option value="rejected">Rejected</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>Assigned To</label>
+
+<input
+id="assignedTo"
+placeholder="Employee / RM name">
+
+</div>
+
+
+<div class="field full">
+
+<label>CRM Remark</label>
+
+<textarea
+id="leadRemark"
+placeholder="Call status, documents, follow-up or remarks..."></textarea>
+
+</div>
+
+</div>
+
+
+<button
+class="save-btn"
+id="saveLeadBtn">
+Update Lead
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- MANUAL LEAD MODAL -->
+
+<div
+class="modal"
+id="addLeadModal">
+
+<div class="modal-box">
+
+<button
+class="close"
+onclick="closeModal('addLeadModal')">
+×
+</button>
+
+<h2>Add Customer Lead</h2>
+
+<p class="modal-sub">
+Create a lead manually from the CRM.
+</p>
+
+
+<form id="manualLeadForm">
+
+<div class="form-grid">
+
+<div class="field">
+
+<label>Customer Name *</label>
+
+<input
+id="manualName"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>Mobile *</label>
+
+<input
+id="manualPhone"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>Requirement *</label>
+
+<select id="manualProduct" required>
+
+<option value="">Select Product</option>
+<option>Business Loan</option>
+<option>Personal Loan</option>
+<option>Home Loan</option>
+<option>Loan Against Property</option>
+<option>MSME Loan</option>
+<option>Working Capital / CC / OD</option>
+<option>Startup Funding</option>
+<option>Grant Funding</option>
+<option>Credit Card</option>
+<option>Credit Line</option>
+<option>Used Car Loan</option>
+<option>Insurance</option>
+<option>Website / Digital Services</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>Amount</label>
+
+<input
+id="manualAmount"
+type="number">
+
+</div>
+
+
+<div class="field">
+
+<label>City</label>
+
+<input id="manualCity">
+
+</div>
+
+
+<div class="field">
+
+<label>Agent ID</label>
+
+<input
+id="manualAgentId"
+placeholder="Optional">
+
+</div>
+
+
+<div class="field full">
+
+<label>Remark</label>
+
+<textarea id="manualRemark"></textarea>
+
+</div>
+
+</div>
+
+<button
+type="submit"
+class="save-btn">
+Save Customer Lead
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- FIREBASE -->
+
 <script type="module">
 
-/* ==========================================
+import {
+    initializeApp
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+import {
+    getAuth,
+    onAuthStateChanged,
+    signInWithEmailAndPassword,
+    signOut
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+import {
+    getFirestore,
+    collection,
+    onSnapshot,
+    doc,
+    updateDoc,
+    addDoc,
+    serverTimestamp
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+/* ===============================
    FIREBASE
-========================================== */
-
-import {
-  initializeApp
-}
-from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-
-
-import {
-  getFirestore,
-  collection,
-  onSnapshot,
-  updateDoc,
-  addDoc,
-  doc,
-  query,
-  orderBy
-}
-from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
-
-
-/* ==========================================
-   YOUR FIREBASE CONFIG
-========================================== */
+================================ */
 
 const firebaseConfig = {
 
-  apiKey:
-    "AIzaSyArcvyvNAOKipPZB0YEfSeoeN9_k-8JznQ",
+    apiKey:
+        "AIzaSyArcvyvNAOKipPZB0YEfSeoeN9_k-8JznQ",
 
-  authDomain:
-    "smile-business-os.firebaseapp.com",
+    authDomain:
+        "smile-business-os.firebaseapp.com",
 
-  projectId:
-    "smile-business-os",
+    projectId:
+        "smile-business-os",
 
-  storageBucket:
-    "smile-business-os.firebasestorage.app",
+    storageBucket:
+        "smile-business-os.firebasestorage.app",
 
-  messagingSenderId:
-    "114356400630",
+    messagingSenderId:
+        "114356400630",
 
-  appId:
-    "1:114356400630:web:96fc9d07baaf3a504c17d7",
+    appId:
+        "1:114356400630:web:96fc9d07baaf3a504c17d7",
 
-  measurementId:
-    "G-73WD9V05ZZ"
+    measurementId:
+        "G-73WD9V05ZZ"
 
 };
 
 
 const app =
-  initializeApp(firebaseConfig);
+    initializeApp(firebaseConfig);
+
+const auth =
+    getAuth(app);
 
 const db =
-  getFirestore(app);
+    getFirestore(app);
 
 
-/* ==========================================
-   GLOBAL DATA
-========================================== */
+/* ===============================
+   STATE
+================================ */
 
-let allLeads = [];
+let agentApplications = [];
+let customerLeads = [];
 
+let currentAgentId = null;
 let currentLeadId = null;
 
 
-/* ==========================================
-   REAL TIME LEADS
-========================================== */
-
-onSnapshot(
-
-  collection(db,"leads"),
-
-  (snapshot)=>{
-
-    allLeads = [];
-
-    snapshot.forEach((item)=>{
-
-      allLeads.push({
-
-        id:item.id,
-
-        ...item.data()
-
-      });
-
-    });
-
-
-    allLeads.sort((a,b)=>{
-
-      const aTime =
-        a.createdAt?.seconds || 0;
-
-      const bTime =
-        b.createdAt?.seconds || 0;
-
-      return bTime-aTime;
-
-    });
-
-
-    updateStats();
-
-    loadCurrentLeads();
-
-  },
-
-  (error)=>{
-
-    console.error(
-      "Firebase leads error:",
-      error
-    );
-
-    document.getElementById(
-      "leadsTable"
-    ).innerHTML = `
-
-      <tr>
-        <td colspan="9">
-
-          <div class="empty">
-
-            Unable to load leads from Firebase.
-
-            <br><br>
-
-            ${escapeHTML(error.message)}
-
-          </div>
-
-        </td>
-      </tr>
-
-    `;
-
-  }
-
-);
-
-
-/* ==========================================
-   REAL TIME AGENTS
-========================================== */
-
-onSnapshot(
-
-  collection(db,"users"),
-
-  (snapshot)=>{
-
-    const table =
-      document.getElementById(
-        "agentsTable"
-      );
-
-    let html = "";
-
-    let total = 0;
-
-    snapshot.forEach((item)=>{
-
-      const data =
-        item.data();
-
-      total++;
-
-      html += `
-
-        <tr>
-
-          <td>
-            <span class="customer">
-              ${escapeHTML(
-                data.name ||
-                data.fullName ||
-                "-"
-              )}
-            </span>
-          </td>
-
-          <td>
-            ${escapeHTML(
-              data.mobile ||
-              data.phone ||
-              "-"
-            )}
-          </td>
-
-          <td>
-            ${escapeHTML(
-              data.email ||
-              "-"
-            )}
-          </td>
-
-          <td>
-            ${escapeHTML(
-              data.membership ||
-              data.plan ||
-              "-"
-            )}
-          </td>
-
-          <td>
-            <span class="badge ${
-              String(data.status||"")
-              .toLowerCase()
-              === "active"
-              ? "interested"
-              : "pending"
-            }">
-              ${escapeHTML(
-                data.status ||
-                "Pending"
-              )}
-            </span>
-          </td>
-
-          <td>
-
-            <button
-              class="action"
-              onclick="activateAgent('${item.id}')"
-            >
-              Activate
-            </button>
-
-            <button
-              class="action"
-              onclick="rejectAgent('${item.id}')"
-            >
-              Reject
-            </button>
-
-          </td>
-
-        </tr>
-
-      `;
-
-    });
-
-
-    if(!html){
-
-      html = `
-
-        <tr>
-          <td colspan="6">
-
-            <div class="empty">
-              No agents found.
-            </div>
-
-          </td>
-        </tr>
-
-      `;
-
-    }
-
-
-    table.innerHTML = html;
-
-    document.getElementById(
-      "agentCount"
-    ).textContent =
-      total+" records";
-
-    document.getElementById(
-      "totalAgents"
-    ).textContent =
-      total;
-
-  }
-
-);
-
-
-/* ==========================================
-   REAL TIME WITHDRAWALS
-========================================== */
-
-onSnapshot(
-
-  collection(db,"withdrawals"),
-
-  (snapshot)=>{
-
-    const table =
-      document.getElementById(
-        "withdrawTable"
-      );
-
-    let html = "";
-
-    let total = 0;
-
-    snapshot.forEach((item)=>{
-
-      const data =
-        item.data();
-
-      total++;
-
-      let date = "-";
-
-      if(data.createdAt){
-
-        date =
-          formatDate(
-            data.createdAt
-          );
-
-      }
-
-
-      html += `
-
-        <tr>
-
-          <td>
-            ${escapeHTML(
-              data.agentId ||
-              data.agentName ||
-              "-"
-            )}
-          </td>
-
-          <td>
-            <b>
-              ₹${escapeHTML(
-                String(
-                  data.amount || 0
-                )
-              )}
-            </b>
-          </td>
-
-          <td>
-
-            <span class="badge ${
-              data.status==="Paid"
-              ? "interested"
-              : "pending"
-            }">
-
-              ${escapeHTML(
-                data.status ||
-                "Pending"
-              )}
-
-            </span>
-
-          </td>
-
-          <td>
-            ${date}
-          </td>
-
-          <td>
-
-            ${
-              data.status !== "Paid"
-
-              ?
-
-              `<button
-                class="action"
-                onclick="payWithdrawal('${item.id}')"
-              >
-                Mark Paid
-              </button>`
-
-              :
-
-              `<span
-                style="font-size:10px;color:#21834b"
-              >
-                Completed
-              </span>`
-
-            }
-
-          </td>
-
-        </tr>
-
-      `;
-
-    });
-
-
-    if(!html){
-
-      html = `
-
-        <tr>
-          <td colspan="5">
-
-            <div class="empty">
-              No withdrawal requests found.
-            </div>
-
-          </td>
-        </tr>
-
-      `;
-
-    }
-
-
-    table.innerHTML = html;
-
-    document.getElementById(
-      "withdrawCount"
-    ).textContent =
-      total+" records";
-
-  }
-
-);
-
-
-/* ==========================================
-   STATS
-========================================== */
-
-function updateStats(){
-
-  document.getElementById(
-    "totalLeads"
-  ).textContent =
-    allLeads.length;
-
-
-  document.getElementById(
-    "newLeads"
-  ).textContent =
-
-    allLeads.filter(
-      x => normalizeStatus(x.status)==="new"
-    ).length;
-
-
-  document.getElementById(
-    "followLeads"
-  ).textContent =
-
-    allLeads.filter(
-      x =>
-        normalizeStatus(x.status)
-        ==="follow up"
-    ).length;
-
-
-  document.getElementById(
-    "interestedLeads"
-  ).textContent =
-
-    allLeads.filter(
-      x =>
-        normalizeStatus(x.status)
-        ==="interested"
-    ).length;
-
-}
-
-
-/* ==========================================
-   LOAD LEADS
-========================================== */
-
-window.loadCurrentLeads =
-function(){
-
-  const search =
-    document.getElementById(
-      "searchInput"
-    ).value
-    .trim()
-    .toLowerCase();
-
-
-  const status =
-    document.getElementById(
-      "statusFilter"
-    ).value;
-
-
-  const filtered =
-    allLeads.filter((lead)=>{
-
-      const text = [
-
-        lead.name,
-
-        lead.fullName,
-
-        lead.customer,
-
-        lead.customerName,
-
-        lead.phone,
-
-        lead.mobile,
-
-        lead.email,
-
-        lead.requirement,
-
-        lead.product,
-
-        lead.service,
-
-        lead.source
-
-      ]
-      .filter(Boolean)
-      .join(" ")
-      .toLowerCase();
-
-
-      const matchesSearch =
-        !search ||
-        text.includes(search);
-
-
-      const matchesStatus =
-        status==="all" ||
-        lead.status===status;
-
-
-      return (
-        matchesSearch &&
-        matchesStatus
-      );
-
-    });
-
-
-  renderLeads(filtered);
-
-};
-
-
-/* ==========================================
-   RENDER LEADS
-========================================== */
-
-function renderLeads(leads){
-
-  const table =
-    document.getElementById(
-      "leadsTable"
-    );
-
-
-  document.getElementById(
-    "leadCount"
-  ).textContent =
-    leads.length+" records";
-
-
-  if(!leads.length){
-
-    table.innerHTML = `
-
-      <tr>
-        <td colspan="9">
-
-          <div class="empty">
-
-            No customer leads found.
-
-            <br>
-
-            New website enquiries will appear here automatically.
-
-          </div>
-
-        </td>
-      </tr>
-
-    `;
-
-    return;
-
-  }
-
-
-  table.innerHTML =
-    leads.map((lead)=>{
-
-      const name =
-        lead.name ||
-        lead.fullName ||
-        lead.customerName ||
-        lead.customer ||
-        "Unknown";
-
-
-      const phone =
-        lead.phone ||
-        lead.mobile ||
-        "-";
-
-
-      const requirement =
-        lead.requirement ||
-        lead.product ||
-        lead.service ||
-        "-";
-
-
-      const amount =
-        lead.amount ||
-        lead.loanAmount ||
-        "-";
-
-
-      const source =
-        lead.source ||
-        "-";
-
-
-      const status =
-        lead.status ||
-        "New";
-
-
-      const callStatus =
-        lead.callStatus ||
-        "Not Called";
-
-
-      const date =
-        formatDate(
-          lead.createdAt
-        );
-
-
-      return `
-
-        <tr>
-
-          <td>
-
-            <div
-              class="customer"
-            >
-              ${escapeHTML(name)}
-            </div>
-
-            <div
-              class="phone"
-            >
-              ${escapeHTML(
-                lead.email || ""
-              )}
-            </div>
-
-          </td>
-
-
-          <td>
-
-            ${
-              phone !== "-"
-
-              ?
-
-              `<a
-                href="tel:${escapeHTML(phone)}"
-                class="phone"
-              >
-                ${escapeHTML(phone)}
-              </a>`
-
-              :
-
-              "-"
-
-            }
-
-          </td>
-
-
-          <td>
-
-            <span class="product">
-              ${escapeHTML(
-                requirement
-              )}
-            </span>
-
-          </td>
-
-
-          <td>
-
-            ${
-              amount !== "-"
-              ?
-              "₹"+escapeHTML(
-                String(amount)
-              )
-              :
-              "-"
-            }
-
-          </td>
-
-
-          <td>
-
-            <span class="product">
-              ${escapeHTML(source)}
-            </span>
-
-          </td>
-
-
-          <td>
-
-            <span
-              class="badge ${statusClass(status)}"
-            >
-              ${escapeHTML(status)}
-            </span>
-
-          </td>
-
-
-          <td>
-
-            <span
-              class="badge pending"
-            >
-              ${escapeHTML(callStatus)}
-            </span>
-
-          </td>
-
-
-          <td>
-
-            <span
-              class="product"
-            >
-              ${date}
-            </span>
-
-          </td>
-
-
-          <td>
-
-            <div class="actions">
-
-              <button
-                class="action"
-                onclick="viewLead('${lead.id}')"
-              >
-                View
-              </button>
-
-
-              ${
-                phone !== "-"
-
-                ?
-
-                `<a
-                  class="action call"
-                  href="tel:${escapeHTML(phone)}"
-                >
-                  Call
-                </a>`
-
-                :
-
-                ""
-
-              }
-
-
-              ${
-                phone !== "-"
-
-                ?
-
-                `<a
-                  class="action whatsapp"
-                  target="_blank"
-                  href="https://wa.me/91${cleanPhone(phone)}?text=Hello%20${encodeURIComponent(name)},%20this%20is%20Fundvexxa.%20We%20received%20your%20enquiry."
-                >
-                  WhatsApp
-                </a>`
-
-                :
-
-                ""
-
-              }
-
-            </div>
-
-          </td>
-
-        </tr>
-
-      `;
-
-    }).join("");
-
-}
-
-
-/* ==========================================
-   SEARCH EVENTS
-========================================== */
-
-document
-.getElementById("searchInput")
-.addEventListener(
-  "input",
-  loadCurrentLeads
-);
-
-
-document
-.getElementById("statusFilter")
-.addEventListener(
-  "change",
-  loadCurrentLeads
-);
-
-
-/* ==========================================
-   VIEW LEAD
-========================================== */
-
-window.viewLead =
-function(id){
-
-  const lead =
-    allLeads.find(
-      x => x.id===id
-    );
-
-
-  if(!lead) return;
-
-
-  currentLeadId = id;
-
-
-  document.getElementById(
-    "dName"
-  ).textContent =
-
-    lead.name ||
-    lead.fullName ||
-    lead.customerName ||
-    lead.customer ||
-    "-";
-
-
-  document.getElementById(
-    "dPhone"
-  ).textContent =
-
-    lead.phone ||
-    lead.mobile ||
-    "-";
-
-
-  document.getElementById(
-    "dEmail"
-  ).textContent =
-
-    lead.email ||
-    "-";
-
-
-  document.getElementById(
-    "dRequirement"
-  ).textContent =
-
-    lead.requirement ||
-    lead.product ||
-    lead.service ||
-    "-";
-
-
-  document.getElementById(
-    "dAmount"
-  ).textContent =
-
-    lead.amount ||
-    lead.loanAmount ||
-    "-";
-
-
-  document.getElementById(
-    "dSource"
-  ).textContent =
-
-    lead.source ||
-    "-";
-
-
-  document.getElementById(
-    "editStatus"
-  ).value =
-
-    lead.status ||
-    "New";
-
-
-  document.getElementById(
-    "editCallStatus"
-  ).value =
-
-    lead.callStatus ||
-    "Not Called";
-
-
-  document.getElementById(
-    "editAgent"
-  ).value =
-
-    lead.assignedAgent ||
-    "";
-
-
-  document.getElementById(
-    "editFollowup"
-  ).value =
-
-    lead.nextFollowUp ||
-    "";
-
-
-  document.getElementById(
-    "editRemarks"
-  ).value =
-
-    lead.remarks ||
-    "";
-
-
-  document
-  .getElementById("leadModal")
-  .classList.add("show");
-
-
-  loadCallHistory(id);
-
-};
-
-
-/* ==========================================
-   SAVE CRM UPDATE
-========================================== */
-
-window.saveLeadUpdate =
-async function(){
-
-  if(!currentLeadId)
-    return;
-
-
-  const status =
-    document.getElementById(
-      "editStatus"
-    ).value;
-
-
-  const callStatus =
-    document.getElementById(
-      "editCallStatus"
-    ).value;
-
-
-  const assignedAgent =
-    document.getElementById(
-      "editAgent"
-    ).value
-    .trim();
-
-
-  const nextFollowUp =
-    document.getElementById(
-      "editFollowup"
-    ).value;
-
-
-  const remarks =
-    document.getElementById(
-      "editRemarks"
-    ).value
-    .trim();
-
-
-  try{
-
-    await updateDoc(
-
-      doc(
-        db,
-        "leads",
-        currentLeadId
-      ),
-
-      {
-
-        status,
-
-        callStatus,
-
-        assignedAgent,
-
-        nextFollowUp,
-
-        remarks,
-
-        updatedAt:
-          new Date()
-
-      }
-
-    );
-
-
-    /* SAVE CALL LOG */
-
-    await addDoc(
-
-      collection(
-        db,
-        "leads",
-        currentLeadId,
-        "callLogs"
-      ),
-
-      {
-
-        status,
-
-        callStatus,
-
-        remarks,
-
-        agent:
-          assignedAgent,
-
-        createdAt:
-          new Date()
-
-      }
-
-    );
-
-
-    alert(
-      "CRM update saved successfully."
-    );
-
-    loadCallHistory(
-      currentLeadId
-    );
-
-  }
-
-  catch(error){
-
-    console.error(error);
-
-    alert(
-      "Unable to update CRM: "+
-      error.message
-    );
-
-  }
-
-};
-
-
-/* ==========================================
-   CALL HISTORY
-========================================== */
-
-function loadCallHistory(id){
-
-  const history =
-    document.getElementById(
-      "callHistory"
-    );
-
-
-  history.innerHTML = `
-
-    <div class="empty">
-      Loading call history...
-    </div>
-
-  `;
-
-
-  const q =
-    query(
-
-      collection(
-        db,
-        "leads",
-        id,
-        "callLogs"
-      ),
-
-      orderBy(
-        "createdAt",
-        "desc"
-      )
-
-    );
-
-
-  onSnapshot(
-
-    q,
-
-    (snapshot)=>{
-
-      if(snapshot.empty){
-
-        history.innerHTML = `
-
-          <div class="empty">
-            No call history yet.
-          </div>
-
-        `;
-
-        return;
-
-      }
-
-
-      history.innerHTML = "";
-
-      snapshot.forEach((item)=>{
-
-        const data =
-          item.data();
-
-
-        history.innerHTML += `
-
-          <div class="history-item">
-
-            <strong>
-
-              ${escapeHTML(
-                data.callStatus ||
-                data.status ||
-                "CRM Update"
-              )}
-
-            </strong>
-
-            <small>
-
-              ${formatDate(
-                data.createdAt
-              )}
-
-              ${
-                data.agent
-                ?
-                " · "+escapeHTML(
-                  data.agent
-                )
-                :
-                ""
-              }
-
-            </small>
-
-            ${
-              data.remarks
-
-              ?
-
-              `<p>
-                ${escapeHTML(
-                  data.remarks
-                )}
-              </p>`
-
-              :
-
-              ""
-
-            }
-
-          </div>
-
-        `;
-
-      });
-
-    },
-
-    (error)=>{
-
-      console.error(
-        "Call history:",
-        error
-      );
-
-      history.innerHTML = `
-
-        <div class="empty">
-          Call history unavailable.
-        </div>
-
-      `;
-
-    }
-
-  );
-
-}
-
-
-/* ==========================================
-   CLOSE MODAL
-========================================== */
-
-window.closeModal =
-function(){
-
-  document
-  .getElementById("leadModal")
-  .classList.remove("show");
-
-  currentLeadId = null;
-
-};
-
-
-/* ==========================================
-   AGENT ACTIONS
-========================================== */
-
-window.activateAgent =
-async function(id){
-
-  try{
-
-    await updateDoc(
-
-      doc(
-        db,
-        "users",
-        id
-      ),
-
-      {
-        status:"Active"
-      }
-
-    );
-
-  }
-
-  catch(error){
-
-    alert(
-      error.message
-    );
-
-  }
-
-};
-
-
-window.rejectAgent =
-async function(id){
-
-  try{
-
-    await updateDoc(
-
-      doc(
-        db,
-        "users",
-        id
-      ),
-
-      {
-        status:"Rejected"
-      }
-
-    );
-
-  }
-
-  catch(error){
-
-    alert(
-      error.message
-    );
-
-  }
-
-};
-
-
-/* ==========================================
-   WITHDRAWAL
-========================================== */
-
-window.payWithdrawal =
-async function(id){
-
-  if(
-    !confirm(
-      "Mark this withdrawal as Paid?"
-    )
-  )
-    return;
-
-
-  try{
-
-    await updateDoc(
-
-      doc(
-        db,
-        "withdrawals",
-        id
-      ),
-
-      {
-        status:"Paid",
-        paidAt:new Date()
-      }
-
-    );
-
-  }
-
-  catch(error){
-
-    alert(
-      error.message
-    );
-
-  }
-
-};
-
-
-/* ==========================================
-   NAVIGATION
-========================================== */
-
-window.showSection =
-function(section){
-
-  document.getElementById(
-    "leadsSection"
-  ).style.display =
-    section==="leads"
-    ? "block"
-    : "none";
-
-
-  document.getElementById(
-    "agentsSection"
-  ).style.display =
-    section==="agents"
-    ? "block"
-    : "none";
-
-
-  document.getElementById(
-    "withdrawalsSection"
-  ).style.display =
-    section==="withdrawals"
-    ? "block"
-    : "none";
-
-
-  document.getElementById(
-    "dashboardSection"
-  ).style.display =
-    section==="dashboard"
-    ? "block"
-    : "none";
-
-
-  document
-  .querySelectorAll(".menu button")
-  .forEach(btn =>
-    btn.classList.remove("active")
-  );
-
-
-  event?.currentTarget?.classList.add(
-    "active"
-  );
-
-};
-
-
-/* ==========================================
-   MOBILE SIDEBAR
-========================================== */
-
-window.toggleSidebar =
-function(){
-
-  document
-  .getElementById("sidebar")
-  .classList.toggle("open");
-
-};
-
-
-/* ==========================================
+/* ===============================
    HELPERS
-========================================== */
+================================ */
 
-function normalizeStatus(value){
+const $ = id =>
+    document.getElementById(id);
 
-  return String(
-    value || ""
-  )
-  .trim()
-  .toLowerCase();
 
+function safe(value){
+
+    if(
+        value === undefined ||
+        value === null ||
+        value === ""
+    ){
+        return "—";
+    }
+
+    return String(value);
+}
+
+
+function money(value){
+
+    const n =
+        Number(value);
+
+    if(!Number.isFinite(n)){
+        return "—";
+    }
+
+    return "₹" +
+        n.toLocaleString("en-IN");
 }
 
 
 function statusClass(status){
 
-  const s =
-    normalizeStatus(status);
+    return String(status || "pending")
+        .toLowerCase()
+        .replace(/\s+/g,"-");
+}
 
 
-  if(s==="new")
-    return "new";
+function statusBadge(status){
+
+    const text =
+        safe(status);
+
+    return `
+        <span class="badge ${statusClass(text)}">
+            ${text}
+        </span>
+    `;
+}
 
 
-  if(s==="follow up")
-    return "follow";
+function displayDate(value){
 
+    if(!value){
+        return "—";
+    }
 
-  if(s==="interested")
-    return "interested";
+    try{
 
+        if(value.toDate){
+            return value
+                .toDate()
+                .toLocaleDateString("en-IN");
+        }
 
-  if(s==="not interested")
-    return "not-interested";
+        return new Date(value)
+            .toLocaleDateString("en-IN");
 
-
-  if(s==="closed")
-    return "closed";
-
-
-  return "pending";
+    }
+    catch{
+        return "—";
+    }
 
 }
 
 
-function cleanPhone(phone){
+/* ===============================
+   AUTH
+================================ */
 
-  let p =
-    String(phone)
-    .replace(/\D/g,"");
+$("adminLoginForm")
+.addEventListener(
+    "submit",
+    async event=>{
+
+        event.preventDefault();
+
+        const btn =
+            $("loginBtn");
+
+        const error =
+            $("loginError");
+
+        btn.disabled = true;
+        btn.textContent = "Signing in...";
+
+        error.style.display =
+            "none";
 
 
-  if(p.startsWith("91") &&
-     p.length===12){
+        try{
 
-    p =
-      p.substring(2);
+            await signInWithEmailAndPassword(
+                auth,
+                $("adminEmail").value.trim(),
+                $("adminPassword").value
+            );
 
-  }
+        }
+        catch(err){
+
+            console.error(err);
+
+            error.textContent =
+                "Login failed. Please check your admin email and password.";
+
+            error.style.display =
+                "block";
+
+            btn.disabled = false;
+
+            btn.textContent =
+                "Sign In";
+
+        }
+
+    }
+);
 
 
-  return p;
+onAuthStateChanged(
+    auth,
+    user=>{
+
+        if(user){
+
+            $("authScreen")
+            .classList
+            .add("hidden");
+
+            $("adminBadge").textContent =
+                user.email || "Admin";
+
+            startRealtimeCRM();
+
+        }
+        else{
+
+            $("authScreen")
+            .classList
+            .remove("hidden");
+
+        }
+
+    }
+);
+
+
+$("logoutBtn")
+.addEventListener(
+    "click",
+    async()=>{
+
+        await signOut(auth);
+
+    }
+);
+
+
+/* ===============================
+   REAL-TIME AGENTS
+================================ */
+
+let unsubscribeAgents = null;
+let unsubscribeLeads = null;
+
+
+function startRealtimeCRM(){
+
+    if(
+        unsubscribeAgents ||
+        unsubscribeLeads
+    ){
+        return;
+    }
+
+
+    unsubscribeAgents =
+    onSnapshot(
+        collection(
+            db,
+            "agent_registrations"
+        ),
+        snapshot=>{
+
+            agentApplications = [];
+
+            snapshot.forEach(item=>{
+
+                agentApplications.push({
+                    id:item.id,
+                    ...item.data()
+                });
+
+            });
+
+            sortAgents();
+
+            renderEverything();
+
+        },
+        error=>{
+
+            console.error(
+                "Agent realtime error:",
+                error
+            );
+
+        }
+    );
+
+
+    unsubscribeLeads =
+    onSnapshot(
+        collection(
+            db,
+            "leads"
+        ),
+        snapshot=>{
+
+            customerLeads = [];
+
+            snapshot.forEach(item=>{
+
+                customerLeads.push({
+                    id:item.id,
+                    ...item.data()
+                });
+
+            });
+
+            sortLeads();
+
+            renderEverything();
+
+        },
+        error=>{
+
+            console.error(
+                "Lead realtime error:",
+                error
+            );
+
+        }
+    );
 
 }
 
 
-function formatDate(timestamp){
+function sortAgents(){
 
-  if(!timestamp)
-    return "-";
+    agentApplications.sort(
+        (a,b)=>
+            getTimestamp(b.createdAt) -
+            getTimestamp(a.createdAt)
+    );
+
+}
 
 
-  try{
+function sortLeads(){
 
-    let date;
+    customerLeads.sort(
+        (a,b)=>
+            getTimestamp(b.createdAt) -
+            getTimestamp(a.createdAt)
+    );
+
+}
+
+
+function getTimestamp(value){
+
+    if(!value){
+        return 0;
+    }
+
+    try{
+
+        if(value.toMillis){
+            return value.toMillis();
+        }
+
+        return new Date(value)
+            .getTime();
+
+    }
+    catch{
+        return 0;
+    }
+
+}
+
+
+/* ===============================
+   RENDER ALL
+================================ */
+
+function renderEverything(){
+
+    renderStats();
+
+    renderAgentTables();
+
+    renderLeadTables();
+
+    renderMemberships();
+
+    renderPayments();
+
+}
+
+
+/* ===============================
+   STATS
+================================ */
+
+function renderStats(){
+
+    const pendingAgents =
+        agentApplications
+        .filter(
+            agent =>
+                String(
+                    agent.approvalStatus ||
+                    agent.status
+                ).toLowerCase()
+                === "pending"
+        ).length;
+
+
+    const approvedAgents =
+        agentApplications
+        .filter(
+            agent =>
+                String(
+                    agent.approvalStatus ||
+                    agent.status
+                ).toLowerCase()
+                === "approved"
+        ).length;
+
+
+    const newLeads =
+        customerLeads
+        .filter(
+            lead =>{
+
+                const s =
+                    String(
+                        lead.status || "new"
+                    ).toLowerCase();
+
+                return (
+                    s === "new" ||
+                    s === "pending"
+                );
+
+            }
+        ).length;
+
+
+    $("statAgents").textContent =
+        agentApplications.length;
+
+    $("statPendingAgents").textContent =
+        pendingAgents;
+
+    $("statApprovedAgents").textContent =
+        approvedAgents;
+
+    $("statLeads").textContent =
+        customerLeads.length;
+
+    $("statNewLeads").textContent =
+        newLeads;
+
+}
+
+
+/* ===============================
+   AGENT TABLES
+================================ */
+
+function getFilteredAgents(){
+
+    const query =
+        $("agentSearch")
+        ?.value
+        .trim()
+        .toLowerCase() || "";
+
+    const status =
+        $("agentStatusFilter")
+        ?.value
+        .toLowerCase() || "";
+
+
+    return agentApplications.filter(
+        agent=>{
+
+            const text = `
+                ${safe(agent.fullName)}
+                ${safe(agent.mobile)}
+                ${safe(agent.email)}
+                ${safe(agent.city)}
+                ${safe(agent.agentId)}
+            `.toLowerCase();
+
+
+            const currentStatus =
+                String(
+                    agent.approvalStatus ||
+                    agent.status ||
+                    "Pending"
+                ).toLowerCase();
+
+
+            return (
+                (!query || text.includes(query)) &&
+                (!status || currentStatus === status)
+            );
+
+        }
+    );
+
+}
+
+
+function agentRow(agent){
+
+    const status =
+        agent.approvalStatus ||
+        agent.status ||
+        "Pending";
+
+
+    return `
+
+        <tr>
+
+            <td>
+
+                <div class="person">
+
+                    <strong>
+                        ${safe(agent.fullName)}
+                    </strong>
+
+                    <span>
+                        ${safe(agent.mobile)}
+                        ·
+                        ${safe(agent.email)}
+                    </span>
+
+                </div>
+
+            </td>
+
+            <td>
+                ${safe(agent.city)}
+                ${agent.state ? " · " + agent.state : ""}
+            </td>
+
+            <td>
+                ${safe(agent.experience)}
+            </td>
+
+            <td>
+                ${safe(agent.membership)}
+                <br>
+                <small>
+                    ${money(agent.membershipPrice)}
+                </small>
+            </td>
+
+            <td>
+                ${statusBadge(
+                    agent.paymentStatus ||
+                    "Pending"
+                )}
+            </td>
+
+            <td>
+                ${statusBadge(status)}
+            </td>
+
+            <td>
+                ${safe(agent.agentId)}
+            </td>
+
+            <td>
+
+                <div class="actions">
+
+                    <button
+                        class="small-btn view-btn"
+                        data-agent-view="${agent.id}">
+                        View
+                    </button>
+
+                    ${
+                        String(status).toLowerCase()
+                        !== "approved"
+                        ?
+                        `
+                        <button
+                            class="small-btn approve-btn"
+                            data-agent-approve="${agent.id}">
+                            Approve
+                        </button>
+                        `
+                        :
+                        ""
+                    }
+
+                    ${
+                        String(status).toLowerCase()
+                        !== "rejected"
+                        ?
+                        `
+                        <button
+                            class="small-btn reject-btn"
+                            data-agent-reject="${agent.id}">
+                            Reject
+                        </button>
+                        `
+                        :
+                        ""
+                    }
+
+                </div>
+
+            </td>
+
+        </tr>
+
+    `;
+
+}
+
+
+function renderAgentTables(){
+
+    const filtered =
+        getFilteredAgents();
+
+
+    $("agentsTable").innerHTML =
+        filtered.length
+        ?
+        filtered.map(agentRow).join("")
+        :
+        `<tr><td colspan="8"><div class="empty">No agent applications found.</div></td></tr>`;
+
+
+    $("recentAgentsTable").innerHTML =
+        agentApplications
+        .slice(0,5)
+        .map(agent=>{
+
+            const status =
+                agent.approvalStatus ||
+                agent.status ||
+                "Pending";
+
+            return `
+
+                <tr>
+
+                    <td>
+                        <div class="person">
+                            <strong>
+                                ${safe(agent.fullName)}
+                            </strong>
+                            <span>
+                                ${safe(agent.mobile)}
+                            </span>
+                        </div>
+                    </td>
+
+                    <td>
+                        ${safe(agent.membership)}
+                    </td>
+
+                    <td>
+                        ${statusBadge(
+                            agent.paymentStatus ||
+                            "Pending"
+                        )}
+                    </td>
+
+                    <td>
+                        ${statusBadge(status)}
+                    </td>
+
+                    <td>
+
+                        <button
+                            class="small-btn view-btn"
+                            data-agent-view="${agent.id}">
+                            Review
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        })
+        .join("") ||
+        `<tr><td colspan="5"><div class="empty">No registrations.</div></td></tr>`;
+
+
+    attachAgentButtons();
+
+}
+
+
+function attachAgentButtons(){
+
+    document
+    .querySelectorAll(
+        "[data-agent-view]"
+    )
+    .forEach(button=>{
+
+        button.onclick =
+            ()=>openAgent(
+                button.dataset.agentView
+            );
+
+    });
+
+
+    document
+    .querySelectorAll(
+        "[data-agent-approve]"
+    )
+    .forEach(button=>{
+
+        button.onclick =
+            ()=>quickApprove(
+                button.dataset.agentApprove
+            );
+
+    });
+
+
+    document
+    .querySelectorAll(
+        "[data-agent-reject]"
+    )
+    .forEach(button=>{
+
+        button.onclick =
+            ()=>quickReject(
+                button.dataset.agentReject
+            );
+
+    });
+
+}
+
+
+/* ===============================
+   AGENT MODAL
+================================ */
+
+window.openAgent =
+function(id){
+
+    const agent =
+        agentApplications.find(
+            item=>item.id === id
+        );
+
+    if(!agent){
+        return;
+    }
+
+    currentAgentId =
+        id;
+
+
+    $("agentModalName").textContent =
+        agent.fullName ||
+        "Agent Application";
+
+    $("agentModalId").textContent =
+        "Application ID: " +
+        id;
+
+
+    $("agentDetails").innerHTML = `
+
+        ${detail("Mobile",agent.mobile)}
+        ${detail("Email",agent.email)}
+        ${detail("City",agent.city)}
+        ${detail("State",agent.state)}
+        ${detail("Experience",agent.experience)}
+        ${detail("Profession",agent.profession)}
+        ${detail("Work Type",agent.workType)}
+        ${detail("Referral Code",agent.referralCode)}
+        ${detail("Selected Plan",agent.membership)}
+        ${detail("Plan Price",money(agent.membershipPrice))}
+        ${detail("Payment Status",agent.paymentStatus)}
+        ${detail("Current Agent ID",agent.agentId)}
+        ${detail(
+            "Reason / Goal",
+            agent.reason,
+            true
+        )}
+
+    `;
+
+
+    $("editMembership").value =
+        agent.membership ||
+        "Basic";
+
+    $("editPaymentStatus").value =
+        normalizeAdminValue(
+            agent.paymentStatus,
+            [
+                "Pending",
+                "Verified",
+                "Rejected"
+            ],
+            "Pending"
+        );
+
+    $("editApprovalStatus").value =
+        normalizeAdminValue(
+            agent.approvalStatus ||
+            agent.status,
+            [
+                "Pending",
+                "Approved",
+                "Rejected"
+            ],
+            "Pending"
+        );
+
+    $("editAgentId").value =
+        agent.agentId || "";
+
+    $("agentAdminRemark").value =
+        agent.adminRemark || "";
+
+
+    $("agentModal")
+    .classList
+    .add("show");
+
+};
+
+
+function detail(label,value,full=false){
+
+    return `
+
+        <div class="detail ${full ? "full" : ""}">
+
+            <span>
+                ${label}
+            </span>
+
+            <strong>
+                ${safe(value)}
+            </strong>
+
+        </div>
+
+    `;
+
+}
+
+
+function normalizeAdminValue(
+    value,
+    allowed,
+    fallback
+){
+
+    const match =
+        allowed.find(
+            item =>
+                item.toLowerCase() ===
+                String(value || "")
+                .toLowerCase()
+        );
+
+    return match || fallback;
+
+}
+
+
+/* ===============================
+   GENERATE AGENT ID
+================================ */
+
+function generateAgentId(){
+
+    const number =
+        String(
+            Date.now()
+        )
+        .slice(-6);
+
+    return "FXV" + number;
+
+}
+
+
+/* ===============================
+   SAVE AGENT
+================================ */
+
+$("saveAgentBtn")
+.addEventListener(
+    "click",
+    async()=>{
+
+        if(!currentAgentId){
+            return;
+        }
+
+
+        let agentId =
+            $("editAgentId")
+            .value
+            .trim();
+
+
+        const approval =
+            $("editApprovalStatus")
+            .value;
+
+
+        if(
+            approval === "Approved" &&
+            !agentId
+        ){
+
+            agentId =
+                generateAgentId();
+
+        }
+
+
+        try{
+
+            await updateDoc(
+                doc(
+                    db,
+                    "agent_registrations",
+                    currentAgentId
+                ),
+                {
+
+                    membership:
+                        $("editMembership").value,
+
+                    paymentStatus:
+                        $("editPaymentStatus").value,
+
+                    approvalStatus:
+                        approval,
+
+                    status:
+                        approval,
+
+                    agentId:
+                        agentId,
+
+                    dashboardAccess:
+                        approval === "Approved",
+
+                    adminRemark:
+                        $("agentAdminRemark")
+                        .value
+                        .trim(),
+
+                    updatedAt:
+                        serverTimestamp()
+
+                }
+            );
+
+
+            closeModal(
+                "agentModal"
+            );
+
+        }
+        catch(error){
+
+            console.error(error);
+
+            alert(
+                "Agent update failed."
+            );
+
+        }
+
+    }
+);
+
+
+/* ===============================
+   QUICK APPROVE
+================================ */
+
+async function quickApprove(id){
+
+    const agent =
+        agentApplications.find(
+            item=>item.id === id
+        );
+
+    if(!agent){
+        return;
+    }
 
 
     if(
-      timestamp.toDate
+        agent.paymentStatus !== "Verified"
     ){
 
-      date =
-        timestamp.toDate();
+        const proceed =
+            confirm(
+                "Payment is not marked Verified. Approve anyway?"
+            );
+
+        if(!proceed){
+            return;
+        }
 
     }
 
-    else if(
-      timestamp.seconds
-    ){
 
-      date =
-        new Date(
-          timestamp.seconds*1000
+    const agentId =
+        agent.agentId ||
+        generateAgentId();
+
+
+    try{
+
+        await updateDoc(
+            doc(
+                db,
+                "agent_registrations",
+                id
+            ),
+            {
+
+                approvalStatus:
+                    "Approved",
+
+                status:
+                    "Approved",
+
+                agentId:
+                    agentId,
+
+                dashboardAccess:
+                    true,
+
+                updatedAt:
+                    serverTimestamp()
+
+            }
+        );
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        alert(
+            "Unable to approve agent."
         );
 
     }
 
-    else{
+}
 
-      date =
-        new Date(timestamp);
 
+async function quickReject(id){
+
+    const reason =
+        prompt(
+            "Enter rejection reason:"
+        );
+
+    if(reason === null){
+        return;
     }
 
 
-    if(
-      isNaN(date.getTime())
-    )
-      return "-";
+    try{
+
+        await updateDoc(
+            doc(
+                db,
+                "agent_registrations",
+                id
+            ),
+            {
+
+                approvalStatus:
+                    "Rejected",
+
+                status:
+                    "Rejected",
+
+                dashboardAccess:
+                    false,
+
+                adminRemark:
+                    reason,
+
+                updatedAt:
+                    serverTimestamp()
+
+            }
+        );
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        alert(
+            "Unable to reject agent."
+        );
+
+    }
+
+}
 
 
-    return date.toLocaleString(
-      "en-IN",
-      {
-        day:"2-digit",
-        month:"short",
-        year:"numeric",
-        hour:"2-digit",
-        minute:"2-digit"
-      }
+/* ===============================
+   CUSTOMER LEADS
+================================ */
+
+function getFilteredLeads(){
+
+    const query =
+        $("leadSearch")
+        ?.value
+        .trim()
+        .toLowerCase() || "";
+
+    const status =
+        $("leadStatusFilter")
+        ?.value
+        .toLowerCase() || "";
+
+
+    return customerLeads.filter(
+        lead=>{
+
+            const text = `
+
+                ${safe(
+                    lead.name ||
+                    lead.customer ||
+                    lead.customerName
+                )}
+
+                ${safe(
+                    lead.phone ||
+                    lead.mobile
+                )}
+
+                ${safe(
+                    lead.requirement ||
+                    lead.product
+                )}
+
+                ${safe(lead.company)}
+
+                ${safe(lead.agentId)}
+
+                ${safe(lead.agentName)}
+
+            `.toLowerCase();
+
+
+            const currentStatus =
+                String(
+                    lead.status ||
+                    "new"
+                ).toLowerCase();
+
+
+            return (
+                (!query || text.includes(query)) &&
+                (!status || currentStatus === status)
+            );
+
+        }
     );
 
-  }
+}
 
-  catch{
 
-    return "-";
+function leadRow(lead){
 
-  }
+    const customer =
+        lead.name ||
+        lead.customer ||
+        lead.customerName ||
+        "Customer";
+
+
+    const phone =
+        lead.phone ||
+        lead.mobile ||
+        "";
+
+
+    const product =
+        lead.requirement ||
+        lead.product ||
+        "Enquiry";
+
+
+    const agent =
+        lead.agentName ||
+        lead.agentId ||
+        (
+            String(
+                lead.source || ""
+            ).includes("website")
+            ?
+            "Direct Website"
+            :
+            "—"
+        );
+
+
+    const status =
+        lead.status ||
+        "new";
+
+
+    return `
+
+        <tr>
+
+            <td>
+
+                <div class="person">
+
+                    <strong>
+                        ${safe(customer)}
+                    </strong>
+
+                    <span>
+                        ${safe(phone)}
+                    </span>
+
+                </div>
+
+            </td>
+
+            <td>
+                ${safe(product)}
+            </td>
+
+            <td>
+                ${money(lead.amount)}
+            </td>
+
+            <td>
+                ${safe(lead.company)}
+                ${lead.city ? "<br>" + safe(lead.city) : ""}
+            </td>
+
+            <td>
+                ${safe(agent)}
+            </td>
+
+            <td>
+                ${statusBadge(status)}
+            </td>
+
+            <td>
+                ${displayDate(
+                    lead.createdAt
+                )}
+            </td>
+
+            <td>
+
+                <button
+                    class="small-btn view-btn"
+                    data-lead-view="${lead.id}">
+
+                    Open
+
+                </button>
+
+            </td>
+
+        </tr>
+
+    `;
 
 }
 
 
-function escapeHTML(value){
+function renderLeadTables(){
 
-  return String(
-    value ?? ""
-  )
-  .replace(/&/g,"&amp;")
-  .replace(/</g,"&lt;")
-  .replace(/>/g,"&gt;")
-  .replace(/"/g,"&quot;")
-  .replace(/'/g,"&#039;");
+    const filtered =
+        getFilteredLeads();
+
+
+    $("leadsTable").innerHTML =
+        filtered.length
+        ?
+        filtered.map(leadRow).join("")
+        :
+        `<tr><td colspan="8"><div class="empty">No customer leads found.</div></td></tr>`;
+
+
+    $("recentLeadsTable").innerHTML =
+        customerLeads
+        .slice(0,5)
+        .map(lead=>{
+
+            const customer =
+                lead.name ||
+                lead.customer ||
+                lead.customerName ||
+                "Customer";
+
+            return `
+
+                <tr>
+
+                    <td>
+
+                        <div class="person">
+
+                            <strong>
+                                ${safe(customer)}
+                            </strong>
+
+                            <span>
+                                ${safe(
+                                    lead.phone ||
+                                    lead.mobile
+                                )}
+                            </span>
+
+                        </div>
+
+                    </td>
+
+                    <td>
+                        ${safe(
+                            lead.requirement ||
+                            lead.product
+                        )}
+                    </td>
+
+                    <td>
+                        ${money(lead.amount)}
+                    </td>
+
+                    <td>
+                        ${safe(
+                            lead.agentName ||
+                            lead.agentId ||
+                            lead.source
+                        )}
+                    </td>
+
+                    <td>
+                        ${statusBadge(
+                            lead.status ||
+                            "new"
+                        )}
+                    </td>
+
+                    <td>
+
+                        <button
+                            class="small-btn view-btn"
+                            data-lead-view="${lead.id}">
+
+                            Open
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        })
+        .join("") ||
+        `<tr><td colspan="6"><div class="empty">No customer leads.</div></td></tr>`;
+
+
+    attachLeadButtons();
 
 }
 
 
-/* ==========================================
-   ESC CLOSE
-========================================== */
+function attachLeadButtons(){
 
-document.addEventListener(
-  "keydown",
-  function(e){
+    document
+    .querySelectorAll(
+        "[data-lead-view]"
+    )
+    .forEach(button=>{
 
-    if(
-      e.key==="Escape"
-    ){
+        button.onclick =
+            ()=>openLead(
+                button.dataset.leadView
+            );
 
-      closeModal();
+    });
+
+}
+
+
+/* ===============================
+   LEAD MODAL
+================================ */
+
+window.openLead =
+function(id){
+
+    const lead =
+        customerLeads.find(
+            item=>item.id === id
+        );
+
+    if(!lead){
+        return;
+    }
+
+
+    currentLeadId =
+        id;
+
+
+    const customer =
+        lead.name ||
+        lead.customer ||
+        lead.customerName ||
+        "Customer";
+
+
+    $("leadModalName").textContent =
+        customer;
+
+
+    $("leadModalId").textContent =
+        "Lead ID: " + id;
+
+
+    $("leadDetails").innerHTML = `
+
+        ${detail(
+            "Mobile",
+            lead.phone ||
+            lead.mobile
+        )}
+
+        ${detail(
+            "Email",
+            lead.email
+        )}
+
+        ${detail(
+            "Requirement",
+            lead.requirement ||
+            lead.product
+        )}
+
+        ${detail(
+            "Amount",
+            money(lead.amount)
+        )}
+
+        ${detail(
+            "Company",
+            lead.company
+        )}
+
+        ${detail(
+            "City",
+            lead.city
+        )}
+
+        ${detail(
+            "Agent ID",
+            lead.agentId
+        )}
+
+        ${detail(
+            "Agent Name",
+            lead.agentName
+        )}
+
+        ${detail(
+            "Source",
+            lead.source
+        )}
+
+        ${detail(
+            "Created",
+            displayDate(
+                lead.createdAt
+            )
+        )}
+
+        ${detail(
+            "Customer Message",
+            lead.message ||
+            lead.purpose,
+            true
+        )}
+
+    `;
+
+
+    $("editLeadStatus").value =
+        normalizeLeadStatus(
+            lead.status
+        );
+
+
+    $("assignedTo").value =
+        lead.assignedTo ||
+        "";
+
+
+    $("leadRemark").value =
+        lead.crmRemark ||
+        lead.remark ||
+        "";
+
+
+    $("leadModal")
+    .classList
+    .add("show");
+
+};
+
+
+function normalizeLeadStatus(value){
+
+    const allowed = [
+        "new",
+        "contacted",
+        "documents pending",
+        "documents received",
+        "processing",
+        "submitted",
+        "under review",
+        "approved",
+        "disbursed",
+        "rejected"
+    ];
+
+
+    const current =
+        String(
+            value || "new"
+        ).toLowerCase();
+
+
+    return allowed.includes(current)
+        ? current
+        : "new";
+
+}
+
+
+/* ===============================
+   SAVE LEAD
+================================ */
+
+$("saveLeadBtn")
+.addEventListener(
+    "click",
+    async()=>{
+
+        if(!currentLeadId){
+            return;
+        }
+
+
+        try{
+
+            await updateDoc(
+                doc(
+                    db,
+                    "leads",
+                    currentLeadId
+                ),
+                {
+
+                    status:
+                        $("editLeadStatus")
+                        .value,
+
+                    assignedTo:
+                        $("assignedTo")
+                        .value
+                        .trim(),
+
+                    crmRemark:
+                        $("leadRemark")
+                        .value
+                        .trim(),
+
+                    updatedAt:
+                        serverTimestamp()
+
+                }
+            );
+
+
+            closeModal(
+                "leadModal"
+            );
+
+        }
+        catch(error){
+
+            console.error(error);
+
+            alert(
+                "Lead update failed."
+            );
+
+        }
+
+    }
+);
+
+
+/* ===============================
+   MANUAL LEAD
+================================ */
+
+$("addLeadBtn")
+.addEventListener(
+    "click",
+    ()=>{
+
+        $("addLeadModal")
+        .classList
+        .add("show");
+
+    }
+);
+
+
+$("manualLeadForm")
+.addEventListener(
+    "submit",
+    async event=>{
+
+        event.preventDefault();
+
+
+        try{
+
+            await addDoc(
+                collection(
+                    db,
+                    "leads"
+                ),
+                {
+
+                    name:
+                        $("manualName")
+                        .value
+                        .trim(),
+
+                    phone:
+                        $("manualPhone")
+                        .value
+                        .trim(),
+
+                    requirement:
+                        $("manualProduct")
+                        .value,
+
+                    amount:
+                        $("manualAmount").value
+                        ?
+                        Number(
+                            $("manualAmount").value
+                        )
+                        :
+                        null,
+
+                    city:
+                        $("manualCity")
+                        .value
+                        .trim(),
+
+                    agentId:
+                        $("manualAgentId")
+                        .value
+                        .trim(),
+
+                    crmRemark:
+                        $("manualRemark")
+                        .value
+                        .trim(),
+
+                    source:
+                        "admin-manual",
+
+                    status:
+                        "new",
+
+                    createdAt:
+                        serverTimestamp(),
+
+                    updatedAt:
+                        serverTimestamp()
+
+                }
+            );
+
+
+            event.target.reset();
+
+
+            closeModal(
+                "addLeadModal"
+            );
+
+        }
+        catch(error){
+
+            console.error(error);
+
+            alert(
+                "Unable to create lead."
+            );
+
+        }
+
+    }
+);
+
+
+/* ===============================
+   MEMBERSHIP TABLE
+================================ */
+
+function renderMemberships(){
+
+    $("membershipTable").innerHTML =
+        agentApplications
+        .map(agent=>{
+
+            const approval =
+                agent.approvalStatus ||
+                agent.status ||
+                "Pending";
+
+            return `
+
+                <tr>
+
+                    <td>
+
+                        <div class="person">
+
+                            <strong>
+                                ${safe(agent.fullName)}
+                            </strong>
+
+                            <span>
+                                ${safe(agent.mobile)}
+                            </span>
+
+                        </div>
+
+                    </td>
+
+                    <td>
+                        ${safe(agent.membership)}
+                    </td>
+
+                    <td>
+                        ${money(agent.membershipPrice)}
+                    </td>
+
+                    <td>
+                        ${statusBadge(
+                            agent.paymentStatus ||
+                            "Pending"
+                        )}
+                    </td>
+
+                    <td>
+                        ${statusBadge(approval)}
+                    </td>
+
+                    <td>
+
+                        <button
+                            class="small-btn view-btn"
+                            data-agent-view="${agent.id}">
+                            Manage
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        })
+        .join("") ||
+        `<tr><td colspan="6"><div class="empty">No membership records.</div></td></tr>`;
+
+
+    attachAgentButtons();
+
+}
+
+
+/* ===============================
+   PAYMENT TABLE
+================================ */
+
+function renderPayments(){
+
+    $("paymentTable").innerHTML =
+        agentApplications
+        .map(agent=>{
+
+            return `
+
+                <tr>
+
+                    <td>
+
+                        <div class="person">
+
+                            <strong>
+                                ${safe(agent.fullName)}
+                            </strong>
+
+                            <span>
+                                ${safe(agent.mobile)}
+                            </span>
+
+                        </div>
+
+                    </td>
+
+                    <td>
+                        ${safe(agent.membership)}
+                    </td>
+
+                    <td>
+                        ${money(agent.membershipPrice)}
+                    </td>
+
+                    <td>
+                        ${safe(
+                            agent.utrNumber ||
+                            agent.paymentReference
+                        )}
+                    </td>
+
+                    <td>
+                        ${statusBadge(
+                            agent.paymentStatus ||
+                            "Pending"
+                        )}
+                    </td>
+
+                    <td>
+
+                        <button
+                            class="small-btn verify-btn"
+                            data-payment-verify="${agent.id}">
+
+                            Verify
+
+                        </button>
+
+                        <button
+                            class="small-btn view-btn"
+                            data-agent-view="${agent.id}">
+
+                            Open
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        })
+        .join("") ||
+        `<tr><td colspan="6"><div class="empty">No payment records.</div></td></tr>`;
+
+
+    document
+    .querySelectorAll(
+        "[data-payment-verify]"
+    )
+    .forEach(button=>{
+
+        button.onclick =
+            ()=>verifyPayment(
+                button.dataset.paymentVerify
+            );
+
+    });
+
+
+    attachAgentButtons();
+
+}
+
+
+async function verifyPayment(id){
+
+    const confirmed =
+        confirm(
+            "Mark this membership payment as Verified?"
+        );
+
+    if(!confirmed){
+        return;
+    }
+
+
+    try{
+
+        await updateDoc(
+            doc(
+                db,
+                "agent_registrations",
+                id
+            ),
+            {
+
+                paymentStatus:
+                    "Verified",
+
+                paymentVerifiedAt:
+                    serverTimestamp(),
+
+                updatedAt:
+                    serverTimestamp()
+
+            }
+        );
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        alert(
+            "Payment update failed."
+        );
 
     }
 
-  }
+}
+
+
+/* ===============================
+   FILTER LISTENERS
+================================ */
+
+$("agentSearch")
+.addEventListener(
+    "input",
+    renderAgentTables
 );
+
+
+$("agentStatusFilter")
+.addEventListener(
+    "change",
+    renderAgentTables
+);
+
+
+$("leadSearch")
+.addEventListener(
+    "input",
+    renderLeadTables
+);
+
+
+$("leadStatusFilter")
+.addEventListener(
+    "change",
+    renderLeadTables
+);
+
+
+/* ===============================
+   NAVIGATION
+================================ */
+
+window.openScreen =
+function(name){
+
+    document
+    .querySelectorAll(".screen")
+    .forEach(screen=>{
+
+        screen.classList.remove(
+            "active"
+        );
+
+    });
+
+
+    const target =
+        $("screen-" + name);
+
+    if(target){
+
+        target.classList.add(
+            "active"
+        );
+
+    }
+
+
+    document
+    .querySelectorAll(".menu-item")
+    .forEach(item=>{
+
+        item.classList.toggle(
+            "active",
+            item.dataset.screen === name
+        );
+
+    });
+
+
+    const titles = {
+
+        overview:
+            "CRM Overview",
+
+        agents:
+            "Agent Applications",
+
+        leads:
+            "Customer Leads",
+
+        memberships:
+            "Membership Management",
+
+        payments:
+            "Payment Verification"
+
+    };
+
+
+    $("screenTitle").textContent =
+        titles[name] ||
+        "Fundvexxa CRM";
+
+
+    closeSidebar();
+
+};
+
+
+document
+.querySelectorAll(".menu-item")
+.forEach(button=>{
+
+    button.addEventListener(
+        "click",
+        ()=>{
+
+            openScreen(
+                button.dataset.screen
+            );
+
+        }
+    );
+
+});
+
+
+/* ===============================
+   MODALS
+================================ */
+
+window.closeModal =
+function(id){
+
+    $(id)
+    .classList
+    .remove("show");
+
+};
+
+
+document
+.querySelectorAll(".modal")
+.forEach(modal=>{
+
+    modal.addEventListener(
+        "click",
+        event=>{
+
+            if(event.target === modal){
+
+                modal.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+    );
+
+});
+
+
+/* ===============================
+   MOBILE
+================================ */
+
+const sidebar =
+    $("sidebar");
+
+const overlay =
+    $("overlay");
+
+
+$("mobileMenu")
+.addEventListener(
+    "click",
+    ()=>{
+
+        sidebar.classList.add(
+            "open"
+        );
+
+        overlay.classList.add(
+            "show"
+        );
+
+    }
+);
+
+
+overlay.addEventListener(
+    "click",
+    closeSidebar
+);
+
+
+function closeSidebar(){
+
+    sidebar.classList.remove(
+        "open"
+    );
+
+    overlay.classList.remove(
+        "show"
+    );
+
+}
 
 </script>
 
