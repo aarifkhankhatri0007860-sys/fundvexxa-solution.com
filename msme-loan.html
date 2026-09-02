@@ -1,0 +1,2133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>MSME Loan Assistance | Fundvexxa</title>
+
+  <meta
+    name="description"
+    content="Explore MSME loan and business funding options with Fundvexxa. Check preliminary eligibility, understand documents and submit an enquiry."
+  />
+
+  <style>
+    :root{
+      --navy:#082442;
+      --blue:#1267c4;
+      --blue2:#0b82e8;
+      --gold:#c89b3c;
+      --light:#f4f8fc;
+      --text:#172b43;
+      --muted:#64778d;
+      --border:#dfe8f1;
+      --white:#fff;
+      --green:#159957;
+      --danger:#c62828;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+      background:var(--light);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .topbar{
+      background:var(--navy);
+      color:#dce8f4;
+      font-size:13px;
+      padding:9px 20px;
+    }
+
+    .topbar-inner{
+      max-width:1180px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    header{
+      background:#fff;
+      border-bottom:1px solid var(--border);
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .nav{
+      max-width:1180px;
+      margin:auto;
+      padding:15px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+    }
+
+    .logo{
+      font-size:27px;
+      font-weight:900;
+      letter-spacing:-.5px;
+      color:var(--navy);
+    }
+
+    .logo span{
+      color:var(--gold);
+    }
+
+    .navlinks{
+      display:flex;
+      align-items:center;
+      gap:21px;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .navlinks a:hover{
+      color:var(--blue);
+    }
+
+    .nav-cta{
+      color:#fff !important;
+      background:var(--blue);
+      padding:10px 17px;
+      border-radius:8px;
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:
+        linear-gradient(
+          105deg,
+          rgba(5,28,52,.97),
+          rgba(8,72,137,.91)
+        ),
+        url("https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1600");
+      background-size:cover;
+      background-position:center;
+      color:#fff;
+    }
+
+    .hero-inner{
+      max-width:1180px;
+      margin:auto;
+      padding:78px 20px 85px;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:45px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      padding:7px 13px;
+      border:1px solid rgba(255,255,255,.25);
+      background:rgba(255,255,255,.09);
+      border-radius:30px;
+      font-size:13px;
+      margin-bottom:18px;
+    }
+
+    .hero h1{
+      font-size:48px;
+      line-height:1.08;
+      letter-spacing:-1.2px;
+      margin-bottom:18px;
+    }
+
+    .hero h1 span{
+      color:#e3bd68;
+    }
+
+    .hero p{
+      color:#e2edf7;
+      font-size:17px;
+      max-width:720px;
+      margin-bottom:27px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      padding:13px 20px;
+      border-radius:9px;
+      font-size:15px;
+      font-weight:800;
+      border:1px solid transparent;
+      cursor:pointer;
+      transition:.2s;
+    }
+
+    .btn-primary{
+      background:#fff;
+      color:var(--navy);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn-outline{
+      color:#fff;
+      border-color:rgba(255,255,255,.4);
+      background:rgba(255,255,255,.06);
+    }
+
+    .hero-note{
+      margin-top:17px;
+      font-size:12px;
+      color:#c9d8e7;
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,.96);
+      color:var(--text);
+      padding:27px;
+      border-radius:18px;
+      box-shadow:0 20px 60px rgba(0,0,0,.2);
+    }
+
+    .hero-card h2{
+      font-size:22px;
+      margin-bottom:7px;
+      color:var(--navy);
+    }
+
+    .hero-card p{
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:20px;
+    }
+
+    .quick-point{
+      display:flex;
+      gap:12px;
+      margin:14px 0;
+      align-items:flex-start;
+    }
+
+    .quick-icon{
+      width:31px;
+      height:31px;
+      min-width:31px;
+      border-radius:8px;
+      background:#e9f4ff;
+      color:var(--blue);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-weight:900;
+      font-size:13px;
+    }
+
+    .quick-point strong{
+      display:block;
+      font-size:14px;
+      color:var(--navy);
+    }
+
+    .quick-point span{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    .container{
+      max-width:1180px;
+      margin:auto;
+      padding:0 20px;
+    }
+
+    .section{
+      padding:70px 0;
+    }
+
+    .section-heading{
+      max-width:760px;
+      margin:0 auto 35px;
+      text-align:center;
+    }
+
+    .section-heading .label{
+      color:var(--blue);
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-size:12px;
+      font-weight:900;
+      margin-bottom:8px;
+    }
+
+    .section-heading h2{
+      color:var(--navy);
+      font-size:34px;
+      line-height:1.15;
+      margin-bottom:10px;
+    }
+
+    .section-heading p{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .overview{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:25px;
+    }
+
+    .info-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:28px;
+      box-shadow:0 8px 30px rgba(12,44,78,.05);
+    }
+
+    .info-card h3{
+      color:var(--navy);
+      font-size:21px;
+      margin-bottom:10px;
+    }
+
+    .info-card p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .feature{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:23px;
+    }
+
+    .feature-icon{
+      width:42px;
+      height:42px;
+      border-radius:10px;
+      background:#eaf4ff;
+      color:var(--blue);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      margin-bottom:14px;
+    }
+
+    .feature h3{
+      font-size:17px;
+      color:var(--navy);
+      margin-bottom:6px;
+    }
+
+    .feature p{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .eligibility-wrap{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:25px;
+      align-items:start;
+    }
+
+    .check-list{
+      display:flex;
+      flex-direction:column;
+      gap:13px;
+      margin-top:18px;
+    }
+
+    .check-item{
+      display:flex;
+      gap:10px;
+      color:#435a71;
+      font-size:14px;
+    }
+
+    .check{
+      color:var(--green);
+      font-weight:900;
+    }
+
+    .form-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:17px;
+      padding:29px;
+      box-shadow:0 10px 35px rgba(10,45,80,.07);
+    }
+
+    .form-card h2{
+      color:var(--navy);
+      font-size:25px;
+      margin-bottom:6px;
+    }
+
+    .form-card .form-intro{
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:22px;
+    }
+
+    form{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:15px;
+    }
+
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .field.full{
+      grid-column:1/-1;
+    }
+
+    label{
+      color:#29415c;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    input,
+    select,
+    textarea{
+      width:100%;
+      padding:12px 13px;
+      border:1px solid #ccd9e6;
+      border-radius:8px;
+      font-family:inherit;
+      font-size:14px;
+      outline:none;
+      background:#fff;
+      color:var(--text);
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus{
+      border-color:var(--blue);
+      box-shadow:0 0 0 3px rgba(18,103,196,.09);
+    }
+
+    textarea{
+      min-height:95px;
+      resize:vertical;
+    }
+
+    .consent{
+      grid-column:1/-1;
+      display:flex;
+      align-items:flex-start;
+      gap:8px;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .consent input{
+      width:auto;
+      margin-top:3px;
+    }
+
+    .submit{
+      grid-column:1/-1;
+      border:0;
+      color:#fff;
+      background:linear-gradient(135deg,var(--blue),var(--blue2));
+      padding:14px;
+      border-radius:9px;
+      font-size:15px;
+      font-weight:900;
+      cursor:pointer;
+    }
+
+    .submit:disabled{
+      opacity:.6;
+      cursor:not-allowed;
+    }
+
+    .form-message{
+      grid-column:1/-1;
+      display:none;
+      padding:13px;
+      border-radius:8px;
+      font-size:13px;
+    }
+
+    .form-message.success{
+      display:block;
+      background:#eaf8f0;
+      color:#12683e;
+      border:1px solid #bfe6d0;
+    }
+
+    .form-message.error{
+      display:block;
+      background:#fff0f0;
+      color:#a32121;
+      border:1px solid #f1c3c3;
+    }
+
+    .docs-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .doc-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:15px;
+      padding:24px;
+    }
+
+    .doc-card h3{
+      color:var(--navy);
+      margin-bottom:12px;
+      font-size:19px;
+    }
+
+    .doc-card ul{
+      list-style:none;
+    }
+
+    .doc-card li{
+      position:relative;
+      padding-left:20px;
+      margin:9px 0;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .doc-card li::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      color:var(--green);
+      font-weight:900;
+    }
+
+    .uses{
+      background:#fff;
+    }
+
+    .use-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:15px;
+    }
+
+    .use{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:20px;
+      background:#fff;
+    }
+
+    .use h3{
+      font-size:16px;
+      color:var(--navy);
+      margin-bottom:5px;
+    }
+
+    .use p{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .faq{
+      max-width:850px;
+      margin:auto;
+    }
+
+    details{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:11px;
+      margin-bottom:11px;
+      padding:16px 18px;
+    }
+
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      color:var(--navy);
+      font-size:14px;
+    }
+
+    details p{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .cta{
+      background:
+        linear-gradient(
+          105deg,
+          var(--navy),
+          #0c5fae
+        );
+      color:#fff;
+      border-radius:20px;
+      padding:45px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:25px;
+    }
+
+    .cta h2{
+      font-size:30px;
+      margin-bottom:7px;
+    }
+
+    .cta p{
+      color:#d8e7f5;
+      font-size:14px;
+      max-width:700px;
+    }
+
+    .cta-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      min-width:max-content;
+    }
+
+    footer{
+      background:#061a30;
+      color:#c4d1df;
+      margin-top:70px;
+      padding:45px 20px 25px;
+    }
+
+    .footer-grid{
+      max-width:1180px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1.4fr 1fr 1fr;
+      gap:35px;
+    }
+
+    footer h3,
+    footer h4{
+      color:#fff;
+      margin-bottom:12px;
+    }
+
+    footer p,
+    footer a{
+      font-size:13px;
+      color:#bdccda;
+    }
+
+    footer a:hover{
+      color:#fff;
+    }
+
+    .footer-links{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .footer-bottom{
+      max-width:1180px;
+      margin:30px auto 0;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.12);
+      font-size:11px;
+      color:#92a5b8;
+    }
+
+    .mobile-bar{
+      display:none;
+    }
+
+    @media(max-width:900px){
+
+      .navlinks{
+        display:none;
+      }
+
+      .hero-inner{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:40px;
+      }
+
+      .feature-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .use-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .eligibility-wrap,
+      .overview{
+        grid-template-columns:1fr;
+      }
+
+      .cta{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+    @media(max-width:600px){
+
+      body{
+        padding-bottom:55px;
+      }
+
+      .topbar-inner{
+        justify-content:center;
+        text-align:center;
+      }
+
+      .hero-inner{
+        padding:55px 18px 60px;
+      }
+
+      .hero h1{
+        font-size:32px;
+      }
+
+      .hero p{
+        font-size:15px;
+      }
+
+      .section{
+        padding:52px 0;
+      }
+
+      .section-heading h2{
+        font-size:28px;
+      }
+
+      .feature-grid,
+      .docs-grid,
+      .use-grid{
+        grid-template-columns:1fr;
+      }
+
+      form{
+        grid-template-columns:1fr;
+      }
+
+      .field.full,
+      .consent,
+      .submit,
+      .form-message{
+        grid-column:auto;
+      }
+
+      .form-card,
+      .info-card,
+      .doc-card{
+        padding:21px;
+      }
+
+      .cta{
+        padding:30px 22px;
+      }
+
+      .cta h2{
+        font-size:25px;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .mobile-bar{
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        position:fixed;
+        bottom:0;
+        left:0;
+        right:0;
+        z-index:2000;
+        background:#fff;
+        box-shadow:0 -5px 22px rgba(0,0,0,.14);
+      }
+
+      .mobile-bar a{
+        padding:14px 4px;
+        text-align:center;
+        font-size:12px;
+        font-weight:900;
+        border-right:1px solid #e3e8ee;
+      }
+
+      .mobile-bar .apply{
+        background:var(--blue);
+        color:#fff;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>Business & Financial Consultancy · Delhi · Maharashtra</span>
+      <span>+91 72909 77231 · fundvexxasupport@gmail.com</span>
+    </div>
+  </div>
+
+
+  <header>
+    <nav class="nav">
+
+      <a href="index.html" class="logo">
+        Fund<span>vexxa</span>
+      </a>
+
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="success-stories.html">Success Stories</a>
+        <a href="faq.html">FAQ</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="contact.html" class="nav-cta">
+          Contact
+        </a>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-inner">
+
+        <div>
+
+          <div class="eyebrow">
+            MSME Funding Assistance
+          </div>
+
+          <h1>
+            Explore the right
+            <span>MSME Loan</span>
+            option for your business
+          </h1>
+
+          <p>
+            Whether you need funds for working capital, expansion, equipment,
+            inventory or another business requirement, Fundvexxa can help you
+            understand potentially relevant funding routes and the basic
+            documentation involved.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a
+              href="#apply"
+              class="btn btn-primary"
+            >
+              Check My Eligibility
+            </a>
+
+            <a
+              href="https://wa.me/917290977231?text=Hello%20Fundvexxa%2C%20I%20want%20to%20know%20about%20MSME%20Loan%20options."
+              target="_blank"
+              rel="noopener"
+              class="btn btn-outline"
+            >
+              WhatsApp an Expert
+            </a>
+
+          </div>
+
+          <div class="hero-note">
+            Preliminary assessment only. Final approval and terms depend on
+            the relevant lender/institution and applicant profile.
+          </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+          <h2>
+            MSME funding — quick overview
+          </h2>
+
+          <p>
+            The appropriate facility can vary according to business profile,
+            cash flow, requirement and lender criteria.
+          </p>
+
+
+          <div class="quick-point">
+
+            <div class="quick-icon">✓</div>
+
+            <div>
+              <strong>Business Funding</strong>
+              <span>
+                Explore funding for eligible business requirements.
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="quick-point">
+
+            <div class="quick-icon">✓</div>
+
+            <div>
+              <strong>Working Capital</strong>
+              <span>
+                Options may include CC/OD or other working-capital facilities.
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="quick-point">
+
+            <div class="quick-icon">✓</div>
+
+            <div>
+              <strong>Business Expansion</strong>
+              <span>
+                Funding may be considered for expansion or asset-related needs.
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="quick-point">
+
+            <div class="quick-icon">✓</div>
+
+            <div>
+              <strong>Guidance</strong>
+              <span>
+                Understand possible routes and commonly required documents.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="label">
+            MSME Funding
+          </div>
+
+          <h2>
+            What is an MSME Loan?
+          </h2>
+
+          <p>
+            MSME/business funding can help eligible enterprises meet
+            business-related financial requirements. The actual product,
+            amount, interest rate, tenure, charges and security requirements
+            depend on the lender and applicant profile.
+          </p>
+
+        </div>
+
+
+        <div class="overview">
+
+          <div class="info-card">
+
+            <h3>
+              When businesses may explore it
+            </h3>
+
+            <p>
+              Businesses may explore funding for working capital, inventory,
+              equipment, expansion, business infrastructure, cash-flow
+              requirements or other permitted business purposes.
+            </p>
+
+          </div>
+
+
+          <div class="info-card">
+
+            <h3>
+              How Fundvexxa helps
+            </h3>
+
+            <p>
+              We help applicants understand potentially relevant funding
+              categories, basic eligibility factors and documentation
+              requirements before they proceed with the relevant lender or
+              institution.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="label">
+            Key Factors
+          </div>
+
+          <h2>
+            What may be considered?
+          </h2>
+
+          <p>
+            Every lender can have its own eligibility and underwriting
+            requirements.
+          </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+          <div class="feature">
+
+            <div class="feature-icon">01</div>
+
+            <h3>
+              Business Profile
+            </h3>
+
+            <p>
+              Nature of business, constitution, vintage and business activity
+              may be considered.
+            </p>
+
+          </div>
+
+
+          <div class="feature">
+
+            <div class="feature-icon">02</div>
+
+            <h3>
+              Cash Flow
+            </h3>
+
+            <p>
+              Revenue, banking and repayment capacity can be relevant to
+              lender assessment.
+            </p>
+
+          </div>
+
+
+          <div class="feature">
+
+            <div class="feature-icon">03</div>
+
+            <h3>
+              Existing Obligations
+            </h3>
+
+            <p>
+              Existing loans and repayment obligations may affect eligibility.
+            </p>
+
+          </div>
+
+
+          <div class="feature">
+
+            <div class="feature-icon">04</div>
+
+            <h3>
+              Credit Profile
+            </h3>
+
+            <p>
+              Where applicable, lenders may consider credit history and other
+              risk parameters.
+            </p>
+
+          </div>
+
+
+          <div class="feature">
+
+            <div class="feature-icon">05</div>
+
+            <h3>
+              Documents
+            </h3>
+
+            <p>
+              Required documentation varies by lender, product and applicant
+              profile.
+            </p>
+
+          </div>
+
+
+          <div class="feature">
+
+            <div class="feature-icon">06</div>
+
+            <h3>
+              Security / Collateral
+            </h3>
+
+            <p>
+              Security requirements, if any, depend on the selected product
+              and lender.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="section" id="apply">
+
+      <div class="container">
+
+        <div class="eligibility-wrap">
+
+          <div class="info-card">
+
+            <div class="section-heading" style="text-align:left;margin:0;">
+
+              <div class="label">
+                Check Eligibility
+              </div>
+
+              <h2>
+                Start with a simple enquiry
+              </h2>
+
+              <p>
+                Share basic information and our team can review your
+                requirement. Do not enter OTPs, passwords, card PINs or other
+                sensitive authentication information.
+              </p>
+
+            </div>
+
+
+            <div class="check-list">
+
+              <div class="check-item">
+                <span class="check">✓</span>
+                <span>
+                  Basic business and funding requirement
+                </span>
+              </div>
+
+              <div class="check-item">
+                <span class="check">✓</span>
+                <span>
+                  Preliminary discussion about possible funding routes
+                </span>
+              </div>
+
+              <div class="check-item">
+                <span class="check">✓</span>
+                <span>
+                  Documentation guidance based on the relevant route
+                </span>
+              </div>
+
+              <div class="check-item">
+                <span class="check">✓</span>
+                <span>
+                  Follow-up by Fundvexxa support team
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="form-card">
+
+            <h2>
+              MSME Loan Enquiry
+            </h2>
+
+            <p class="form-intro">
+              Fill in the basic details below. This enquiry does not guarantee
+              approval or sanction.
+            </p>
+
+
+            <form id="msmeForm">
+
+              <div class="field">
+
+                <label for="name">
+                  Full Name *
+                </label>
+
+                <input
+                  id="name"
+                  type="text"
+                  maxlength="80"
+                  required
+                  placeholder="Your full name"
+                />
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="mobile">
+                  Mobile Number *
+                </label>
+
+                <input
+                  id="mobile"
+                  type="tel"
+                  inputmode="numeric"
+                  maxlength="10"
+                  pattern="[6-9][0-9]{9}"
+                  required
+                  placeholder="10-digit mobile number"
+                />
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="email">
+                  Email
+                </label>
+
+                <input
+                  id="email"
+                  type="email"
+                  maxlength="120"
+                  placeholder="Optional"
+                />
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="city">
+                  City *
+                </label>
+
+                <input
+                  id="city"
+                  type="text"
+                  maxlength="60"
+                  required
+                  placeholder="Your city"
+                />
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="businessType">
+                  Business Type *
+                </label>
+
+                <select id="businessType" required>
+
+                  <option value="">
+                    Select
+                  </option>
+
+                  <option value="Proprietorship">
+                    Proprietorship
+                  </option>
+
+                  <option value="Partnership">
+                    Partnership
+                  </option>
+
+                  <option value="LLP">
+                    LLP
+                  </option>
+
+                  <option value="Private Limited">
+                    Private Limited
+                  </option>
+
+                  <option value="Other">
+                    Other
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="vintage">
+                  Business Vintage *
+                </label>
+
+                <select id="vintage" required>
+
+                  <option value="">
+                    Select
+                  </option>
+
+                  <option value="New / Proposed">
+                    New / Proposed
+                  </option>
+
+                  <option value="Below 1 Year">
+                    Below 1 Year
+                  </option>
+
+                  <option value="1-2 Years">
+                    1–2 Years
+                  </option>
+
+                  <option value="2-5 Years">
+                    2–5 Years
+                  </option>
+
+                  <option value="5+ Years">
+                    5+ Years
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="amount">
+                  Funding Required *
+                </label>
+
+                <input
+                  id="amount"
+                  type="number"
+                  min="10000"
+                  max="100000000"
+                  required
+                  placeholder="Approx. amount"
+                />
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="turnover">
+                  Approx. Annual Turnover
+                </label>
+
+                <input
+                  id="turnover"
+                  type="number"
+                  min="0"
+                  max="1000000000"
+                  placeholder="Optional"
+                />
+
+              </div>
+
+
+              <div class="field full">
+
+                <label for="purpose">
+                  Funding Purpose
+                </label>
+
+                <textarea
+                  id="purpose"
+                  maxlength="500"
+                  placeholder="Working capital, expansion, machinery, inventory, etc."
+                ></textarea>
+
+              </div>
+
+
+              <div class="consent">
+
+                <input
+                  id="consent"
+                  type="checkbox"
+                  required
+                />
+
+                <label for="consent">
+                  I agree that Fundvexxa may contact me regarding this enquiry.
+                  I understand that eligibility is preliminary and final
+                  approval and terms are subject to the relevant lender or
+                  institution.
+                </label>
+
+              </div>
+
+
+              <div
+                id="formMessage"
+                class="form-message"
+                aria-live="polite"
+              ></div>
+
+
+              <button
+                id="submitBtn"
+                type="submit"
+                class="submit"
+              >
+                Submit MSME Loan Enquiry
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="section uses">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="label">
+            Business Uses
+          </div>
+
+          <h2>
+            What can business funding be used for?
+          </h2>
+
+        </div>
+
+
+        <div class="use-grid">
+
+          <div class="use">
+            <h3>Working Capital</h3>
+            <p>
+              Day-to-day business cash-flow requirements.
+            </p>
+          </div>
+
+          <div class="use">
+            <h3>Inventory</h3>
+            <p>
+              Stock and inventory-related business requirements.
+            </p>
+          </div>
+
+          <div class="use">
+            <h3>Equipment</h3>
+            <p>
+              Eligible machinery or equipment requirements.
+            </p>
+          </div>
+
+          <div class="use">
+            <h3>Expansion</h3>
+            <p>
+              Business expansion or eligible growth-related requirements.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="label">
+            Documents
+          </div>
+
+          <h2>
+            Commonly requested documents
+          </h2>
+
+          <p>
+            Exact requirements vary by lender, product and applicant profile.
+          </p>
+
+        </div>
+
+
+        <div class="docs-grid">
+
+          <div class="doc-card">
+
+            <h3>
+              Business / Entity Documents
+            </h3>
+
+            <ul>
+              <li>Business registration details, where applicable</li>
+              <li>Business address information</li>
+              <li>Udyam/MSME details, where applicable</li>
+              <li>GST details, where applicable</li>
+            </ul>
+
+          </div>
+
+
+          <div class="doc-card">
+
+            <h3>
+              Financial Documents
+            </h3>
+
+            <ul>
+              <li>Banking information/statements as required</li>
+              <li>Income or business financial information</li>
+              <li>ITR/financial statements where applicable</li>
+              <li>Existing loan information, if applicable</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="label">
+            FAQs
+          </div>
+
+          <h2>
+            MSME Loan FAQs
+          </h2>
+
+        </div>
+
+
+        <div class="faq">
+
+          <details>
+            <summary>
+              Is MSME loan approval guaranteed?
+            </summary>
+
+            <p>
+              No. Fundvexxa does not guarantee approval. Final sanction,
+              amount, rate, tenure, charges and other terms depend on the
+              relevant lender/institution and applicant assessment.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              How much funding can I get?
+            </summary>
+
+            <p>
+              There is no single amount applicable to every applicant.
+              Funding depends on the selected product, lender policy,
+              business profile, repayment capacity, documentation and other
+              eligibility factors.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              Is collateral required?
+            </summary>
+
+            <p>
+              It depends on the product and lender. Some facilities may have
+              security requirements while others may be assessed differently.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              Can a new business apply?
+            </summary>
+
+            <p>
+              Some funding schemes and products may consider new/proposed
+              businesses, while others require an established operating
+              history. Eligibility depends on the specific route.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              Are government MSME schemes the same as MSME loans?
+            </summary>
+
+            <p>
+              No. Government schemes can have their own eligibility,
+              subsidy/support and application rules. Always verify current
+              scheme conditions through the relevant official authority.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              Does submitting this form mean my loan is approved?
+            </summary>
+
+            <p>
+              No. This is only an enquiry. Submission does not constitute a
+              sanction, approval or guarantee of funding.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="cta">
+
+          <div>
+
+            <h2>
+              Need help choosing the right funding route?
+            </h2>
+
+            <p>
+              Share your requirement with Fundvexxa and our team can discuss
+              the potentially relevant options and documentation.
+            </p>
+
+          </div>
+
+
+          <div class="cta-actions">
+
+            <a
+              href="#apply"
+              class="btn btn-primary"
+            >
+              Check Eligibility
+            </a>
+
+            <a
+              href="https://wa.me/917290977231?text=Hello%20Fundvexxa%2C%20I%20need%20help%20with%20MSME%20funding."
+              target="_blank"
+              rel="noopener"
+              class="btn btn-outline"
+            >
+              WhatsApp
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+
+        <h3>Fundvexxa</h3>
+
+        <p>
+          Business and financial consultancy supporting businesses,
+          entrepreneurs and organisations with funding and business-growth
+          requirements.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>Quick Links</h4>
+
+        <div class="footer-links">
+
+          <a href="index.html">Home</a>
+
+          <a href="services.html">Services</a>
+
+          <a href="about.html">About Us</a>
+
+          <a href="faq.html">FAQ</a>
+
+          <a href="privacy-policy.html">
+            Privacy Policy
+          </a>
+
+          <a href="terms.html">
+            Terms
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <h4>Related Services</h4>
+
+        <div class="footer-links">
+
+          <a href="business-loan.html">
+            Business Loan
+          </a>
+
+          <a href="working-capital-loan.html">
+            Working Capital
+          </a>
+
+          <a href="mudra-loan.html">
+            Mudra Loan
+          </a>
+
+          <a href="calculator.html">
+            Eligibility Calculator
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      © 2026 Fundvexxa. All rights reserved.
+
+      Funding eligibility, approval, amount, interest rate, tenure, charges
+      and other terms are subject to the relevant lender/institution and
+      applicant profile.
+
+    </div>
+
+  </footer>
+
+
+
+  <div class="mobile-bar">
+
+    <a href="tel:+917290977231">
+      Call
+    </a>
+
+    <a
+      href="https://wa.me/917290977231?text=Hello%20Fundvexxa%2C%20I%20need%20help%20with%20MSME%20funding."
+      target="_blank"
+      rel="noopener"
+    >
+      WhatsApp
+    </a>
+
+    <a href="#apply" class="apply">
+      Apply Now
+    </a>
+
+  </div>
+
+
+
+  <script type="module">
+
+    import {
+      initializeApp
+    } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+    const firebaseConfig = {
+
+      apiKey:
+        "AIzaSyArcvyvNAOKipPZB0YEseN9_k-8JznQ",
+
+      authDomain:
+        "smile-business-os.firebaseapp.com",
+
+      projectId:
+        "smile-business-os",
+
+      storageBucket:
+        "smile-business-os.firebasestorage.app",
+
+      messagingSenderId:
+        "114356400630",
+
+      appId:
+        "1:114356400630:web:96fc9d07baaf3a504c17d7",
+
+      measurementId:
+        "G-73WD9V05ZZ"
+
+    };
+
+
+    const app =
+      initializeApp(firebaseConfig);
+
+
+    const db =
+      getFirestore(app);
+
+
+    const form =
+      document.getElementById("msmeForm");
+
+
+    const submitBtn =
+      document.getElementById("submitBtn");
+
+
+    const formMessage =
+      document.getElementById("formMessage");
+
+
+    function showMessage(type, text){
+
+      formMessage.className =
+        "form-message " + type;
+
+      formMessage.textContent =
+        text;
+
+    }
+
+
+    function clean(value){
+
+      return String(value || "").trim();
+
+    }
+
+
+    form.addEventListener("submit", async (event) => {
+
+      event.preventDefault();
+
+
+      const name =
+        clean(document.getElementById("name").value);
+
+      const mobile =
+        clean(document.getElementById("mobile").value);
+
+      const email =
+        clean(document.getElementById("email").value);
+
+      const city =
+        clean(document.getElementById("city").value);
+
+      const businessType =
+        clean(document.getElementById("businessType").value);
+
+      const vintage =
+        clean(document.getElementById("vintage").value);
+
+      const amount =
+        clean(document.getElementById("amount").value);
+
+      const turnover =
+        clean(document.getElementById("turnover").value);
+
+      const purpose =
+        clean(document.getElementById("purpose").value);
+
+
+      if(
+        !name ||
+        !mobile ||
+        !city ||
+        !businessType ||
+        !vintage ||
+        !amount
+      ){
+
+        showMessage(
+          "error",
+          "Please complete all required fields."
+        );
+
+        return;
+
+      }
+
+
+      if(
+        !/^[6-9][0-9]{9}$/.test(mobile)
+      ){
+
+        showMessage(
+          "error",
+          "Please enter a valid 10-digit mobile number."
+        );
+
+        return;
+
+      }
+
+
+      submitBtn.disabled = true;
+
+      submitBtn.textContent =
+        "Submitting...";
+
+
+      showMessage(
+        "success",
+        "Please wait while we submit your enquiry..."
+      );
+
+
+      try{
+
+        await addDoc(
+          collection(db, "leads"),
+          {
+
+            name: name,
+
+            mobile: mobile,
+
+            email: email,
+
+            city: city,
+
+            service: "MSME Loan",
+
+            requirement: "MSME Loan",
+
+            businessType: businessType,
+
+            businessVintage: vintage,
+
+            amountRequired: amount,
+
+            annualTurnover: turnover,
+
+            purpose: purpose,
+
+            source: "website",
+
+            landingPage: "msme-loan.html",
+
+            leadType: "msme_loan_enquiry",
+
+            status: "new",
+
+            createdAt: serverTimestamp()
+
+          }
+        );
+
+
+        showMessage(
+          "success",
+          "Thank you. Your MSME Loan enquiry has been submitted successfully. Our team will contact you regarding the next steps."
+        );
+
+
+        form.reset();
+
+
+        const whatsappText =
+          "Hello Fundvexxa,%0A%0A" +
+          "I submitted an MSME Loan enquiry on your website.%0A" +
+          "Name: " +
+          encodeURIComponent(name) +
+          "%0A" +
+          "Mobile: " +
+          encodeURIComponent(mobile) +
+          "%0A" +
+          "City: " +
+          encodeURIComponent(city) +
+          "%0A" +
+          "Funding Required: ₹" +
+          encodeURIComponent(amount);
+
+
+        setTimeout(() => {
+
+          window.open(
+            "https://wa.me/917290977231?text=" +
+            whatsappText,
+            "_blank",
+            "noopener"
+          );
+
+        }, 1200);
+
+
+      }catch(error){
+
+        console.error(
+          "MSME lead error:",
+          error
+        );
+
+
+        showMessage(
+          "error",
+          "We could not submit your enquiry right now. Please try again or contact us on WhatsApp."
+        );
+
+      }finally{
+
+        submitBtn.disabled = false;
+
+        submitBtn.textContent =
+          "Submit MSME Loan Enquiry";
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
