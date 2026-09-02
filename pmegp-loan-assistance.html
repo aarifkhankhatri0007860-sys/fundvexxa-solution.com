@@ -1,1354 +1,3497 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PMEGP Loan Assistance | Fundvexxa</title>
 
-<title>PMEGP Loan Assistance | Fundvexxa</title>
+  <meta
+    name="description"
+    content="PMEGP loan assistance by Fundvexxa. Get guidance for project planning, documentation and PMEGP application process for eligible new micro enterprise projects."
+  >
 
-<style>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b1f3a">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+  <meta property="og:title" content="PMEGP Loan Assistance | Fundvexxa">
+  <meta
+    property="og:description"
+    content="Guidance for PMEGP project planning, documentation and application support."
+  >
+  <meta property="og:type" content="website">
 
-body{
-font-family:Arial,Helvetica,sans-serif;
-overflow-x:hidden;
-background:#fff;
-color:#222;
-line-height:1.8;
-}
+  <style>
+    /* =========================================================
+       FUNVEXXA PMEGP PAGE
+       All styles scoped under .pmegp-page
+       ========================================================= */
 
-img{
-max-width:100%;
-height:auto;
-display:block;
-}
+    .pmegp-page,
+    .pmegp-page * {
+      box-sizing: border-box;
+    }
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:0 20px;
-}
+    .pmegp-page {
+      --navy: #0b1f3a;
+      --navy-2: #12345b;
+      --blue: #0d6efd;
+      --blue-dark: #0755c8;
+      --light-blue: #eef6ff;
+      --gold: #d6a84f;
+      --gold-light: #fff7e5;
+      --text: #172033;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --white: #ffffff;
+      --success: #16834a;
+      --danger: #c62828;
 
-.hero{
-padding:70px 0;
-background:linear-gradient(135deg,#eef5ff,#ffffff);
-}
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
 
-.hero-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center;
-}
+      color: var(--text);
+      background: #ffffff;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-.badge{
-display:inline-block;
-padding:10px 18px;
-background:#dbeafe;
-color:#0d6efd;
-border-radius:30px;
-font-size:15px;
-font-weight:700;
-margin-bottom:20px;
-}
+    .pmegp-page img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
-.hero h1{
-font-size:54px;
-line-height:1.2;
-margin-bottom:20px;
-color:#111827;
-}
+    .pmegp-page a {
+      color: inherit;
+    }
 
-.hero p{
-font-size:20px;
-color:#555;
-margin-bottom:30px;
-}
+    .pmegp-container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
 
-.hero-buttons{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
+    /* =========================================================
+       HEADER
+       ========================================================= */
 
-.btn-primary{
-background:#0d6efd;
-color:#fff;
-padding:16px 30px;
-border-radius:12px;
-text-decoration:none;
-font-weight:700;
-}
+    .pmegp-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+    }
 
-.btn-secondary{
-background:#111827;
-color:#fff;
-padding:16px 30px;
-border-radius:12px;
-text-decoration:none;
-font-weight:700;
-}
+    .pmegp-nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
 
-.hero-image img{
-border-radius:25px;
-box-shadow:0 15px 40px rgba(0,0,0,.12);
-}
+    .pmegp-logo {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: var(--navy);
+      white-space: nowrap;
+    }
 
-.section{
-padding:80px 0;
-}
+    .pmegp-logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      color: white;
+      font-size: 17px;
+      font-weight: 900;
+    }
 
-.section-title{
-text-align:center;
-margin-bottom:50px;
-}
+    .pmegp-logo span:last-child {
+      color: var(--blue);
+    }
 
-.section-title h2{
-font-size:42px;
-margin-bottom:15px;
-color:#111827;
-}
+    .pmegp-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
 
-.section-title p{
-font-size:20px;
-max-width:900px;
-margin:auto;
-color:#555;
-}
+    .pmegp-nav-links a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      color: #334155;
+      transition: 0.2s ease;
+    }
 
-.card-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-}
+    .pmegp-nav-links a:hover {
+      color: var(--blue);
+    }
 
-.card{
-background:#fff;
-padding:35px;
-border-radius:24px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
+    .pmegp-nav-cta {
+      padding: 11px 18px !important;
+      color: #ffffff !important;
+      background: var(--blue);
+      border-radius: 10px;
+    }
 
-.card h3{
-font-size:24px;
-margin-bottom:15px;
-}
+    .pmegp-menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 27px;
+      cursor: pointer;
+      color: var(--navy);
+    }
 
-.card p{
-font-size:18px;
-color:#555;
-}
+    /* =========================================================
+       HERO
+       ========================================================= */
 
-.stats-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-}
+    .pmegp-hero {
+      position: relative;
+      padding: 78px 0 82px;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(13, 110, 253, 0.12), transparent 30%),
+        linear-gradient(135deg, #edf6ff 0%, #ffffff 62%);
+    }
 
-.stat-card{
-background:#fff;
-padding:30px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
+    .pmegp-hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 60px;
+    }
 
-.stat-card h3{
-font-size:30px;
-color:#0d6efd;
-margin-bottom:10px;
-}
+    .pmegp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      margin-bottom: 20px;
+      border-radius: 50px;
+      background: #dcecff;
+      color: #0755c8;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
 
-.stat-card p{
-font-size:18px;
-}
+    .pmegp-badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
 
-.whatsapp-btn{
-position:fixed;
-bottom:20px;
-right:15px;
-background:#25D366;
-color:#fff;
-text-decoration:none;
-padding:15px 22px;
-border-radius:50px;
-font-weight:700;
-z-index:999;
-box-shadow:0 10px 25px rgba(0,0,0,.25);
-}
+    .pmegp-hero h1 {
+      max-width: 760px;
+      margin: 0 0 20px;
+      color: var(--navy);
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.1;
+      letter-spacing: -1.8px;
+    }
 
-@media(max-width:768px){
+    .pmegp-hero h1 span {
+      color: var(--blue);
+    }
 
-.hero{
-padding:50px 0;
-}
+    .pmegp-hero-text {
+      max-width: 730px;
+      margin: 0 0 30px;
+      color: #526174;
+      font-size: 18px;
+      line-height: 1.8;
+    }
 
-.hero-grid{
-grid-template-columns:1fr;
-}
+    .pmegp-hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
 
-.hero h1{
-font-size:38px;
-}
+    .pmegp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 13px 23px;
+      border-radius: 11px;
+      text-decoration: none;
+      border: 1px solid transparent;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
 
-.hero p{
-font-size:18px;
-}
+    .pmegp-btn-primary {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 10px 24px rgba(13, 110, 253, 0.18);
+    }
 
-.hero-buttons a{
-width:100%;
-text-align:center;
-}
+    .pmegp-btn-primary:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+    }
 
-.stats-grid{
-grid-template-columns:1fr;
-}
+    .pmegp-btn-outline {
+      background: white;
+      color: var(--navy);
+      border-color: #cbd5e1;
+    }
 
-.card-grid{
-grid-template-columns:1fr;
-}
+    .pmegp-btn-outline:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
 
-.section-title h2{
-font-size:32px;
-}
+    .pmegp-hero-note {
+      margin-top: 18px;
+      color: #64748b;
+      font-size: 13px;
+    }
 
-.section-title p{
-font-size:18px;
-}
+    .pmegp-hero-image {
+      position: relative;
+    }
 
-.card{
-padding:28px;
-}
+    .pmegp-hero-image img {
+      width: 100%;
+      min-height: 430px;
+      object-fit: cover;
+      border-radius: 25px;
+      box-shadow: 0 25px 65px rgba(15, 23, 42, 0.16);
+    }
 
-.card h3{
-font-size:22px;
-}
+    .pmegp-image-card {
+      position: absolute;
+      left: -24px;
+      bottom: 25px;
+      width: 220px;
+      padding: 17px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.15);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+    }
 
-.card p{
-font-size:17px;
-}
+    .pmegp-image-card strong {
+      display: block;
+      color: var(--navy);
+      font-size: 14px;
+    }
 
-}
+    .pmegp-image-card small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+    }
 
-</style>
+    /* =========================================================
+       TRUST STRIP
+       ========================================================= */
 
+    .pmegp-trust {
+      margin-top: -1px;
+      padding: 22px 0;
+      background: var(--navy);
+      color: white;
+    }
+
+    .pmegp-trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .pmegp-trust-item {
+      padding: 12px 18px;
+      border-right: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .pmegp-trust-item:last-child {
+      border-right: 0;
+    }
+
+    .pmegp-trust-item strong {
+      display: block;
+      color: white;
+      font-size: 14px;
+    }
+
+    .pmegp-trust-item span {
+      display: block;
+      margin-top: 3px;
+      color: #b9c8db;
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       SECTIONS
+       ========================================================= */
+
+    .pmegp-section {
+      padding: 82px 0;
+    }
+
+    .pmegp-section-soft {
+      background: #f7fbff;
+    }
+
+    .pmegp-section-head {
+      max-width: 850px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .pmegp-eyebrow {
+      margin-bottom: 8px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .pmegp-section-head h2 {
+      margin: 0 0 14px;
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.2;
+      letter-spacing: -0.8px;
+    }
+
+    .pmegp-section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* =========================================================
+       CARDS
+       ========================================================= */
+
+    .pmegp-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .pmegp-card {
+      padding: 30px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 19px;
+      box-shadow: 0 8px 25px rgba(15, 23, 42, 0.045);
+      transition: 0.22s ease;
+    }
+
+    .pmegp-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.08);
+      border-color: #cbdcf2;
+    }
+
+    .pmegp-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      border-radius: 13px;
+      background: var(--light-blue);
+      color: var(--blue);
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .pmegp-card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 20px;
+      line-height: 1.3;
+    }
+
+    .pmegp-card p {
+      margin: 0;
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    /* =========================================================
+       PMEGP KEY FIGURES
+       ========================================================= */
+
+    .pmegp-info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .pmegp-info-box {
+      padding: 25px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      text-align: center;
+    }
+
+    .pmegp-info-box strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--blue);
+      font-size: 27px;
+      line-height: 1.2;
+    }
+
+    .pmegp-info-box span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       FUNDING / SUBSIDY TABLE
+       ========================================================= */
+
+    .pmegp-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: white;
+      box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04);
+    }
+
+    .pmegp-table {
+      width: 100%;
+      min-width: 750px;
+      border-collapse: collapse;
+    }
+
+    .pmegp-table th,
+    .pmegp-table td {
+      padding: 16px 18px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .pmegp-table th {
+      background: #eff6ff;
+      color: var(--navy);
+      font-weight: 900;
+    }
+
+    .pmegp-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .pmegp-table-note {
+      margin-top: 15px;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       ELIGIBILITY
+       ========================================================= */
+
+    .pmegp-check-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .pmegp-check {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 16px;
+      border-radius: 14px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .pmegp-check-mark {
+      flex: 0 0 25px;
+      width: 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #e8f7ef;
+      color: var(--success);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .pmegp-check strong {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--navy);
+      font-size: 14px;
+    }
+
+    .pmegp-check span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       PROCESS
+       ========================================================= */
+
+    .pmegp-process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      counter-reset: process;
+    }
+
+    .pmegp-process-card {
+      position: relative;
+      padding: 27px 22px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .pmegp-step {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 18px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: white;
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .pmegp-process-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 17px;
+    }
+
+    .pmegp-process-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       TWO COLUMN CONTENT
+       ========================================================= */
+
+    .pmegp-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      align-items: stretch;
+    }
+
+    .pmegp-panel {
+      padding: 32px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+
+    .pmegp-panel h3 {
+      margin: 0 0 18px;
+      color: var(--navy);
+      font-size: 22px;
+    }
+
+    .pmegp-panel ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #64748b;
+    }
+
+    .pmegp-panel li {
+      margin-bottom: 9px;
+      font-size: 14px;
+    }
+
+    /* =========================================================
+       FORM
+       ========================================================= */
+
+    .pmegp-form-wrap {
+      max-width: 900px;
+      margin: auto;
+      padding: 35px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 23px;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+    }
+
+    .pmegp-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+
+    .pmegp-field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .pmegp-field-full {
+      grid-column: 1 / -1;
+    }
+
+    .pmegp-field label {
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .pmegp-field input,
+    .pmegp-field select,
+    .pmegp-field textarea {
+      width: 100%;
+      border: 1px solid #d7dee8;
+      outline: none;
+      border-radius: 11px;
+      padding: 13px 14px;
+      background: #ffffff;
+      color: #172033;
+      font: inherit;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .pmegp-field input:focus,
+    .pmegp-field select:focus,
+    .pmegp-field textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.09);
+    }
+
+    .pmegp-field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .pmegp-form-disclaimer {
+      margin: 17px 0;
+      padding: 13px 15px;
+      border-radius: 11px;
+      background: #f8fafc;
+      color: #64748b;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .pmegp-submit {
+      width: 100%;
+      min-height: 51px;
+      border: 0;
+      border-radius: 11px;
+      background: var(--blue);
+      color: white;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .pmegp-submit:hover {
+      background: var(--blue-dark);
+    }
+
+    .pmegp-submit:disabled {
+      cursor: not-allowed;
+      opacity: 0.65;
+    }
+
+    .pmegp-form-message {
+      display: none;
+      margin-top: 15px;
+      padding: 13px 15px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .pmegp-form-message.success {
+      display: block;
+      color: #126b3d;
+      background: #eaf8f0;
+      border: 1px solid #bde8cf;
+    }
+
+    .pmegp-form-message.error {
+      display: block;
+      color: #a51f1f;
+      background: #fff0f0;
+      border: 1px solid #f2c2c2;
+    }
+
+    /* =========================================================
+       FAQ
+       ========================================================= */
+
+    .pmegp-faq {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    .pmegp-faq details {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .pmegp-faq summary {
+      padding: 19px 20px;
+      color: var(--navy);
+      font-weight: 800;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .pmegp-faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .pmegp-faq summary::after {
+      content: "+";
+      float: right;
+      color: var(--blue);
+      font-size: 20px;
+    }
+
+    .pmegp-faq details[open] summary::after {
+      content: "−";
+    }
+
+    .pmegp-faq-answer {
+      padding: 0 20px 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================================================
+       CTA
+       ========================================================= */
+
+    .pmegp-cta {
+      padding: 85px 0;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,.12), transparent 30%),
+        linear-gradient(135deg, #0b1f3a, #0755c8);
+      color: white;
+      text-align: center;
+    }
+
+    .pmegp-cta h2 {
+      margin: 0 0 14px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.2;
+    }
+
+    .pmegp-cta p {
+      max-width: 780px;
+      margin: 0 auto 27px;
+      color: #dbeafe;
+      font-size: 16px;
+    }
+
+    .pmegp-cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pmegp-cta .pmegp-btn-primary {
+      background: white;
+      color: var(--blue);
+      box-shadow: none;
+    }
+
+    .pmegp-cta .pmegp-btn-outline {
+      background: transparent;
+      border-color: rgba(255,255,255,.5);
+      color: white;
+    }
+
+    /* =========================================================
+       SOURCES
+       ========================================================= */
+
+    .pmegp-sources {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .pmegp-source {
+      padding: 20px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    .pmegp-source strong {
+      display: block;
+      color: var(--navy);
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .pmegp-source a {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .pmegp-footer {
+      padding: 60px 0 25px;
+      background: #081426;
+      color: white;
+    }
+
+    .pmegp-footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .pmegp-footer h3 {
+      margin: 0 0 14px;
+      font-size: 18px;
+    }
+
+    .pmegp-footer p,
+    .pmegp-footer a {
+      color: #aebdd0;
+      font-size: 13px;
+    }
+
+    .pmegp-footer a {
+      display: block;
+      margin-bottom: 8px;
+      text-decoration: none;
+    }
+
+    .pmegp-footer a:hover {
+      color: white;
+    }
+
+    .pmegp-footer-bottom {
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      color: #8293a9;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       WHATSAPP
+       ========================================================= */
+
+    .pmegp-whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 20px;
+      z-index: 1100;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 18px;
+      border-radius: 50px;
+      background: #25d366;
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: 0 12px 30px rgba(0,0,0,.22);
+    }
+
+    /* =========================================================
+       POPUP
+       ========================================================= */
+
+    .pmegp-popup {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(2, 12, 27, .68);
+      backdrop-filter: blur(5px);
+    }
+
+    .pmegp-popup.active {
+      display: flex;
+    }
+
+    .pmegp-popup-box {
+      position: relative;
+      width: min(450px, 100%);
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 30px;
+      border-radius: 22px;
+      background: white;
+      box-shadow: 0 30px 80px rgba(0,0,0,.28);
+    }
+
+    .pmegp-popup-close {
+      position: absolute;
+      top: 12px;
+      right: 15px;
+      width: 35px;
+      height: 35px;
+      border: 0;
+      border-radius: 50%;
+      background: #f1f5f9;
+      color: #334155;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .pmegp-popup-box h3 {
+      margin: 0 35px 7px 0;
+      color: var(--navy);
+      font-size: 23px;
+    }
+
+    .pmegp-popup-box > p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .pmegp-popup .pmegp-field {
+      margin-bottom: 11px;
+    }
+
+    /* =========================================================
+       MOBILE ACTION BAR
+       ========================================================= */
+
+    .pmegp-mobile-bar {
+      display: none;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 980px) {
+      .pmegp-nav-links {
+        gap: 14px;
+      }
+
+      .pmegp-hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pmegp-hero-image {
+        max-width: 700px;
+      }
+
+      .pmegp-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pmegp-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pmegp-process {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pmegp-sources {
+        grid-template-columns: 1fr;
+      }
+
+      .pmegp-footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .pmegp-container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .pmegp-menu-btn {
+        display: block;
+      }
+
+      .pmegp-nav-links {
+        display: none;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        right: 0;
+        padding: 18px;
+        background: white;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 15px 30px rgba(15,23,42,.08);
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .pmegp-nav-links.active {
+        display: flex;
+      }
+
+      .pmegp-nav-links a {
+        padding: 10px;
+      }
+
+      .pmegp-nav-cta {
+        text-align: center;
+      }
+
+      .pmegp-hero {
+        padding: 52px 0 60px;
+      }
+
+      .pmegp-hero h1 {
+        font-size: 39px;
+        letter-spacing: -1px;
+      }
+
+      .pmegp-hero-text {
+        font-size: 16px;
+      }
+
+      .pmegp-hero-buttons {
+        flex-direction: column;
+      }
+
+      .pmegp-hero-buttons .pmegp-btn {
+        width: 100%;
+      }
+
+      .pmegp-hero-image img {
+        min-height: 300px;
+      }
+
+      .pmegp-image-card {
+        left: 15px;
+        bottom: 15px;
+      }
+
+      .pmegp-trust-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .pmegp-trust-item {
+        border-right: 0;
+      }
+
+      .pmegp-section {
+        padding: 60px 0;
+      }
+
+      .pmegp-card-grid,
+      .pmegp-info-grid,
+      .pmegp-process,
+      .pmegp-two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .pmegp-form-wrap {
+        padding: 23px;
+      }
+
+      .pmegp-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pmegp-field-full {
+        grid-column: auto;
+      }
+
+      .pmegp-footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pmegp-whatsapp {
+        bottom: 75px;
+        right: 12px;
+        padding: 11px 14px;
+      }
+
+      .pmegp-mobile-bar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1200;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1.2fr;
+        background: white;
+        border-top: 1px solid var(--border);
+        box-shadow: 0 -8px 25px rgba(15,23,42,.1);
+      }
+
+      .pmegp-mobile-bar a {
+        padding: 13px 6px;
+        text-align: center;
+        text-decoration: none;
+        color: var(--navy);
+        font-size: 11px;
+        font-weight: 900;
+      }
+
+      .pmegp-mobile-bar a:last-child {
+        background: var(--blue);
+        color: white;
+      }
+
+      .pmegp-page {
+        padding-bottom: 55px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pmegp-card,
+      .pmegp-btn {
+        transition: none;
+      }
+    }
+  </style>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is PMEGP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PMEGP stands for Prime Minister's Employment Generation Programme. It is a Government of India scheme intended to promote self-employment through eligible new micro enterprise projects."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who can apply for a new PMEGP project?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For new PMEGP enterprises, an individual above 18 years of age can be eligible subject to the applicable PMEGP guidelines and project conditions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the maximum project cost under PMEGP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Under the revised PMEGP guidelines, the maximum project cost eligible for margin-money subsidy is Rs. 50 lakh for manufacturing units and Rs. 20 lakh for business/service units. Additional bank finance may be considered beyond the subsidy-eligible ceiling subject to applicable rules and lender appraisal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is PMEGP assistance guaranteed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Eligibility, project appraisal, bank finance, subsidy adjustment and final sanction are subject to applicable PMEGP guidelines, implementing agency processes and lender decisions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does an existing business automatically qualify for PMEGP expansion assistance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "New enterprise assistance is intended for eligible new projects. Separate provisions exist for upgradation of eligible existing PMEGP, REGP and MUDRA units subject to specific conditions."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
 
-<!-- HERO -->
+<div class="pmegp-page">
+
+  <!-- =======================================================
+       HEADER
+       ======================================================= -->
+
+  <header class="pmegp-header">
+    <div class="pmegp-container">
+      <nav class="pmegp-nav">
+
+        <a href="index.html" class="pmegp-logo" aria-label="Fundvexxa Home">
+          <span class="pmegp-logo-mark">F</span>
+          <span>Fund<span>vexxa</span></span>
+        </a>
 
-<section class="hero">
+        <button
+          class="pmegp-menu-btn"
+          id="pmegpMenuBtn"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
 
-<div class="container">
+        <div class="pmegp-nav-links" id="pmegpNavLinks">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="about.html">About</a>
+          <a href="mudra-loan.html">Mudra Loan</a>
+          <a href="business-loan.html">Business Loan</a>
+          <a href="contact.html">Contact</a>
+          <a href="#apply" class="pmegp-nav-cta">Check Requirement</a>
+        </div>
 
-<div class="hero-grid">
+      </nav>
+    </div>
+  </header>
 
-<div>
 
-<span class="badge">
-PMEGP LOAN ASSISTANCE
-</span>
+  <!-- =======================================================
+       HERO
+       ======================================================= -->
 
-<h1>
-Start Or Expand Your Business With PMEGP Support
-</h1>
+  <main>
 
-<p>
-Prime Minister Employment Generation Programme (PMEGP) ek Government initiative hai jo eligible entrepreneurs ko manufacturing aur service sector businesses establish karne aur expand karne ke liye support provide karta hai. Fundvexxa documentation aur application guidance me aapki madad karta hai.
-</p>
+    <section class="pmegp-hero">
 
-<div class="hero-buttons">
+      <div class="pmegp-container">
 
-<a href="#apply" class="btn-primary">
-Apply Now
-</a>
+        <div class="pmegp-hero-grid">
 
-<a href="tel:+917290977231" class="btn-secondary">
-Talk To Expert
-</a>
+          <div>
 
-</div>
+            <div class="pmegp-badge">
+              PMEGP Assistance
+            </div>
 
-</div>
+            <h1>
+              Build Your New Business With
+              <span>PMEGP Guidance</span>
+            </h1>
 
-<div class="hero-image">
+            <p class="pmegp-hero-text">
+              Prime Minister's Employment Generation Programme (PMEGP)
+              eligible entrepreneurs ko new micro enterprise projects establish
+              karne ke liye support framework provide karta hai.
+              Fundvexxa project planning, documentation aur application
+              guidance mein assistance provide karta hai.
+            </p>
 
-<img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg" alt="PMEGP Loan">
+            <div class="pmegp-hero-buttons">
 
-</div>
+              <a href="#apply" class="pmegp-btn pmegp-btn-primary">
+                Check Your Requirement
+              </a>
 
-</div>
+              <a
+                href="tel:+917290977231"
+                class="pmegp-btn pmegp-btn-outline"
+              >
+                Talk To Our Team
+              </a>
 
-</div>
+            </div>
 
-</section>
+            <p class="pmegp-hero-note">
+              Final eligibility, project appraisal, bank finance, subsidy
+              adjustment and sanction applicable authorities/lender ke
+              decision aur current guidelines par depend karte hain.
+            </p>
 
-<!-- HIGHLIGHTS -->
+          </div>
 
-<section class="section">
 
-<div class="container">
+          <div class="pmegp-hero-image">
 
-<div class="stats-grid">
+            <img
+              src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
+              alt="Entrepreneurs discussing a business project"
+              loading="eager"
+            >
 
-<div class="stat-card">
-<h3>Government</h3>
-<p>Supported Scheme</p>
-</div>
+            <div class="pmegp-image-card">
+              <strong>Project • Documents • Application</strong>
+              <small>
+                Structured assistance for your PMEGP journey
+              </small>
+            </div>
 
-<div class="stat-card">
-<h3>Manufacturing</h3>
-<p>Business Projects</p>
-</div>
+          </div>
 
-<div class="stat-card">
-<h3>Service Sector</h3>
-<p>Business Support</p>
-</div>
+        </div>
 
-<div class="stat-card">
-<h3>India Wide</h3>
-<p>Opportunities</p>
-</div>
+      </div>
 
-</div>
+    </section>
 
-</div>
 
-</section>
+    <!-- =====================================================
+         TRUST STRIP
+         ===================================================== -->
 
-<!-- ABOUT PMEGP -->
+    <section class="pmegp-trust">
 
-<section class="section" style="background:#f8fbff;">
+      <div class="pmegp-container">
 
-<div class="container">
+        <div class="pmegp-trust-grid">
 
-<div class="section-title">
+          <div class="pmegp-trust-item">
+            <strong>Government Scheme</strong>
+            <span>PMEGP is a Government of India programme</span>
+          </div>
 
-<h2>
-What Is PMEGP?
-</h2>
+          <div class="pmegp-trust-item">
+            <strong>New Micro Enterprises</strong>
+            <span>New eligible projects are covered</span>
+          </div>
 
-<p>
-PMEGP (Prime Minister Employment Generation Programme) ek Government-backed scheme hai jiska objective naye entrepreneurs ko self-employment opportunities create karne aur micro enterprises establish karne me support provide karna hai. Scheme manufacturing aur service sector dono ko cover karti hai.
-</p>
+          <div class="pmegp-trust-item">
+            <strong>Manufacturing & Service</strong>
+            <span>Eligible activities subject to guidelines</span>
+          </div>
 
-</div>
+          <div class="pmegp-trust-item">
+            <strong>Application Guidance</strong>
+            <span>Project and documentation support</span>
+          </div>
 
-<div class="card-grid">
+        </div>
 
-<div class="card">
+      </div>
 
-<h3>
-New Business Setup
-</h3>
+    </section>
 
-<p>
-Entrepreneurs ko apna business start karne aur self-employment opportunities create karne me support.
-</p>
 
-</div>
+    <!-- =====================================================
+         PMEGP OVERVIEW
+         ===================================================== -->
 
-<div class="card">
+    <section class="pmegp-section">
 
-<h3>
-Manufacturing Projects
-</h3>
+      <div class="pmegp-container">
 
-<p>
-Small manufacturing units, production activities aur local industry development ke liye opportunities.
-</p>
+        <div class="pmegp-section-head">
 
-</div>
+          <div class="pmegp-eyebrow">
+            PMEGP Overview
+          </div>
 
-<div class="card">
+          <h2>
+            What Is PMEGP?
+          </h2>
 
-<h3>
-Service Sector Projects
-</h3>
+          <p>
+            PMEGP ka objective rural aur urban areas mein new
+            self-employment ventures, micro enterprises aur employment
+            opportunities ko promote karna hai.
+          </p>
 
-<p>
-Professional services, repair centers, retail businesses aur various service-based ventures ke liye support.
-</p>
+        </div>
 
-</div>
 
-</div>
+        <div class="pmegp-card-grid">
 
-</div>
+          <article class="pmegp-card">
+            <div class="pmegp-icon">01</div>
+            <h3>New Enterprise Setup</h3>
+            <p>
+              Eligible new micro enterprise projects ke liye PMEGP
+              assistance explore ki ja sakti hai.
+            </p>
+          </article>
 
-</section>
+          <article class="pmegp-card">
+            <div class="pmegp-icon">02</div>
+            <h3>Manufacturing Projects</h3>
+            <p>
+              Eligible manufacturing and production-oriented micro
+              enterprise activities guidelines ke according consider ho
+              sakti hain.
+            </p>
+          </article>
 
-<!-- WHY PMEGP -->
+          <article class="pmegp-card">
+            <div class="pmegp-icon">03</div>
+            <h3>Service Projects</h3>
+            <p>
+              Eligible service-oriented micro enterprise activities bhi
+              applicable guidelines ke under explore ki ja sakti hain.
+            </p>
+          </article>
 
-<section class="section">
+        </div>
 
-<div class="container">
+      </div>
 
-<div class="section-title">
+    </section>
 
-<h2>
-Why Entrepreneurs Explore PMEGP
-</h2>
 
-<p>
-PMEGP scheme ka focus employment generation, entrepreneurship promotion aur local business development par rehta hai.
-</p>
+    <!-- =====================================================
+         KEY FIGURES
+         ===================================================== -->
 
-</div>
+    <section class="pmegp-section pmegp-section-soft">
 
-<div class="card-grid">
+      <div class="pmegp-container">
 
-<div class="card">
+        <div class="pmegp-section-head">
 
-<h3>
-Business Ownership
-</h3>
+          <div class="pmegp-eyebrow">
+            Current Guideline Snapshot
+          </div>
 
-<p>
-Apna business establish karne aur long-term growth opportunities create karne ka platform.
-</p>
+          <h2>
+            Important PMEGP Project Limits
+          </h2>
 
-</div>
+          <p>
+            Ye figures current revised PMEGP guidelines ke
+            margin-money subsidy framework se related hain.
+          </p>
 
-<div class="card">
+        </div>
 
-<h3>
-Employment Generation
-</h3>
 
-<p>
-Local level par employment opportunities create karne me contribution.
-</p>
+        <div class="pmegp-info-grid">
 
-</div>
+          <div class="pmegp-info-box">
+            <strong>₹50L</strong>
+            <span>
+              Manufacturing project cost eligible for margin-money subsidy
+            </span>
+          </div>
 
-<div class="card">
+          <div class="pmegp-info-box">
+            <strong>₹20L</strong>
+            <span>
+              Business / Service project cost eligible for margin-money subsidy
+            </span>
+          </div>
 
-<h3>
-Business Expansion
-</h3>
+          <div class="pmegp-info-box">
+            <strong>18+</strong>
+            <span>
+              Minimum age for individual applicants for new enterprises
+            </span>
+          </div>
 
-<p>
-Eligible projects ko develop karne aur scale-up opportunities explore karne ka support.
-</p>
+          <div class="pmegp-info-box">
+            <strong>VIII</strong>
+            <span>
+              Minimum education condition above specified project thresholds
+            </span>
+          </div>
 
-</div>
+        </div>
 
-</div>
+        <p class="pmegp-table-note">
+          Important: ₹50 lakh / ₹20 lakh figures margin-money subsidy
+          eligibility ceiling se related hain; ye guaranteed loan amount
+          nahi hain. Final bank finance and project sanction lender appraisal
+          aur applicable guidelines par depend karte hain.
+        </p>
 
-</div>
+      </div>
 
-</section>
+    </section>
 
-<a href="https://wa.me/917290977231" class="whatsapp-btn">
-WhatsApp Us
-</a>
 
+    <!-- =====================================================
+         SUBSIDY TABLE
+         ===================================================== -->
 
-<!-- PMEGP BENEFITS -->
+    <section class="pmegp-section">
 
-<section class="section" style="background:#f8fbff;">
+      <div class="pmegp-container">
 
-<div class="container">
+        <div class="pmegp-section-head">
 
-<div class="section-title">
+          <div class="pmegp-eyebrow">
+            Funding Structure
+          </div>
 
-<h2>
-Benefits Of PMEGP Scheme
-</h2>
+          <h2>
+            PMEGP Contribution & Margin Money
+          </h2>
 
-<p>
-PMEGP scheme entrepreneurship development aur employment generation ko encourage karne ke objective se introduce ki gayi hai. Yeh eligible applicants ko business establish karne ke liye support opportunities provide karti hai.
-</p>
+          <p>
+            Revised guidelines mein beneficiary contribution aur
+            margin-money subsidy category aur project location ke
+            according vary karte hain.
+          </p>
 
-</div>
+        </div>
 
-<div class="card-grid">
 
-<div class="card">
+        <div class="pmegp-table-wrap">
 
-<h3>
-Government Supported Initiative
-</h3>
+          <table class="pmegp-table">
 
-<p>
-Government backed entrepreneurship promotion scheme jo eligible business projects ko support karne ke objective se operate ki jaati hai.
-</p>
+            <thead>
+              <tr>
+                <th>Beneficiary Category</th>
+                <th>Own Contribution</th>
+                <th>Urban Subsidy</th>
+                <th>Rural Subsidy</th>
+              </tr>
+            </thead>
 
-</div>
+            <tbody>
 
-<div class="card">
+              <tr>
+                <td>General Category</td>
+                <td>10%</td>
+                <td>15%</td>
+                <td>25%</td>
+              </tr>
 
-<h3>
-Business Establishment Support
-</h3>
+              <tr>
+                <td>
+                  Special Category
+                  <br>
+                  <small>
+                    including applicable special categories
+                  </small>
+                </td>
+                <td>5%</td>
+                <td>25%</td>
+                <td>35%</td>
+              </tr>
 
-<p>
-New entrepreneurs ko apna manufacturing ya service sector business establish karne ka opportunity mil sakta hai.
-</p>
+            </tbody>
 
-</div>
+          </table>
 
-<div class="card">
+        </div>
 
-<h3>
-Employment Creation
-</h3>
+        <p class="pmegp-table-note">
+          Subsidy rate and applicability are subject to the current PMEGP
+          guidelines, beneficiary category, location, project and sanction.
+          Margin money subsidy should not be treated as an upfront cash
+          payout to the applicant.
+        </p>
 
-<p>
-Local level par employment opportunities create karne aur self-employment promote karne me contribution.
-</p>
+      </div>
 
-</div>
+    </section>
 
-<div class="card">
 
-<h3>
-Manufacturing Sector Coverage
-</h3>
+    <!-- =====================================================
+         ELIGIBILITY
+         ===================================================== -->
 
-<p>
-Small production units, fabrication units aur manufacturing related business activities cover ki ja sakti hain.
-</p>
+    <section class="pmegp-section pmegp-section-soft">
 
-</div>
+      <div class="pmegp-container">
 
-<div class="card">
+        <div class="pmegp-section-head">
 
-<h3>
-Service Sector Opportunities
-</h3>
+          <div class="pmegp-eyebrow">
+            Eligibility
+          </div>
 
-<p>
-Service-based businesses, repair centers, retail activities aur professional services ke liye opportunities.
-</p>
+          <h2>
+            Who May Be Eligible?
+          </h2>
 
-</div>
+          <p>
+            PMEGP eligibility applicant, project type, cost, activity and
+            applicable guidelines ke basis par evaluate hoti hai.
+          </p>
 
-<div class="card">
+        </div>
 
-<h3>
-Long-Term Business Growth
-</h3>
 
-<p>
-Entrepreneurs ko sustainable business build karne aur future expansion opportunities explore karne ka platform mil sakta hai.
-</p>
+        <div class="pmegp-two-col">
 
-</div>
+          <div class="pmegp-panel">
 
-</div>
+            <h3>
+              New Enterprise – Key Conditions
+            </h3>
 
-</div>
+            <div class="pmegp-check-list">
 
-</section>
+              <div class="pmegp-check">
+                <div class="pmegp-check-mark">✓</div>
+                <div>
+                  <strong>Individual above 18 years</strong>
+                  <span>
+                    New enterprise applicants ke liye individual applicant
+                    generally 18 years se above hona chahiye.
+                  </span>
+                </div>
+              </div>
 
-<!-- ELIGIBILITY -->
+              <div class="pmegp-check">
+                <div class="pmegp-check-mark">✓</div>
+                <div>
+                  <strong>No income ceiling</strong>
+                  <span>
+                    Official PMEGP eligibility page new enterprise assistance
+                    ke liye income ceiling specify nahi karti.
+                  </span>
+                </div>
+              </div>
 
-<section class="section">
+              <div class="pmegp-check">
+                <div class="pmegp-check-mark">✓</div>
+                <div>
+                  <strong>Educational condition</strong>
+                  <span>
+                    Manufacturing projects above ₹10 lakh and business/service
+                    projects above ₹5 lakh ke liye minimum VIII standard
+                    qualification condition apply hoti hai.
+                  </span>
+                </div>
+              </div>
 
-<div class="container">
+              <div class="pmegp-check">
+                <div class="pmegp-check-mark">✓</div>
+                <div>
+                  <strong>New project requirement</strong>
+                  <span>
+                    New enterprise assistance eligible new projects ke liye
+                    intended hai.
+                  </span>
+                </div>
+              </div>
 
-<div class="section-title">
+            </div>
 
-<h2>
-Who Can Apply?
-</h2>
+          </div>
 
-<p>
-Eligibility actual guidelines aur project profile ke according evaluate ki jaati hai. General categories neeche di gayi hain.
-</p>
 
-</div>
+          <div class="pmegp-panel">
 
-<div class="card-grid">
+            <h3>
+              Important Restrictions & Conditions
+            </h3>
 
-<div class="card">
+            <div class="pmegp-check-list">
 
-<h3>
-New Entrepreneurs
-</h3>
+              <div class="pmegp-check">
+                <div class="pmegp-check-mark">!</div>
+                <div>
+                  <strong>Existing unit is not automatically eligible</strong>
+                  <span>
+                    Existing units ke liye separate upgradation provisions
+                    hain, subject to specific conditions.
+                  </span>
+                </div>
+              </div>
 
-<p>
-Individuals jo apna pehla business start karna chahte hain aur self-employment opportunities create karna chahte hain.
-</p>
+              <div class="pmegp-check">
+                <div class="pmegp-check-mark">!</div>
+                <div>
+                  <strong>Capital expenditure matters</strong>
+                  <span>
+                    Projects without capital expenditure PMEGP financing ke
+                    liye eligible nahi hote.
+                  </span>
+                </div>
+              </div>
 
-</div>
+              <div class="pmegp-check">
+                <div class="pmegp-check-mark">!</div>
+                <div>
+                  <strong>Land cost</strong>
+                  <span>
+                    Land purchase cost project cost mein include nahi kiya
+                    jaata; eligible work-shed conditions separately apply.
+                  </span>
+                </div>
+              </div>
 
-<div class="card">
+              <div class="pmegp-check">
+                <div class="pmegp-check-mark">!</div>
+                <div>
+                  <strong>Activity must be eligible</strong>
+                  <span>
+                    Negative-list and activity-specific restrictions
+                    applicable ho sakti hain.
+                  </span>
+                </div>
+              </div>
 
-<h3>
-Existing Small Businesses
-</h3>
+            </div>
 
-<p>
-Certain eligible business activities jo expansion ya development opportunities explore karna chahte hain.
-</p>
+          </div>
 
-</div>
+        </div>
 
-<div class="card">
+      </div>
 
-<h3>
-Manufacturing Applicants
-</h3>
+    </section>
 
-<p>
-Production, fabrication, food processing aur manufacturing related project applicants.
-</p>
 
-</div>
+    <!-- =====================================================
+         PROJECT CATEGORIES
+         ===================================================== -->
 
-<div class="card">
+    <section class="pmegp-section">
 
-<h3>
-Service Sector Applicants
-</h3>
+      <div class="pmegp-container">
 
-<p>
-Retail, service center, consultancy, repair services aur similar business activities.
-</p>
+        <div class="pmegp-section-head">
 
-</div>
+          <div class="pmegp-eyebrow">
+            Project Ideas
+          </div>
 
-<div class="card">
+          <h2>
+            Examples Of Business Activities
+          </h2>
 
-<h3>
-Rural Entrepreneurs
-</h3>
+          <p>
+            Actual eligibility activity-specific PMEGP guidelines aur
+            appraisal ke according decide hoti hai.
+          </p>
 
-<p>
-Village aur semi-urban areas me business opportunities create karne wale applicants.
-</p>
+        </div>
 
-</div>
 
-<div class="card">
+        <div class="pmegp-card-grid">
 
-<h3>
-Urban Entrepreneurs
-</h3>
+          <article class="pmegp-card">
+            <div class="pmegp-icon">🍞</div>
+            <h3>Food Processing</h3>
+            <p>
+              Bakery, snacks, food processing, packaging aur similar
+              eligible micro-enterprise activities.
+            </p>
+          </article>
 
-<p>
-Cities aur towns me eligible projects establish karne wale individuals.
-</p>
+          <article class="pmegp-card">
+            <div class="pmegp-icon">🏭</div>
+            <h3>Manufacturing</h3>
+            <p>
+              Fabrication, engineering, production aur other eligible
+              manufacturing activities.
+            </p>
+          </article>
 
-</div>
+          <article class="pmegp-card">
+            <div class="pmegp-icon">🔧</div>
+            <h3>Repair & Services</h3>
+            <p>
+              Eligible repair, maintenance and service-oriented
+              micro-enterprise projects.
+            </p>
+          </article>
 
-</div>
+          <article class="pmegp-card">
+            <div class="pmegp-icon">🚐</div>
+            <h3>Transport Activities</h3>
+            <p>
+              Certain transport activities may be permitted subject to
+              PMEGP conditions and applicable ceilings.
+            </p>
+          </article>
+
+          <article class="pmegp-card">
+            <div class="pmegp-icon">🛍</div>
+            <h3>Trading / Retail</h3>
+            <p>
+              Certain trading and retail activities are permitted only
+              under specified PMEGP conditions.
+            </p>
+          </article>
+
+          <article class="pmegp-card">
+            <div class="pmegp-icon">💼</div>
+            <h3>Service Businesses</h3>
+            <p>
+              Various eligible service-sector projects can be evaluated
+              according to current scheme guidelines.
+            </p>
+          </article>
 
-</div>
+        </div>
 
-</section>
+      </div>
 
-<!-- DOCUMENTS -->
+    </section>
 
-<section class="section" style="background:#f8fbff;">
 
-<div class="container">
+    <!-- =====================================================
+         DOCUMENTS
+         ===================================================== -->
 
-<div class="section-title">
+    <section class="pmegp-section pmegp-section-soft">
 
-<h2>
-Documents Commonly Required
-</h2>
+      <div class="pmegp-container">
 
-<p>
-Actual document requirements project type, applicant profile aur applicable guidelines ke hisab se vary kar sakti hain.
-</p>
+        <div class="pmegp-section-head">
 
-</div>
+          <div class="pmegp-eyebrow">
+            Documentation
+          </div>
 
-<div class="card-grid">
+          <h2>
+            Documents Commonly Needed
+          </h2>
 
-<div class="card">
+          <p>
+            Exact documents applicant profile, project and implementing
+            agency/bank requirements ke according vary kar sakte hain.
+          </p>
 
-<h3>
-Identity Proof
-</h3>
+        </div>
 
-<p>
-Aadhaar Card, PAN Card, Voter ID ya other valid identity documents.
-</p>
 
-</div>
+        <div class="pmegp-card-grid">
 
-<div class="card">
+          <article class="pmegp-card">
+            <div class="pmegp-icon">ID</div>
+            <h3>Identity Proof</h3>
+            <p>
+              Aadhaar, PAN aur other applicable identity documents.
+            </p>
+          </article>
 
-<h3>
-Address Proof
-</h3>
+          <article class="pmegp-card">
+            <div class="pmegp-icon">AD</div>
+            <h3>Address Details</h3>
+            <p>
+              Applicant aur project location se related applicable
+              address documents.
+            </p>
+          </article>
 
-<p>
-Residence verification ke liye valid address related documents.
-</p>
+          <article class="pmegp-card">
+            <div class="pmegp-icon">ED</div>
+            <h3>Education Proof</h3>
+            <p>
+              Applicable project threshold ke according educational
+              qualification proof.
+            </p>
+          </article>
+
+          <article class="pmegp-card">
+            <div class="pmegp-icon">PR</div>
+            <h3>Project Report</h3>
+            <p>
+              Project cost, machinery, working capital, revenue model
+              aur implementation details.
+            </p>
+          </article>
+
+          <article class="pmegp-card">
+            <div class="pmegp-icon">QT</div>
+            <h3>Quotations</h3>
+            <p>
+              Machinery/equipment ya other project-related quotations
+              where applicable.
+            </p>
+          </article>
+
+          <article class="pmegp-card">
+            <div class="pmegp-icon">UD</div>
+            <h3>Udyam Registration</h3>
+            <p>
+              PMEGP units ke liye applicable stage par Udyam registration
+              requirement ko follow karna hota hai.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         HOW FUNDVEXXA HELPS
+         ===================================================== -->
+
+    <section class="pmegp-section">
+
+      <div class="pmegp-container">
+
+        <div class="pmegp-section-head">
+
+          <div class="pmegp-eyebrow">
+            Fundvexxa Assistance
+          </div>
+
+          <h2>
+            How We Can Assist
+          </h2>
 
-</div>
+          <p>
+            Fundvexxa PMEGP approval ya subsidy guarantee nahi karta.
+            Hamara role documentation, project preparation aur process
+            understanding mein assistance provide karna hai.
+          </p>
 
-<div class="card">
+        </div>
+
+
+        <div class="pmegp-card-grid">
 
-<h3>
-Educational Documents
-</h3>
+          <article class="pmegp-card">
+            <div class="pmegp-icon">01</div>
+            <h3>Requirement Assessment</h3>
+            <p>
+              Aapke business idea, location, project cost aur basic profile
+              ko understand karne mein assistance.
+            </p>
+          </article>
+
+          <article class="pmegp-card">
+            <div class="pmegp-icon">02</div>
+            <h3>Project Report Guidance</h3>
+            <p>
+              Business proposal ko structured manner mein prepare karne
+              ke liye guidance.
+            </p>
+          </article>
+
+          <article class="pmegp-card">
+            <div class="pmegp-icon">03</div>
+            <h3>Documentation Support</h3>
+            <p>
+              Applicable documents ko identify aur organise karne mein
+              assistance.
+            </p>
+          </article>
+
+          <article class="pmegp-card">
+            <div class="pmegp-icon">04</div>
+            <h3>Application Guidance</h3>
+            <p>
+              PMEGP application process aur next steps ko samajhne mein
+              support.
+            </p>
+          </article>
+
+          <article class="pmegp-card">
+            <div class="pmegp-icon">05</div>
+            <h3>Bank Process Understanding</h3>
+            <p>
+              Bank appraisal, finance structure aur lender-side process
+              ke baare mein general guidance.
+            </p>
+          </article>
 
-<p>
-Applicable qualification certificates ya educational records where required.
-</p>
+          <article class="pmegp-card">
+            <div class="pmegp-icon">06</div>
+            <h3>Follow-up Guidance</h3>
+            <p>
+              Available information ke basis par application journey
+              ko understand karne mein assistance.
+            </p>
+          </article>
+
+        </div>
 
-</div>
+      </div>
+
+    </section>
 
-<div class="card">
+
+    <!-- =====================================================
+         PROCESS
+         ===================================================== -->
+
+    <section class="pmegp-section pmegp-section-soft">
+
+      <div class="pmegp-container">
+
+        <div class="pmegp-section-head">
 
-<h3>
-Project Report
-</h3>
+          <div class="pmegp-eyebrow">
+            Process
+          </div>
 
-<p>
-Business project details, cost estimation aur implementation plan.
-</p>
+          <h2>
+            PMEGP Assistance Journey
+          </h2>
 
-</div>
+          <p>
+            Aapke requirement se lekar application guidance tak ek
+            structured process follow kiya ja sakta hai.
+          </p>
 
-<div class="card">
+        </div>
 
-<h3>
-Photographs
-</h3>
 
-<p>
-Recent passport size photographs as applicable.
-</p>
+        <div class="pmegp-process">
+
+          <div class="pmegp-process-card">
+            <span class="pmegp-step">01</span>
+            <h3>Requirement Discussion</h3>
+            <p>
+              Business idea, project location, category aur estimated
+              requirement discuss ki jaati hai.
+            </p>
+          </div>
+
+          <div class="pmegp-process-card">
+            <span class="pmegp-step">02</span>
+            <h3>Project Planning</h3>
+            <p>
+              Eligible project structure aur required documentation
+              ko understand kiya jaata hai.
+            </p>
+          </div>
 
-</div>
+          <div class="pmegp-process-card">
+            <span class="pmegp-step">03</span>
+            <h3>Documentation</h3>
+            <p>
+              Applicable documents aur project report preparation ke
+              liye assistance di jaati hai.
+            </p>
+          </div>
 
-<div class="card">
+          <div class="pmegp-process-card">
+            <span class="pmegp-step">04</span>
+            <h3>Application Guidance</h3>
+            <p>
+              Application aur subsequent process ke next steps ko
+              understand karne mein support.
+            </p>
+          </div>
 
-<h3>
-Business Related Documents
-</h3>
+        </div>
 
-<p>
-Project specific registrations, quotations ya supporting records where applicable.
-</p>
+      </div>
 
-</div>
+    </section>
 
-</div>
 
-</div>
+    <!-- =====================================================
+         IMPORTANT NOTE
+         ===================================================== -->
 
-</section>
+    <section class="pmegp-section">
 
-<!-- PROJECT TYPES -->
+      <div class="pmegp-container">
 
-<section class="section">
+        <div class="pmegp-two-col">
 
-<div class="container">
+          <div class="pmegp-panel">
 
-<div class="section-title">
+            <h3>
+              New Project vs Existing Business
+            </h3>
 
-<h2>
-Popular PMEGP Project Categories
-</h2>
+            <ul>
+              <li>
+                New PMEGP enterprise assistance eligible new projects
+                ke liye intended hai.
+              </li>
 
-<p>
-Different industries aur sectors ke entrepreneurs PMEGP under business opportunities explore karte hain.
-</p>
+              <li>
+                Existing PMEGP/REGP/MUDRA units ke upgradation ke liye
+                separate second-loan provisions exist karte hain.
+              </li>
 
-</div>
+              <li>
+                Existing business ko simply “PMEGP expansion loan”
+                kehna correct nahi hai; applicable category and
+                conditions verify karni hoti hain.
+              </li>
+            </ul>
 
-<div class="card-grid">
+          </div>
 
-<div class="card">
 
-<h3>
-Food Processing Units
-</h3>
+          <div class="pmegp-panel">
 
-<p>
-Bakery, snacks manufacturing, food packaging aur processing related businesses.
-</p>
+            <h3>
+              Important Financial Disclaimer
+            </h3>
 
-</div>
+            <ul>
+              <li>
+                PMEGP approval guaranteed nahi hai.
+              </li>
 
-<div class="card">
+              <li>
+                Subsidy guaranteed cash payout nahi hai.
+              </li>
 
-<h3>
-Retail Businesses
-</h3>
+              <li>
+                Bank finance lender appraisal aur applicable rules
+                ke subject mein hota hai.
+              </li>
 
-<p>
-General stores, trading activities aur local retail establishments.
-</p>
+              <li>
+                Project cost, contribution, subsidy, interest,
+                repayment and other terms current guidelines and
+                sanction ke according final hote hain.
+              </li>
+            </ul>
 
-</div>
+          </div>
 
-<div class="card">
+        </div>
 
-<h3>
-Repair & Service Centers
-</h3>
+      </div>
 
-<p>
-Electronics repair, automobile service aur maintenance related businesses.
-</p>
+    </section>
 
-</div>
 
-<div class="card">
+    <!-- =====================================================
+         FAQ
+         ===================================================== -->
 
-<h3>
-Manufacturing Activities
-</h3>
+    <section class="pmegp-section pmegp-section-soft">
 
-<p>
-Fabrication, engineering, handicrafts aur production based units.
-</p>
+      <div class="pmegp-container">
 
-</div>
+        <div class="pmegp-section-head">
 
-<div class="card">
+          <div class="pmegp-eyebrow">
+            FAQ
+          </div>
 
-<h3>
-Professional Services
-</h3>
+          <h2>
+            Frequently Asked Questions
+          </h2>
 
-<p>
-Consultancy, training centers aur specialized service businesses.
-</p>
+          <p>
+            PMEGP assistance se related common questions.
+          </p>
 
-</div>
+        </div>
 
-<div class="card">
 
-<h3>
-Local Enterprise Projects
-</h3>
+        <div class="pmegp-faq">
 
-<p>
-Area-specific demand aur market requirements ke according eligible projects.
-</p>
+          <details>
+            <summary>
+              What is PMEGP?
+            </summary>
 
-</div>
+            <div class="pmegp-faq-answer">
+              PMEGP, Prime Minister's Employment Generation Programme,
+              Government of India ka entrepreneurship and employment
+              generation programme hai jo eligible micro enterprise
+              projects ko support framework provide karta hai.
+            </div>
+          </details>
 
-</div>
 
-</div>
+          <details>
+            <summary>
+              Can a new entrepreneur apply?
+            </summary>
 
-</section>
+            <div class="pmegp-faq-answer">
+              Haan, applicable guidelines ke according 18 years se above
+              eligible individual new enterprise ke liye PMEGP explore
+              kar sakta hai.
+            </div>
+          </details>
 
-<!-- HOW WE HELP -->
 
-<section class="section" style="background:#f8fbff;">
+          <details>
+            <summary>
+              What is the maximum PMEGP project cost?
+            </summary>
 
-<div class="container">
+            <div class="pmegp-faq-answer">
+              Current revised guidelines ke according margin-money subsidy
+              ke liye maximum project cost manufacturing sector mein
+              ₹50 lakh aur business/service sector mein ₹20 lakh hai.
+              Iska matlab guaranteed loan amount nahi hai.
+            </div>
+          </details>
 
-<div class="section-title">
 
-<h2>
-How Fundvexxa Helps You
-</h2>
+          <details>
+            <summary>
+              Is PMEGP subsidy guaranteed?
+            </summary>
 
-<p>
-PMEGP application process me proper preparation aur documentation important role play karte hain. Hamari team aapko process samajhne aur documents organize karne me assistance provide karti hai.
-</p>
+            <div class="pmegp-faq-answer">
+              Nahi. Applicant eligibility, project viability, documentation,
+              implementing agency process, bank appraisal aur applicable
+              PMEGP rules ke according final decision hota hai.
+            </div>
+          </details>
 
-</div>
 
-<div class="card-grid">
+          <details>
+            <summary>
+              Can an existing business apply for PMEGP?
+            </summary>
 
-<div class="card">
+            <div class="pmegp-faq-answer">
+              New enterprise assistance new projects ke liye intended hai.
+              Eligible existing PMEGP/REGP/MUDRA units ke upgradation ke
+              liye separate second-loan provisions ho sakte hain, subject
+              to specific conditions.
+            </div>
+          </details>
 
-<h3>
-Project Report Assistance
-</h3>
 
-<p>
-Business project ko properly present karne ke liye guidance.
-</p>
+          <details>
+            <summary>
+              Does Fundvexxa guarantee approval?
+            </summary>
 
-</div>
+            <div class="pmegp-faq-answer">
+              Nahi. Fundvexxa documentation, project preparation aur
+              application guidance provide karta hai. Final sanction,
+              finance aur subsidy-related decision relevant authorities
+              aur lender ke discretion aur applicable rules par depend
+              karta hai.
+            </div>
+          </details>
 
-<div class="card">
+        </div>
 
-<h3>
-Documentation Guidance
-</h3>
+      </div>
 
-<p>
-Required documents ko organize aur prepare karne me support.
-</p>
+    </section>
 
-</div>
 
-<div class="card">
+    <!-- =====================================================
+         APPLICATION FORM
+         ===================================================== -->
 
-<h3>
-Application Support
-</h3>
+    <section
+      class="pmegp-section"
+      id="apply"
+    >
 
-<p>
-Application process ko samajhne aur complete karne me assistance.
-</p>
+      <div class="pmegp-container">
 
-</div>
+        <div class="pmegp-section-head">
 
-</div>
+          <div class="pmegp-eyebrow">
+            Get Started
+          </div>
 
-</div>
+          <h2>
+            Check Your PMEGP Requirement
+          </h2>
 
-</section>
+          <p>
+            Apni basic details share karein. Hamari team aapke
+            requirement ko understand karke next steps batayegi.
+          </p>
 
-<!-- PROCESS SECTION -->
+        </div>
 
-<section class="section">
 
-<div class="container">
+        <div class="pmegp-form-wrap">
 
-<div class="section-title">
+          <form id="pmegpLeadForm">
 
-<h2>
-Simple PMEGP Assistance Process
-</h2>
+            <div class="pmegp-form-grid">
 
-<p>
-Hamari team aapko project planning se lekar application guidance tak support provide karti hai.
-</p>
+              <div class="pmegp-field">
 
-</div>
+                <label for="pmegpName">
+                  Full Name *
+                </label>
 
-<div class="stats-grid">
+                <input
+                  id="pmegpName"
+                  name="name"
+                  type="text"
+                  placeholder="Enter your full name"
+                  autocomplete="name"
+                  required
+                >
 
-<div class="stat-card">
-<h3>01</h3>
-<p>Requirement Discussion</p>
-</div>
+              </div>
 
-<div class="stat-card">
-<h3>02</h3>
-<p>Project Report Planning</p>
-</div>
 
-<div class="stat-card">
-<h3>03</h3>
-<p>Document Preparation</p>
-</div>
+              <div class="pmegp-field">
 
-<div class="stat-card">
-<h3>04</h3>
-<p>Application Guidance</p>
-</div>
+                <label for="pmegpPhone">
+                  Mobile Number *
+                </label>
 
-</div>
+                <input
+                  id="pmegpPhone"
+                  name="phone"
+                  type="tel"
+                  inputmode="numeric"
+                  maxlength="10"
+                  placeholder="10-digit mobile number"
+                  autocomplete="tel"
+                  pattern="[6-9][0-9]{9}"
+                  required
+                >
 
-</div>
+              </div>
 
-</section>
 
-<!-- FAQ SECTION -->
+              <div class="pmegp-field">
 
-<section class="section" style="background:#f8fbff;">
+                <label for="pmegpEmail">
+                  Email
+                </label>
 
-<div class="container">
+                <input
+                  id="pmegpEmail"
+                  name="email"
+                  type="email"
+                  placeholder="Enter email address"
+                  autocomplete="email"
+                >
 
-<div class="section-title">
+              </div>
 
-<h2>
-Frequently Asked Questions
-</h2>
 
-<p>
-Common questions related to PMEGP Loan Assistance.
-</p>
+              <div class="pmegp-field">
 
-</div>
+                <label for="pmegpCity">
+                  City *
+                </label>
 
-<div class="card">
+                <input
+                  id="pmegpCity"
+                  name="city"
+                  type="text"
+                  placeholder="Your city"
+                  autocomplete="address-level2"
+                  required
+                >
 
-<h3>
-What is PMEGP?
-</h3>
+              </div>
 
-<p>
-PMEGP is a Government supported entrepreneurship promotion scheme designed to encourage new business establishment and employment generation.
-</p>
 
-</div>
+              <div class="pmegp-field">
 
-<br>
+                <label for="pmegpBusiness">
+                  Business / Project Idea *
+                </label>
 
-<div class="card">
+                <input
+                  id="pmegpBusiness"
+                  name="businessName"
+                  type="text"
+                  placeholder="e.g. Food processing unit"
+                  required
+                >
 
-<h3>
-Can new entrepreneurs apply?
-</h3>
+              </div>
 
-<p>
-Eligible first-time entrepreneurs may explore PMEGP opportunities subject to applicable guidelines.
-</p>
 
-</div>
+              <div class="pmegp-field">
 
-<br>
+                <label for="pmegpSector">
+                  Project Sector
+                </label>
 
-<div class="card">
+                <select
+                  id="pmegpSector"
+                  name="businessType"
+                >
+                  <option value="">Select sector</option>
+                  <option value="Manufacturing">Manufacturing</option>
+                  <option value="Service">Service</option>
+                  <option value="Trading / Retail">Trading / Retail</option>
+                  <option value="Food Processing">Food Processing</option>
+                  <option value="Other">Other</option>
+                </select>
 
-<h3>
-Is a project report required?
-</h3>
+              </div>
 
-<p>
-Project report is generally an important part of the application process and helps explain the business proposal.
-</p>
 
-</div>
+              <div class="pmegp-field">
 
-<br>
+                <label for="pmegpAmount">
+                  Estimated Project Cost
+                </label>
 
-<div class="card">
+                <input
+                  id="pmegpAmount"
+                  name="amount"
+                  type="number"
+                  min="0"
+                  step="1000"
+                  placeholder="Approx. project cost in ₹"
+                >
 
-<h3>
-Which sectors are covered?
-</h3>
+              </div>
 
-<p>
-Manufacturing activities and many service sector projects may be covered depending on applicable guidelines.
-</p>
 
-</div>
+              <div class="pmegp-field">
 
-</div>
+                <label for="pmegpCategory">
+                  Applicant Category
+                </label>
 
-</section>
+                <select
+                  id="pmegpCategory"
+                  name="category"
+                >
+                  <option value="">Select category</option>
+                  <option value="General">General</option>
+                  <option value="Special Category">Special Category</option>
+                  <option value="Not Sure">Not Sure</option>
+                </select>
 
-<!-- APPLY FORM -->
+              </div>
 
-<section class="section" id="apply">
 
-<div class="container">
+              <div class="pmegp-field pmegp-field-full">
 
-<div class="section-title">
+                <label for="pmegpMessage">
+                  Project Requirement
+                </label>
 
-<h2>
-Request Free Consultation
-</h2>
+                <textarea
+                  id="pmegpMessage"
+                  name="message"
+                  placeholder="Tell us briefly about your business idea, project location, estimated requirement, etc."
+                ></textarea>
 
-<p>
-Share your details and our team will contact you for PMEGP assistance.
-</p>
+              </div>
 
-</div>
+            </div>
 
-<div style="
-max-width:850px;
-margin:auto;
-background:#fff;
-padding:35px;
-border-radius:24px;
-box-shadow:0 15px 40px rgba(0,0,0,.10);
-">
-
-<form>
-
-<input type="text"
-placeholder="Full Name"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:12px;
-font-size:16px;
-">
-
-<input type="tel"
-placeholder="Mobile Number"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:12px;
-font-size:16px;
-">
-
-<input type="text"
-placeholder="Business Idea / Project"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:12px;
-font-size:16px;
-">
-
-<input type="text"
-placeholder="City"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:12px;
-font-size:16px;
-">
-
-<textarea
-rows="5"
-placeholder="Describe Your Project Requirement"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:12px;
-font-size:16px;
-"></textarea>
-
-<button
-type="submit"
-style="
-width:100%;
-padding:18px;
-background:#0d6efd;
-border:none;
-border-radius:12px;
-color:white;
-font-size:18px;
-font-weight:700;
-cursor:pointer;
-">
-Submit Request
-</button>
-
-</form>
 
-</div>
+            <div class="pmegp-form-disclaimer">
+              By submitting this form, you agree that Fundvexxa may contact
+              you regarding your enquiry. This form is an assistance request
+              and does not constitute a guarantee of PMEGP eligibility,
+              subsidy, loan sanction or approval.
+            </div>
 
-</div>
 
-</section>
-
-<!-- CTA SECTION -->
-
-<section style="
-padding:90px 0;
-background:linear-gradient(135deg,#0d6efd,#004cc4);
-text-align:center;
-color:white;
-">
-
-<div class="container">
-
-<h2 style="
-font-size:42px;
-margin-bottom:20px;
-line-height:1.3;
-">
-Ready To Start Your Business Journey?
-</h2>
-
-<p style="
-font-size:20px;
-max-width:850px;
-margin:auto;
-line-height:1.8;
-margin-bottom:30px;
-">
-Get professional assistance for PMEGP documentation, project report preparation and application guidance from Fundvexxa.
-</p>
-
-<a
-href="tel:+917290977231"
-style="
-display:inline-block;
-padding:16px 35px;
-background:white;
-color:#0d6efd;
-text-decoration:none;
-font-weight:700;
-border-radius:12px;
-">
-Call Now
-</a>
+            <button
+              id="pmegpSubmitBtn"
+              class="pmegp-submit"
+              type="submit"
+            >
+              Submit PMEGP Enquiry
+            </button>
 
-</div>
 
-</section>
-
-<!-- POPUP -->
-
-<div id="pmegpPopup"
-style="
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.60);
-justify-content:center;
-align-items:center;
-padding:20px;
-z-index:9999;
-">
-
-<div style="
-background:white;
-width:100%;
-max-width:450px;
-padding:30px;
-border-radius:20px;
-position:relative;
-">
-
-<span
-onclick="document.getElementById('pmegpPopup').style.display='none'"
-style="
-position:absolute;
-right:15px;
-top:10px;
-font-size:28px;
-cursor:pointer;
-">
-×
-</span>
-
-<h3 style="margin-bottom:15px;">
-Free PMEGP Consultation
-</h3>
-
-<p style="margin-bottom:20px;">
-Share your details and our team will contact you shortly.
-</p>
-
-<input type="text"
-placeholder="Name"
-style="
-width:100%;
-padding:14px;
-margin-bottom:10px;
-border:1px solid #ddd;
-border-radius:10px;
-">
-
-<input type="tel"
-placeholder="Mobile Number"
-style="
-width:100%;
-padding:14px;
-margin-bottom:10px;
-border:1px solid #ddd;
-border-radius:10px;
-">
-
-<button
-style="
-width:100%;
-padding:14px;
-background:#0d6efd;
-border:none;
-border-radius:10px;
-color:white;
-font-weight:700;
-">
-Request Callback
-</button>
+            <div
+              id="pmegpFormMessage"
+              class="pmegp-form-message"
+              role="status"
+              aria-live="polite"
+            ></div>
 
-</div>
+          </form>
 
-</div>
+        </div>
 
-<script>
+      </div>
 
-setTimeout(function(){
+    </section>
 
-document.getElementById("pmegpPopup").style.display="flex";
 
-},10000);
+    <!-- =====================================================
+         CTA
+         ===================================================== -->
 
-</script>
+    <section class="pmegp-cta">
 
-<!-- FOOTER -->
+      <div class="pmegp-container">
 
-<footer style="
-background:#111827;
-padding:60px 0 25px;
-color:white;
-">
+        <h2>
+          Planning A New Business Project?
+        </h2>
 
-<div class="container">
+        <p>
+          PMEGP eligibility, project structure aur documentation ko
+          samajhne ke liye Fundvexxa team se baat karein.
+        </p>
 
-<div style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-">
+        <div class="pmegp-cta-buttons">
 
-<div>
+          <a
+            href="tel:+917290977231"
+            class="pmegp-btn pmegp-btn-primary"
+          >
+            Call +91 72909 77231
+          </a>
 
-<h3>Fundvexxa</h3>
+          <a
+            href="https://wa.me/917290977231"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="pmegp-btn pmegp-btn-outline"
+          >
+            WhatsApp Us
+          </a>
 
-<p style="
-margin-top:15px;
-color:#cbd5e1;
-line-height:1.8;
-">
-PMEGP Assistance, Mudra Loan Support, MSME Services, Startup Support and Business Consultancy Services across India.
-</p>
+        </div>
 
-</div>
+      </div>
 
-<div>
+    </section>
 
-<h3>Services</h3>
 
-<p style="margin-top:12px;">PMEGP Assistance</p>
-<p>Mudra Loan</p>
-<p>MSME Registration</p>
-<p>Startup Support</p>
+    <!-- =====================================================
+         OFFICIAL SOURCES
+         ===================================================== -->
 
-</div>
+    <section class="pmegp-section pmegp-section-soft">
 
-<div>
+      <div class="pmegp-container">
 
-<h3>Contact</h3>
+        <div class="pmegp-section-head">
 
-<p style="margin-top:12px;">
-+91 7290977231
-</p>
+          <div class="pmegp-eyebrow">
+            Official References
+          </div>
 
-<p>
-smilefinancialsolutions@gmail.com
-</p>
+          <h2>
+            Verify Current PMEGP Information
+          </h2>
 
-</div>
+          <p>
+            Scheme rules, eligibility, activity restrictions and
+            implementation details time-to-time update ho sakte hain.
+          </p>
 
-</div>
+        </div>
 
-<hr style="
-margin:30px 0;
-border:none;
-height:1px;
-background:#334155;
-">
-
-<p style="
-text-align:center;
-color:#94a3b8;
-">
-© 2026 Fundvexxa. All Rights Reserved.
-</p>
 
-</div>
+        <div class="pmegp-sources">
+
+          <div class="pmegp-source">
+
+            <strong>
+              PMEGP Official Portal
+            </strong>
+
+            <a
+              href="https://common-pmegp.msme.gov.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              common-pmegp.msme.gov.in
+            </a>
+
+          </div>
+
+
+          <div class="pmegp-source">
+
+            <strong>
+              Ministry of MSME
+            </strong>
+
+            <a
+              href="https://msme.gov.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              msme.gov.in
+            </a>
+
+          </div>
+
+
+          <div class="pmegp-source">
+
+            <strong>
+              MyMSME Scheme Information
+            </strong>
+
+            <a
+              href="https://my.msme.gov.in/mymsme/Scheme.aspx"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              my.msme.gov.in
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer class="pmegp-footer">
+
+    <div class="pmegp-container">
+
+      <div class="pmegp-footer-grid">
+
+        <div>
+
+          <h3>Fundvexxa</h3>
+
+          <p>
+            Financial and business assistance platform providing guidance
+            across selected loan, MSME and business support requirements.
+          </p>
+
+          <p style="margin-top:12px;">
+            Fundvexxa is not a government department or bank.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h3>Quick Links</h3>
+
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="about.html">About Us</a>
+          <a href="business-loan.html">Business Loan</a>
+          <a href="mudra-loan.html">Mudra Loan</a>
+          <a href="contact.html">Contact</a>
+
+        </div>
+
+
+        <div>
+
+          <h3>Contact</h3>
+
+          <a href="tel:+917290977231">
+            +91 72909 77231
+          </a>
+
+          <a href="mailto:fundvexxasupport@gmail.com">
+            fundvexxasupport@gmail.com
+          </a>
+
+          <a
+            href="https://wa.me/917290977231"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="pmegp-footer-bottom">
+
+        © 2026 Fundvexxa. All Rights Reserved.
+        <br>
+        PMEGP information is provided for general assistance and should be
+        verified against the latest official guidelines.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =======================================================
+       WHATSAPP FLOATING BUTTON
+       ======================================================= -->
+
+  <a
+    class="pmegp-whatsapp"
+    href="https://wa.me/917290977231"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Fundvexxa on WhatsApp"
+  >
+    WhatsApp
+  </a>
+
+
+  <!-- =======================================================
+       MOBILE ACTION BAR
+       ======================================================= -->
+
+  <div class="pmegp-mobile-bar">
+
+    <a href="tel:+917290977231">
+      Call
+    </a>
+
+    <a
+      href="https://wa.me/917290977231"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      WhatsApp
+    </a>
+
+    <a href="#apply">
+      Apply / Enquire
+    </a>
+
+  </div>
+
+
+  <!-- =======================================================
+       POPUP
+       ======================================================= -->
+
+  <div
+    id="pmegpPopup"
+    class="pmegp-popup"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="pmegpPopupTitle"
+  >
+
+    <div class="pmegp-popup-box">
+
+      <button
+        id="pmegpPopupClose"
+        class="pmegp-popup-close"
+        type="button"
+        aria-label="Close popup"
+      >
+        ×
+      </button>
+
+      <h3 id="pmegpPopupTitle">
+        PMEGP Consultation Request
+      </h3>
+
+      <p>
+        Basic details share karein. Hamari team aapke requirement
+        ke according next steps discuss karegi.
+      </p>
+
+
+      <form id="pmegpPopupForm">
+
+        <div class="pmegp-field">
+
+          <label for="pmegpPopupName">
+            Full Name *
+          </label>
+
+          <input
+            id="pmegpPopupName"
+            name="name"
+            type="text"
+            placeholder="Full name"
+            required
+          >
+
+        </div>
+
+
+        <div class="pmegp-field">
+
+          <label for="pmegpPopupPhone">
+            Mobile Number *
+          </label>
+
+          <input
+            id="pmegpPopupPhone"
+            name="phone"
+            type="tel"
+            inputmode="numeric"
+            maxlength="10"
+            pattern="[6-9][0-9]{9}"
+            placeholder="10-digit mobile number"
+            required
+          >
+
+        </div>
+
+
+        <div class="pmegp-field">
+
+          <label for="pmegpPopupCity">
+            City
+          </label>
+
+          <input
+            id="pmegpPopupCity"
+            name="city"
+            type="text"
+            placeholder="City"
+          >
+
+        </div>
+
+
+        <button
+          id="pmegpPopupSubmit"
+          class="pmegp-submit"
+          type="submit"
+        >
+          Request Callback
+        </button>
+
+
+        <div
+          id="pmegpPopupMessage"
+          class="pmegp-form-message"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       FIREBASE + PAGE JAVASCRIPT
+       ======================================================= -->
+
+  <script type="module">
+
+    import {
+      initializeApp
+    } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+    /* =======================================================
+       FIREBASE CONFIG
+       ======================================================= */
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyArcvyvNAOKipPZB0YEseSeN9_k-8JznQ",
+      authDomain: "smile-business-os.firebaseapp.com",
+      projectId: "smile-business-os",
+      storageBucket: "smile-business-os.firebasestorage.app",
+      messagingSenderId: "114356400630",
+      appId: "1:114356400630:web:96fc9d07baaf3a504c17d7",
+      measurementId: "G-73WD9V05ZZ"
+    };
+
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+
+    /* =======================================================
+       NAVIGATION
+       ======================================================= */
+
+    const menuBtn = document.getElementById("pmegpMenuBtn");
+    const navLinks = document.getElementById("pmegpNavLinks");
+
+    if (menuBtn && navLinks) {
+
+      menuBtn.addEventListener("click", () => {
+
+        const isOpen =
+          navLinks.classList.toggle("active");
+
+        menuBtn.setAttribute(
+          "aria-expanded",
+          String(isOpen)
+        );
+
+      });
+
+
+      navLinks.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          navLinks.classList.remove("active");
+
+          menuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        });
+
+      });
+
+    }
+
+
+    /* =======================================================
+       HELPERS
+       ======================================================= */
+
+    function cleanPhone(value) {
+
+      return String(value || "")
+        .replace(/\D/g, "")
+        .slice(0, 10);
 
-</footer>
+    }
+
+
+    function showMessage(element, type, message) {
+
+      element.className =
+        "pmegp-form-message " + type;
+
+      element.textContent = message;
+
+    }
+
+
+    function clearMessage(element) {
+
+      element.className =
+        "pmegp-form-message";
+
+      element.textContent = "";
+
+    }
+
+
+    /* =======================================================
+       MAIN LEAD SUBMISSION
+       ======================================================= */
+
+    const mainForm =
+      document.getElementById("pmegpLeadForm");
+
+    const mainSubmit =
+      document.getElementById("pmegpSubmitBtn");
+
+    const mainMessage =
+      document.getElementById("pmegpFormMessage");
+
+
+    if (mainForm) {
+
+      mainForm.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+
+        clearMessage(mainMessage);
+
+        const formData =
+          new FormData(mainForm);
+
+        const name =
+          String(formData.get("name") || "").trim();
+
+        const phone =
+          cleanPhone(formData.get("phone"));
+
+        const email =
+          String(formData.get("email") || "").trim();
+
+        const city =
+          String(formData.get("city") || "").trim();
+
+        const businessName =
+          String(formData.get("businessName") || "").trim();
+
+        const businessType =
+          String(formData.get("businessType") || "").trim();
+
+        const amount =
+          String(formData.get("amount") || "").trim();
+
+        const category =
+          String(formData.get("category") || "").trim();
+
+        const message =
+          String(formData.get("message") || "").trim();
+
+
+        if (!name) {
+
+          showMessage(
+            mainMessage,
+            "error",
+            "Please enter your full name."
+          );
+
+          return;
+        }
+
+
+        if (!/^[6-9]\d{9}$/.test(phone)) {
+
+          showMessage(
+            mainMessage,
+            "error",
+            "Please enter a valid 10-digit mobile number."
+          );
+
+          return;
+        }
+
+
+        if (!city) {
+
+          showMessage(
+            mainMessage,
+            "error",
+            "Please enter your city."
+          );
+
+          return;
+        }
+
+
+        if (!businessName) {
+
+          showMessage(
+            mainMessage,
+            "error",
+            "Please enter your business or project idea."
+          );
+
+          return;
+        }
+
+
+        mainSubmit.disabled = true;
+        mainSubmit.textContent = "Submitting...";
+
+
+        try {
+
+          const leadData = {
+
+            name: name,
+
+            fullName: name,
+
+            phone: phone,
+
+            mobile: phone,
+
+            email: email,
+
+            city: city,
+
+            businessName: businessName,
+
+            businessType: businessType,
+
+            amount: amount,
+
+            loanAmount: amount,
+
+            category: category,
+
+            requirement: "PMEGP Assistance",
+
+            loanType: "PMEGP",
+
+            message: message,
+
+            source: "pmegp-page",
+
+            page: "pmegp-loan.html",
+
+            status: "new",
+
+            createdAt: serverTimestamp(),
+
+            updatedAt: serverTimestamp()
+
+          };
+
+
+          await addDoc(
+            collection(db, "leads"),
+            leadData
+          );
+
+
+          showMessage(
+            mainMessage,
+            "success",
+            "Thank you. Your PMEGP enquiry has been submitted successfully. Our team will contact you regarding the next steps."
+          );
+
+
+          mainForm.reset();
+
+        } catch (error) {
+
+          console.error(
+            "PMEGP lead submission error:",
+            error
+          );
+
+
+          showMessage(
+            mainMessage,
+            "error",
+            "We could not submit your enquiry right now. Please call or WhatsApp us directly."
+          );
+
+        } finally {
+
+          mainSubmit.disabled = false;
+
+          mainSubmit.textContent =
+            "Submit PMEGP Enquiry";
+
+        }
+
+      });
+
+    }
+
+
+    /* =======================================================
+       POPUP
+       ======================================================= */
+
+    const popup =
+      document.getElementById("pmegpPopup");
+
+    const popupClose =
+      document.getElementById("pmegpPopupClose");
+
+    const popupForm =
+      document.getElementById("pmegpPopupForm");
+
+    const popupSubmit =
+      document.getElementById("pmegpPopupSubmit");
+
+    const popupMessage =
+      document.getElementById("pmegpPopupMessage");
+
+
+    function openPopup() {
+
+      if (!popup) return;
+
+      popup.classList.add("active");
+
+      document.body.style.overflow = "hidden";
+
+      setTimeout(() => {
+
+        const firstInput =
+          document.getElementById("pmegpPopupName");
+
+        if (firstInput) {
+          firstInput.focus();
+        }
+
+      }, 100);
+
+    }
+
+
+    function closePopup() {
+
+      if (!popup) return;
+
+      popup.classList.remove("active");
+
+      document.body.style.overflow = "";
+
+    }
+
+
+    if (popupClose) {
+
+      popupClose.addEventListener(
+        "click",
+        closePopup
+      );
+
+    }
+
+
+    if (popup) {
+
+      popup.addEventListener("click", (event) => {
+
+        if (event.target === popup) {
+          closePopup();
+        }
+
+      });
+
+    }
+
+
+    document.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (
+          event.key === "Escape" &&
+          popup &&
+          popup.classList.contains("active")
+        ) {
+
+          closePopup();
+
+        }
+
+      }
+    );
+
+
+    /*
+      Show popup only once per browser session.
+      This avoids repeatedly disturbing the visitor.
+    */
+
+    const popupAlreadyShown =
+      sessionStorage.getItem(
+        "fundvexxa_pmegp_popup_shown"
+      );
+
+
+    if (!popupAlreadyShown) {
+
+      setTimeout(() => {
+
+        openPopup();
+
+        sessionStorage.setItem(
+          "fundvexxa_pmegp_popup_shown",
+          "true"
+        );
+
+      }, 12000);
+
+    }
+
+
+    /* =======================================================
+       POPUP FORM SUBMISSION
+       ======================================================= */
+
+    if (popupForm) {
+
+      popupForm.addEventListener(
+        "submit",
+        async (event) => {
+
+          event.preventDefault();
+
+          clearMessage(popupMessage);
+
+          const formData =
+            new FormData(popupForm);
+
+          const name =
+            String(
+              formData.get("name") || ""
+            ).trim();
+
+          const phone =
+            cleanPhone(
+              formData.get("phone")
+            );
+
+          const city =
+            String(
+              formData.get("city") || ""
+            ).trim();
+
+
+          if (!name) {
+
+            showMessage(
+              popupMessage,
+              "error",
+              "Please enter your name."
+            );
+
+            return;
+
+          }
+
+
+          if (!/^[6-9]\d{9}$/.test(phone)) {
+
+            showMessage(
+              popupMessage,
+              "error",
+              "Please enter a valid 10-digit mobile number."
+            );
+
+            return;
+
+          }
+
+
+          popupSubmit.disabled = true;
+
+          popupSubmit.textContent =
+            "Submitting...";
+
+
+          try {
+
+            const popupLead = {
+
+              name: name,
+
+              fullName: name,
+
+              phone: phone,
+
+              mobile: phone,
+
+              city: city,
+
+              requirement: "PMEGP Assistance",
+
+              loanType: "PMEGP",
+
+              message:
+                "Callback requested through PMEGP popup.",
+
+              source: "pmegp-popup",
+
+              page: "pmegp-loan.html",
+
+              status: "new",
+
+              createdAt: serverTimestamp(),
+
+              updatedAt: serverTimestamp()
+
+            };
+
+
+            await addDoc(
+              collection(db, "leads"),
+              popupLead
+            );
+
+
+            showMessage(
+              popupMessage,
+              "success",
+              "Request submitted successfully. Our team will contact you."
+            );
+
+
+            popupForm.reset();
+
+
+            setTimeout(() => {
+
+              closePopup();
+
+            }, 1500);
+
+
+          } catch (error) {
+
+            console.error(
+              "PMEGP popup submission error:",
+              error
+            );
+
+
+            showMessage(
+              popupMessage,
+              "error",
+              "Unable to submit right now. Please call or WhatsApp us."
+            );
+
+          } finally {
+
+            popupSubmit.disabled = false;
+
+            popupSubmit.textContent =
+              "Request Callback";
+
+          }
+
+        }
+      );
+
+    }
+
+
+    /* =======================================================
+       PHONE INPUT CLEANUP
+       ======================================================= */
+
+    document
+      .querySelectorAll(
+        '#pmegpLeadForm input[type="tel"], #pmegpPopupForm input[type="tel"]'
+      )
+      .forEach(input => {
+
+        input.addEventListener(
+          "input",
+          () => {
+
+            input.value =
+              cleanPhone(input.value);
+
+          }
+        );
+
+      });
+
+  </script>
+
+</div>
 
 </body>
 </html>
