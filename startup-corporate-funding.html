@@ -1,0 +1,2873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Startup & Corporate Funding | Fundvexxa</title>
+
+  <meta
+    name="description"
+    content="Explore startup and corporate funding support with Fundvexxa. Get guidance for business expansion, working capital, project funding and financing readiness."
+  />
+
+  <meta
+    name="keywords"
+    content="startup funding, corporate funding, business funding, startup finance, corporate finance, business expansion funding, working capital funding, Fundvexxa"
+  />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://fundvexxa-solution-com.vercel.app/startup-corporate-funding.html" />
+
+  <meta property="og:title" content="Startup & Corporate Funding | Fundvexxa" />
+  <meta
+    property="og:description"
+    content="Funding-readiness and financing coordination for startups and established businesses."
+  />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:url"
+    content="https://fundvexxa-solution-com.vercel.app/startup-corporate-funding.html"
+  />
+
+  <style>
+    :root {
+      --navy: #0b1f3a;
+      --navy-2: #102b4d;
+      --blue: #1769aa;
+      --blue-light: #eef7ff;
+      --gold: #c99a2e;
+      --gold-light: #fff8e6;
+      --text: #172033;
+      --muted: #637083;
+      --white: #ffffff;
+      --border: #e2e8f0;
+      --success: #16803c;
+      --danger: #c62828;
+      --shadow: 0 15px 45px rgba(11, 31, 58, 0.10);
+      --radius: 18px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background: #f8fbff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .scf-page {
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .scf-container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       TOP BAR
+    ========================== */
+
+    .scf-topbar {
+      background: var(--navy);
+      color: #fff;
+      font-size: 13px;
+    }
+
+    .scf-topbar-inner {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .scf-topbar-left,
+    .scf-topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .scf-topbar a {
+      color: #fff;
+      opacity: 0.94;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    .scf-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+    }
+
+    .scf-nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .scf-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 25px;
+      letter-spacing: -0.7px;
+      color: var(--navy);
+    }
+
+    .scf-logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .scf-logo span {
+      color: var(--gold);
+    }
+
+    .scf-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      list-style: none;
+    }
+
+    .scf-nav-links a {
+      color: #35445a;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .scf-nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .scf-nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .scf-nav-btn {
+      padding: 11px 17px;
+      border-radius: 10px;
+      background: var(--navy);
+      color: #fff !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+    }
+
+    .scf-menu-btn {
+      display: none;
+      width: 43px;
+      height: 43px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      cursor: pointer;
+      color: var(--navy);
+      font-size: 20px;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .scf-hero {
+      position: relative;
+      padding: 78px 0 82px;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(23, 105, 170, 0.13), transparent 30%),
+        radial-gradient(circle at 5% 80%, rgba(201, 154, 46, 0.08), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #f4f9ff 100%);
+    }
+
+    .scf-hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .scf-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border: 1px solid #d5e8f8;
+      border-radius: 999px;
+      background: #f3faff;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .scf-badge-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .scf-hero h1 {
+      max-width: 700px;
+      color: var(--navy);
+      font-size: clamp(38px, 5vw, 63px);
+      line-height: 1.06;
+      letter-spacing: -2.6px;
+      margin-bottom: 22px;
+    }
+
+    .scf-hero h1 span {
+      color: var(--blue);
+    }
+
+    .scf-hero-text {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .scf-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .scf-btn {
+      border: 0;
+      cursor: pointer;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 11px;
+      font-size: 14px;
+      font-weight: 750;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .scf-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .scf-btn-primary {
+      background: var(--navy);
+      color: #fff;
+      box-shadow: 0 12px 25px rgba(11, 31, 58, 0.18);
+    }
+
+    .scf-btn-primary:hover {
+      background: #15345a;
+    }
+
+    .scf-btn-secondary {
+      background: #fff;
+      color: var(--navy);
+      border: 1px solid var(--border);
+    }
+
+    .scf-btn-whatsapp {
+      background: #16803c;
+      color: #fff;
+    }
+
+    .scf-hero-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      max-width: 630px;
+      color: #748094;
+      font-size: 12px;
+    }
+
+    .scf-hero-card {
+      position: relative;
+    }
+
+    .scf-hero-image {
+      min-height: 465px;
+      border-radius: 25px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 28px 70px rgba(11, 31, 58, 0.18);
+      background:
+        linear-gradient(135deg, rgba(11, 31, 58, 0.75), rgba(23, 105, 170, 0.38)),
+        url("https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200")
+        center/cover;
+    }
+
+    .scf-hero-overlay {
+      position: absolute;
+      inset: 0;
+      padding: 28px;
+      display: flex;
+      align-items: flex-end;
+      background: linear-gradient(
+        180deg,
+        rgba(11, 31, 58, 0.02) 20%,
+        rgba(11, 31, 58, 0.82) 100%
+      );
+    }
+
+    .scf-floating-card {
+      width: 100%;
+      padding: 22px;
+      border-radius: 17px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--shadow);
+    }
+
+    .scf-floating-label {
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      margin-bottom: 6px;
+    }
+
+    .scf-floating-card h3 {
+      color: var(--navy);
+      font-size: 21px;
+      margin-bottom: 7px;
+    }
+
+    .scf-floating-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       TRUST STRIP
+    ========================== */
+
+    .scf-trust {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      border-top: 1px solid var(--border);
+    }
+
+    .scf-trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .scf-trust-item {
+      padding: 24px 18px;
+      border-right: 1px solid var(--border);
+    }
+
+    .scf-trust-item:last-child {
+      border-right: 0;
+    }
+
+    .scf-trust-number {
+      color: var(--navy);
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 3px;
+    }
+
+    .scf-trust-text {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================== */
+
+    .scf-section {
+      padding: 82px 0;
+    }
+
+    .scf-section-light {
+      background: #f4f8fd;
+    }
+
+    .scf-section-white {
+      background: #fff;
+    }
+
+    .scf-section-head {
+      max-width: 720px;
+      margin-bottom: 42px;
+    }
+
+    .scf-eyebrow {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 10px;
+    }
+
+    .scf-section h2 {
+      color: var(--navy);
+      font-size: clamp(29px, 4vw, 43px);
+      line-height: 1.15;
+      letter-spacing: -1.2px;
+      margin-bottom: 13px;
+    }
+
+    .scf-section-head p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* =========================
+       FUNDING OPTIONS
+    ========================== */
+
+    .scf-options-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .scf-option {
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 8px 30px rgba(11, 31, 58, 0.05);
+      transition: 0.25s ease;
+    }
+
+    .scf-option:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .scf-option-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .scf-option h3 {
+      color: var(--navy);
+      font-size: 19px;
+      margin-bottom: 9px;
+    }
+
+    .scf-option p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       WHO IS IT FOR
+    ========================== */
+
+    .scf-two-col {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .scf-image-box {
+      min-height: 460px;
+      border-radius: 24px;
+      background:
+        linear-gradient(135deg, rgba(11, 31, 58, 0.22), rgba(23, 105, 170, 0.18)),
+        url("https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200")
+        center/cover;
+      box-shadow: var(--shadow);
+    }
+
+    .scf-list {
+      display: grid;
+      gap: 15px;
+      margin-top: 24px;
+    }
+
+    .scf-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: #fff;
+    }
+
+    .scf-check {
+      flex: 0 0 27px;
+      width: 27px;
+      height: 27px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #e9f7ee;
+      color: var(--success);
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .scf-list-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .scf-list-item span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       PROCESS
+    ========================== */
+
+    .scf-process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .scf-process {
+      position: relative;
+      padding: 27px 22px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    .scf-step {
+      width: 35px;
+      height: 35px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .scf-process h3 {
+      color: var(--navy);
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .scf-process p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       ELIGIBILITY
+    ========================== */
+
+    .scf-eligibility-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .scf-eligibility-card {
+      padding: 28px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+    }
+
+    .scf-eligibility-card h3 {
+      color: var(--navy);
+      margin-bottom: 15px;
+      font-size: 19px;
+    }
+
+    .scf-eligibility-card ul {
+      padding-left: 19px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .scf-eligibility-card li {
+      margin-bottom: 8px;
+    }
+
+    /* =========================
+       APPLICATION
+    ========================== */
+
+    .scf-apply-section {
+      background:
+        radial-gradient(circle at 10% 20%, rgba(23, 105, 170, 0.18), transparent 30%),
+        linear-gradient(135deg, #0b1f3a 0%, #102f52 100%);
+      color: #fff;
+    }
+
+    .scf-apply-grid {
+      display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .scf-apply-copy h2 {
+      color: #fff;
+    }
+
+    .scf-apply-copy > p {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    .scf-apply-points {
+      display: grid;
+      gap: 13px;
+    }
+
+    .scf-apply-point {
+      display: flex;
+      gap: 11px;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 13px;
+    }
+
+    .scf-apply-point b {
+      color: #fff;
+    }
+
+    .scf-form-card {
+      padding: 30px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.22);
+      color: var(--text);
+    }
+
+    .scf-form-card h3 {
+      color: var(--navy);
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .scf-form-subtitle {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 23px;
+    }
+
+    .scf-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .scf-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .scf-field-full {
+      grid-column: 1 / -1;
+    }
+
+    .scf-field label {
+      color: #344054;
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .scf-field input,
+    .scf-field select,
+    .scf-field textarea {
+      width: 100%;
+      border: 1px solid #d9e1eb;
+      border-radius: 10px;
+      background: #fbfdff;
+      padding: 12px 13px;
+      outline: none;
+      color: var(--text);
+      font-size: 13px;
+      transition: 0.2s ease;
+    }
+
+    .scf-field input,
+    .scf-field select {
+      height: 45px;
+    }
+
+    .scf-field textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .scf-field input:focus,
+    .scf-field select:focus,
+    .scf-field textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(23, 105, 170, 0.09);
+      background: #fff;
+    }
+
+    .scf-required {
+      color: #c62828;
+    }
+
+    .scf-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin-top: 16px;
+      color: #6b7280;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .scf-consent input {
+      margin-top: 2px;
+      accent-color: var(--blue);
+    }
+
+    .scf-consent a {
+      color: var(--blue);
+      text-decoration: underline;
+    }
+
+    .scf-submit {
+      width: 100%;
+      margin-top: 18px;
+      min-height: 50px;
+    }
+
+    .scf-form-status {
+      display: none;
+      margin-top: 15px;
+      padding: 12px 13px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .scf-form-status.success {
+      display: block;
+      color: #146c35;
+      background: #eaf7ee;
+      border: 1px solid #ccebd6;
+    }
+
+    .scf-form-status.error {
+      display: block;
+      color: #a61b1b;
+      background: #fff0f0;
+      border: 1px solid #f2c5c5;
+    }
+
+    /* =========================
+       FAQ
+    ========================== */
+
+    .scf-faq {
+      max-width: 850px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .scf-faq-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      overflow: hidden;
+    }
+
+    .scf-faq-question {
+      width: 100%;
+      border: 0;
+      background: #fff;
+      color: var(--navy);
+      text-align: left;
+      padding: 17px 19px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .scf-faq-icon {
+      font-size: 18px;
+      color: var(--blue);
+    }
+
+    .scf-faq-answer {
+      display: none;
+      padding: 0 19px 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .scf-faq-item.active .scf-faq-answer {
+      display: block;
+    }
+
+    /* =========================
+       CTA
+    ========================== */
+
+    .scf-final-cta {
+      padding: 70px 0;
+      background: #fff;
+    }
+
+    .scf-final-box {
+      padding: 45px;
+      border-radius: 23px;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(201, 154, 46, 0.16), transparent 25%),
+        linear-gradient(135deg, #edf6ff, #ffffff);
+      border: 1px solid #dbeaf7;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .scf-final-box h2 {
+      color: var(--navy);
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .scf-final-box p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 700px;
+    }
+
+    .scf-final-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    .scf-footer {
+      background: #07182d;
+      color: #fff;
+      padding: 55px 0 25px;
+    }
+
+    .scf-footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 38px;
+    }
+
+    .scf-footer h3 {
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    .scf-footer p,
+    .scf-footer a {
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 12px;
+    }
+
+    .scf-footer-links {
+      display: grid;
+      gap: 9px;
+    }
+
+    .scf-footer-brand p {
+      max-width: 310px;
+      margin-top: 12px;
+    }
+
+    .scf-footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .scf-footer-bottom p {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* =========================
+       MOBILE CTA
+    ========================== */
+
+    .scf-mobile-cta {
+      display: none;
+      position: fixed;
+      z-index: 1500;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      padding: 8px;
+      background: rgba(7, 24, 45, 0.96);
+      border-radius: 14px;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 7px;
+    }
+
+    .scf-mobile-cta a {
+      min-height: 43px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .scf-mobile-call {
+      background: #1769aa;
+    }
+
+    .scf-mobile-wa {
+      background: #16803c;
+    }
+
+    .scf-mobile-apply {
+      background: var(--gold);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 1050px) {
+      .scf-nav-links {
+        gap: 15px;
+      }
+
+      .scf-hero-grid {
+        gap: 35px;
+      }
+
+      .scf-footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .scf-menu-btn {
+        display: block;
+      }
+
+      .scf-nav-actions {
+        display: none;
+      }
+
+      .scf-nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        padding: 18px 20px;
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 15px 25px rgba(11, 31, 58, 0.08);
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .scf-nav-links.open {
+        display: flex;
+      }
+
+      .scf-hero-grid,
+      .scf-two-col,
+      .scf-apply-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .scf-hero {
+        padding-top: 55px;
+      }
+
+      .scf-hero-image {
+        min-height: 390px;
+      }
+
+      .scf-options-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .scf-process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .scf-apply-copy {
+        max-width: 700px;
+      }
+
+      .scf-final-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .scf-container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .scf-topbar {
+        display: none;
+      }
+
+      .scf-nav-inner {
+        min-height: 68px;
+      }
+
+      .scf-logo {
+        font-size: 21px;
+      }
+
+      .scf-logo-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      .scf-nav-links {
+        top: 68px;
+      }
+
+      .scf-hero {
+        padding: 48px 0 55px;
+      }
+
+      .scf-hero h1 {
+        font-size: 39px;
+        letter-spacing: -1.7px;
+      }
+
+      .scf-hero-text {
+        font-size: 15px;
+      }
+
+      .scf-hero-image {
+        min-height: 350px;
+      }
+
+      .scf-hero-overlay {
+        padding: 16px;
+      }
+
+      .scf-floating-card {
+        padding: 17px;
+      }
+
+      .scf-trust-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .scf-trust-item {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .scf-trust-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .scf-options-grid,
+      .scf-process-grid,
+      .scf-eligibility-grid,
+      .scf-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .scf-section {
+        padding: 60px 0;
+      }
+
+      .scf-image-box {
+        min-height: 320px;
+      }
+
+      .scf-field-full {
+        grid-column: auto;
+      }
+
+      .scf-form-card {
+        padding: 20px;
+      }
+
+      .scf-final-box {
+        padding: 28px 20px;
+      }
+
+      .scf-final-box h2 {
+        font-size: 27px;
+      }
+
+      .scf-footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .scf-mobile-cta {
+        display: grid;
+      }
+
+      body {
+        padding-bottom: 68px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="scf-page">
+
+    <!-- TOP BAR -->
+    <div class="scf-topbar">
+      <div class="scf-container scf-topbar-inner">
+        <div class="scf-topbar-left">
+          <span>Business & Financial Consultancy</span>
+          <span>Delhi · Maharashtra</span>
+        </div>
+
+        <div class="scf-topbar-right">
+          <a href="tel:+917290977231">+91 72909 77231</a>
+          <a href="mailto:fundvexxasupport@gmail.com">
+            fundvexxasupport@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="scf-navbar">
+      <div class="scf-container scf-nav-inner">
+
+        <a class="scf-logo" href="index.html" aria-label="Fundvexxa Home">
+          <span class="scf-logo-mark">F</span>
+          Fundvex<span>xa</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+          <ul class="scf-nav-links" id="scfNavLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="business-loan.html">Business Loan</a></li>
+            <li><a href="working-capital-loan.html">Working Capital</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="scf-nav-actions">
+          <a class="scf-nav-btn" href="#apply">Check Funding Options</a>
+        </div>
+
+        <button
+          class="scf-menu-btn"
+          id="scfMenuBtn"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main>
+
+      <section class="scf-hero">
+        <div class="scf-container scf-hero-grid">
+
+          <div>
+            <div class="scf-badge">
+              <span class="scf-badge-dot"></span>
+              Startup & Corporate Funding Support
+            </div>
+
+            <h1>
+              Build the right
+              <span>funding strategy</span>
+              for your business.
+            </h1>
+
+            <p class="scf-hero-text">
+              From startup funding-readiness to business expansion and
+              corporate financing requirements, Fundvexxa helps you
+              understand suitable financing routes and coordinate the
+              next steps based on your profile.
+            </p>
+
+            <div class="scf-hero-actions">
+              <a href="#apply" class="scf-btn scf-btn-primary">
+                Explore Funding Options →
+              </a>
+
+              <a
+                href="https://wa.me/917290977231"
+                target="_blank"
+                rel="noopener"
+                class="scf-btn scf-btn-whatsapp"
+              >
+                WhatsApp Us
+              </a>
+            </div>
+
+            <div class="scf-hero-note">
+              <span>✓</span>
+              <span>
+                Initial assessment is indicative only. Final financing,
+                sanction, rate, tenure, charges and terms depend on the
+                relevant lender or funding provider.
+              </span>
+            </div>
+          </div>
+
+          <div class="scf-hero-card">
+            <div class="scf-hero-image">
+              <div class="scf-hero-overlay">
+                <div class="scf-floating-card">
+                  <div class="scf-floating-label">
+                    Funding support
+                  </div>
+
+                  <h3>
+                    One requirement. Multiple possible financing routes.
+                  </h3>
+
+                  <p>
+                    We help organise your requirement and identify the
+                    next practical financing route based on your business
+                    profile and funding purpose.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TRUST STRIP -->
+      <section class="scf-trust">
+        <div class="scf-container scf-trust-grid">
+
+          <div class="scf-trust-item">
+            <div class="scf-trust-number">Funding Guidance</div>
+            <div class="scf-trust-text">
+              Profile-based financing support
+            </div>
+          </div>
+
+          <div class="scf-trust-item">
+            <div class="scf-trust-number">Startup & MSME</div>
+            <div class="scf-trust-text">
+              Support across different business stages
+            </div>
+          </div>
+
+          <div class="scf-trust-item">
+            <div class="scf-trust-number">Corporate Needs</div>
+            <div class="scf-trust-text">
+              Expansion and business financing requirements
+            </div>
+          </div>
+
+          <div class="scf-trust-item">
+            <div class="scf-trust-number">Transparent Process</div>
+            <div class="scf-trust-text">
+              No guaranteed approval claims
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- FUNDING OPTIONS -->
+      <section class="scf-section scf-section-white">
+        <div class="scf-container">
+
+          <div class="scf-section-head">
+            <div class="scf-eyebrow">Funding Routes</div>
+
+            <h2>
+              Funding support built around your requirement
+            </h2>
+
+            <p>
+              The right route depends on your business stage, cash flow,
+              requirement, documentation, repayment capacity and the
+              criteria of the relevant funding provider.
+            </p>
+          </div>
+
+          <div class="scf-options-grid">
+
+            <article class="scf-option">
+              <div class="scf-option-icon">01</div>
+
+              <h3>Startup Funding Readiness</h3>
+
+              <p>
+                Understand your funding requirement, business profile,
+                financial information and readiness before approaching
+                a suitable financing or funding route.
+              </p>
+            </article>
+
+            <article class="scf-option">
+              <div class="scf-option-icon">02</div>
+
+              <h3>Business Expansion Funding</h3>
+
+              <p>
+                Financing support for expansion, new locations,
+                additional capacity, equipment and other eligible
+                business requirements.
+              </p>
+            </article>
+
+            <article class="scf-option">
+              <div class="scf-option-icon">03</div>
+
+              <h3>Working Capital Funding</h3>
+
+              <p>
+                Explore working-capital facilities for operational
+                requirements, inventory cycles, receivables and
+                business cash-flow needs.
+              </p>
+            </article>
+
+            <article class="scf-option">
+              <div class="scf-option-icon">04</div>
+
+              <h3>Corporate Finance</h3>
+
+              <p>
+                Guidance for established businesses evaluating
+                financing requirements linked to expansion,
+                operations or strategic business needs.
+              </p>
+            </article>
+
+            <article class="scf-option">
+              <div class="scf-option-icon">05</div>
+
+              <h3>Project & Capex Requirements</h3>
+
+              <p>
+                Understand possible financing routes for eligible
+                equipment, infrastructure, project and capital
+                expenditure requirements.
+              </p>
+            </article>
+
+            <article class="scf-option">
+              <div class="scf-option-icon">06</div>
+
+              <h3>Structured Financing Review</h3>
+
+              <p>
+                Where applicable, we help organise the requirement
+                and identify whether another financing route may be
+                more suitable for the business profile.
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- WHO IS IT FOR -->
+      <section class="scf-section scf-section-light">
+        <div class="scf-container scf-two-col">
+
+          <div class="scf-image-box" aria-label="Business team discussing funding"></div>
+
+          <div>
+            <div class="scf-section-head">
+              <div class="scf-eyebrow">Who Can Explore</div>
+
+              <h2>
+                For businesses at different stages
+              </h2>
+
+              <p>
+                Funding requirements are different for every business.
+                A preliminary review helps structure the requirement
+                before the next financing step.
+              </p>
+            </div>
+
+            <div class="scf-list">
+
+              <div class="scf-list-item">
+                <div class="scf-check">✓</div>
+                <div>
+                  <strong>Early-stage startups</strong>
+                  <span>
+                    Businesses preparing for growth, operations or
+                    initial financing requirements.
+                  </span>
+                </div>
+              </div>
+
+              <div class="scf-list-item">
+                <div class="scf-check">✓</div>
+                <div>
+                  <strong>Growing MSMEs</strong>
+                  <span>
+                    Businesses looking for working capital,
+                    expansion or equipment-related finance.
+                  </span>
+                </div>
+              </div>
+
+              <div class="scf-list-item">
+                <div class="scf-check">✓</div>
+                <div>
+                  <strong>Established companies</strong>
+                  <span>
+                    Corporate businesses evaluating financing for
+                    expansion and operational requirements.
+                  </span>
+                </div>
+              </div>
+
+              <div class="scf-list-item">
+                <div class="scf-check">✓</div>
+                <div>
+                  <strong>Businesses planning expansion</strong>
+                  <span>
+                    Requirements can be reviewed before choosing
+                    an appropriate financing route.
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="scf-section scf-section-white">
+        <div class="scf-container">
+
+          <div class="scf-section-head">
+            <div class="scf-eyebrow">Our Process</div>
+
+            <h2>
+              Simple, structured and transparent
+            </h2>
+
+            <p>
+              We start with your requirement and then organise the
+              information needed to evaluate possible financing routes.
+            </p>
+          </div>
+
+          <div class="scf-process-grid">
+
+            <div class="scf-process">
+              <div class="scf-step">1</div>
+
+              <h3>Share Requirement</h3>
+
+              <p>
+                Tell us your business type, funding purpose and
+                approximate requirement.
+              </p>
+            </div>
+
+            <div class="scf-process">
+              <div class="scf-step">2</div>
+
+              <h3>Profile Review</h3>
+
+              <p>
+                We review the basic business and funding information
+                available at the initial stage.
+              </p>
+            </div>
+
+            <div class="scf-process">
+              <div class="scf-step">3</div>
+
+              <h3>Route Discussion</h3>
+
+              <p>
+                Possible financing routes are discussed based on
+                profile and applicable provider criteria.
+              </p>
+            </div>
+
+            <div class="scf-process">
+              <div class="scf-step">4</div>
+
+              <h3>Next Steps</h3>
+
+              <p>
+                If suitable, the application or documentation process
+                can move forward with the relevant provider.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ELIGIBILITY -->
+      <section class="scf-section scf-section-light">
+        <div class="scf-container">
+
+          <div class="scf-section-head">
+            <div class="scf-eyebrow">Preliminary Assessment</div>
+
+            <h2>
+              What may influence funding eligibility?
+            </h2>
+
+            <p>
+              There is no single eligibility formula for every funding
+              product. The relevant lender or provider may consider
+              multiple factors.
+            </p>
+          </div>
+
+          <div class="scf-eligibility-grid">
+
+            <div class="scf-eligibility-card">
+              <h3>Business Factors</h3>
+
+              <ul>
+                <li>Business vintage and operating history</li>
+                <li>Business structure and registration</li>
+                <li>Annual turnover and cash-flow profile</li>
+                <li>Industry and business model</li>
+                <li>Existing financial obligations</li>
+              </ul>
+            </div>
+
+            <div class="scf-eligibility-card">
+              <h3>Funding Factors</h3>
+
+              <ul>
+                <li>Purpose of funding</li>
+                <li>Funding requirement and proposed amount</li>
+                <li>Repayment capacity</li>
+                <li>Available financial records</li>
+                <li>Applicable lender/provider criteria</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- DOCUMENTS -->
+      <section class="scf-section scf-section-white">
+        <div class="scf-container">
+
+          <div class="scf-section-head">
+            <div class="scf-eyebrow">Documentation</div>
+
+            <h2>
+              Keep your business information organised
+            </h2>
+
+            <p>
+              Exact documentation depends on the product and provider.
+              Commonly requested information can include the following.
+            </p>
+          </div>
+
+          <div class="scf-options-grid">
+
+            <article class="scf-option">
+              <h3>Business Identity</h3>
+              <p>
+                Business registration, constitution and basic business
+                details as applicable.
+              </p>
+            </article>
+
+            <article class="scf-option">
+              <h3>Financial Information</h3>
+              <p>
+                Relevant financial statements, turnover information,
+                banking information or tax records as applicable.
+              </p>
+            </article>
+
+            <article class="scf-option">
+              <h3>Business Requirement</h3>
+              <p>
+                Details explaining why funding is required and how the
+                proposed finance is expected to be used.
+              </p>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- APPLICATION -->
+      <section class="scf-section scf-apply-section" id="apply">
+        <div class="scf-container scf-apply-grid">
+
+          <div class="scf-apply-copy">
+
+            <div class="scf-eyebrow" style="color:#8ecbff;">
+              Start Your Enquiry
+            </div>
+
+            <h2>
+              Tell us what your business needs.
+            </h2>
+
+            <p>
+              Submit a basic enquiry and our team can review your
+              requirement and discuss possible next steps.
+            </p>
+
+            <div class="scf-apply-points">
+
+              <div class="scf-apply-point">
+                <span>✓</span>
+                <span>
+                  <b>Requirement-focused:</b>
+                  Start with your funding purpose and business profile.
+                </span>
+              </div>
+
+              <div class="scf-apply-point">
+                <span>✓</span>
+                <span>
+                  <b>Simple initial enquiry:</b>
+                  No PAN, OTP, password or card details are requested here.
+                </span>
+              </div>
+
+              <div class="scf-apply-point">
+                <span>✓</span>
+                <span>
+                  <b>Provider decision:</b>
+                  Final approval and terms are determined by the relevant
+                  lender or funding provider.
+                </span>
+              </div>
+
+              <div class="scf-apply-point">
+                <span>✓</span>
+                <span>
+                  <b>Transparent communication:</b>
+                  Applicable charges and terms should be confirmed before
+                  proceeding.
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="scf-form-card">
+
+            <h3>Funding Enquiry</h3>
+
+            <p class="scf-form-subtitle">
+              Share your basic details. We will use this information
+              to understand and respond to your enquiry.
+            </p>
+
+            <form id="scfFundingForm" novalidate>
+
+              <div class="scf-form-grid">
+
+                <div class="scf-field">
+                  <label for="scfName">
+                    Full Name <span class="scf-required">*</span>
+                  </label>
+
+                  <input
+                    id="scfName"
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
+
+                <div class="scf-field">
+                  <label for="scfMobile">
+                    Mobile Number <span class="scf-required">*</span>
+                  </label>
+
+                  <input
+                    id="scfMobile"
+                    name="mobile"
+                    type="tel"
+                    inputmode="numeric"
+                    autocomplete="tel"
+                    maxlength="10"
+                    placeholder="10-digit mobile number"
+                    required
+                  />
+                </div>
+
+                <div class="scf-field">
+                  <label for="scfEmail">
+                    Email Address
+                  </label>
+
+                  <input
+                    id="scfEmail"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    placeholder="you@example.com"
+                  />
+                </div>
+
+                <div class="scf-field">
+                  <label for="scfCity">
+                    City
+                  </label>
+
+                  <input
+                    id="scfCity"
+                    name="city"
+                    type="text"
+                    autocomplete="address-level2"
+                    placeholder="Your city"
+                  />
+                </div>
+
+                <div class="scf-field">
+                  <label for="scfBusinessType">
+                    Business / Applicant Type
+                    <span class="scf-required">*</span>
+                  </label>
+
+                  <select id="scfBusinessType" name="businessType" required>
+                    <option value="">Select</option>
+                    <option value="Startup">Startup</option>
+                    <option value="MSME">MSME</option>
+                    <option value="Private Limited Company">
+                      Private Limited Company
+                    </option>
+                    <option value="LLP">LLP</option>
+                    <option value="Proprietorship">
+                      Proprietorship
+                    </option>
+                    <option value="Partnership">
+                      Partnership
+                    </option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div class="scf-field">
+                  <label for="scfFundingStage">
+                    Funding Stage
+                  </label>
+
+                  <select id="scfFundingStage" name="fundingStage">
+                    <option value="">Select</option>
+                    <option value="Idea / Pre-launch">
+                      Idea / Pre-launch
+                    </option>
+                    <option value="Early Stage">
+                      Early Stage
+                    </option>
+                    <option value="Operating Business">
+                      Operating Business
+                    </option>
+                    <option value="Growth / Expansion">
+                      Growth / Expansion
+                    </option>
+                    <option value="Established Corporate">
+                      Established Corporate
+                    </option>
+                  </select>
+                </div>
+
+                <div class="scf-field">
+                  <label for="scfAmount">
+                    Approx. Funding Requirement
+                  </label>
+
+                  <select id="scfAmount" name="fundingAmount">
+                    <option value="">Select</option>
+                    <option value="Up to ₹5 Lakh">
+                      Up to ₹5 Lakh
+                    </option>
+                    <option value="₹5 Lakh – ₹10 Lakh">
+                      ₹5 Lakh – ₹10 Lakh
+                    </option>
+                    <option value="₹10 Lakh – ₹25 Lakh">
+                      ₹10 Lakh – ₹25 Lakh
+                    </option>
+                    <option value="₹25 Lakh – ₹50 Lakh">
+                      ₹25 Lakh – ₹50 Lakh
+                    </option>
+                    <option value="Above ₹50 Lakh">
+                      Above ₹50 Lakh
+                    </option>
+                  </select>
+                </div>
+
+                <div class="scf-field">
+                  <label for="scfPurpose">
+                    Funding Purpose
+                    <span class="scf-required">*</span>
+                  </label>
+
+                  <select id="scfPurpose" name="fundingPurpose" required>
+                    <option value="">Select</option>
+                    <option value="Working Capital">
+                      Working Capital
+                    </option>
+                    <option value="Business Expansion">
+                      Business Expansion
+                    </option>
+                    <option value="Equipment / Machinery">
+                      Equipment / Machinery
+                    </option>
+                    <option value="Project Finance">
+                      Project Finance
+                    </option>
+                    <option value="Business Operations">
+                      Business Operations
+                    </option>
+                    <option value="Other">
+                      Other
+                    </option>
+                  </select>
+                </div>
+
+                <div class="scf-field">
+                  <label for="scfVintage">
+                    Business Vintage
+                  </label>
+
+                  <select id="scfVintage" name="businessVintage">
+                    <option value="">Select</option>
+                    <option value="Pre-launch / New">
+                      Pre-launch / New
+                    </option>
+                    <option value="Below 1 Year">
+                      Below 1 Year
+                    </option>
+                    <option value="1–3 Years">
+                      1–3 Years
+                    </option>
+                    <option value="3–5 Years">
+                      3–5 Years
+                    </option>
+                    <option value="5+ Years">
+                      5+ Years
+                    </option>
+                  </select>
+                </div>
+
+                <div class="scf-field scf-field-full">
+                  <label for="scfTurnover">
+                    Approx. Annual Turnover
+                  </label>
+
+                  <input
+                    id="scfTurnover"
+                    name="annualTurnover"
+                    type="text"
+                    placeholder="Example: ₹25 Lakh / ₹1 Crore"
+                  />
+                </div>
+
+                <div class="scf-field scf-field-full">
+                  <label for="scfMessage">
+                    Tell us briefly about your requirement
+                  </label>
+
+                  <textarea
+                    id="scfMessage"
+                    name="message"
+                    maxlength="1000"
+                    placeholder="Briefly explain your funding requirement..."
+                  ></textarea>
+                </div>
+
+              </div>
+
+              <label class="scf-consent">
+                <input
+                  id="scfConsent"
+                  type="checkbox"
+                  required
+                />
+
+                <span>
+                  I agree that Fundvexxa may contact me regarding this
+                  enquiry. I understand that submitting this form does
+                  not guarantee approval or funding. See our
+                  <a href="privacy-policy.html">Privacy Policy</a>
+                  and
+                  <a href="terms.html">Terms</a>.
+                </span>
+              </label>
+
+              <button
+                type="submit"
+                class="scf-btn scf-btn-primary scf-submit"
+                id="scfSubmitBtn"
+              >
+                Submit Funding Enquiry
+              </button>
+
+              <div
+                id="scfFormStatus"
+                class="scf-form-status"
+                role="status"
+                aria-live="polite"
+              ></div>
+
+            </form>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="scf-section scf-section-light">
+        <div class="scf-container">
+
+          <div class="scf-section-head">
+            <div class="scf-eyebrow">FAQs</div>
+
+            <h2>
+              Frequently asked questions
+            </h2>
+
+            <p>
+              A few important things to understand before starting
+              a funding enquiry.
+            </p>
+          </div>
+
+          <div class="scf-faq">
+
+            <div class="scf-faq-item">
+              <button
+                class="scf-faq-question"
+                type="button"
+                aria-expanded="false"
+              >
+                Is startup funding guaranteed?
+                <span class="scf-faq-icon">+</span>
+              </button>
+
+              <div class="scf-faq-answer">
+                No. Fundvexxa does not guarantee funding or approval.
+                Any financing or investment decision is made by the
+                relevant lender, investor or funding provider according
+                to its own criteria.
+              </div>
+            </div>
+
+            <div class="scf-faq-item">
+              <button
+                class="scf-faq-question"
+                type="button"
+                aria-expanded="false"
+              >
+                Can a new startup enquire about funding?
+                <span class="scf-faq-icon">+</span>
+              </button>
+
+              <div class="scf-faq-answer">
+                Yes. A new startup can share its requirement for a
+                preliminary discussion. Suitable funding routes depend
+                on the business stage, purpose, profile and applicable
+                provider criteria.
+              </div>
+            </div>
+
+            <div class="scf-faq-item">
+              <button
+                class="scf-faq-question"
+                type="button"
+                aria-expanded="false"
+              >
+                What documents will be required?
+                <span class="scf-faq-icon">+</span>
+              </button>
+
+              <div class="scf-faq-answer">
+                Documentation varies by product and provider. Depending
+                on the case, business registration, financial information,
+                banking information, tax records and funding-purpose
+                details may be requested.
+              </div>
+            </div>
+
+            <div class="scf-faq-item">
+              <button
+                class="scf-faq-question"
+                type="button"
+                aria-expanded="false"
+              >
+                Does Fundvexxa directly provide the loan?
+                <span class="scf-faq-icon">+</span>
+              </button>
+
+              <div class="scf-faq-answer">
+                Fundvexxa provides consultancy and application/funding
+                coordination support. Final financing decisions,
+                sanction, interest rates, charges and other terms are
+                determined by the relevant lender or provider.
+              </div>
+            </div>
+
+            <div class="scf-faq-item">
+              <button
+                class="scf-faq-question"
+                type="button"
+                aria-expanded="false"
+              >
+                How much funding can a business get?
+                <span class="scf-faq-icon">+</span>
+              </button>
+
+              <div class="scf-faq-answer">
+                There is no single amount applicable to every business.
+                The available amount depends on the product, business
+                profile, repayment capacity, financial information and
+                the applicable provider's criteria.
+              </div>
+            </div>
+
+            <div class="scf-faq-item">
+              <button
+                class="scf-faq-question"
+                type="button"
+                aria-expanded="false"
+              >
+                Does submitting this form mean my funding is approved?
+                <span class="scf-faq-icon">+</span>
+              </button>
+
+              <div class="scf-faq-answer">
+                No. This is only an initial enquiry. It does not
+                constitute a sanction, approval, offer or commitment
+                of funding.
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="scf-final-cta">
+        <div class="scf-container">
+
+          <div class="scf-final-box">
+
+            <div>
+              <h2>
+                Have a funding requirement?
+              </h2>
+
+              <p>
+                Share your requirement and let us help you understand
+                the possible next steps.
+              </p>
+            </div>
+
+            <div class="scf-final-actions">
+              <a
+                href="#apply"
+                class="scf-btn scf-btn-primary"
+              >
+                Start Enquiry
+              </a>
+
+              <a
+                href="https://wa.me/917290977231"
+                target="_blank"
+                rel="noopener"
+                class="scf-btn scf-btn-whatsapp"
+              >
+                WhatsApp
+              </a>
+
+              <a
+                href="tel:+917290977231"
+                class="scf-btn scf-btn-secondary"
+              >
+                Call
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="scf-footer">
+      <div class="scf-container">
+
+        <div class="scf-footer-grid">
+
+          <div class="scf-footer-brand">
+            <a class="scf-logo" href="index.html" style="color:#fff;">
+              <span class="scf-logo-mark">F</span>
+              Fundvex<span>xa</span>
+            </a>
+
+            <p>
+              Business and financial consultancy supporting customers
+              with funding requirements, business services and
+              application coordination.
+            </p>
+
+            <p style="margin-top:12px;">
+              Delhi · Maharashtra
+            </p>
+          </div>
+
+          <div>
+            <h3>Funding</h3>
+
+            <div class="scf-footer-links">
+              <a href="business-loan.html">Business Loan</a>
+              <a href="msme-loan.html">MSME Loan</a>
+              <a href="working-capital-loan.html">
+                Working Capital
+              </a>
+              <a href="mudra-loan.html">Mudra Loan</a>
+              <a href="startup-corporate-funding.html">
+                Startup & Corporate Funding
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h3>Company</h3>
+
+            <div class="scf-footer-links">
+              <a href="index.html">Home</a>
+              <a href="services.html">Services</a>
+              <a href="about.html">About</a>
+              <a href="success-stories.html">Success Stories</a>
+              <a href="faq.html">FAQ</a>
+              <a href="contact.html">Contact</a>
+            </div>
+          </div>
+
+          <div>
+            <h3>Contact</h3>
+
+            <div class="scf-footer-links">
+              <a href="tel:+917290977231">
+                +91 72909 77231
+              </a>
+
+              <a href="mailto:fundvexxasupport@gmail.com">
+                fundvexxasupport@gmail.com
+              </a>
+
+              <a
+                href="https://wa.me/917290977231"
+                target="_blank"
+                rel="noopener"
+              >
+                WhatsApp
+              </a>
+
+              <a href="privacy-policy.html">
+                Privacy Policy
+              </a>
+
+              <a href="terms.html">
+                Terms & Conditions
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="scf-footer-bottom">
+
+          <p>
+            © 2026 Fundvexxa. All rights reserved.
+          </p>
+
+          <p>
+            Funding, approval, interest rate, tenure, charges and
+            other terms are subject to the relevant lender/provider
+            and applicable eligibility criteria.
+          </p>
+
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- MOBILE CTA -->
+    <div class="scf-mobile-cta">
+
+      <a
+        href="tel:+917290977231"
+        class="scf-mobile-call"
+      >
+        ☎ Call
+      </a>
+
+      <a
+        href="https://wa.me/917290977231"
+        target="_blank"
+        rel="noopener"
+        class="scf-mobile-wa"
+      >
+        WhatsApp
+      </a>
+
+      <a
+        href="#apply"
+        class="scf-mobile-apply"
+      >
+        Apply
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- =========================
+       FIREBASE + JAVASCRIPT
+  ========================== -->
+
+  <script type="module">
+
+    import {
+      initializeApp
+    } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+    /* =========================
+       FIREBASE CONFIG
+    ========================== */
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyArcvyvNAOKipPZB0YEseN9_k-8JznQ",
+      authDomain: "smile-business-os.firebaseapp.com",
+      projectId: "smile-business-os",
+      storageBucket: "smile-business-os.firebasestorage.app",
+      messagingSenderId: "114356400630",
+      appId: "1:114356400630:web:96fc9d07baaf3a504c17d7",
+      measurementId: "G-73WD9V05ZZ"
+    };
+
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+
+    /* =========================
+       MOBILE MENU
+    ========================== */
+
+    const menuBtn = document.getElementById("scfMenuBtn");
+    const navLinks = document.getElementById("scfNavLinks");
+
+    if (menuBtn && navLinks) {
+
+      menuBtn.addEventListener("click", () => {
+
+        const isOpen = navLinks.classList.toggle("open");
+
+        menuBtn.setAttribute(
+          "aria-expanded",
+          String(isOpen)
+        );
+
+      });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+          navLinks.classList.remove("open");
+
+          menuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        });
+
+      });
+
+    }
+
+
+    /* =========================
+       FAQ
+    ========================== */
+
+    document
+      .querySelectorAll(".scf-faq-question")
+      .forEach((question) => {
+
+        question.addEventListener("click", () => {
+
+          const item = question.closest(".scf-faq-item");
+
+          if (!item) return;
+
+          const currentlyActive =
+            item.classList.contains("active");
+
+          document
+            .querySelectorAll(".scf-faq-item")
+            .forEach((faq) => {
+
+              faq.classList.remove("active");
+
+              const btn =
+                faq.querySelector(".scf-faq-question");
+
+              const icon =
+                faq.querySelector(".scf-faq-icon");
+
+              if (btn) {
+                btn.setAttribute(
+                  "aria-expanded",
+                  "false"
+                );
+              }
+
+              if (icon) {
+                icon.textContent = "+";
+              }
+
+            });
+
+          if (!currentlyActive) {
+
+            item.classList.add("active");
+
+            question.setAttribute(
+              "aria-expanded",
+              "true"
+            );
+
+            const icon =
+              question.querySelector(".scf-faq-icon");
+
+            if (icon) {
+              icon.textContent = "−";
+            }
+
+          }
+
+        });
+
+      });
+
+
+    /* =========================
+       FORM
+    ========================== */
+
+    const form =
+      document.getElementById("scfFundingForm");
+
+    const submitBtn =
+      document.getElementById("scfSubmitBtn");
+
+    const statusBox =
+      document.getElementById("scfFormStatus");
+
+
+    function showStatus(message, type) {
+
+      statusBox.textContent = message;
+
+      statusBox.className =
+        "scf-form-status " + type;
+
+    }
+
+
+    function clean(value) {
+
+      return String(value || "").trim();
+
+    }
+
+
+    function isValidMobile(mobile) {
+
+      return /^[6-9]\d{9}$/.test(mobile);
+
+    }
+
+
+    function isValidEmail(email) {
+
+      if (!email) return true;
+
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    }
+
+
+    if (form) {
+
+      form.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+
+        showStatus("", "");
+
+        const formData =
+          new FormData(form);
+
+        const name =
+          clean(formData.get("name"));
+
+        const mobile =
+          clean(formData.get("mobile"))
+            .replace(/\s+/g, "");
+
+        const email =
+          clean(formData.get("email"));
+
+        const city =
+          clean(formData.get("city"));
+
+        const businessType =
+          clean(formData.get("businessType"));
+
+        const fundingStage =
+          clean(formData.get("fundingStage"));
+
+        const fundingAmount =
+          clean(formData.get("fundingAmount"));
+
+        const fundingPurpose =
+          clean(formData.get("fundingPurpose"));
+
+        const businessVintage =
+          clean(formData.get("businessVintage"));
+
+        const annualTurnover =
+          clean(formData.get("annualTurnover"));
+
+        const message =
+          clean(formData.get("message"));
+
+        const consent =
+          document.getElementById("scfConsent").checked;
+
+
+        /* =========================
+           VALIDATION
+        ========================== */
+
+        if (!name) {
+
+          showStatus(
+            "Please enter your full name.",
+            "error"
+          );
+
+          document
+            .getElementById("scfName")
+            .focus();
+
+          return;
+
+        }
+
+
+        if (!isValidMobile(mobile)) {
+
+          showStatus(
+            "Please enter a valid 10-digit Indian mobile number.",
+            "error"
+          );
+
+          document
+            .getElementById("scfMobile")
+            .focus();
+
+          return;
+
+        }
+
+
+        if (!isValidEmail(email)) {
+
+          showStatus(
+            "Please enter a valid email address.",
+            "error"
+          );
+
+          document
+            .getElementById("scfEmail")
+            .focus();
+
+          return;
+
+        }
+
+
+        if (!businessType) {
+
+          showStatus(
+            "Please select your business/applicant type.",
+            "error"
+          );
+
+          document
+            .getElementById("scfBusinessType")
+            .focus();
+
+          return;
+
+        }
+
+
+        if (!fundingPurpose) {
+
+          showStatus(
+            "Please select your funding purpose.",
+            "error"
+          );
+
+          document
+            .getElementById("scfPurpose")
+            .focus();
+
+          return;
+
+        }
+
+
+        if (!consent) {
+
+          showStatus(
+            "Please accept the enquiry consent before submitting.",
+            "error"
+          );
+
+          return;
+
+        }
+
+
+        /* =========================
+           BUTTON LOADING
+        ========================== */
+
+        const originalText =
+          submitBtn.textContent;
+
+        submitBtn.disabled = true;
+
+        submitBtn.textContent =
+          "Submitting...";
+
+
+        try {
+
+          /* =========================
+             FIRESTORE LEAD
+          ========================== */
+
+          const leadData = {
+
+            name: name,
+
+            mobile: mobile,
+
+            email: email || "",
+
+            city: city || "",
+
+            businessType:
+              businessType || "",
+
+            fundingStage:
+              fundingStage || "",
+
+            fundingAmount:
+              fundingAmount || "",
+
+            fundingPurpose:
+              fundingPurpose || "",
+
+            businessVintage:
+              businessVintage || "",
+
+            annualTurnover:
+              annualTurnover || "",
+
+            message:
+              message || "",
+
+            service:
+              "Startup & Corporate Funding",
+
+            requirement:
+              "Startup & Corporate Funding",
+
+            landingPage:
+              "startup-corporate-funding.html",
+
+            leadType:
+              "startup_corporate_funding_enquiry",
+
+            source:
+              "website",
+
+            status:
+              "new",
+
+            createdAt:
+              serverTimestamp()
+
+          };
+
+
+          await addDoc(
+            collection(db, "leads"),
+            leadData
+          );
+
+
+          /* =========================
+             SUCCESS
+          ========================== */
+
+          showStatus(
+            "Thank you. Your funding enquiry has been submitted successfully. Our team will contact you regarding the next steps.",
+            "success"
+          );
+
+
+          form.reset();
+
+
+          /* =========================
+             WHATSAPP OPTION
+          ========================== */
+
+          const whatsappMessage =
+            encodeURIComponent(
+              `Hello Fundvexxa,
+
+I have submitted a Startup & Corporate Funding enquiry.
+
+Name: ${name}
+Mobile: ${mobile}
+Business Type: ${businessType}
+Funding Purpose: ${fundingPurpose}
+Funding Requirement: ${fundingAmount || "Not specified"}
+
+Please help me with the next steps.`
+            );
+
+
+          setTimeout(() => {
+
+            const shouldWhatsApp =
+              confirm(
+                "Your enquiry has been submitted. Would you also like to continue the conversation on WhatsApp?"
+              );
+
+            if (shouldWhatsApp) {
+
+              window.open(
+                "https://wa.me/917290977231?text=" +
+                  whatsappMessage,
+                "_blank",
+                "noopener"
+              );
+
+            }
+
+          }, 500);
+
+
+        } catch (error) {
+
+          console.error(
+            "Startup funding lead error:",
+            error
+          );
+
+          showStatus(
+            "We could not submit your enquiry right now. Please try again or contact us directly on WhatsApp.",
+            "error"
+          );
+
+        } finally {
+
+          submitBtn.disabled = false;
+
+          submitBtn.textContent =
+            originalText;
+
+        }
+
+      });
+
+    }
+
+  </script>
+
+
+  <!-- FAQ STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is startup funding guaranteed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Fundvexxa does not guarantee funding or approval. Any financing or investment decision is made by the relevant lender, investor or funding provider according to its own criteria."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a new startup enquire about funding?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. A new startup can share its requirement for a preliminary discussion. Suitable funding routes depend on the business stage, purpose, profile and applicable provider criteria."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What documents will be required?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Documentation varies by product and provider. Depending on the case, business registration, financial information, banking information, tax records and funding-purpose details may be requested."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does submitting this form mean my funding is approved?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This is only an initial enquiry. It does not constitute a sanction, approval, offer or commitment of funding."
+        }
+      }
+    ]
+  }
+  </script>
+
+</body>
+</html>
