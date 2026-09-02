@@ -1,1261 +1,2560 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mudra Loan Assistance | PMMY Loan Guidance | Fundvexxa</title>
 
-<title>Mudra Loan Assistance | Fundvexxa</title>
+  <meta name="description" content="Fundvexxa provides Mudra Loan assistance for eligible small businesses and entrepreneurs, including eligibility guidance, documentation support and application assistance.">
+  <meta name="keywords" content="Mudra Loan, PMMY Loan, Pradhan Mantri Mudra Yojana, Mudra Loan assistance, Shishu Loan, Kishor Loan, Tarun Loan, Tarun Plus">
+  <meta name="robots" content="index, follow">
 
-<style>
+  <meta property="og:title" content="Mudra Loan Assistance | Fundvexxa">
+  <meta property="og:description" content="Explore PMMY Mudra Loan options with professional eligibility, documentation and application guidance.">
+  <meta property="og:type" content="website">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+  <style>
+    :root{
+      --navy:#10243e;
+      --navy-2:#173a62;
+      --blue:#1267d6;
+      --blue-dark:#0b4fa8;
+      --blue-soft:#eef6ff;
+      --gold:#c79a4a;
+      --gold-soft:#f5ead4;
+      --text:#172235;
+      --muted:#65748a;
+      --border:#e3eaf2;
+      --white:#fff;
+      --bg:#f6f9fc;
+      --success:#15803d;
+      --danger:#b42318;
+      --shadow:0 18px 50px rgba(16,36,62,.08);
+      --radius:20px;
+    }
 
-html{
-scroll-behavior:smooth;
-}
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
 
-body{
-font-family:Arial,Helvetica,sans-serif;
-background:#ffffff;
-color:#222;
-overflow-x:hidden;
-line-height:1.8;
-}
+    html{
+      scroll-behavior:smooth;
+    }
 
-img{
-max-width:100%;
-display:block;
-height:auto;
-}
+    body{
+      font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.7;
+      overflow-x:hidden;
+    }
 
-.container{
-width:100%;
-max-width:1200px;
-margin:auto;
-padding:0 20px;
-}
+    a{
+      color:inherit;
+    }
 
-.hero{
-padding:70px 0;
-background:linear-gradient(135deg,#eef6ff,#ffffff);
-}
+    img{
+      display:block;
+      max-width:100%;
+      height:auto;
+    }
 
-.hero-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center;
-}
+    button,
+    input,
+    select,
+    textarea{
+      font:inherit;
+    }
 
-.badge{
-display:inline-block;
-padding:10px 18px;
-background:#dbeafe;
-color:#0d6efd;
-font-weight:700;
-border-radius:30px;
-font-size:15px;
-margin-bottom:20px;
-}
+    .page{
+      min-height:100vh;
+      background:#fff;
+    }
 
-.hero h1{
-font-size:56px;
-line-height:1.2;
-margin-bottom:20px;
-color:#111827;
-}
+    .container{
+      width:min(1180px,calc(100% - 36px));
+      margin:auto;
+    }
 
-.hero p{
-font-size:20px;
-color:#555;
-margin-bottom:30px;
-}
+    /* HEADER */
 
-.hero-buttons{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
+    .topbar{
+      background:var(--navy);
+      color:#dce6f0;
+      font-size:13px;
+    }
 
-.btn-primary{
-background:#0d6efd;
-color:#fff;
-padding:16px 28px;
-text-decoration:none;
-border-radius:12px;
-font-weight:700;
-}
+    .topbar-inner{
+      min-height:38px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+    }
 
-.btn-secondary{
-background:#111827;
-color:#fff;
-padding:16px 28px;
-text-decoration:none;
-border-radius:12px;
-font-weight:700;
-}
+    .topbar a{
+      color:#fff;
+      text-decoration:none;
+    }
 
-.hero-image img{
-border-radius:25px;
-box-shadow:0 15px 40px rgba(0,0,0,.12);
-}
+    .topbar-right{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
 
-.stats{
-padding:40px 0;
-background:#fff;
-}
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);
+    }
 
-.stats-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-}
+    .nav-inner{
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+    }
 
-.stat-card{
-background:#fff;
-padding:30px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
+    .logo{
+      text-decoration:none;
+      font-size:27px;
+      font-weight:900;
+      letter-spacing:-1px;
+      color:var(--navy);
+      white-space:nowrap;
+    }
 
-.stat-card h3{
-font-size:32px;
-color:#0d6efd;
-margin-bottom:10px;
-}
+    .logo span{
+      color:var(--gold);
+    }
 
-.stat-card p{
-font-size:18px;
-}
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      flex-wrap:wrap;
+    }
 
-.section{
-padding:80px 0;
-}
+    .nav-links a{
+      text-decoration:none;
+      color:#34445a;
+      font-size:14px;
+      font-weight:700;
+    }
 
-.section-title{
-text-align:center;
-margin-bottom:50px;
-}
+    .nav-links a:hover{
+      color:var(--blue);
+    }
 
-.section-title h2{
-font-size:42px;
-margin-bottom:15px;
-color:#111827;
-}
+    .nav-cta{
+      background:var(--navy);
+      color:#fff !important;
+      padding:11px 17px;
+      border-radius:10px;
+    }
 
-.section-title p{
-font-size:20px;
-max-width:900px;
-margin:auto;
-color:#555;
-}
+    /* HERO */
 
-.card-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-}
+    .hero{
+      background:
+        radial-gradient(circle at 90% 10%,rgba(18,103,214,.10),transparent 30%),
+        linear-gradient(135deg,#edf6ff 0%,#fff 68%);
+      padding:72px 0 68px;
+    }
 
-.card{
-background:#fff;
-padding:35px;
-border-radius:24px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.04fr .96fr;
+      gap:55px;
+      align-items:center;
+    }
 
-.card h3{
-font-size:24px;
-margin-bottom:15px;
-}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      background:#e5f0ff;
+      border:1px solid #cfe2fa;
+      color:var(--blue-dark);
+      border-radius:30px;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.09em;
+      margin-bottom:20px;
+    }
 
-.card p{
-font-size:18px;
-color:#555;
-}
+    .eyebrow::before{
+      content:"";
+      width:7px;
+      height:7px;
+      background:var(--gold);
+      border-radius:50%;
+    }
 
-.whatsapp-btn{
-position:fixed;
-right:15px;
-bottom:20px;
-background:#25D366;
-color:white;
-text-decoration:none;
-padding:15px 20px;
-border-radius:50px;
-font-weight:700;
-z-index:999;
-box-shadow:0 10px 25px rgba(0,0,0,.20);
-}
+    .hero h1{
+      font-size:clamp(40px,5vw,62px);
+      line-height:1.08;
+      letter-spacing:-2.5px;
+      color:var(--navy);
+      margin-bottom:22px;
+      max-width:720px;
+    }
 
-@media(max-width:768px){
+    .hero h1 span{
+      color:var(--blue);
+    }
 
-.hero{
-padding:50px 0;
-}
+    .hero-copy{
+      color:var(--muted);
+      font-size:18px;
+      max-width:690px;
+      margin-bottom:28px;
+    }
 
-.hero-grid{
-grid-template-columns:1fr;
-}
+    .hero-actions{
+      display:flex;
+      gap:13px;
+      flex-wrap:wrap;
+    }
 
-.hero h1{
-font-size:38px;
-}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:50px;
+      padding:0 21px;
+      border-radius:11px;
+      text-decoration:none;
+      font-weight:800;
+      border:1px solid transparent;
+      cursor:pointer;
+      transition:.2s ease;
+    }
 
-.hero p{
-font-size:18px;
-}
+    .btn-primary{
+      background:var(--blue);
+      color:#fff;
+      box-shadow:0 10px 24px rgba(18,103,214,.20);
+    }
 
-.hero-buttons a{
-width:100%;
-text-align:center;
-}
+    .btn-primary:hover{
+      background:var(--blue-dark);
+      transform:translateY(-1px);
+    }
 
-.stats-grid{
-grid-template-columns:1fr;
-}
+    .btn-outline{
+      background:#fff;
+      color:var(--navy);
+      border-color:#cbd8e6;
+    }
 
-.card-grid{
-grid-template-columns:1fr;
-}
+    .btn-outline:hover{
+      border-color:var(--blue);
+      color:var(--blue);
+    }
 
-.section-title h2{
-font-size:32px;
-}
+    .hero-image{
+      position:relative;
+    }
 
-.section-title p{
-font-size:18px;
-}
+    .hero-image img{
+      width:100%;
+      min-height:390px;
+      object-fit:cover;
+      border-radius:24px;
+      box-shadow:var(--shadow);
+    }
 
-.card{
-padding:28px;
-}
+    .hero-card{
+      position:absolute;
+      left:-22px;
+      bottom:24px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:15px;
+      padding:16px 18px;
+      box-shadow:0 15px 35px rgba(16,36,62,.13);
+      max-width:245px;
+    }
 
-.card h3{
-font-size:22px;
-}
+    .hero-card strong{
+      display:block;
+      color:var(--navy);
+      font-size:15px;
+      margin-bottom:3px;
+    }
 
-.card p{
-font-size:17px;
-}
+    .hero-card span{
+      color:var(--muted);
+      font-size:12px;
+    }
 
-}
+    /* TRUST STRIP */
 
-</style>
+    .trust-strip{
+      background:#fff;
+      border-bottom:1px solid var(--border);
+    }
 
+    .trust-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+    }
+
+    .trust-item{
+      padding:25px 18px;
+      text-align:center;
+      border-right:1px solid var(--border);
+    }
+
+    .trust-item:last-child{
+      border-right:0;
+    }
+
+    .trust-item strong{
+      display:block;
+      font-size:20px;
+      color:var(--navy);
+      margin-bottom:3px;
+    }
+
+    .trust-item span{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* COMMON SECTIONS */
+
+    .section{
+      padding:82px 0;
+    }
+
+    .section.alt{
+      background:var(--bg);
+    }
+
+    .section-heading{
+      max-width:850px;
+      margin:0 auto 48px;
+      text-align:center;
+    }
+
+    .section-heading .mini{
+      display:block;
+      color:var(--blue);
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      margin-bottom:9px;
+    }
+
+    .section-heading h2{
+      font-size:clamp(32px,4vw,45px);
+      line-height:1.15;
+      letter-spacing:-1.4px;
+      color:var(--navy);
+      margin-bottom:14px;
+    }
+
+    .section-heading p{
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    /* CARDS */
+
+    .card-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:27px;
+      box-shadow:0 8px 25px rgba(16,36,62,.045);
+    }
+
+    .card:hover{
+      box-shadow:var(--shadow);
+    }
+
+    .icon{
+      width:44px;
+      height:44px;
+      display:grid;
+      place-items:center;
+      background:var(--blue-soft);
+      color:var(--blue);
+      border-radius:12px;
+      font-weight:900;
+      margin-bottom:18px;
+    }
+
+    .card h3{
+      color:var(--navy);
+      font-size:20px;
+      line-height:1.3;
+      margin-bottom:9px;
+    }
+
+    .card p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* CATEGORY */
+
+    .category-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .category{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:25px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .category::after{
+      content:"";
+      position:absolute;
+      width:90px;
+      height:90px;
+      border-radius:50%;
+      background:var(--blue-soft);
+      right:-35px;
+      top:-35px;
+    }
+
+    .category .number{
+      color:var(--gold);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+    }
+
+    .category h3{
+      margin:8px 0 6px;
+      color:var(--navy);
+      font-size:21px;
+    }
+
+    .category .amount{
+      color:var(--blue);
+      font-weight:900;
+      font-size:16px;
+      margin-bottom:10px;
+    }
+
+    .category p{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* SPLIT */
+
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:45px;
+      align-items:center;
+    }
+
+    .split-image img{
+      width:100%;
+      min-height:380px;
+      object-fit:cover;
+      border-radius:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .content-label{
+      color:var(--blue);
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      margin-bottom:9px;
+    }
+
+    .split h2{
+      font-size:40px;
+      line-height:1.15;
+      letter-spacing:-1.2px;
+      color:var(--navy);
+      margin-bottom:18px;
+    }
+
+    .split p{
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .check-list{
+      list-style:none;
+      display:grid;
+      gap:12px;
+    }
+
+    .check-list li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:#42536a;
+      font-size:14px;
+    }
+
+    .check-list li::before{
+      content:"✓";
+      flex:0 0 23px;
+      width:23px;
+      height:23px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:#e9f7ee;
+      color:var(--success);
+      font-weight:900;
+      font-size:12px;
+    }
+
+    /* PROCESS */
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .process{
+      position:relative;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:25px;
+    }
+
+    .process-number{
+      font-size:12px;
+      font-weight:900;
+      color:var(--gold);
+      letter-spacing:.1em;
+    }
+
+    .process h3{
+      color:var(--navy);
+      margin:8px 0;
+      font-size:18px;
+    }
+
+    .process p{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* DOCUMENTS */
+
+    .docs-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:15px;
+    }
+
+    .doc{
+      padding:19px 20px;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:14px;
+      display:flex;
+      gap:13px;
+      align-items:flex-start;
+    }
+
+    .doc strong{
+      display:block;
+      color:var(--navy);
+      font-size:15px;
+    }
+
+    .doc span{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* FORM */
+
+    .form-section{
+      background:linear-gradient(135deg,#f0f7ff,#fff);
+    }
+
+    .form-wrap{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:35px;
+      align-items:start;
+    }
+
+    .form-info{
+      background:var(--navy);
+      color:#fff;
+      border-radius:22px;
+      padding:35px;
+      position:sticky;
+      top:100px;
+    }
+
+    .form-info h2{
+      font-size:31px;
+      line-height:1.2;
+      margin-bottom:14px;
+    }
+
+    .form-info p{
+      color:#c9d7e5;
+      font-size:14px;
+      margin-bottom:24px;
+    }
+
+    .contact-line{
+      padding:14px 0;
+      border-top:1px solid rgba(255,255,255,.12);
+      color:#e5edf5;
+      font-size:14px;
+    }
+
+    .contact-line a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+    }
+
+    .lead-form{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:32px;
+      box-shadow:var(--shadow);
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:15px;
+    }
+
+    .field{
+      margin-bottom:15px;
+    }
+
+    .field.full{
+      grid-column:1/-1;
+    }
+
+    .field label{
+      display:block;
+      color:var(--navy);
+      font-size:13px;
+      font-weight:800;
+      margin-bottom:7px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea{
+      width:100%;
+      border:1px solid #d6e0ea;
+      background:#fff;
+      border-radius:11px;
+      padding:13px 14px;
+      outline:none;
+      color:var(--text);
+      font-size:14px;
+      transition:.2s;
+    }
+
+    .field textarea{
+      resize:vertical;
+      min-height:115px;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus{
+      border-color:var(--blue);
+      box-shadow:0 0 0 3px rgba(18,103,214,.10);
+    }
+
+    .consent{
+      display:flex;
+      gap:9px;
+      align-items:flex-start;
+      color:var(--muted);
+      font-size:12px;
+      margin:2px 0 15px;
+    }
+
+    .consent input{
+      margin-top:4px;
+    }
+
+    .submit-btn{
+      width:100%;
+      border:0;
+      min-height:53px;
+      background:var(--blue);
+      color:#fff;
+      border-radius:11px;
+      font-weight:900;
+      cursor:pointer;
+    }
+
+    .submit-btn:disabled{
+      opacity:.65;
+      cursor:not-allowed;
+    }
+
+    .form-message{
+      display:none;
+      margin-top:15px;
+      padding:13px 15px;
+      border-radius:10px;
+      font-size:13px;
+    }
+
+    .form-message.success{
+      display:block;
+      color:#126b32;
+      background:#eaf7ee;
+      border:1px solid #bce5c9;
+    }
+
+    .form-message.error{
+      display:block;
+      color:#9b241a;
+      background:#fff0ee;
+      border:1px solid #f0c5c0;
+    }
+
+    /* FAQ */
+
+    .faq-grid{
+      max-width:900px;
+      margin:auto;
+      display:grid;
+      gap:12px;
+    }
+
+    details{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:18px 20px;
+    }
+
+    summary{
+      cursor:pointer;
+      list-style:none;
+      font-weight:850;
+      color:var(--navy);
+      padding-right:20px;
+    }
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
+
+    details p{
+      color:var(--muted);
+      font-size:14px;
+      padding-top:12px;
+    }
+
+    /* CTA */
+
+    .cta{
+      padding:75px 0;
+      background:var(--navy);
+      color:#fff;
+      text-align:center;
+    }
+
+    .cta h2{
+      font-size:clamp(32px,4vw,45px);
+      line-height:1.15;
+      margin-bottom:14px;
+    }
+
+    .cta p{
+      max-width:760px;
+      margin:0 auto 25px;
+      color:#c8d5e2;
+    }
+
+    /* SOURCES */
+
+    .source-links{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:25px;
+    }
+
+    .source-links a{
+      display:inline-flex;
+      padding:11px 15px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:10px;
+      color:var(--navy);
+      text-decoration:none;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#0b192b;
+      color:#fff;
+      padding:55px 0 22px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.4fr 1fr 1fr;
+      gap:40px;
+    }
+
+    footer h3{
+      margin-bottom:12px;
+    }
+
+    footer p,
+    footer a{
+      color:#aebdcc;
+      font-size:13px;
+      line-height:1.8;
+    }
+
+    footer a{
+      text-decoration:none;
+    }
+
+    footer a:hover{
+      color:#fff;
+    }
+
+    .footer-links{
+      display:grid;
+      gap:7px;
+    }
+
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,.1);
+      margin-top:35px;
+      padding-top:20px;
+      text-align:center;
+      color:#7f92a6;
+      font-size:12px;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:1100;
+      background:#20c767;
+      color:#fff;
+      text-decoration:none;
+      padding:13px 18px;
+      border-radius:50px;
+      font-weight:900;
+      font-size:13px;
+      box-shadow:0 12px 28px rgba(0,0,0,.20);
+    }
+
+    /* POPUP */
+
+    .popup{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(4,15,28,.66);
+      z-index:2000;
+      padding:20px;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .popup.show{
+      display:flex;
+    }
+
+    .popup-card{
+      width:min(450px,100%);
+      background:#fff;
+      border-radius:20px;
+      padding:30px;
+      position:relative;
+      box-shadow:0 30px 80px rgba(0,0,0,.25);
+    }
+
+    .popup-close{
+      position:absolute;
+      right:15px;
+      top:10px;
+      width:35px;
+      height:35px;
+      border:0;
+      background:#f1f4f7;
+      border-radius:50%;
+      font-size:23px;
+      cursor:pointer;
+      color:var(--navy);
+    }
+
+    .popup-card h3{
+      color:var(--navy);
+      font-size:24px;
+      margin-bottom:8px;
+      padding-right:35px;
+    }
+
+    .popup-card p{
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:20px;
+    }
+
+    .popup-form input{
+      width:100%;
+      padding:13px;
+      border:1px solid #d6e0ea;
+      border-radius:10px;
+      margin-bottom:10px;
+      outline:none;
+    }
+
+    .popup-form button{
+      width:100%;
+      padding:14px;
+      border:0;
+      border-radius:10px;
+      background:var(--blue);
+      color:#fff;
+      font-weight:900;
+      cursor:pointer;
+    }
+
+    .popup-message{
+      display:none;
+      margin-top:10px;
+      padding:10px;
+      border-radius:9px;
+      font-size:12px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:950px){
+      .nav-links{
+        display:none;
+      }
+
+      .hero-grid,
+      .split,
+      .form-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .hero-image{
+        max-width:720px;
+        margin:auto;
+      }
+
+      .hero-card{
+        left:15px;
+      }
+
+      .form-info{
+        position:static;
+      }
+
+      .card-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .category-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .process-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(max-width:650px){
+      .container{
+        width:min(100% - 28px,1180px);
+      }
+
+      .topbar{
+        display:none;
+      }
+
+      .nav-inner{
+        min-height:66px;
+      }
+
+      .logo{
+        font-size:23px;
+      }
+
+      .hero{
+        padding:48px 0;
+      }
+
+      .hero h1{
+        letter-spacing:-1.6px;
+      }
+
+      .hero-copy{
+        font-size:16px;
+      }
+
+      .hero-actions .btn{
+        width:100%;
+      }
+
+      .hero-image img{
+        min-height:270px;
+      }
+
+      .hero-card{
+        position:relative;
+        left:auto;
+        bottom:auto;
+        margin:-35px 15px 0;
+      }
+
+      .trust-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .trust-item{
+        border-bottom:1px solid var(--border);
+      }
+
+      .section{
+        padding:60px 0;
+      }
+
+      .card-grid,
+      .category-grid,
+      .process-grid,
+      .docs-grid,
+      .form-grid{
+        grid-template-columns:1fr;
+      }
+
+      .field.full{
+        grid-column:auto;
+      }
+
+      .split h2{
+        font-size:32px;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .whatsapp{
+        right:12px;
+        bottom:12px;
+      }
+    }
+  </style>
+
+  <!-- FAQ structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What is PMMY Mudra Loan?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Pradhan Mantri Mudra Yojana (PMMY) is a Government of India initiative that provides institutional credit access to eligible micro enterprises through participating lending institutions."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What are the Mudra Loan categories?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"The current PMMY categories are Shishu up to Rs.50,000, Kishor above Rs.50,000 up to Rs.5 lakh, Tarun above Rs.5 lakh up to Rs.10 lakh and Tarun Plus above Rs.10 lakh up to Rs.20 lakh, subject to the applicable eligibility conditions."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Is collateral required for Mudra Loan?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"The official Department of Financial Services describes PMMY loans as collateral-free, subject to the applicable scheme and lender conditions."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can a new entrepreneur explore Mudra Loan?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Eligible new entrepreneurs may explore PMMY options. Final eligibility, loan amount, pricing and terms are decided by the relevant lending institution."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Does Fundvexxa guarantee Mudra Loan approval?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No. Fundvexxa provides guidance and application assistance. Final approval, loan amount, interest rate, tenure and other terms are decided by the relevant lender."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
 
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="container">
-
-<div class="hero-grid">
-
-<div>
-
-<span class="badge">
-MUDRA LOAN ASSISTANCE
-</span>
-
-<h1>
-Mudra Loan Support For Small Businesses & Entrepreneurs
-</h1>
-
-<p>
-Mudra Loan scheme small business owners, shopkeepers, traders, service providers and aspiring entrepreneurs ko business growth ke liye financial assistance explore karne ka opportunity deti hai. Fundvexxa aapko documentation, eligibility guidance aur application support provide karta hai.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#apply" class="btn-primary">
-Apply Now
-</a>
-
-<a href="tel:+917290977231" class="btn-secondary">
-Call Expert
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-image">
-
-<img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" alt="Mudra Loan">
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- STATS -->
-
-<section class="stats">
-
-<div class="container">
-
-<div class="stats-grid">
-
-<div class="stat-card">
-<h3>₹10 Lakh</h3>
-<p>Funding Support Category</p>
-</div>
-
-<div class="stat-card">
-<h3>MSME</h3>
-<p>Business Focused</p>
-</div>
-
-<div class="stat-card">
-<h3>India Wide</h3>
-<p>Support Network</p>
-</div>
-
-<div class="stat-card">
-<h3>Expert Help</h3>
-<p>Documentation Guidance</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ABOUT -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-What Is Mudra Loan?
-</h2>
-
-<p>
-Pradhan Mantri Mudra Yojana (PMMY) ke under micro aur small businesses ko financial assistance provide karne ke liye Mudra Loan concept introduce kiya gaya hai. Yeh scheme un entrepreneurs ke liye useful ho sakti hai jo apna business start karna chahte hain ya existing business ko expand karna chahte hain.
-</p>
-
-</div>
-
-<div class="card-grid">
-
-<div class="card">
-
-<h3>
-Business Expansion
-</h3>
-
-<p>
-Existing business ko grow karne, inventory badhane aur operational capacity improve karne ke liye support.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-New Business Setup
-</h3>
-
-<p>
-Naye entrepreneurs ko business establish karne aur initial requirements manage karne mein help.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Working Capital Needs
-</h3>
-
-<p>
-Daily business expenses, stock purchase aur cash flow management ke liye assistance.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<a href="https://wa.me/917290977231" class="whatsapp-btn">
-WhatsApp Us
-</a>
-
-  
-<!-- MUDRA LOAN CATEGORIES -->
-
-<section class="section" style="background:#f8fbff;">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Mudra Loan Categories
-</h2>
-
-<p>
-Mudra Loan ko business requirement aur funding stage ke according different categories me divide kiya gaya hai. Business ki growth stage ke hisab se suitable category explore ki ja sakti hai.
-</p>
-
-</div>
-
-<div class="card-grid">
-
-<div class="card">
-
-<h3>
-Shishu Category
-</h3>
-
-<p>
-New entrepreneurs aur small startup businesses ke liye. Yeh category un applicants ke liye useful ho sakti hai jo business ki shuruaat kar rahe hain aur initial funding support ki requirement rakhte hain.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Kishore Category
-</h3>
-
-<p>
-Existing businesses jo apne operations ko expand karna chahte hain, machinery purchase karna chahte hain ya working capital strengthen karna chahte hain unke liye suitable option ho sakta hai.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Tarun Category
-</h3>
-
-<p>
-Growing businesses ke liye jo expansion, higher production capacity aur larger business opportunities ko target kar rahe hain.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- BENEFITS -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Benefits Of Mudra Loan
-</h2>
-
-<p>
-Mudra Loan scheme ka objective small businesses aur entrepreneurs ko business growth opportunities tak pahunch provide karna hai.
-</p>
-
-</div>
-
-<div class="card-grid">
-
-<div class="card">
-
-<h3>
-Business Growth
-</h3>
-
-<p>
-Business expansion, inventory purchase aur operational improvement ke liye funding support explore kiya ja sakta hai.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Support For Entrepreneurs
-</h3>
-
-<p>
-First-time entrepreneurs aur self-employed individuals ke liye business development opportunities create karne me help mil sakti hai.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Working Capital Management
-</h3>
-
-<p>
-Daily business expenses aur cash flow requirements ko manage karne me assistance mil sakti hai.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Business Stability
-</h3>
-
-<p>
-Seasonal demand aur operational requirements ko efficiently manage karne me support mil sakta hai.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Expansion Opportunities
-</h3>
-
-<p>
-New equipment, stock purchase aur business infrastructure development ke liye opportunities create ho sakti hain.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Professional Guidance
-</h3>
-
-<p>
-Fundvexxa documentation aur application support provide karta hai jisse process samajhna easier ho jata hai.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ELIGIBILITY -->
-
-<section class="section" style="background:#f8fbff;">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Who Can Apply?
-</h2>
-
-<p>
-Mudra Loan generally small businesses, self-employed individuals aur micro enterprises ke liye designed hai. Actual eligibility lender policies ke hisab se vary kar sakti hai.
-</p>
-
-</div>
-
-<div class="card-grid">
-
-<div class="card">
-
-<h3>
-Shop Owners
-</h3>
-
-<p>
-Retail shops, kirana stores aur local trading businesses.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Service Providers
-</h3>
-
-<p>
-Salon, repair centers, coaching institutes aur service-based businesses.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Manufacturing Units
-</h3>
-
-<p>
-Small manufacturing businesses aur production units.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Traders
-</h3>
-
-<p>
-Wholesalers, distributors aur trading related businesses.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Self Employed Professionals
-</h3>
-
-<p>
-Independent professionals aur business operators.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-New Entrepreneurs
-</h3>
-
-<p>
-Individuals jo apna naya business start karna chahte hain.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- DOCUMENTS REQUIRED -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Documents Commonly Required
-</h2>
-
-<p>
-Applicant profile aur lender requirements ke according additional documents bhi maange ja sakte hain.
-</p>
-
-</div>
-
-<div class="card-grid">
-
-<div class="card">
-
-<h3>
-Identity Proof
-</h3>
-
-<p>
-Aadhaar Card, PAN Card, Voter ID ya other valid identity documents.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Address Proof
-</h3>
-
-<p>
-Aadhaar Card, Electricity Bill, Passport ya other acceptable address proof.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Business Proof
-</h3>
-
-<p>
-GST Registration, Shop Act License, Udyam Registration ya business related documents.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Bank Statements
-</h3>
-
-<p>
-Recent banking transactions aur account statements.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Photographs
-</h3>
-
-<p>
-Recent passport size photographs as required.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Additional Financial Documents
-</h3>
-
-<p>
-Income records, quotations ya business related supporting documents where applicable.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- WHY CHOOSE SMILE FINANCIAL SOLUTION -->
-
-<section class="section" style="background:#f8fbff;">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-How We Help You
-</h2>
-
-<p>
-Mudra Loan application process me sirf form fill karna hi important nahi hota. Proper documentation, profile understanding aur business requirement assessment bhi important role play karte hain. Fundvexxa aapko har stage par professional guidance provide karta hai.
-</p>
-
-</div>
-
-<div class="card-grid">
-
-<div class="card">
-<h3>Eligibility Guidance</h3>
-<p>
-Business profile aur available options ko samajhne me assistance.
-</p>
-</div>
-
-<div class="card">
-<h3>Documentation Support</h3>
-<p>
-Required documents organize aur prepare karne me help.
-</p>
-</div>
-
-<div class="card">
-<h3>Application Assistance</h3>
-<p>
-Application process ko smoothly complete karne me support.
-</p>
-</div>
-
-<div class="card">
-<h3>Business Understanding</h3>
-<p>
-Funding requirement aur business objective ko evaluate karne me guidance.
-</p>
-</div>
-
-<div class="card">
-<h3>Regular Updates</h3>
-<p>
-Process ke dauran communication aur updates.
-</p>
-</div>
-
-<div class="card">
-<h3>Professional Support</h3>
-<p>
-Dedicated team assistance throughout the process.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- PROCESS -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Simple Process
-</h2>
-
-<p>
-Easy and transparent process designed for entrepreneurs and business owners.
-</p>
-
-</div>
-
-<div class="stats-grid">
-
-<div class="stat-card">
-<h3>01</h3>
-<p>Share Requirement</p>
-</div>
-
-<div class="stat-card">
-<h3>02</h3>
-<p>Eligibility Review</p>
-</div>
-
-<div class="stat-card">
-<h3>03</h3>
-<p>Document Collection</p>
-</div>
-
-<div class="stat-card">
-<h3>04</h3>
-<p>Application Assistance</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- FAQ -->
-
-<section class="section" style="background:#f8fbff;">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Frequently Asked Questions
-</h2>
-
-<p>
-Some common questions related to Mudra Loan assistance.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-What is Mudra Loan?
-</h3>
-
-<p>
-Mudra Loan is a government-supported initiative designed to support micro and small business activities through eligible financial institutions.
-</p>
-
-</div>
-
-<br>
-
-<div class="card">
-
-<h3>
-Who can apply?
-</h3>
-
-<p>
-Small business owners, traders, manufacturers, service providers and eligible entrepreneurs may explore Mudra Loan options.
-</p>
-
-</div>
-
-<br>
-
-<div class="card">
-
-<h3>
-What documents are generally required?
-</h3>
-
-<p>
-Identity proof, address proof, business proof, bank statements and other supporting documents may be required.
-</p>
-
-</div>
-
-<br>
-
-<div class="card">
-
-<h3>
-Can new businesses apply?
-</h3>
-
-<p>
-Depending on the business model and eligibility criteria, new entrepreneurs may also explore available options.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- APPLY FORM -->
-
-<section class="section" id="apply">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Request A Free Consultation
-</h2>
-
-<p>
-Share your details and our team will contact you to understand your business requirement.
-</p>
-
-</div>
-
-<div style="
-max-width:800px;
-margin:auto;
-background:#fff;
-padding:35px;
-border-radius:24px;
-box-shadow:0 15px 40px rgba(0,0,0,.10);
-">
-
-<form>
-
-<input
-type="text"
-placeholder="Full Name"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:12px;
-font-size:16px;
-">
-
-<input
-type="tel"
-placeholder="Mobile Number"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:12px;
-font-size:16px;
-">
-
-<input
-type="text"
-placeholder="Business Name"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:12px;
-font-size:16px;
-">
-
-<input
-type="text"
-placeholder="City"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:12px;
-font-size:16px;
-">
-
-<textarea
-rows="5"
-placeholder="Tell Us About Your Requirement"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:12px;
-font-size:16px;
-"></textarea>
-
-<button
-type="submit"
-style="
-width:100%;
-padding:18px;
-background:#0d6efd;
-border:none;
-border-radius:12px;
-color:white;
-font-size:18px;
-font-weight:700;
-cursor:pointer;
-">
-Submit Request
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- FINAL CTA -->
-
-<section style="
-padding:90px 0;
-background:linear-gradient(135deg,#0d6efd,#0052cc);
-text-align:center;
-color:white;
-">
-
-<div class="container">
-
-<h2 style="
-font-size:42px;
-margin-bottom:20px;
-line-height:1.3;
-">
-Ready To Grow Your Business?
-</h2>
-
-<p style="
-font-size:20px;
-max-width:850px;
-margin:auto;
-line-height:1.8;
-margin-bottom:30px;
-">
-Connect with Fundvexxa and get professional assistance for Mudra Loan related guidance, documentation support and application assistance.
-</p>
-
+<div class="page">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div>Professional financial & business assistance</div>
+
+      <div class="topbar-right">
+        <a href="tel:+917290977231">+91 72909 77231</a>
+        <a href="mailto:fundvexxasupport@gmail.com">fundvexxasupport@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-inner">
+
+      <a href="index.html" class="logo">
+        Fund<span>vexxa</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="business-loan.html">Business Loan</a>
+        <a href="government-schemes.html">Government Schemes</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="#apply" class="nav-cta">Check Eligibility</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <div>
+
+        <div class="eyebrow">
+          PMMY / MUDRA LOAN ASSISTANCE
+        </div>
+
+        <h1>
+          Mudra Loan Guidance For
+          <span>Small Businesses</span> & Entrepreneurs
+        </h1>
+
+        <p class="hero-copy">
+          Pradhan Mantri Mudra Yojana (PMMY) ke under eligible micro
+          businesses aur entrepreneurs institutional credit options explore
+          kar sakte hain. Fundvexxa aapko eligibility understanding,
+          documentation preparation aur application assistance mein guide
+          karta hai.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#apply" class="btn btn-primary">
+            Check Your Requirement
+          </a>
+
+          <a href="tel:+917290977231" class="btn btn-outline">
+            Call Expert
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+
+        <img
+          src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+          alt="Business professionals discussing financial planning"
+          loading="eager"
+        >
+
+        <div class="hero-card">
+          <strong>Profile-Based Guidance</strong>
+          <span>Eligibility and documentation support based on your business profile.</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="trust-strip">
+    <div class="container trust-grid">
+
+      <div class="trust-item">
+        <strong>₹20 Lakh*</strong>
+        <span>Current PMMY upper category</span>
+      </div>
+
+      <div class="trust-item">
+        <strong>4 Categories</strong>
+        <span>Shishu to Tarun Plus</span>
+      </div>
+
+      <div class="trust-item">
+        <strong>Collateral-Free</strong>
+        <span>As described under PMMY</span>
+      </div>
+
+      <div class="trust-item">
+        <strong>Professional Support</strong>
+        <span>Documentation & application guidance</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="mini">Understanding PMMY</span>
+
+        <h2>
+          What Is Mudra Loan?
+        </h2>
+
+        <p>
+          Pradhan Mantri Mudra Yojana (PMMY) was launched to improve access
+          to institutional credit for micro enterprises. The scheme can
+          support eligible income-generating activities, including
+          manufacturing, trading, services and certain activities allied
+          to agriculture.
+        </p>
+      </div>
+
+      <div class="card-grid">
+
+        <article class="card">
+          <div class="icon">01</div>
+          <h3>Business Expansion</h3>
+          <p>
+            Existing eligible businesses may explore funding for expansion,
+            assets, stock and other permitted business requirements.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">02</div>
+          <h3>New Business</h3>
+          <p>
+            Eligible entrepreneurs starting a micro business can explore
+            applicable PMMY options based on their profile and lender
+            requirements.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">03</div>
+          <h3>Working Capital</h3>
+          <p>
+            PMMY can cover eligible term-loan and working-capital
+            requirements through participating lending institutions.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section alt">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="mini">Current PMMY Categories</span>
+
+        <h2>
+          Which Mudra Category May Apply?
+        </h2>
+
+        <p>
+          Current official PMMY categories are based on the loan amount.
+          Tarun Plus has an additional previous-loan repayment condition.
+        </p>
+      </div>
+
+      <div class="category-grid">
+
+        <article class="category">
+          <div class="number">Category 01</div>
+          <h3>Shishu</h3>
+          <div class="amount">Up to ₹50,000</div>
+          <p>
+            Designed for smaller funding requirements, subject to lender
+            assessment and applicable conditions.
+          </p>
+        </article>
+
+        <article class="category">
+          <div class="number">Category 02</div>
+          <h3>Kishor</h3>
+          <div class="amount">Above ₹50,000 to ₹5 Lakh</div>
+          <p>
+            Suitable for eligible businesses requiring a higher level of
+            business finance.
+          </p>
+        </article>
+
+        <article class="category">
+          <div class="number">Category 03</div>
+          <h3>Tarun</h3>
+          <div class="amount">Above ₹5 Lakh to ₹10 Lakh</div>
+          <p>
+            For eligible business requirements within the Tarun category
+            limit.
+          </p>
+        </article>
+
+        <article class="category">
+          <div class="number">Category 04</div>
+          <h3>Tarun Plus</h3>
+          <div class="amount">Above ₹10 Lakh to ₹20 Lakh</div>
+          <p>
+            Applicable to entrepreneurs who have availed and successfully
+            repaid a previous Tarun-category loan, subject to conditions.
+          </p>
+        </article>
+
+      </div>
+
+      <p style="text-align:center;color:#738196;font-size:12px;margin-top:20px;">
+        *Loan amount, eligibility, pricing, repayment terms and approval are
+        subject to the applicable PMMY guidelines and the decision of the
+        relevant lending institution.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- WHO CAN EXPLORE -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="mini">Business Profiles</span>
+
+        <h2>
+          Who Can Explore Mudra Loan Options?
+        </h2>
+
+        <p>
+          PMMY is intended for eligible micro business activities. The
+          relevant lender will assess the applicant and business according
+          to applicable requirements.
+        </p>
+      </div>
+
+      <div class="card-grid">
+
+        <article class="card">
+          <div class="icon">01</div>
+          <h3>Shop Owners</h3>
+          <p>
+            Retail stores, kirana shops and other eligible small trading
+            activities.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">02</div>
+          <h3>Service Businesses</h3>
+          <p>
+            Eligible service providers and micro service enterprises.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">03</div>
+          <h3>Manufacturing</h3>
+          <p>
+            Eligible small manufacturing and production activities.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">04</div>
+          <h3>Traders</h3>
+          <p>
+            Eligible trading, distribution and related business activities.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">05</div>
+          <h3>Self-Employed</h3>
+          <p>
+            Eligible self-employed individuals operating income-generating
+            micro business activities.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">06</div>
+          <h3>Entrepreneurs</h3>
+          <p>
+            Eligible individuals planning or operating a micro enterprise
+            can explore applicable options.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="section alt">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="mini">Why Consider PMMY?</span>
+
+        <h2>
+          Business Funding Support
+        </h2>
+
+        <p>
+          PMMY provides a formal credit route for eligible micro-enterprise
+          activities through participating lending institutions.
+        </p>
+      </div>
+
+      <div class="card-grid">
+
+        <article class="card">
+          <div class="icon">✓</div>
+          <h3>Institutional Credit</h3>
+          <p>
+            Access to credit through participating banks, NBFCs, MFIs and
+            other eligible lending institutions.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">✓</div>
+          <h3>Business Requirements</h3>
+          <p>
+            Eligible term-loan and working-capital requirements can be
+            considered under PMMY.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">✓</div>
+          <h3>Collateral-Free Framework</h3>
+          <p>
+            PMMY is officially described by the Department of Financial
+            Services as providing collateral-free credit.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">✓</div>
+          <h3>Multiple Categories</h3>
+          <p>
+            Funding categories range from Shishu through Tarun Plus,
+            subject to applicable conditions.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">✓</div>
+          <h3>Multiple Lenders</h3>
+          <p>
+            PMMY loans are available through participating member lending
+            institutions.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">✓</div>
+          <h3>Structured Guidance</h3>
+          <p>
+            Fundvexxa can help you understand the process and organize
+            your application information.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW WE HELP -->
+  <section class="section">
+    <div class="container split">
+
+      <div class="split-image">
+        <img
+          src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+          alt="Business team reviewing financial documents"
+          loading="lazy"
+        >
+      </div>
+
+      <div>
+
+        <div class="content-label">
+          Fundvexxa Assistance
+        </div>
+
+        <h2>
+          We Help You Understand The Process
+        </h2>
+
+        <p>
+          Fundvexxa ka role lender ke final decision ko replace karna nahi
+          hai. Hum aapko requirement samajhne, information organize karne
+          aur application process ko better understand karne mein
+          assistance provide karte hain.
+        </p>
+
+        <ul class="check-list">
+          <li>Business requirement understanding</li>
+          <li>Basic eligibility guidance</li>
+          <li>Document checklist assistance</li>
+          <li>Application information preparation</li>
+          <li>Process-related communication support</li>
+          <li>Relevant funding options explore karne mein guidance</li>
+        </ul>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DOCUMENTS -->
+  <section class="section alt">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="mini">Documentation</span>
+
+        <h2>
+          Documents Commonly Required
+        </h2>
+
+        <p>
+          Exact documentation applicant profile, business type and lender
+          requirements ke according vary kar sakti hai.
+        </p>
+      </div>
+
+      <div class="docs-grid">
+
+        <div class="doc">
+          <div class="icon">01</div>
+          <div>
+            <strong>Identity Proof</strong>
+            <span>Aadhaar, PAN or another acceptable identity document.</span>
+          </div>
+        </div>
+
+        <div class="doc">
+          <div class="icon">02</div>
+          <div>
+            <strong>Address Proof</strong>
+            <span>Applicable residential or business address proof.</span>
+          </div>
+        </div>
+
+        <div class="doc">
+          <div class="icon">03</div>
+          <div>
+            <strong>Business Proof</strong>
+            <span>Udyam, GST, licence or other applicable business records.</span>
+          </div>
+        </div>
+
+        <div class="doc">
+          <div class="icon">04</div>
+          <div>
+            <strong>Bank Statements</strong>
+            <span>Recent account statements as required by the lender.</span>
+          </div>
+        </div>
+
+        <div class="doc">
+          <div class="icon">05</div>
+          <div>
+            <strong>Photographs</strong>
+            <span>Recent photographs where applicable.</span>
+          </div>
+        </div>
+
+        <div class="doc">
+          <div class="icon">06</div>
+          <div>
+            <strong>Financial / Supporting Records</strong>
+            <span>Quotations, income records and other supporting documents if required.</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="mini">Our Process</span>
+
+        <h2>
+          Simple & Structured
+        </h2>
+
+        <p>
+          A clear process helps you prepare your requirement before
+          approaching the relevant lender.
+        </p>
+      </div>
+
+      <div class="process-grid">
+
+        <div class="process">
+          <div class="process-number">STEP 01</div>
+          <h3>Share Requirement</h3>
+          <p>
+            Tell us about your business, location and funding requirement.
+          </p>
+        </div>
+
+        <div class="process">
+          <div class="process-number">STEP 02</div>
+          <h3>Profile Review</h3>
+          <p>
+            We understand the basic business profile and requirement.
+          </p>
+        </div>
+
+        <div class="process">
+          <div class="process-number">STEP 03</div>
+          <h3>Documentation</h3>
+          <p>
+            Prepare and organize the applicable documents.
+          </p>
+        </div>
+
+        <div class="process">
+          <div class="process-number">STEP 04</div>
+          <h3>Application Support</h3>
+          <p>
+            Assist with the application process and relevant communication.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="section form-section" id="apply">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="mini">Start Here</span>
+
+        <h2>
+          Check Your Mudra Loan Requirement
+        </h2>
+
+        <p>
+          Basic details share karein. Our team will contact you to
+          understand your requirement and guide you on the next steps.
+        </p>
+      </div>
+
+      <div class="form-wrap">
+
+        <aside class="form-info">
+
+          <h2>
+            Need Help With Your Business Funding?
+          </h2>
+
+          <p>
+            Submit your basic requirement. Fundvexxa team will review the
+            information and contact you for further discussion.
+          </p>
+
+          <div class="contact-line">
+            Call:
+            <a href="tel:+917290977231">
+              +91 72909 77231
+            </a>
+          </div>
+
+          <div class="contact-line">
+            WhatsApp:
+            <a href="https://wa.me/917290977231" target="_blank" rel="noopener">
+              Chat with Fundvexxa
+            </a>
+          </div>
+
+          <div class="contact-line">
+            Email:
+            <a href="mailto:fundvexxasupport@gmail.com">
+              fundvexxasupport@gmail.com
+            </a>
+          </div>
+
+        </aside>
+
+        <form class="lead-form" id="mudraLeadForm">
+
+          <div class="form-grid">
+
+            <div class="field">
+              <label for="name">Full Name *</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Enter your name"
+                autocomplete="name"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="phone">Mobile Number *</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                inputmode="numeric"
+                maxlength="10"
+                placeholder="10-digit mobile number"
+                autocomplete="tel"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+              >
+            </div>
+
+            <div class="field">
+              <label for="businessName">Business Name</label>
+              <input
+                id="businessName"
+                name="businessName"
+                type="text"
+                placeholder="Your business name"
+              >
+            </div>
+
+            <div class="field">
+              <label for="city">City *</label>
+              <input
+                id="city"
+                name="city"
+                type="text"
+                placeholder="Delhi, Mumbai, etc."
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="businessStage">Business Stage</label>
+              <select id="businessStage" name="businessStage">
+                <option value="">Select</option>
+                <option value="New Business">New Business</option>
+                <option value="Existing Business">Existing Business</option>
+                <option value="Expansion">Business Expansion</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="amount">Approx. Funding Requirement</label>
+              <select id="amount" name="amount">
+                <option value="">Select Amount</option>
+                <option value="Up to ₹50,000">Up to ₹50,000</option>
+                <option value="₹50,000 - ₹5 Lakh">₹50,000 - ₹5 Lakh</option>
+                <option value="₹5 Lakh - ₹10 Lakh">₹5 Lakh - ₹10 Lakh</option>
+                <option value="₹10 Lakh - ₹20 Lakh">₹10 Lakh - ₹20 Lakh</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="scheme">Preferred Category</label>
+              <select id="scheme" name="scheme">
+                <option value="">Not Sure</option>
+                <option value="Shishu">Shishu</option>
+                <option value="Kishor">Kishor</option>
+                <option value="Tarun">Tarun</option>
+                <option value="Tarun Plus">Tarun Plus</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="message">Requirement Details</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us about your business and how you plan to use the funds..."
+              ></textarea>
+            </div>
+
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" id="consent" required>
+            <span>
+              I agree to be contacted by Fundvexxa regarding my enquiry.
+            </span>
+          </label>
+
+          <button
+            type="submit"
+            class="submit-btn"
+            id="submitBtn"
+          >
+            Submit Requirement
+          </button>
+
+          <div
+            class="form-message"
+            id="formMessage"
+            role="alert"
+            aria-live="polite"
+          ></div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+  <section class="section alt">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="mini">FAQ</span>
+
+        <h2>
+          Frequently Asked Questions
+        </h2>
+
+        <p>
+          Important questions before exploring PMMY.
+        </p>
+      </div>
+
+      <div class="faq-grid">
+
+        <details>
+          <summary>What is Mudra Loan?</summary>
+          <p>
+            Pradhan Mantri Mudra Yojana (PMMY) is a Government of India
+            initiative designed to improve institutional credit access for
+            eligible micro enterprises.
+          </p>
+        </details>
+
+        <details>
+          <summary>What are the current Mudra Loan categories?</summary>
+          <p>
+            Shishu is up to ₹50,000; Kishor is above ₹50,000 up to ₹5 lakh;
+            Tarun is above ₹5 lakh up to ₹10 lakh; and Tarun Plus is above
+            ₹10 lakh up to ₹20 lakh, subject to the applicable condition
+            for previous successful Tarun repayment.
+          </p>
+        </details>
+
+        <details>
+          <summary>Is collateral required?</summary>
+          <p>
+            The Department of Financial Services describes PMMY as providing
+            collateral-free credit. Individual lender requirements and
+            applicable scheme conditions should still be checked.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can a new business apply?</summary>
+          <p>
+            Eligible new entrepreneurs can explore applicable PMMY options.
+            Final eligibility and approval depend on the relevant lender's
+            assessment.
+          </p>
+        </details>
+
+        <details>
+          <summary>Does Fundvexxa guarantee approval?</summary>
+          <p>
+            No. Fundvexxa provides guidance and application assistance.
+            Final approval, amount, pricing, tenure and other terms are
+            decided by the relevant lending institution.
+          </p>
+        </details>
+
+        <details>
+          <summary>Where can I learn more about PMMY?</summary>
+          <p>
+            You can check the official Department of Financial Services
+            PMMY page and the official MUDRA website for the latest scheme
+            information.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OFFICIAL SOURCES -->
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="mini">
+          Official References
+        </span>
+
+        <h2>
+          Verify Current Scheme Information
+        </h2>
+
+        <p>
+          Government schemes can change. Always verify current eligibility,
+          terms and application requirements from official sources.
+        </p>
+
+      </div>
+
+      <div class="source-links">
+
+        <a
+          href="https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Department of Financial Services – PMMY
+        </a>
+
+        <a
+          href="https://www.mudra.org.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Official MUDRA Website
+        </a>
+
+        <a
+          href="https://www.startupindia.gov.in/content/sih/en/government-schemes.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Startup India – Government Schemes
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>
+        Ready To Explore Your Funding Requirement?
+      </h2>
+
+      <p>
+        Connect with Fundvexxa for Mudra Loan related eligibility,
+        documentation and application guidance. Approval remains subject
+        to the relevant lender's assessment.
+      </p>
+
+      <div class="hero-actions" style="justify-content:center;">
+
+        <a href="#apply" class="btn btn-primary">
+          Check Requirement
+        </a>
+
+        <a
+          href="https://wa.me/917290977231"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-outline"
+        >
+          WhatsApp Us
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container footer-grid">
+
+      <div>
+        <h3>
+          Fund<span style="color:var(--gold)">vexxa</span>
+        </h3>
+
+        <p>
+          Financial and business assistance for entrepreneurs, businesses
+          and individuals. We provide guidance for loan, government scheme
+          and business funding requirements.
+        </p>
+      </div>
+
+      <div>
+
+        <h3>Quick Links</h3>
+
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="business-loan.html">Business Loan</a>
+          <a href="government-schemes.html">Government Schemes</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+      </div>
+
+      <div>
+
+        <h3>Contact</h3>
+
+        <div class="footer-links">
+          <a href="tel:+917290977231">
+            +91 72909 77231
+          </a>
+
+          <a href="mailto:fundvexxasupport@gmail.com">
+            fundvexxasupport@gmail.com
+          </a>
+
+          <a
+            href="https://wa.me/917290977231"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+
+      © 2026 Fundvexxa. All Rights Reserved.
+      <br>
+
+      <span>
+        Fundvexxa is a financial assistance and consultancy service.
+        It does not guarantee loan approval, interest rate, loan amount
+        or disbursement. Final decisions are made by the relevant lender
+        or institution.
+      </span>
+
+    </div>
+
+  </footer>
+
+</div>
+
+<!-- WHATSAPP -->
 <a
-href="tel:+917290977231"
-style="
-display:inline-block;
-padding:16px 35px;
-background:white;
-color:#0d6efd;
-font-weight:700;
-text-decoration:none;
-border-radius:12px;
-">
-Call Now
+  class="whatsapp"
+  href="https://wa.me/917290977231"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chat with Fundvexxa on WhatsApp"
+>
+  WhatsApp Us
 </a>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer style="
-background:#111827;
-padding:60px 0 25px;
-color:white;
-">
-
-<div class="container">
-
-<div style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-">
-
-<div>
-
-<h3>Fundvexxa</h3>
-
-<p style="
-margin-top:15px;
-color:#cbd5e1;
-">
-Business Loan, Mudra Loan, MSME Support, Startup Assistance and Financial Consultancy Services.
-</p>
-
-</div>
-
-<div>
-
-<h3>Quick Links</h3>
-
-<p style="margin-top:12px;">Home</p>
-<p>About Us</p>
-<p>Services</p>
-<p>Contact</p>
-
-</div>
-
-<div>
-
-<h3>Contact</h3>
-
-<p style="margin-top:12px;">
-Phone: +91 7290977231
-</p>
-
-<p>
-Email: smilefinancialsolutions@gmail.com
-</p>
-
-</div>
-
-</div>
-
-<hr style="
-margin:30px 0;
-border:none;
-height:1px;
-background:#334155;
-">
-
-<p style="
-text-align:center;
-color:#94a3b8;
-">
-© 2026 Fundvexxa. All Rights Reserved.
-</p>
-
-</div>
-
-</footer>
 
 <!-- POPUP -->
+<div
+  class="popup"
+  id="mudraPopup"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="popupTitle"
+>
 
-<div id="mudraPopup"
-style="
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.6);
-z-index:9999;
-justify-content:center;
-align-items:center;
-padding:20px;
-">
+  <div class="popup-card">
 
-<div style="
-background:white;
-width:100%;
-max-width:450px;
-padding:30px;
-border-radius:20px;
-position:relative;
-">
+    <button
+      type="button"
+      class="popup-close"
+      id="popupClose"
+      aria-label="Close"
+    >
+      ×
+    </button>
 
-<span onclick="document.getElementById('mudraPopup').style.display='none'"
-style="
-position:absolute;
-right:15px;
-top:10px;
-font-size:28px;
-cursor:pointer;
-">
-×
-</span>
+    <h3 id="popupTitle">
+      Free Mudra Loan Consultation
+    </h3>
 
-<h3 style="margin-bottom:15px;">
-Free Mudra Loan Consultation
-</h3>
+    <p>
+      Share your basic details and our team will contact you regarding
+      your requirement.
+    </p>
 
-<p style="margin-bottom:20px;">
-Share your details and our team will contact you.
-</p>
+    <form class="popup-form" id="popupForm">
 
-<input type="text" placeholder="Name"
-style="width:100%;padding:14px;margin-bottom:10px;border:1px solid #ddd;border-radius:10px;">
+      <input
+        id="popupName"
+        type="text"
+        placeholder="Full Name"
+        required
+      >
 
-<input type="tel" placeholder="Mobile Number"
-style="width:100%;padding:14px;margin-bottom:10px;border:1px solid #ddd;border-radius:10px;">
+      <input
+        id="popupPhone"
+        type="tel"
+        inputmode="numeric"
+        maxlength="10"
+        placeholder="10-digit Mobile Number"
+        required
+      >
 
-<button
-style="
-width:100%;
-padding:14px;
-background:#0d6efd;
-color:white;
-border:none;
-border-radius:10px;
-font-weight:700;
-">
-Request Callback
-</button>
+      <button type="submit" id="popupSubmit">
+        Request Callback
+      </button>
 
-</div>
+      <div
+        class="popup-message"
+        id="popupMessage"
+        role="alert"
+      ></div>
+
+    </form>
+
+  </div>
 
 </div>
 
-<script>
+<!-- FIREBASE -->
+<script type="module">
 
-setTimeout(function(){
+  import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
-document.getElementById("mudraPopup").style.display="flex";
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp
+  } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-},10000);
+  const firebaseConfig = {
+    apiKey: "AIzaSyArcvyvNAOKipPZB0YEseSeN9_k-8JznQ",
+    authDomain: "smile-business-os.firebaseapp.com",
+    projectId: "smile-business-os",
+    storageBucket: "smile-business-os.firebasestorage.app",
+    messagingSenderId: "114356400630",
+    appId: "1:114356400630:web:96fc9d07baaf3a504c17d7",
+    measurementId: "G-73WD9V05ZZ"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  /* =========================
+     MAIN FORM
+  ========================= */
+
+  const form = document.getElementById("mudraLeadForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const formMessage = document.getElementById("formMessage");
+
+  form.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    formMessage.className = "form-message";
+    formMessage.textContent = "";
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const businessName = document.getElementById("businessName").value.trim();
+    const city = document.getElementById("city").value.trim();
+    const businessStage = document.getElementById("businessStage").value;
+    const amount = document.getElementById("amount").value;
+    const scheme = document.getElementById("scheme").value;
+    const message = document.getElementById("message").value.trim();
+    const consent = document.getElementById("consent").checked;
+
+    if(name.length < 2){
+      showFormError("Please enter your full name.");
+      return;
+    }
+
+    if(!/^[6-9]\d{9}$/.test(phone)){
+      showFormError("Please enter a valid 10-digit Indian mobile number.");
+      return;
+    }
+
+    if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+      showFormError("Please enter a valid email address.");
+      return;
+    }
+
+    if(city.length < 2){
+      showFormError("Please enter your city.");
+      return;
+    }
+
+    if(!consent){
+      showFormError("Please confirm that you agree to be contacted.");
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+
+    try{
+
+      const leadData = {
+
+        name: name,
+        fullName: name,
+
+        phone: phone,
+        mobile: phone,
+
+        email: email || "",
+
+        businessName: businessName || "",
+        city: city,
+
+        businessStage: businessStage || "",
+        amount: amount || "",
+        loanAmount: amount || "",
+
+        scheme: scheme || "",
+        schemeName: scheme || "",
+
+        message: message || "",
+
+        requirement: "Mudra Loan",
+        loanType: "Mudra Loan",
+
+        source: "mudra-loan-page",
+        page: "mudra-loan.html",
+
+        status: "new",
+
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp()
+      };
+
+      await addDoc(
+        collection(db, "leads"),
+        leadData
+      );
+
+      formMessage.className =
+        "form-message success";
+
+      formMessage.textContent =
+        "Thank you. Your requirement has been submitted successfully. Our team will contact you.";
+
+      form.reset();
+
+    }catch(error){
+
+      console.error("Mudra lead error:", error);
+
+      formMessage.className =
+        "form-message error";
+
+      formMessage.textContent =
+        "We could not submit your request right now. Please call or WhatsApp us directly.";
+
+    }finally{
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit Requirement";
+
+    }
+
+  });
+
+  function showFormError(message){
+
+    formMessage.className =
+      "form-message error";
+
+    formMessage.textContent =
+      message;
+
+  }
+
+
+  /* =========================
+     POPUP
+  ========================= */
+
+  const popup = document.getElementById("mudraPopup");
+  const popupClose = document.getElementById("popupClose");
+  const popupForm = document.getElementById("popupForm");
+  const popupSubmit = document.getElementById("popupSubmit");
+  const popupMessage = document.getElementById("popupMessage");
+
+  function closePopup(){
+
+    popup.classList.remove("show");
+
+  }
+
+  popupClose.addEventListener(
+    "click",
+    closePopup
+  );
+
+  popup.addEventListener("click", function(e){
+
+    if(e.target === popup){
+      closePopup();
+    }
+
+  });
+
+
+  /*
+    Show popup only once per browser session
+    after 12 seconds.
+  */
+
+  setTimeout(function(){
+
+    if(
+      !sessionStorage.getItem("mudraPopupShown")
+    ){
+
+      popup.classList.add("show");
+
+      sessionStorage.setItem(
+        "mudraPopupShown",
+        "1"
+      );
+
+    }
+
+  },12000);
+
+
+  popupForm.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    popupMessage.style.display = "none";
+
+    const name =
+      document.getElementById("popupName").value.trim();
+
+    const phone =
+      document.getElementById("popupPhone").value.trim();
+
+    if(name.length < 2){
+
+      popupMessage.style.display = "block";
+      popupMessage.style.background = "#fff0ee";
+      popupMessage.style.color = "#9b241a";
+      popupMessage.textContent =
+        "Please enter your name.";
+
+      return;
+    }
+
+    if(!/^[6-9]\d{9}$/.test(phone)){
+
+      popupMessage.style.display = "block";
+      popupMessage.style.background = "#fff0ee";
+      popupMessage.style.color = "#9b241a";
+      popupMessage.textContent =
+        "Please enter a valid 10-digit mobile number.";
+
+      return;
+    }
+
+    popupSubmit.disabled = true;
+    popupSubmit.textContent = "Submitting...";
+
+    try{
+
+      await addDoc(
+        collection(db, "leads"),
+        {
+
+          name: name,
+          fullName: name,
+
+          phone: phone,
+          mobile: phone,
+
+          email: "",
+
+          businessName: "",
+          city: "",
+
+          businessStage: "",
+          amount: "",
+          loanAmount: "",
+
+          scheme: "",
+          schemeName: "",
+
+          message: "Popup callback request",
+
+          requirement: "Mudra Loan",
+          loanType: "Mudra Loan",
+
+          source: "mudra-popup",
+          page: "mudra-loan.html",
+
+          status: "new",
+
+          createdAt: serverTimestamp(),
+          updatedAt: serverTimestamp()
+
+        }
+      );
+
+      popupMessage.style.display = "block";
+      popupMessage.style.background = "#eaf7ee";
+      popupMessage.style.color = "#126b32";
+      popupMessage.textContent =
+        "Request submitted successfully. We will contact you.";
+
+      popupForm.reset();
+
+      setTimeout(
+        closePopup,
+        1800
+      );
+
+    }catch(error){
+
+      console.error(
+        "Popup lead error:",
+        error
+      );
+
+      popupMessage.style.display = "block";
+      popupMessage.style.background = "#fff0ee";
+      popupMessage.style.color = "#9b241a";
+      popupMessage.textContent =
+        "Unable to submit right now. Please call or WhatsApp us.";
+
+    }finally{
+
+      popupSubmit.disabled = false;
+      popupSubmit.textContent =
+        "Request Callback";
+
+    }
+
+  });
 
 </script>
 
 </body>
 </html>
+```
