@@ -1,699 +1,3588 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Service Details | Fundvexxa</title>
 
+<meta name="description" content="Explore Fundvexxa loan, insurance, MSME, GST, government scheme and business support services. Check your requirement and submit an enquiry.">
+<meta name="robots" content="index,follow">
+
 <style>
+/* =========================================================
+   FUNDEVXXA SERVICE DETAILS
+   Scoped CSS - avoids conflict with other website pages
+========================================================= */
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+.service-page{
+  --primary:#0d6efd;
+  --primary-dark:#084db5;
+  --navy:#0b1f3a;
+  --gold:#d6a84f;
+  --text:#172033;
+  --muted:#667085;
+  --light:#f5f9ff;
+  --white:#ffffff;
+  --border:#e5eaf2;
+  --success:#138a4b;
+  --danger:#c62828;
+
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  color:var(--text);
+  background:#fff;
+  line-height:1.7;
+  overflow-x:hidden;
 }
 
-body{
-background:#f5f9ff;
+.service-page *,
+.service-page *::before,
+.service-page *::after{
+  box-sizing:border-box;
 }
 
-header{
-background:white;
-padding:15px 5%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 2px 15px rgba(0,0,0,.08);
+.service-page img{
+  max-width:100%;
+  display:block;
 }
 
-.logo{
-font-size:24px;
-font-weight:bold;
-color:#0d6efd;
+.service-page a{
+  text-decoration:none;
 }
 
-.hero{
-padding:80px 5%;
-background:linear-gradient(135deg,#0d6efd,#5fa8ff);
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:40px;
-flex-wrap:wrap;
-color:white;
+.service-page button,
+.service-page input,
+.service-page select,
+.service-page textarea{
+  font:inherit;
 }
 
-.hero-content{
-flex:1;
-min-width:300px;
+.service-container{
+  width:min(1180px,92%);
+  margin:auto;
 }
 
-.hero-content h1{
-font-size:48px;
-margin-bottom:20px;
+/* =========================================================
+   HEADER
+========================================================= */
+
+.service-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,.06);
 }
 
-.hero-content p{
-line-height:1.8;
-font-size:18px;
+.service-header-inner{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
 }
 
-.hero-image{
-flex:1;
-text-align:center;
+.service-logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--navy);
+  font-size:25px;
+  font-weight:800;
+  letter-spacing:-.5px;
 }
 
-.hero-image img{
-width:100%;
-max-width:550px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.3);
+.service-logo-mark{
+  width:38px;
+  height:38px;
+  border-radius:11px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,var(--primary),var(--navy));
+  color:#fff;
+  font-size:17px;
+  font-weight:800;
 }
 
-.section{
-padding:60px 5%;
+.service-nav{
+  display:flex;
+  align-items:center;
+  gap:25px;
 }
 
-.card{
-background:white;
-padding:25px;
-border-radius:15px;
-margin-bottom:25px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
+.service-nav a{
+  color:#344054;
+  font-size:14px;
+  font-weight:600;
 }
 
-.card img{
-width:100%;
-max-width:700px;
-border-radius:15px;
-margin-bottom:20px;
+.service-nav a:hover{
+  color:var(--primary);
 }
 
-.card h2{
-color:#0d6efd;
-margin-bottom:15px;
+.service-header-cta{
+  background:var(--primary);
+  color:#fff !important;
+  padding:10px 17px;
+  border-radius:9px;
 }
 
-ul{
-padding-left:20px;
-line-height:1.9;
+.service-menu-btn{
+  display:none;
+  border:0;
+  background:none;
+  font-size:27px;
+  cursor:pointer;
+  color:var(--navy);
 }
 
+/* =========================================================
+   HERO
+========================================================= */
+
+.service-hero{
+  background:
+    radial-gradient(circle at 85% 15%,rgba(13,110,253,.15),transparent 28%),
+    linear-gradient(135deg,#edf5ff,#fff);
+  padding:75px 0;
+}
+
+.service-hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:55px;
+  align-items:center;
+}
+
+.service-breadcrumb{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:20px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.service-breadcrumb a{
+  color:var(--primary);
+  font-weight:600;
+}
+
+.service-badge{
+  display:inline-flex;
+  padding:8px 14px;
+  border-radius:30px;
+  background:#dbeafe;
+  color:#0757c7;
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:18px;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+}
+
+.service-hero h1{
+  font-size:clamp(36px,5vw,60px);
+  line-height:1.1;
+  letter-spacing:-1.8px;
+  margin:0 0 20px;
+  color:var(--navy);
+}
+
+.service-hero h1 span{
+  color:var(--primary);
+}
+
+.service-hero-text{
+  color:#596579;
+  font-size:18px;
+  max-width:680px;
+  margin-bottom:28px;
+}
+
+.service-hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
+}
+
+.service-btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  min-height:48px;
+  padding:0 21px;
+  border-radius:10px;
+  font-weight:750;
+  transition:.2s ease;
+}
+
+.service-btn-primary{
+  color:#fff;
+  background:var(--primary);
+  box-shadow:0 10px 25px rgba(13,110,253,.22);
+}
+
+.service-btn-primary:hover{
+  background:var(--primary-dark);
+  transform:translateY(-1px);
+}
+
+.service-btn-dark{
+  color:#fff;
+  background:var(--navy);
+}
+
+.service-btn-outline{
+  color:var(--primary);
+  border:1px solid #b9d3fa;
+  background:#fff;
+}
+
+.service-hero-image{
+  position:relative;
+}
+
+.service-hero-image img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  border-radius:25px;
+  box-shadow:0 25px 60px rgba(11,31,58,.18);
+}
+
+.service-image-card{
+  position:absolute;
+  left:-20px;
+  bottom:22px;
+  background:#fff;
+  padding:16px 18px;
+  border-radius:15px;
+  box-shadow:0 15px 35px rgba(0,0,0,.12);
+  max-width:240px;
+}
+
+.service-image-card strong{
+  display:block;
+  color:var(--navy);
+  font-size:15px;
+}
+
+.service-image-card span{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* =========================================================
+   TRUST STRIP
+========================================================= */
+
+.service-trust{
+  padding:18px 0;
+  border-bottom:1px solid var(--border);
+  background:#fff;
+}
+
+.service-trust-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.service-trust-item{
+  text-align:center;
+  padding:10px;
+}
+
+.service-trust-item strong{
+  display:block;
+  color:var(--navy);
+  font-size:15px;
+}
+
+.service-trust-item span{
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.service-section{
+  padding:75px 0;
+}
+
+.service-section-soft{
+  background:var(--light);
+}
+
+.service-section-heading{
+  text-align:center;
+  max-width:850px;
+  margin:0 auto 45px;
+}
+
+.service-eyebrow{
+  color:var(--primary);
+  font-size:13px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:9px;
+}
+
+.service-section-heading h2{
+  color:var(--navy);
+  font-size:clamp(30px,4vw,43px);
+  line-height:1.2;
+  letter-spacing:-1px;
+  margin:0 0 14px;
+}
+
+.service-section-heading p{
+  color:var(--muted);
+  font-size:16px;
+}
+
+/* =========================================================
+   OVERVIEW
+========================================================= */
+
+.service-overview-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:stretch;
+}
+
+.service-overview-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 10px 30px rgba(15,23,42,.05);
+}
+
+.service-overview-card h3{
+  margin:0 0 13px;
+  color:var(--navy);
+  font-size:23px;
+}
+
+.service-overview-card p{
+  color:var(--muted);
+  margin:0;
+}
+
+.service-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.service-list li{
+  position:relative;
+  padding:9px 0 9px 28px;
+  color:#475467;
+}
+
+.service-list li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  top:9px;
+  width:20px;
+  height:20px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#e8f2ff;
+  color:var(--primary);
+  font-size:12px;
+  font-weight:800;
+}
+
+/* =========================================================
+   FEATURE CARDS
+========================================================= */
+
+.service-card-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.service-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:27px;
+  transition:.2s ease;
+}
+
+.service-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 35px rgba(15,23,42,.08);
+}
+
+.service-card-icon{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border-radius:13px;
+  background:#eaf3ff;
+  color:var(--primary);
+  font-size:22px;
+  margin-bottom:18px;
+}
+
+.service-card h3{
+  color:var(--navy);
+  font-size:20px;
+  margin:0 0 9px;
+}
+
+.service-card p{
+  color:var(--muted);
+  font-size:14px;
+  margin:0;
+}
+
+/* =========================================================
+   SERVICE SPECIFIC
+========================================================= */
+
+.service-specific{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+
+.service-specific-card{
+  background:#fff;
+  border-radius:18px;
+  padding:25px;
+  border:1px solid var(--border);
+}
+
+.service-specific-card h3{
+  margin:0 0 12px;
+  color:var(--navy);
+}
+
+.service-specific-card p{
+  color:var(--muted);
+  margin:0;
+}
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.service-process{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.service-step{
+  position:relative;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:25px;
+}
+
+.service-step-number{
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  background:var(--primary);
+  color:#fff;
+  font-weight:800;
+  margin-bottom:17px;
+}
+
+.service-step h3{
+  color:var(--navy);
+  font-size:17px;
+  margin:0 0 8px;
+}
+
+.service-step p{
+  color:var(--muted);
+  font-size:14px;
+  margin:0;
+}
+
+/* =========================================================
+   CALCULATOR
+========================================================= */
+
+.service-calculator{
+  max-width:820px;
+  margin:auto;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:30px;
+  box-shadow:0 15px 40px rgba(15,23,42,.07);
+}
+
+.service-form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.service-field{
+  margin-bottom:14px;
+}
+
+.service-field.full{
+  grid-column:1/-1;
+}
+
+.service-field label{
+  display:block;
+  color:#344054;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:6px;
+}
+
+.service-field input,
+.service-field select,
+.service-field textarea{
+  width:100%;
+  border:1px solid #d7deea;
+  background:#fff;
+  border-radius:10px;
+  padding:13px 14px;
+  color:#172033;
+  outline:none;
+}
+
+.service-field input:focus,
+.service-field select:focus,
+.service-field textarea:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 3px rgba(13,110,253,.09);
+}
+
+.service-calculator-result{
+  margin-top:18px;
+  padding:18px;
+  border-radius:13px;
+  background:#eef6ff;
+  color:var(--navy);
+  display:none;
+}
+
+.service-calculator-result strong{
+  color:var(--primary);
+}
+
+/* =========================================================
+   LEAD FORM
+========================================================= */
+
+.service-apply-grid{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:35px;
+  align-items:start;
+}
+
+.service-apply-info{
+  padding-top:10px;
+}
+
+.service-apply-info h2{
+  color:var(--navy);
+  font-size:38px;
+  line-height:1.2;
+  margin:0 0 16px;
+}
+
+.service-apply-info p{
+  color:var(--muted);
+}
+
+.service-contact-box{
+  margin-top:25px;
+  display:grid;
+  gap:12px;
+}
+
+.service-contact-box a{
+  display:block;
+  background:#f4f8fd;
+  padding:13px 15px;
+  border-radius:10px;
+  color:var(--navy);
+  font-weight:650;
+}
+
+.service-lead-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:30px;
+  box-shadow:0 15px 40px rgba(15,23,42,.07);
+}
+
+.service-lead-card h3{
+  color:var(--navy);
+  font-size:24px;
+  margin:0 0 6px;
+}
+
+.service-lead-subtitle{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.service-submit{
+  width:100%;
+  border:0;
+  background:var(--primary);
+  color:#fff;
+  border-radius:11px;
+  padding:15px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.service-submit:disabled{
+  opacity:.65;
+  cursor:not-allowed;
+}
+
+.service-message{
+  display:none;
+  margin-top:15px;
+  padding:12px 14px;
+  border-radius:10px;
+  font-size:14px;
+}
+
+.service-message.success{
+  display:block;
+  background:#eaf8f0;
+  color:var(--success);
+}
+
+.service-message.error{
+  display:block;
+  background:#fff0f0;
+  color:var(--danger);
+}
+
+.service-disclaimer{
+  margin-top:15px;
+  color:#7a8494;
+  font-size:11px;
+  line-height:1.6;
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.service-faq{
+  max-width:850px;
+  margin:auto;
+}
+
+.service-faq-item{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:13px;
+  margin-bottom:12px;
+  overflow:hidden;
+}
+
+.service-faq-question{
+  width:100%;
+  border:0;
+  background:#fff;
+  padding:18px 20px;
+  text-align:left;
+  color:var(--navy);
+  font-weight:750;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.service-faq-answer{
+  display:none;
+  padding:0 20px 18px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.service-faq-item.active .service-faq-answer{
+  display:block;
+}
+
+/* =========================================================
+   RELATED SERVICES
+========================================================= */
+
+.service-related-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:17px;
+}
+
+.service-related-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+}
+
+.service-related-card h3{
+  color:var(--navy);
+  font-size:17px;
+  margin:0 0 8px;
+}
+
+.service-related-card p{
+  color:var(--muted);
+  font-size:13px;
+  margin:0 0 13px;
+}
+
+.service-related-card a{
+  color:var(--primary);
+  font-weight:750;
+  font-size:13px;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.service-cta{
+  padding:75px 0;
+  background:linear-gradient(135deg,var(--navy),#123e73);
+  color:#fff;
+}
+
+.service-cta-box{
+  text-align:center;
+  max-width:850px;
+  margin:auto;
+}
+
+.service-cta h2{
+  font-size:clamp(30px,4vw,45px);
+  line-height:1.2;
+  margin:0 0 15px;
+}
+
+.service-cta p{
+  color:#d8e4f3;
+  margin:0 auto 25px;
+}
+
+.service-cta-actions{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.service-cta .service-btn-primary{
+  background:#fff;
+  color:var(--navy);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.service-footer{
+  background:#071525;
+  color:#fff;
+  padding:55px 0 25px;
+}
+
+.service-footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:30px;
+}
+
+.service-footer h3{
+  margin:0 0 15px;
+  font-size:17px;
+}
+
+.service-footer p,
+.service-footer a{
+  color:#aebdce;
+  font-size:13px;
+}
+
+.service-footer a{
+  display:block;
+  margin:7px 0;
+}
+
+.service-footer a:hover{
+  color:#fff;
+}
+
+.service-footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);
+  margin-top:30px;
+  padding-top:20px;
+  text-align:center;
+  color:#8091a5;
+  font-size:12px;
+}
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.service-whatsapp{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:2000;
+  background:#25d366;
+  color:#fff;
+  padding:13px 18px;
+  border-radius:50px;
+  box-shadow:0 12px 30px rgba(0,0,0,.2);
+  font-weight:800;
+  font-size:14px;
+}
+
+/* =========================================================
+   MOBILE BAR
+========================================================= */
+
+.service-mobile-bar{
+  display:none;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:950px){
+
+  .service-nav{
+    display:none;
+    position:absolute;
+    left:0;
+    right:0;
+    top:72px;
+    background:#fff;
+    border-bottom:1px solid var(--border);
+    padding:18px 5%;
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .service-nav.open{
+    display:flex;
+  }
+
+  .service-menu-btn{
+    display:block;
+  }
+
+  .service-hero-grid,
+  .service-overview-grid,
+  .service-apply-grid{
+    grid-template-columns:1fr;
+  }
+
+  .service-hero-image{
+    order:-1;
+  }
+
+  .service-hero-image img{
+    height:330px;
+  }
+
+  .service-card-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .service-process{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .service-related-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .service-footer-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:650px){
+
+  .service-hero{
+    padding:48px 0;
+  }
+
+  .service-section{
+    padding:55px 0;
+  }
+
+  .service-hero h1{
+    font-size:38px;
+  }
+
+  .service-hero-text{
+    font-size:16px;
+  }
+
+  .service-hero-image img{
+    height:270px;
+    border-radius:18px;
+  }
+
+  .service-image-card{
+    left:12px;
+    bottom:12px;
+  }
+
+  .service-trust-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .service-card-grid,
+  .service-specific,
+  .service-process,
+  .service-related-grid,
+  .service-form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .service-field.full{
+    grid-column:auto;
+  }
+
+  .service-lead-card,
+  .service-calculator{
+    padding:22px;
+  }
+
+  .service-footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .service-whatsapp{
+    display:none;
+  }
+
+  .service-mobile-bar{
+    position:fixed;
+    display:grid;
+    grid-template-columns:1fr 1fr 1.25fr;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:1900;
+    background:#fff;
+    border-top:1px solid var(--border);
+    box-shadow:0 -8px 25px rgba(0,0,0,.08);
+  }
+
+  .service-mobile-bar a{
+    padding:12px 5px;
+    text-align:center;
+    font-size:12px;
+    font-weight:800;
+    color:var(--navy);
+    border-right:1px solid var(--border);
+  }
+
+  .service-mobile-bar a:last-child{
+    background:var(--primary);
+    color:#fff;
+  }
+
+  .service-page{
+    padding-bottom:58px;
+  }
+}
 </style>
-
 </head>
 
 <body>
 
-<header>
+<div class="service-page">
 
-<div class="logo">
-Fundvexxa
-</div>
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-<a href="services.html"
-style="
-background:#0d6efd;
-color:white;
-padding:10px 18px;
-border-radius:8px;
-text-decoration:none;">
-Back
-</a>
+<header class="service-header">
+
+  <div class="service-container service-header-inner">
+
+    <a href="index.html" class="service-logo">
+      <span class="service-logo-mark">F</span>
+      Fundvexxa
+    </a>
+
+    <button
+      class="service-menu-btn"
+      id="serviceMenuBtn"
+      aria-label="Open navigation"
+      aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="service-nav" id="serviceNav">
+
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="government-schemes.html">Government Schemes</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+
+      <a href="#apply" class="service-header-cta">
+        Check Eligibility
+      </a>
+
+    </nav>
+
+  </div>
 
 </header>
 
-<!-- HERO -->
 
-<section class="hero">
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-<div class="hero-content">
+<section class="service-hero">
 
-<h1 id="serviceTitle">
-Business Loan
-</h1>
+  <div class="service-container service-hero-grid">
 
-<p id="serviceDesc">
-Funding solutions for business growth and expansion.
-</p>
+    <div>
 
-</div>
+      <div class="service-breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <a href="services.html">Services</a>
+        <span>›</span>
+        <span id="breadcrumbService">Business Loan</span>
+      </div>
 
-<div class="hero-image">
+      <span class="service-badge" id="serviceBadge">
+        Financial Service
+      </span>
 
-<img
-src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
-alt="Finance">
+      <h1 id="serviceTitle">
+        Business Loan <span>Assistance</span>
+      </h1>
 
-</div>
+      <p class="service-hero-text" id="serviceDesc">
+        Explore suitable business finance options for working capital,
+        expansion, equipment and other eligible business requirements.
+      </p>
 
-</section>
+      <div class="service-hero-actions">
 
-<!-- OVERVIEW -->
+        <a href="#apply" class="service-btn service-btn-primary">
+          Check Your Requirement
+        </a>
 
-<section class="section">
+        <a
+          href="tel:+917290977231"
+          class="service-btn service-btn-dark">
+          Talk to Expert
+        </a>
 
-<div class="card">
+        <a
+          href="https://wa.me/917290977231"
+          target="_blank"
+          rel="noopener"
+          class="service-btn service-btn-outline">
+          WhatsApp
+        </a>
 
-<img
-src="https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg">
+      </div>
 
-<h2>
-Product Overview
-</h2>
+    </div>
 
-<p id="overviewText">
+    <div class="service-hero-image">
 
-Business loans help companies manage working capital,
-purchase inventory and expand operations.
+      <img
+        id="heroImage"
+        src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+        alt="Fundvexxa financial service assistance">
 
-</p>
+      <div class="service-image-card">
+        <strong id="imageCardTitle">
+          Profile-Based Guidance
+        </strong>
+        <span>
+          Final terms are decided by the relevant lender/provider.
+        </span>
+      </div>
 
-</div>
+    </div>
 
-<!-- ELIGIBILITY -->
-
-<div class="card">
-
-<img
-src="https://images.pexels.com/photos/4386367/pexels-photo-4386367.jpeg">
-
-<h2>
-Eligibility
-</h2>
-
-<ul id="eligibilityList">
-
-<li>Age 21+ Years</li>
-<li>Valid PAN Card</li>
-<li>Business Proof</li>
-<li>Bank Statements</li>
-
-</ul>
-
-</div>
-
-<!-- DOCUMENTS -->
-
-<div class="card">
-
-<img
-src="https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg">
-
-<h2>
-Required Documents
-</h2>
-
-<ul>
-
-<li>PAN Card</li>
-<li>Aadhaar Card</li>
-<li>Bank Statements</li>
-<li>Income Proof</li>
-<li>Business Proof</li>
-
-</ul>
-
-</div>
-<!-- SALES PITCH -->
-
-<div class="card">
-
-<img
-src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
-alt="Sales Pitch">
-
-<h2>
-🎯 Sales Pitch
-</h2>
-
-<p id="salesPitch">
-
-Sir/Madam, aapki requirement ke hisab se suitable financial solution check kiya ja sakta hai.
-Main aapki basic eligibility verify karne me madad kar sakta hoon.
-
-</p>
-
-</div>
-
-<!-- OBJECTION HANDLING -->
-
-<div class="card">
-
-<img
-src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg"
-alt="Objection Handling">
-
-<h2>
-💬 Objection Handling
-</h2>
-
-<ul id="objectionList">
-
-<li>Interest rate final eligibility ke baad confirm hoti hai.</li>
-<li>Documents verification ke baad process aage badhta hai.</li>
-<li>Approval lender ke internal assessment par depend karta hai.</li>
-<li>Processing timeline case-to-case vary kar sakti hai.</li>
-
-</ul>
-
-</div>
-
-<!-- FAQ -->
-
-<div class="card">
-
-<img
-src="https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg"
-alt="FAQ">
-
-<h2>
-❓ Frequently Asked Questions
-</h2>
-
-<ul id="faqList">
-
-<li>Minimum age requirement kya hai?</li>
-<li>Income proof mandatory hai?</li>
-<li>PAN aur Aadhaar required hain?</li>
-<li>Processing kitne din me hoti hai?</li>
-
-</ul>
-
-</div>
+  </div>
 
 </section>
 
-<!-- DYNAMIC SERVICE DATA -->
 
-<script>
+<!-- =====================================================
+     TRUST / SERVICE POSITIONING
+===================================================== -->
 
-const params =
-new URLSearchParams(window.location.search);
+<section class="service-trust">
 
-const service =
-params.get("service");
+  <div class="service-container service-trust-grid">
 
-const serviceData = {
+    <div class="service-trust-item">
+      <strong>Requirement Based</strong>
+      <span>Guidance around your profile</span>
+    </div>
 
-"business-loan":{
+    <div class="service-trust-item">
+      <strong>Documentation Support</strong>
+      <span>Understand common requirements</span>
+    </div>
 
-title:"Business Loan",
+    <div class="service-trust-item">
+      <strong>Transparent Process</strong>
+      <span>No guaranteed approval claims</span>
+    </div>
 
-desc:"Funding solutions for business growth and expansion.",
+    <div class="service-trust-item">
+      <strong>Human Assistance</strong>
+      <span>Call or WhatsApp our team</span>
+    </div>
 
-overview:
-"Business loans can help manage working capital, inventory and expansion requirements."
-
-},
-
-"personal-loan":{
-
-title:"Personal Loan",
-
-desc:"Personal financial assistance for various needs.",
-
-overview:
-"Personal loans can be used for planned expenses and emergency requirements."
-
-},
-
-"home-loan":{
-
-title:"Home Loan",
-
-desc:"Finance options for home purchase and ownership.",
-
-overview:
-"Home loans support purchase, construction and related housing requirements."
-
-},
-
-"credit-card":{
-
-title:"Credit Card",
-
-desc:"Convenient card-based spending solutions.",
-
-overview:
-"Credit cards provide flexibility, rewards and digital payment convenience."
-
-},
-
-"health-insurance":{
-
-title:"Health Insurance",
-
-desc:"Coverage for medical and hospitalization expenses.",
-
-overview:
-"Health insurance helps manage healthcare related financial risks."
-
-},
-
-"life-insurance":{
-
-title:"Life Insurance",
-
-desc:"Long-term financial protection planning.",
-
-overview:
-"Life insurance can provide financial support to dependents based on policy terms."
-
-},
-
-"motor-insurance":{
-
-title:"Motor Insurance",
-
-desc:"Protection for vehicles.",
-
-overview:
-"Motor insurance provides coverage options for vehicles."
-
-},
-
-"gst-registration":{
-
-title:"GST Registration",
-
-desc:"GST compliance and registration support.",
-
-overview:
-"GST registration helps businesses comply with applicable tax requirements."
-
-},
-
-"msme-registration":{
-
-title:"MSME Registration",
-
-desc:"MSME recognition and benefits.",
-
-overview:
-"MSME registration can help eligible businesses access government benefits."
-
-},
-
-"scheme-funding":{
-
-title:"Scheme Funding",
-
-desc:"Funding and business assistance information.",
-
-overview:
-"Explore suitable funding programs and financial assistance opportunities."
-
-}
-
-};
-
-if(serviceData[service]){
-
-document.getElementById("serviceTitle").innerHTML =
-serviceData[service].title;
-
-document.getElementById("serviceDesc").innerHTML =
-serviceData[service].desc;
-
-document.getElementById("overviewText").innerHTML =
-serviceData[service].overview;
-
-}
-
-</script>
-<!-- EMI CALCULATOR -->
-
-<section class="section">
-
-<div class="card">
-
-<img
-src="https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg"
-alt="EMI Calculator">
-
-<h2>📊 EMI Calculator</h2>
-
-<input
-type="number"
-id="loanAmount"
-placeholder="Loan Amount"
-style="width:100%;padding:12px;margin:10px 0;">
-
-<input
-type="number"
-id="loanTenure"
-placeholder="Tenure (Months)"
-style="width:100%;padding:12px;margin:10px 0;">
-
-<button
-onclick="calculateEMI()"
-style="
-background:#0d6efd;
-color:white;
-padding:12px 20px;
-border:none;
-border-radius:8px;
-cursor:pointer;">
-Calculate EMI
-</button>
-
-<h3
-id="emiResult"
-style="margin-top:15px;color:#0d6efd;">
-</h3>
-
-</div>
-
-<!-- APPLY FORM -->
-
-<div class="card">
-
-<img
-src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg"
-alt="Apply Now">
-
-<h2>📝 Apply Now</h2>
-
-<form id="leadForm">
-
-<input
-type="text"
-id="customerName"
-placeholder="Customer Name"
-required
-style="width:100%;padding:12px;margin:10px 0;">
-
-<input
-type="tel"
-id="mobile"
-placeholder="Mobile Number"
-required
-style="width:100%;padding:12px;margin:10px 0;">
-
-<input
-type="text"
-id="city"
-placeholder="City"
-required
-style="width:100%;padding:12px;margin:10px 0;">
-
-<input
-type="text"
-id="pan"
-placeholder="PAN Number"
-style="width:100%;padding:12px;margin:10px 0;">
-
-<input
-type="number"
-id="cibil"
-placeholder="CIBIL Score"
-style="width:100%;padding:12px;margin:10px 0;">
-
-<input
-type="number"
-id="income"
-placeholder="Monthly Income"
-style="width:100%;padding:12px;margin:10px 0;">
-
-<input
-type="file"
-id="documents"
-style="width:100%;padding:12px;margin:10px 0;">
-
-<button
-type="submit"
-style="
-background:#0d6efd;
-color:white;
-padding:14px;
-width:100%;
-border:none;
-border-radius:8px;
-font-size:16px;">
-Submit Lead
-</button>
-
-</form>
-
-<p
-id="leadMessage"
-style="
-margin-top:15px;
-font-weight:bold;
-color:green;">
-</p>
-
-</div>
+  </div>
 
 </section>
 
-<script type="module">
 
-import { db } from "./firebase/config.js";
+<!-- =====================================================
+     OVERVIEW
+===================================================== -->
 
-import {
-collection,
-addDoc,
-serverTimestamp
-}
-from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+<section class="service-section">
 
-window.calculateEMI = function(){
+  <div class="service-container">
 
-let amount =
-Number(document.getElementById("loanAmount").value);
+    <div class="service-section-heading">
 
-let tenure =
-Number(document.getElementById("loanTenure").value);
+      <div class="service-eyebrow">
+        Service Overview
+      </div>
 
-if(!amount || !tenure) return;
+      <h2 id="overviewHeading">
+        Understand the service before applying
+      </h2>
 
-let emi =
-(amount / tenure).toFixed(0);
+      <p id="overviewText">
+        We help you understand the broad requirements, documentation
+        and process related to the selected financial or business service.
+      </p>
 
-document.getElementById("emiResult").innerHTML =
-"Estimated EMI: ₹" + emi + " / Month";
-};
+    </div>
 
-const form =
-document.getElementById("leadForm");
+    <div class="service-overview-grid">
 
-form.addEventListener("submit", async(e)=>{
+      <div class="service-overview-card">
 
-e.preventDefault();
+        <h3 id="overviewCardTitle">
+          What this service can help with
+        </h3>
 
-try{
+        <p id="overviewCardText">
+          The exact use, eligibility, pricing and terms depend on the
+          selected product and the relevant lender or service provider.
+        </p>
 
-await addDoc(
-collection(db,"leads"),
-{
+      </div>
 
-service:
-document.getElementById("serviceTitle").innerText,
+      <div class="service-overview-card">
 
-customerName:
-document.getElementById("customerName").value,
+        <h3>
+          Before you proceed
+        </h3>
 
-mobile:
-document.getElementById("mobile").value,
+        <ul class="service-list">
 
-city:
-document.getElementById("city").value,
+          <li>Check whether the service fits your actual requirement.</li>
+          <li>Keep commonly requested documents ready.</li>
+          <li>Compare applicable rates, fees and terms.</li>
+          <li>Do not assume approval before lender/provider assessment.</li>
+          <li>Read the final offer and applicable terms carefully.</li>
 
-pan:
-document.getElementById("pan").value,
+        </ul>
 
-cibil:
-document.getElementById("cibil").value,
+      </div>
 
-income:
-document.getElementById("income").value,
+    </div>
 
-status:"Pending",
+  </div>
 
-createdAt:
-serverTimestamp()
+</section>
 
-}
-);
 
-document.getElementById("leadMessage").innerHTML =
-"✅ Lead Submitted Successfully";
+<!-- =====================================================
+     SERVICE FEATURES
+===================================================== -->
 
-form.reset();
+<section class="service-section service-section-soft">
 
-}
-catch(error){
+  <div class="service-container">
 
-document.getElementById("leadMessage").innerHTML =
-error.message;
+    <div class="service-section-heading">
 
-}
+      <div class="service-eyebrow">
+        What We Help With
+      </div>
 
-});
+      <h2 id="featureHeading">
+        Practical assistance from requirement to application
+      </h2>
 
-</script>
+      <p id="featureDescription">
+        Fundvexxa helps customers understand the next steps and prepare
+        their basic information before proceeding with the relevant provider.
+      </p>
 
-<!-- FOOTER -->
+    </div>
 
-<footer
-style="
-background:#111;
-color:white;
-padding:50px 5%;
-text-align:center;
-">
+    <div class="service-card-grid" id="featureGrid">
 
-<img
-src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg"
-style="
-width:100%;
-max-width:500px;
-border-radius:15px;
-margin-bottom:20px;
-">
+      <article class="service-card">
+        <div class="service-card-icon">✓</div>
+        <h3>Requirement Understanding</h3>
+        <p>Understand which type of financial or business solution may fit your requirement.</p>
+      </article>
 
-<h3>Fundvexxa</h3>
+      <article class="service-card">
+        <div class="service-card-icon">▣</div>
+        <h3>Documentation Guidance</h3>
+        <p>Understand commonly requested documents and information before application.</p>
+      </article>
 
-<p>
-Loans • Insurance • Credit Cards • GST • MSME
-</p>
+      <article class="service-card">
+        <div class="service-card-icon">₹</div>
+        <h3>Option Exploration</h3>
+        <p>Explore available routes based on your profile and requirement.</p>
+      </article>
 
-<br>
+    </div>
 
-<p>
-WhatsApp: 7290977231
-</p>
+  </div>
 
-<br>
+</section>
 
-<p>
-© 2026 Fundvexxa
-</p>
+
+<!-- =====================================================
+     ELIGIBILITY + DOCUMENTS
+===================================================== -->
+
+<section class="service-section">
+
+  <div class="service-container">
+
+    <div class="service-section-heading">
+
+      <div class="service-eyebrow">
+        Requirements
+      </div>
+
+      <h2>Eligibility & Common Documents</h2>
+
+      <p id="eligibilityDescription">
+        Requirements vary by product, lender, insurer, government scheme
+        or service provider. The following information is indicative only.
+      </p>
+
+    </div>
+
+    <div class="service-specific">
+
+      <div class="service-specific-card">
+
+        <h3>
+          Common Eligibility Considerations
+        </h3>
+
+        <ul class="service-list" id="eligibilityList">
+
+          <li>Age and applicant profile may be considered.</li>
+          <li>Identity and address information may be required.</li>
+          <li>Income/business profile may be evaluated where applicable.</li>
+          <li>Existing obligations may be considered for financial products.</li>
+          <li>Final eligibility is determined by the relevant provider.</li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="service-specific-card">
+
+        <h3>
+          Commonly Requested Documents
+        </h3>
+
+        <ul class="service-list" id="documentsList">
+
+          <li>PAN and identity proof, where applicable.</li>
+          <li>Address proof, where applicable.</li>
+          <li>Income or business documents, where applicable.</li>
+          <li>Banking records, where applicable.</li>
+          <li>Additional documents may be requested during verification.</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROCESS
+===================================================== -->
+
+<section class="service-section service-section-soft">
+
+  <div class="service-container">
+
+    <div class="service-section-heading">
+
+      <div class="service-eyebrow">
+        Simple Process
+      </div>
+
+      <h2>How the process works</h2>
+
+      <p>
+        The exact journey varies by service, but the basic flow remains simple.
+      </p>
+
+    </div>
+
+    <div class="service-process">
+
+      <div class="service-step">
+
+        <div class="service-step-number">01</div>
+
+        <h3>Share Requirement</h3>
+
+        <p>
+          Tell us what you need and provide basic contact details.
+        </p>
+
+      </div>
+
+
+      <div class="service-step">
+
+        <div class="service-step-number">02</div>
+
+        <h3>Basic Assessment</h3>
+
+        <p>
+          Your requirement and available information are reviewed.
+        </p>
+
+      </div>
+
+
+      <div class="service-step">
+
+        <div class="service-step-number">03</div>
+
+        <h3>Documentation</h3>
+
+        <p>
+          We explain the commonly required information and documents.
+        </p>
+
+      </div>
+
+
+      <div class="service-step">
+
+        <div class="service-step-number">04</div>
+
+        <h3>Provider Process</h3>
+
+        <p>
+          Final decision, pricing, approval and terms remain with the relevant provider.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     DYNAMIC SALES GUIDANCE
+===================================================== -->
+
+<section class="service-section">
+
+  <div class="service-container">
+
+    <div class="service-section-heading">
+
+      <div class="service-eyebrow">
+        Customer Conversation
+      </div>
+
+      <h2 id="salesHeading">
+        How to explain this service
+      </h2>
+
+      <p>
+        Use clear and responsible communication instead of promising approval,
+        fixed rates or guaranteed funding.
+      </p>
+
+    </div>
+
+    <div class="service-overview-grid">
+
+      <div class="service-overview-card">
+
+        <h3>Suggested Pitch</h3>
+
+        <p id="salesPitch">
+          “Aap apni requirement share kijiye. Hum basic profile aur requirement
+          samajhne ke baad available options aur next steps explain karenge.
+          Final approval aur terms relevant provider decide karta hai.”
+        </p>
+
+      </div>
+
+      <div class="service-overview-card">
+
+        <h3>Important Clarifications</h3>
+
+        <ul class="service-list" id="objectionList">
+
+          <li>Interest/rate or pricing depends on the relevant provider.</li>
+          <li>Approval is subject to assessment and applicable criteria.</li>
+          <li>Documents may be requested during verification.</li>
+          <li>Processing timelines can vary by case and provider.</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     EMI CALCULATOR
+===================================================== -->
+
+<section
+  class="service-section service-section-soft"
+  id="calculator">
+
+  <div class="service-container">
+
+    <div class="service-section-heading">
+
+      <div class="service-eyebrow">
+        Planning Tool
+      </div>
+
+      <h2>EMI Calculator</h2>
+
+      <p>
+        Use this calculator only for an indicative estimate. Actual EMI,
+        rate, fees and repayment schedule depend on the final lender offer.
+      </p>
+
+    </div>
+
+    <div class="service-calculator">
+
+      <div class="service-form-grid">
+
+        <div class="service-field">
+
+          <label for="loanAmount">
+            Loan Amount (₹)
+          </label>
+
+          <input
+            type="number"
+            id="loanAmount"
+            min="1"
+            placeholder="Example: 500000">
+
+        </div>
+
+
+        <div class="service-field">
+
+          <label for="interestRate">
+            Annual Interest Rate (%)
+          </label>
+
+          <input
+            type="number"
+            id="interestRate"
+            min="0"
+            step="0.01"
+            placeholder="Example: 12">
+
+        </div>
+
+
+        <div class="service-field">
+
+          <label for="loanTenure">
+            Tenure (Months)
+          </label>
+
+          <input
+            type="number"
+            id="loanTenure"
+            min="1"
+            placeholder="Example: 60">
+
+        </div>
+
+        <div class="service-field">
+
+          <label>&nbsp;</label>
+
+          <button
+            type="button"
+            class="service-submit"
+            id="calculateEmiBtn">
+            Calculate EMI
+          </button>
+
+        </div>
+
+      </div>
+
+      <div
+        class="service-calculator-result"
+        id="emiResult"
+        aria-live="polite">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     APPLY / LEAD FORM
+===================================================== -->
+
+<section
+  class="service-section"
+  id="apply">
+
+  <div class="service-container service-apply-grid">
+
+    <div class="service-apply-info">
+
+      <div class="service-eyebrow">
+        Get Assistance
+      </div>
+
+      <h2>
+        Tell us what you need
+      </h2>
+
+      <p>
+        Submit your basic requirement. Our team can contact you to understand
+        the case and explain the next steps.
+      </p>
+
+      <div class="service-contact-box">
+
+        <a href="tel:+917290977231">
+          📞 +91 72909 77231
+        </a>
+
+        <a
+          href="https://wa.me/917290977231"
+          target="_blank"
+          rel="noopener">
+          💬 WhatsApp Fundvexxa
+        </a>
+
+        <a href="mailto:fundvexxasupport@gmail.com">
+          ✉ fundvexxasupport@gmail.com
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="service-lead-card">
+
+      <h3>Request a Callback</h3>
+
+      <div class="service-lead-subtitle">
+        Basic details are enough to start the conversation.
+      </div>
+
+      <form id="leadForm">
+
+        <div class="service-form-grid">
+
+          <div class="service-field">
+
+            <label for="customerName">
+              Full Name *
+            </label>
+
+            <input
+              type="text"
+              id="customerName"
+              required
+              autocomplete="name"
+              placeholder="Enter your full name">
+
+          </div>
+
+
+          <div class="service-field">
+
+            <label for="mobile">
+              Mobile Number *
+            </label>
+
+            <input
+              type="tel"
+              id="mobile"
+              required
+              inputmode="numeric"
+              maxlength="10"
+              autocomplete="tel"
+              placeholder="10-digit mobile number">
+
+          </div>
+
+
+          <div class="service-field">
+
+            <label for="email">
+              Email
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              autocomplete="email"
+              placeholder="Optional">
+
+          </div>
+
+
+          <div class="service-field">
+
+            <label for="city">
+              City *
+            </label>
+
+            <input
+              type="text"
+              id="city"
+              required
+              autocomplete="address-level2"
+              placeholder="Your city">
+
+          </div>
+
+
+          <div class="service-field full">
+
+            <label for="requirement">
+              Requirement *
+            </label>
+
+            <select id="requirement" required>
+              <option value="">Select requirement</option>
+              <option value="Loan Enquiry">Loan Enquiry</option>
+              <option value="Insurance Enquiry">Insurance Enquiry</option>
+              <option value="Government Scheme">Government Scheme</option>
+              <option value="MSME / GST">MSME / GST</option>
+              <option value="Business Support">Business Support</option>
+              <option value="Other">Other</option>
+            </select>
+
+          </div>
+
+
+          <div class="service-field full">
+
+            <label for="message">
+              Requirement Details
+            </label>
+
+            <textarea
+              id="message"
+              rows="4"
+              placeholder="Tell us briefly what you need"></textarea>
+
+          </div>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="service-submit"
+          id="submitLeadBtn">
+          Submit Enquiry
+        </button>
+
+        <div
+          id="leadMessage"
+          class="service-message"
+          aria-live="polite">
+        </div>
+
+        <p class="service-disclaimer">
+          Fundvexxa provides assistance and consultancy support. Submission of
+          an enquiry does not guarantee approval, sanction, insurance issuance,
+          subsidy, rate, amount or any other financial outcome. Final eligibility,
+          pricing, terms and approval are determined by the relevant lender,
+          insurer, government authority or service provider.
+        </p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+
+<section class="service-section service-section-soft">
+
+  <div class="service-container">
+
+    <div class="service-section-heading">
+
+      <div class="service-eyebrow">
+        FAQ
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <p>
+        Common questions about Fundvexxa service assistance.
+      </p>
+
+    </div>
+
+    <div class="service-faq" id="faqList">
+
+      <div class="service-faq-item">
+
+        <button class="service-faq-question">
+          Is approval guaranteed?
+          <span>+</span>
+        </button>
+
+        <div class="service-faq-answer">
+          No. Approval or acceptance is never guaranteed. The relevant lender,
+          insurer, government authority or service provider makes the final
+          decision according to its applicable criteria.
+        </div>
+
+      </div>
+
+
+      <div class="service-faq-item">
+
+        <button class="service-faq-question">
+          What documents will I need?
+          <span>+</span>
+        </button>
+
+        <div class="service-faq-answer">
+          Documents vary by service and provider. Common requirements can
+          include identity, address, income, banking, business or other
+          supporting documents.
+        </div>
+
+      </div>
+
+
+      <div class="service-faq-item">
+
+        <button class="service-faq-question">
+          Can I know the exact interest rate or charges before approval?
+          <span>+</span>
+        </button>
+
+        <div class="service-faq-answer">
+          Exact pricing depends on the relevant product and provider.
+          Before accepting a loan, review the applicable Key Fact Statement,
+          APR/all-in cost, fees, repayment schedule and other terms provided
+          by the regulated lender.
+        </div>
+
+      </div>
+
+
+      <div class="service-faq-item">
+
+        <button class="service-faq-question">
+          How long does the process take?
+          <span>+</span>
+        </button>
+
+        <div class="service-faq-answer">
+          Timelines can vary depending on the service, completeness of
+          documents, verification and the relevant provider's process.
+        </div>
+
+      </div>
+
+
+      <div class="service-faq-item">
+
+        <button class="service-faq-question">
+          Can I contact Fundvexxa before submitting an application?
+          <span>+</span>
+        </button>
+
+        <div class="service-faq-answer">
+          Yes. You can call or WhatsApp the Fundvexxa team to discuss your
+          requirement before proceeding.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     RELATED SERVICES
+===================================================== -->
+
+<section class="service-section">
+
+  <div class="service-container">
+
+    <div class="service-section-heading">
+
+      <div class="service-eyebrow">
+        Explore More
+      </div>
+
+      <h2>Other Fundvexxa Services</h2>
+
+      <p>
+        Explore other financial and business assistance options.
+      </p>
+
+    </div>
+
+    <div class="service-related-grid">
+
+      <div class="service-related-card">
+        <h3>Business Loan</h3>
+        <p>Business finance and working capital assistance.</p>
+        <a href="business-loan.html">Explore →</a>
+      </div>
+
+      <div class="service-related-card">
+        <h3>Personal Loan</h3>
+        <p>Personal finance assistance for eligible requirements.</p>
+        <a href="personal-loan.html">Explore →</a>
+      </div>
+
+      <div class="service-related-card">
+        <h3>Home Loan</h3>
+        <p>Home purchase, construction and related housing finance.</p>
+        <a href="home-loan.html">Explore →</a>
+      </div>
+
+      <div class="service-related-card">
+        <h3>Loan Against Property</h3>
+        <p>Explore property-backed finance options.</p>
+        <a href="loan-against-property.html">Explore →</a>
+      </div>
+
+      <div class="service-related-card">
+        <h3>Education Loan</h3>
+        <p>Finance assistance for eligible education requirements.</p>
+        <a href="education-loan.html">Explore →</a>
+      </div>
+
+      <div class="service-related-card">
+        <h3>Mudra Loan</h3>
+        <p>Explore PMMY categories and business credit routes.</p>
+        <a href="mudra-loan.html">Explore →</a>
+      </div>
+
+      <div class="service-related-card">
+        <h3>Government Schemes</h3>
+        <p>Explore government-linked funding and support schemes.</p>
+        <a href="government-schemes.html">Explore →</a>
+      </div>
+
+      <div class="service-related-card">
+        <h3>MSME Services</h3>
+        <p>Business registration and compliance assistance.</p>
+        <a href="services.html">Explore →</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="service-cta">
+
+  <div class="service-container service-cta-box">
+
+    <h2>
+      Have a Financial or Business Requirement?
+    </h2>
+
+    <p>
+      Share your requirement with Fundvexxa and understand the possible
+      next steps before proceeding.
+    </p>
+
+    <div class="service-cta-actions">
+
+      <a
+        href="#apply"
+        class="service-btn service-btn-primary">
+        Check Your Requirement
+      </a>
+
+      <a
+        href="tel:+917290977231"
+        class="service-btn service-btn-dark">
+        Call +91 72909 77231
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="service-footer">
+
+  <div class="service-container">
+
+    <div class="service-footer-grid">
+
+      <div>
+
+        <h3>Fundvexxa</h3>
+
+        <p>
+          Financial assistance, loan consultancy, insurance assistance,
+          MSME support and business consultancy services.
+        </p>
+
+        <p style="margin-top:12px;">
+          Delhi & Maharashtra
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>Loans</h3>
+
+        <a href="business-loan.html">Business Loan</a>
+        <a href="personal-loan.html">Personal Loan</a>
+        <a href="home-loan.html">Home Loan</a>
+        <a href="education-loan.html">Education Loan</a>
+        <a href="loan-against-property.html">Loan Against Property</a>
+        <a href="mudra-loan.html">Mudra Loan</a>
+
+      </div>
+
+
+      <div>
+
+        <h3>Business Support</h3>
+
+        <a href="government-schemes.html">Government Schemes</a>
+        <a href="services.html">MSME Services</a>
+        <a href="services.html">GST Assistance</a>
+        <a href="services.html">Startup Support</a>
+        <a href="contact.html">Contact</a>
+
+      </div>
+
+
+      <div>
+
+        <h3>Contact</h3>
+
+        <a href="tel:+917290977231">
+          +91 72909 77231
+        </a>
+
+        <a href="https://wa.me/917290977231"
+           target="_blank"
+           rel="noopener">
+          WhatsApp
+        </a>
+
+        <a href="mailto:fundvexxasupport@gmail.com">
+          fundvexxasupport@gmail.com
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="service-footer-bottom">
+
+      © 2026 Fundvexxa. All Rights Reserved.
+      <br>
+      Financial products and services are subject to applicable eligibility,
+      verification and provider terms.
+
+    </div>
+
+  </div>
 
 </footer>
 
+
+<!-- =====================================================
+     MOBILE ACTION BAR
+===================================================== -->
+
+<div class="service-mobile-bar">
+
+  <a href="tel:+917290977231">
+    📞 Call
+  </a>
+
+  <a
+    href="https://wa.me/917290977231"
+    target="_blank"
+    rel="noopener">
+    💬 WhatsApp
+  </a>
+
+  <a href="#apply">
+    Apply / Enquire
+  </a>
+
+</div>
+
+
+<!-- =====================================================
+     FLOATING WHATSAPP
+===================================================== -->
+
 <a
-href="https://wa.me/917290977231"
-target="_blank"
-style="
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px 18px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-z-index:9999;">
-WhatsApp
+  href="https://wa.me/917290977231"
+  target="_blank"
+  rel="noopener"
+  class="service-whatsapp"
+  aria-label="Chat with Fundvexxa on WhatsApp">
+  WhatsApp
 </a>
+
+
+<!-- =====================================================
+     FIREBASE + DYNAMIC SERVICE LOGIC
+===================================================== -->
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+/* =====================================================
+   FIREBASE CONFIG
+===================================================== */
+
+const firebaseConfig = {
+  apiKey: "AIzaSyArcvyvNAOKipPZB0YEseSeN9_k-8JznQ",
+  authDomain: "smile-business-os.firebaseapp.com",
+  projectId: "smile-business-os",
+  storageBucket: "smile-business-os.firebasestorage.app",
+  messagingSenderId: "114356400630",
+  appId: "1:114356400630:web:96fc9d07baaf3a504c17d7",
+  measurementId: "G-73WD9V05ZZ"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+
+/* =====================================================
+   SERVICE DATABASE
+===================================================== */
+
+const serviceData = {
+
+  "business-loan": {
+
+    title:"Business Loan",
+    badge:"Business Finance",
+
+    desc:
+      "Explore business finance options for working capital, inventory,
+       equipment, expansion and other eligible business requirements.",
+
+    overview:
+      "Business finance can help eligible businesses manage working capital,
+       purchase assets, expand operations or meet other approved business
+       requirements. Final sanction and terms depend on the lender.",
+
+    overviewCardTitle:
+      "Business finance can support",
+
+    overviewCardText:
+      "Working capital, business expansion, equipment or other eligible
+       requirements may be considered depending on the selected lender and
+       product.",
+
+    features:[
+      ["₹","Working Capital","Support for eligible day-to-day business funding requirements."],
+      ["↗","Business Expansion","Explore finance options for eligible expansion plans."],
+      ["▣","Equipment & Assets","Finance options may be available for eligible business assets."],
+      ["◉","Profile Assessment","Business vintage, turnover and financial profile may be evaluated."],
+      ["✓","Documentation","Understand commonly requested business documents."],
+      ["₹","Funding Options","Explore lender/product options based on requirement."]
+    ],
+
+    eligibility:[
+      "Business profile and vintage may be considered.",
+      "Turnover/income and banking records may be evaluated.",
+      "Applicant age and KYC requirements may apply.",
+      "Existing liabilities may be considered.",
+      "Final eligibility is lender-specific."
+    ],
+
+    documents:[
+      "PAN and identity proof.",
+      "Address proof.",
+      "Business registration/proof where applicable.",
+      "Bank statements.",
+      "ITR/financial documents where applicable.",
+      "Additional documents may be requested."
+    ],
+
+    pitch:
+      "Aap business requirement, approximate funding need aur basic business profile share kijiye. Hum available options aur documentation process samjhane me help karenge. Final approval lender decide karega.",
+
+    image:
+      "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+  },
+
+
+  "personal-loan": {
+
+    title:"Personal Loan",
+    badge:"Personal Finance",
+
+    desc:
+      "Personal finance assistance for eligible planned or emergency
+       requirements.",
+
+    overview:
+      "Personal loans may be used for eligible personal requirements,
+       subject to lender policy, applicant profile and final approval.",
+
+    overviewCardTitle:
+      "Common personal requirements",
+
+    overviewCardText:
+      "Medical expenses, wedding-related expenses, education, home renovation
+       and other eligible personal requirements may be considered.",
+
+    features:[
+      ["✓","Requirement Assessment","Understand the broad requirements before applying."],
+      ["₹","Amount Planning","Discuss the amount required for your purpose."],
+      ["▣","Documentation","Understand common income and KYC requirements."],
+      ["◉","Profile Review","Income, employment and existing obligations may be considered."],
+      ["↗","Option Exploration","Explore available provider/product routes."],
+      ["✓","Application Guidance","Get assistance with the basic application journey."]
+    ],
+
+    eligibility:[
+      "Age and residency criteria may apply.",
+      "Employment/business income may be considered.",
+      "Credit profile may be evaluated by the lender.",
+      "Banking and income information may be requested.",
+      "Final eligibility is lender-specific."
+    ],
+
+    documents:[
+      "PAN and identity proof.",
+      "Address proof.",
+      "Income proof where applicable.",
+      "Bank statements where applicable.",
+      "Employment/business information where applicable.",
+      "Additional verification documents may be requested."
+    ],
+
+    pitch:
+      "Aap apni requirement, income profile aur approximate amount share kijiye. Hum basic information ke basis par next steps samjhane me help karenge. Final rate, amount, tenure aur approval lender decide karega.",
+
+    image:
+      "https://images.pexels.com/photos/4386367/pexels-photo-4386367.jpeg"
+  },
+
+
+  "home-loan": {
+
+    title:"Home Loan",
+    badge:"Housing Finance",
+
+    desc:
+      "Assistance for eligible home purchase, construction, renovation
+       and related housing finance requirements.",
+
+    overview:
+      "Home finance may support eligible purchase, construction or other
+       housing-related requirements subject to lender policy and property
+       verification.",
+
+    overviewCardTitle:
+      "Housing requirements",
+
+    overviewCardText:
+      "Purchase of a home, construction, renovation or eligible housing
+       requirements may be considered depending on the product.",
+
+    features:[
+      ["⌂","Home Purchase","Finance options for eligible residential property purchase."],
+      ["▣","Construction","Explore eligible construction finance requirements."],
+      ["↗","Renovation","Certain home improvement requirements may be considered."],
+      ["₹","Amount Planning","Estimate requirement before applying."],
+      ["✓","Property Documents","Understand common property-related documents."],
+      ["◉","Profile Assessment","Income and repayment profile may be evaluated."]
+    ],
+
+    eligibility:[
+      "Applicant income and repayment profile may be considered.",
+      "Property eligibility and legal verification may apply.",
+      "KYC and income documents may be required.",
+      "Credit profile may be evaluated.",
+      "Final sanction is lender-specific."
+    ],
+
+    documents:[
+      "PAN and identity proof.",
+      "Address proof.",
+      "Income and banking documents.",
+      "Property-related documents.",
+      "Agreement/sale/construction documents where applicable.",
+      "Additional legal or technical documents may be requested."
+    ],
+
+    pitch:
+      "Aap property type, location aur approximate requirement share kijiye. Hum basic process aur documentation samjhane me help karenge. Final property assessment aur sanction lender decide karega.",
+
+    image:
+      "https://images.pexels.com/photos/7031407/pexels-photo-7031407.jpeg"
+  },
+
+
+  "education-loan": {
+
+    title:"Education Loan",
+    badge:"Education Finance",
+
+    desc:
+      "Assistance for eligible higher education and study-related financing
+       requirements in India or abroad.",
+
+    overview:
+      "Education finance may cover eligible tuition, accommodation and other
+       permitted education-related expenses depending on lender policy.",
+
+    overviewCardTitle:
+      "Education-related expenses",
+
+    overviewCardText:
+      "Course fees and other eligible education expenses may be considered
+       based on institution, course, applicant/co-applicant and lender terms.",
+
+    features:[
+      ["🎓","Course Funding","Explore eligible education finance requirements."],
+      ["▣","Documentation","Understand common student/co-applicant documents."],
+      ["₹","Expense Planning","Consider tuition and eligible related expenses."],
+      ["◉","Profile Review","Course, institution and repayment profile may be evaluated."],
+      ["✓","Application Guidance","Understand the application journey."],
+      ["↗","India / Abroad","Explore applicable routes for eligible study plans."]
+    ],
+
+    eligibility:[
+      "Student and co-applicant criteria may apply.",
+      "Course and institution may be evaluated.",
+      "Academic and admission documents may be required.",
+      "Income/repayment profile of co-applicant may be considered.",
+      "Final eligibility is lender-specific."
+    ],
+
+    documents:[
+      "Student identity and address proof.",
+      "Admission/offer letter.",
+      "Academic records.",
+      "Fee structure.",
+      "Co-applicant KYC/income documents where applicable.",
+      "Additional documents may be requested."
+    ],
+
+    pitch:
+      "Course, institute, location aur approximate fee requirement share kijiye. Hum basic education finance process aur documentation samjhane me help karenge.",
+
+    image:
+      "https://images.pexels.com/photos/5212328/pexels-photo-5212328.jpeg"
+  },
+
+
+  "loan-against-property": {
+
+    title:"Loan Against Property",
+    badge:"Property Finance",
+
+    desc:
+      "Explore property-backed finance options for eligible personal or
+       business requirements.",
+
+    overview:
+      "Loan Against Property is a secured finance route where an eligible
+       property may be considered as security, subject to lender valuation,
+       legal verification and other criteria.",
+
+    overviewCardTitle:
+      "Property-backed finance",
+
+    overviewCardText:
+      "Eligible residential or commercial property may be evaluated depending
+       on lender policy, property type, location and legal/technical checks.",
+
+    features:[
+      ["⌂","Property Assessment","Property type, location and ownership may be evaluated."],
+      ["₹","Requirement Planning","Discuss the approximate finance requirement."],
+      ["▣","Legal Documents","Property and ownership records may be required."],
+      ["◉","Financial Profile","Income and repayment ability may be assessed."],
+      ["✓","Documentation","Understand common documents before application."],
+      ["↗","Business / Personal","Purpose eligibility depends on lender/product."]
+    ],
+
+    eligibility:[
+      "Property ownership/title may be evaluated.",
+      "Property valuation and legal verification may apply.",
+      "Applicant income and repayment profile may be considered.",
+      "Existing property liabilities may be evaluated.",
+      "Final eligibility is lender-specific."
+    ],
+
+    documents:[
+      "PAN and identity proof.",
+      "Address proof.",
+      "Income/banking documents.",
+      "Property title/ownership documents.",
+      "Existing loan/property documents where applicable.",
+      "Legal and technical documents as requested."
+    ],
+
+    pitch:
+      "Property location, type aur approximate requirement share kijiye. Hum basic LAP process aur documentation samjhane me help karenge. Final valuation, legal assessment aur sanction lender decide karega.",
+
+    image:
+      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg"
+  },
+
+
+  "working-capital-loan": {
+
+    title:"Working Capital Loan",
+    badge:"Business Finance",
+
+    desc:
+      "Finance assistance for eligible working capital and day-to-day
+       business requirements.",
+
+    overview:
+      "Working capital finance can help eligible businesses manage operational
+       cash-flow requirements, subject to lender assessment.",
+
+    overviewCardTitle:
+      "Business cash-flow needs",
+
+    overviewCardText:
+      "Inventory, receivables, operational expenses and other eligible
+       working capital needs may be considered.",
+
+    features:[
+      ["₹","Cash Flow","Explore eligible working capital requirements."],
+      ["▣","Inventory","Finance routes may support eligible inventory needs."],
+      ["↗","Operations","Manage eligible business operating requirements."],
+      ["◉","Turnover Review","Business banking and turnover may be evaluated."],
+      ["✓","Documentation","Understand common financial documents."],
+      ["₹","Funding Route","Explore suitable product options."]
+    ],
+
+    eligibility:[
+      "Business vintage may be considered.",
+      "Turnover and banking history may be evaluated.",
+      "Business registration/proof may be required.",
+      "Existing liabilities may be considered.",
+      "Final eligibility depends on lender/product."
+    ],
+
+    documents:[
+      "PAN/KYC documents.",
+      "Business proof.",
+      "Bank statements.",
+      "ITR/financial records where applicable.",
+      "GST/business records where applicable.",
+      "Additional documents may be requested."
+    ],
+
+    pitch:
+      "Business turnover, vintage aur working capital requirement share kijiye. Hum basic funding routes aur documentation samjhane me help karenge.",
+
+    image:
+      "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
+  },
+
+
+  "mudra-loan": {
+
+    title:"Mudra Loan",
+    badge:"Government Linked Business Finance",
+
+    desc:
+      "Explore Pradhan Mantri MUDRA Yojana categories for eligible micro
+       enterprise credit requirements.",
+
+    overview:
+      "PMMY provides institutional credit routes for eligible micro enterprises.
+       Current categories include Shishu, Kishore, Tarun and Tarun Plus, subject
+       to applicable conditions.",
+
+    overviewCardTitle:
+      "PMMY categories",
+
+    overviewCardText:
+      "The Department of Financial Services lists Shishu up to ₹50,000,
+       Kishore above ₹50,000 up to ₹5 lakh, Tarun above ₹5 lakh up to ₹10 lakh,
+       and Tarun Plus above ₹10 lakh up to ₹20 lakh for eligible entrepreneurs
+       who have successfully repaid previous Tarun-category loans.",
+
+    features:[
+      ["₹","Shishu","Up to ₹50,000."],
+      ["₹","Kishore","Above ₹50,000 and up to ₹5 lakh."],
+      ["₹","Tarun","Above ₹5 lakh and up to ₹10 lakh."],
+      ["₹","Tarun Plus","Above ₹10 lakh and up to ₹20 lakh subject to eligibility."],
+      ["✓","Business Requirement","Term loan and working capital requirements may be considered."],
+      ["◉","Lender Assessment","Final sanction depends on the lending institution."]
+    ],
+
+    eligibility:[
+      "Applicant and business eligibility must satisfy applicable PMMY/lender conditions.",
+      "Business activity and purpose may be evaluated.",
+      "KYC and business documents may be required.",
+      "Tarun Plus has additional prior Tarun repayment condition.",
+      "Final sanction is determined by the lending institution."
+    ],
+
+    documents:[
+      "KYC and identity documents.",
+      "Business/activity information.",
+      "Banking records where applicable.",
+      "Business registration or supporting documents where applicable.",
+      "Photographs/documents as required by the lender.",
+      "Additional documents may be requested."
+    ],
+
+    pitch:
+      "Aap apna business type, requirement aur existing business profile share kijiye. Hum PMMY category aur basic documentation process samjhane me help karenge. Final eligibility lending institution decide karega.",
+
+    image:
+      "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+  },
+
+
+  "government-schemes": {
+
+    title:"Government Scheme Assistance",
+    badge:"Government Scheme Support",
+
+    desc:
+      "Explore government-linked schemes and understand the basic eligibility,
+       documentation and application route for your requirement.",
+
+    overview:
+      "Different government schemes have different eligibility, project,
+       category, location and documentation requirements. Scheme benefits
+       should always be verified against the current official guidelines.",
+
+    overviewCardTitle:
+      "Scheme exploration",
+
+    overviewCardText:
+      "Fundvexxa can help you understand the broad process and prepare basic
+       information, while the concerned government authority or implementing
+       agency determines eligibility and final outcome.",
+
+    features:[
+      ["₹","PMEGP","Explore eligible entrepreneurship and employment-generation routes."],
+      ["₹","PMMY","Explore MUDRA categories for eligible micro enterprises."],
+      ["◉","MSME Support","Understand applicable business support routes."],
+      ["✓","Documentation","Prepare commonly requested information."],
+      ["▣","Application Guidance","Understand the applicable process."],
+      ["↗","Official Verification","Use current government sources before proceeding."]
+    ],
+
+    eligibility:[
+      "Scheme-specific eligibility applies.",
+      "Applicant category and business/project profile may matter.",
+      "Project/activity eligibility must be checked.",
+      "Location and sector conditions may apply.",
+      "Final decision rests with the implementing authority/lender."
+    ],
+
+    documents:[
+      "Identity and address documents.",
+      "Business/project information.",
+      "Project report where applicable.",
+      "Financial/banking records where applicable.",
+      "Category or eligibility documents where applicable.",
+      "Scheme-specific documents may be requested."
+    ],
+
+    pitch:
+      "Aap apna business idea, location aur funding requirement share kijiye. Hum relevant government-linked routes ko samajhne aur basic documentation prepare karne me guidance de sakte hain. Final benefit/approval concerned authority decide karti hai.",
+
+    image:
+      "https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg"
+  },
+
+
+  "msme-registration": {
+
+    title:"MSME Registration Assistance",
+    badge:"MSME Business Support",
+
+    desc:
+      "Assistance for eligible businesses seeking MSME/Udyam registration
+       and related business documentation support.",
+
+    overview:
+      "Udyam/MSME registration is a government registration process. Eligibility,
+       classification and applicable requirements should be checked against
+       current official rules.",
+
+    overviewCardTitle:
+      "Business registration support",
+
+    overviewCardText:
+      "Fundvexxa can assist with understanding the information and documentation
+       generally required for the registration process.",
+
+    features:[
+      ["✓","Registration Guidance","Understand the registration process."],
+      ["▣","Business Details","Organise basic enterprise information."],
+      ["◉","Documentation","Understand commonly requested details."],
+      ["₹","Business Support","Explore other applicable business support routes."],
+      ["↗","Compliance Awareness","Understand basic registration-related requirements."],
+      ["✓","Application Assistance","Get process guidance."]
+    ],
+
+    eligibility:[
+      "Enterprise details must meet applicable registration rules.",
+      "Applicant/business information is required.",
+      "PAN/GST-linked information may apply depending on case.",
+      "Current government portal requirements should be followed.",
+      "Final registration is subject to government validation."
+    ],
+
+    documents:[
+      "PAN details.",
+      "Aadhaar/KYC details as applicable.",
+      "Business information.",
+      "GST details where applicable.",
+      "Bank details where required.",
+      "Other information requested by the official portal."
+    ],
+
+    pitch:
+      "Aap apne business ka basic profile share kijiye. Hum MSME/Udyam registration process aur required information ko samajhne me assistance karenge.",
+
+    image:
+      "https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg"
+  },
+
+
+  "gst-registration": {
+
+    title:"GST Registration Assistance",
+    badge:"Business Compliance",
+
+    desc:
+      "GST registration and basic compliance process assistance for eligible
+       businesses.",
+
+    overview:
+      "GST registration depends on applicable tax rules and business circumstances.
+       The official GST system and applicable tax provisions should be followed.",
+
+    overviewCardTitle:
+      "GST support",
+
+    overviewCardText:
+      "We can help organise basic information and explain the broad registration
+       process for eligible businesses.",
+
+    features:[
+      ["✓","Registration Guidance","Understand the basic GST registration journey."],
+      ["▣","Document Support","Organise commonly requested business details."],
+      ["◉","Business Profile","Understand which details may be relevant."],
+      ["↗","Compliance Awareness","Understand basic GST-related responsibilities."],
+      ["₹","Business Support","Explore related MSME/business services."],
+      ["✓","Process Assistance","Get help understanding next steps."]
+    ],
+
+    eligibility:[
+      "GST registration depends on applicable tax rules.",
+      "Business activity and turnover may be relevant.",
+      "State/place-of-business details may be required.",
+      "PAN and business information are generally relevant.",
+      "Final applicability should be verified under current GST rules."
+    ],
+
+    documents:[
+      "PAN.",
+      "Identity/address details.",
+      "Business constitution details.",
+      "Business/place-of-business proof where applicable.",
+      "Bank details where applicable.",
+      "Additional documents as required."
+    ],
+
+    pitch:
+      "Aap business type aur basic details share kijiye. Hum GST registration process aur commonly required information ko samajhne me assistance karenge.",
+
+    image:
+      "https://images.pexels.com/photos/6863252/pexels-photo-6863252.jpeg"
+  },
+
+
+  "health-insurance": {
+
+    title:"Health Insurance",
+    badge:"Insurance Assistance",
+
+    desc:
+      "Explore health insurance options for eligible medical and hospitalization
+       protection requirements.",
+
+    overview:
+      "Health insurance products differ by insurer, policy type, coverage,
+       exclusions, waiting periods, limits and terms.",
+
+    overviewCardTitle:
+      "Protection planning",
+
+    overviewCardText:
+      "Fundvexxa can help you understand broad policy options and information
+       to compare, while the insurer determines policy issuance and terms.",
+
+    features:[
+      ["♥","Health Protection","Explore suitable health insurance products."],
+      ["▣","Policy Comparison","Understand major policy features and terms."],
+      ["✓","Coverage Review","Review inclusions, exclusions and conditions."],
+      ["◉","Family Planning","Explore individual/family requirements."],
+      ["₹","Premium Awareness","Premium depends on product and profile."],
+      ["↗","Application Guidance","Understand the basic purchase journey."]
+    ],
+
+    eligibility:[
+      "Age and health profile may be relevant.",
+      "Insurer underwriting may apply.",
+      "Medical history may be requested.",
+      "Policy-specific conditions apply.",
+      "Final policy issuance is insurer-dependent."
+    ],
+
+    documents:[
+      "Identity proof.",
+      "Address details.",
+      "Age/date-of-birth information.",
+      "Medical information where required.",
+      "Existing policy details where applicable.",
+      "Other insurer-requested documents."
+    ],
+
+    pitch:
+      "Aap individual ya family health requirement share kijiye. Hum policy features aur basic information samajhne me assistance karenge. Final policy terms insurer decide karega.",
+
+    image:
+      "https://images.pexels.com/photos/3768114/pexels-photo-3768114.jpeg"
+  },
+
+
+  "life-insurance": {
+
+    title:"Life Insurance",
+    badge:"Insurance Assistance",
+
+    desc:
+      "Explore life insurance options for long-term financial protection
+       and planning.",
+
+    overview:
+      "Life insurance products differ by insurer, policy type, coverage,
+       premium, exclusions and terms.",
+
+    overviewCardTitle:
+      "Long-term protection",
+
+    overviewCardText:
+      "Policy selection should consider financial goals, protection needs,
+       policy terms and affordability.",
+
+    features:[
+      ["♥","Protection Planning","Understand life protection requirements."],
+      ["₹","Financial Planning","Explore policy options based on needs."],
+      ["✓","Policy Terms","Review benefits, exclusions and conditions."],
+      ["◉","Family Protection","Consider eligible dependent protection needs."],
+      ["▣","Documentation","Understand application information."],
+      ["↗","Policy Assistance","Get help understanding the process."]
+    ],
+
+    eligibility:[
+      "Age and insurer underwriting criteria apply.",
+      "Health information may be requested.",
+      "Income/financial information may be relevant for certain policies.",
+      "Policy-specific conditions apply.",
+      "Final issuance is insurer-dependent."
+    ],
+
+    documents:[
+      "Identity proof.",
+      "Address proof.",
+      "Age/date-of-birth information.",
+      "Health/medical information where required.",
+      "Income documents where applicable.",
+      "Additional insurer-requested documents."
+    ],
+
+    pitch:
+      "Aap apni protection requirement aur family needs share kijiye. Hum available life insurance options ko samajhne me assistance karenge. Final policy issuance insurer decide karega.",
+
+    image:
+      "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg"
+  },
+
+
+  "motor-insurance": {
+
+    title:"Motor Insurance",
+    badge:"Insurance Assistance",
+
+    desc:
+      "Assistance for eligible vehicle insurance requirements and policy
+       information.",
+
+    overview:
+      "Motor insurance products and coverage options depend on vehicle,
+       policy type, insurer and applicable terms.",
+
+    overviewCardTitle:
+      "Vehicle protection",
+
+    overviewCardText:
+      "Explore applicable vehicle insurance options and understand coverage,
+       premium and policy conditions before purchase.",
+
+    features:[
+      ["🚗","Vehicle Cover","Explore applicable vehicle insurance products."],
+      ["✓","Policy Review","Understand major coverage features."],
+      ["₹","Premium","Premium depends on vehicle and policy details."],
+      ["▣","Documents","Understand commonly requested vehicle documents."],
+      ["◉","Renewal","Get assistance understanding renewal requirements."],
+      ["↗","Claim Awareness","Understand insurer-defined claim processes."]
+    ],
+
+    eligibility:[
+      "Vehicle and policy details are required.",
+      "Policy type and insurer conditions apply.",
+      "Vehicle registration details may be required.",
+      "Inspection may apply depending on the case.",
+      "Final issuance depends on insurer."
+    ],
+
+    documents:[
+      "Vehicle registration details.",
+      "Previous policy where applicable.",
+      "Identity/contact information.",
+      "Vehicle-related documents.",
+      "Other insurer-requested details."
+    ],
+
+    pitch:
+      "Vehicle details aur existing policy information share kijiye. Hum available motor insurance options aur basic process samajhne me assistance karenge.",
+
+    image:
+      "https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg"
+  }
+
+};
+
+
+/* =====================================================
+   URL SERVICE
+===================================================== */
+
+const params = new URLSearchParams(window.location.search);
+
+const serviceKey =
+  (params.get("service") || "business-loan").toLowerCase();
+
+const selectedService =
+  serviceData[serviceKey] || serviceData["business-loan"];
+
+
+/* =====================================================
+   SAFE TEXT HELPER
+===================================================== */
+
+function setText(id,value){
+
+  const element = document.getElementById(id);
+
+  if(element){
+    element.textContent = value || "";
+  }
+
+}
+
+
+/* =====================================================
+   APPLY SERVICE DATA
+===================================================== */
+
+setText(
+  "serviceTitle",
+  selectedService.title
+);
+
+setText(
+  "serviceBadge",
+  selectedService.badge
+);
+
+setText(
+  "breadcrumbService",
+  selectedService.title
+);
+
+setText(
+  "serviceDesc",
+  selectedService.desc
+);
+
+setText(
+  "overviewText",
+  selectedService.overview
+);
+
+setText(
+  "overviewCardTitle",
+  selectedService.overviewCardTitle
+);
+
+setText(
+  "overviewCardText",
+  selectedService.overviewCardText
+);
+
+setText(
+  "imageCardTitle",
+  selectedService.badge
+);
+
+setText(
+  "salesPitch",
+  selectedService.pitch
+);
+
+const heroImage =
+  document.getElementById("heroImage");
+
+if(heroImage){
+
+  heroImage.src =
+    selectedService.image;
+
+  heroImage.alt =
+    selectedService.title + " - Fundvexxa";
+
+}
+
+
+/* =====================================================
+   TITLE WITH BLUE HIGHLIGHT
+===================================================== */
+
+const titleElement =
+  document.getElementById("serviceTitle");
+
+if(titleElement){
+
+  titleElement.innerHTML =
+    `${selectedService.title} <span>Assistance</span>`;
+
+}
+
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+const featureGrid =
+  document.getElementById("featureGrid");
+
+if(featureGrid){
+
+  featureGrid.innerHTML =
+    selectedService.features
+      .map(item => {
+
+        return `
+          <article class="service-card">
+
+            <div class="service-card-icon">
+              ${item[0]}
+            </div>
+
+            <h3>${item[1]}</h3>
+
+            <p>${item[2]}</p>
+
+          </article>
+        `;
+
+      })
+      .join("");
+
+}
+
+
+/* =====================================================
+   ELIGIBILITY
+===================================================== */
+
+const eligibilityList =
+  document.getElementById("eligibilityList");
+
+if(eligibilityList){
+
+  eligibilityList.innerHTML =
+    selectedService.eligibility
+      .map(item => `<li>${item}</li>`)
+      .join("");
+
+}
+
+
+/* =====================================================
+   DOCUMENTS
+===================================================== */
+
+const documentsList =
+  document.getElementById("documentsList");
+
+if(documentsList){
+
+  documentsList.innerHTML =
+    selectedService.documents
+      .map(item => `<li>${item}</li>`)
+      .join("");
+
+}
+
+
+/* =====================================================
+   SERVICE NAME IN FORM
+===================================================== */
+
+const requirementSelect =
+  document.getElementById("requirement");
+
+if(requirementSelect){
+
+  const option =
+    document.createElement("option");
+
+  option.value =
+    selectedService.title;
+
+  option.textContent =
+    selectedService.title;
+
+  requirementSelect.insertBefore(
+    option,
+    requirementSelect.children[1]
+  );
+
+  requirementSelect.value =
+    selectedService.title;
+
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+const menuBtn =
+  document.getElementById("serviceMenuBtn");
+
+const nav =
+  document.getElementById("serviceNav");
+
+if(menuBtn && nav){
+
+  menuBtn.addEventListener("click",()=>{
+
+    const open =
+      nav.classList.toggle("open");
+
+    menuBtn.setAttribute(
+      "aria-expanded",
+      open ? "true" : "false"
+    );
+
+  });
+
+}
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+document
+  .querySelectorAll(".service-faq-question")
+  .forEach(button => {
+
+    button.addEventListener("click",()=>{
+
+      const item =
+        button.closest(".service-faq-item");
+
+      item.classList.toggle("active");
+
+      const icon =
+        button.querySelector("span");
+
+      if(icon){
+
+        icon.textContent =
+          item.classList.contains("active")
+          ? "−"
+          : "+";
+
+      }
+
+    });
+
+  });
+
+
+/* =====================================================
+   EMI CALCULATOR
+===================================================== */
+
+const calculateBtn =
+  document.getElementById("calculateEmiBtn");
+
+if(calculateBtn){
+
+  calculateBtn.addEventListener(
+    "click",
+    calculateEMI
+  );
+
+}
+
+function calculateEMI(){
+
+  const amount =
+    Number(
+      document.getElementById("loanAmount").value
+    );
+
+  const annualRate =
+    Number(
+      document.getElementById("interestRate").value
+    );
+
+  const months =
+    Number(
+      document.getElementById("loanTenure").value
+    );
+
+  const result =
+    document.getElementById("emiResult");
+
+
+  if(
+    !amount ||
+    !months ||
+    annualRate < 0
+  ){
+
+    result.style.display = "block";
+
+    result.innerHTML =
+      "Please enter a valid loan amount, interest rate and tenure.";
+
+    return;
+  }
+
+
+  const monthlyRate =
+    annualRate / 12 / 100;
+
+
+  let emi;
+
+
+  if(monthlyRate === 0){
+
+    emi =
+      amount / months;
+
+  }
+  else{
+
+    const factor =
+      Math.pow(
+        1 + monthlyRate,
+        months
+      );
+
+    emi =
+      amount *
+      monthlyRate *
+      factor /
+      (factor - 1);
+
+  }
+
+
+  const totalPayment =
+    emi * months;
+
+  const totalInterest =
+    totalPayment - amount;
+
+
+  const money =
+    new Intl.NumberFormat(
+      "en-IN",
+      {
+        maximumFractionDigits:0
+      }
+    );
+
+
+  result.style.display = "block";
+
+  result.innerHTML = `
+    <strong>Estimated EMI: ₹${money.format(emi)}</strong>
+    <br>
+    Total repayment: ₹${money.format(totalPayment)}
+    <br>
+    Approx. interest: ₹${money.format(totalInterest)}
+    <br><br>
+    <small>
+      Indicative calculation only. Actual lender terms may differ.
+    </small>
+  `;
+
+}
+
+
+/* =====================================================
+   LEAD FORM
+===================================================== */
+
+const leadForm =
+  document.getElementById("leadForm");
+
+const submitBtn =
+  document.getElementById("submitLeadBtn");
+
+const leadMessage =
+  document.getElementById("leadMessage");
+
+
+function showMessage(
+  type,
+  message
+){
+
+  leadMessage.className =
+    "service-message " + type;
+
+  leadMessage.textContent =
+    message;
+
+}
+
+
+if(leadForm){
+
+  leadForm.addEventListener(
+    "submit",
+    async function(e){
+
+      e.preventDefault();
+
+
+      const name =
+        document
+          .getElementById("customerName")
+          .value
+          .trim();
+
+
+      const mobile =
+        document
+          .getElementById("mobile")
+          .value
+          .replace(/\D/g,"");
+
+
+      const email =
+        document
+          .getElementById("email")
+          .value
+          .trim();
+
+
+      const city =
+        document
+          .getElementById("city")
+          .value
+          .trim();
+
+
+      const requirement =
+        document
+          .getElementById("requirement")
+          .value
+          .trim();
+
+
+      const message =
+        document
+          .getElementById("message")
+          .value
+          .trim();
+
+
+      if(!name){
+
+        showMessage(
+          "error",
+          "Please enter your name."
+        );
+
+        return;
+      }
+
+
+      if(!/^[6-9]\d{9}$/.test(mobile)){
+
+        showMessage(
+          "error",
+          "Please enter a valid 10-digit mobile number."
+        );
+
+        return;
+      }
+
+
+      if(!city){
+
+        showMessage(
+          "error",
+          "Please enter your city."
+        );
+
+        return;
+      }
+
+
+      if(!requirement){
+
+        showMessage(
+          "error",
+          "Please select your requirement."
+        );
+
+        return;
+      }
+
+
+      submitBtn.disabled = true;
+
+      submitBtn.textContent =
+        "Submitting...";
+
+
+      try{
+
+        const leadData = {
+
+          name:name,
+
+          fullName:name,
+
+          phone:mobile,
+
+          mobile:mobile,
+
+          email:email,
+
+          city:city,
+
+          requirement:
+            requirement || selectedService.title,
+
+          loanType:
+            selectedService.title,
+
+          service:
+            selectedService.title,
+
+          message:message,
+
+          source:
+            "service-details-page",
+
+          page:
+            "service-details.html",
+
+          serviceSlug:
+            serviceKey,
+
+          status:
+            "new",
+
+          createdAt:
+            serverTimestamp(),
+
+          updatedAt:
+            serverTimestamp()
+
+        };
+
+
+        await addDoc(
+          collection(db,"leads"),
+          leadData
+        );
+
+
+        showMessage(
+          "success",
+          "Thank you! Your enquiry has been submitted successfully. Our team will contact you."
+        );
+
+
+        leadForm.reset();
+
+        requirementSelect.value =
+          selectedService.title;
+
+
+      }
+      catch(error){
+
+        console.error(
+          "Lead submission error:",
+          error
+        );
+
+
+        showMessage(
+          "error",
+          "We could not submit your enquiry right now. Please call or WhatsApp us."
+        );
+
+      }
+      finally{
+
+        submitBtn.disabled = false;
+
+        submitBtn.textContent =
+          "Submit Enquiry";
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =====================================================
+   FAQ STRUCTURED DATA
+===================================================== */
+
+const schemaScript =
+  document.createElement("script");
+
+schemaScript.type =
+  "application/ld+json";
+
+schemaScript.textContent =
+  JSON.stringify({
+
+    "@context":"https://schema.org",
+
+    "@type":"FAQPage",
+
+    "mainEntity":[
+
+      {
+        "@type":"Question",
+        "name":"Is approval guaranteed?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No. Final approval is determined by the relevant lender, insurer, government authority or service provider."
+        }
+      },
+
+      {
+        "@type":"Question",
+        "name":"What documents will I need?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Requirements vary by service and provider. Identity, address, income, banking, business or supporting documents may be requested."
+        }
+      },
+
+      {
+        "@type":"Question",
+        "name":"How long does the process take?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Processing time varies by service, document completeness, verification and the relevant provider."
+        }
+      }
+
+    ]
+
+  });
+
+document.head.appendChild(
+  schemaScript
+);
+
+
+/* =====================================================
+   DYNAMIC PAGE TITLE
+===================================================== */
+
+document.title =
+  selectedService.title +
+  " Assistance | Fundvexxa";
+
+</script>
+
+</div>
 
 </body>
 </html>
+
