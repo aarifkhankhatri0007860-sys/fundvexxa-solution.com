@@ -1,1108 +1,2958 @@
-<!-- VEHICLE LOAN HERO -->
+<!DOCTYPE html>
 
-<section class="vehicle-hero">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div class="container">
+  <title>Vehicle Loan Assistance | New & Used Car, Bike & Commercial Vehicle | Fundvexxa</title>
 
-<div class="vehicle-grid">
+<meta
+name="description"
+content="Explore vehicle loan assistance for new and used cars, bikes and commercial vehicles. Fundvexxa provides professional guidance for vehicle finance enquiries."
 
-<div class="vehicle-content">
+>
 
-<span class="loan-badge">
-VEHICLE LOAN
-</span>
+<meta
+name="keywords"
+content="vehicle loan, car loan, used car loan, bike loan, commercial vehicle loan, vehicle finance, Fundvexxa"
 
-<h1>
-Drive Your Dream Vehicle With Confidence
-</h1>
+>
 
-<p>
-Whether you are planning to purchase a new car, used car, bike or commercial vehicle, Fundvexxa helps you explore vehicle financing solutions with professional guidance and transparent support.
-</p>
+  <meta name="theme-color" content="#0b2a4a">
 
-<div class="hero-buttons">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<a href="#vehicle-apply" class="btn-primary">
-Apply Now
-</a>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
-<a href="tel:+917290977231" class="btn-secondary">
-Call Expert
-</a>
+  <style>
+    /* =========================================================
+       FUNDVEXXA VEHICLE LOAN PAGE
+       All styles are scoped to .fx-vehicle-page
+    ========================================================= */
+
+    .fx-vehicle-page {
+      --fx-navy: #0b2a4a;
+      --fx-navy-2: #123d63;
+      --fx-blue: #1769e0;
+      --fx-blue-dark: #0d4fa8;
+      --fx-gold: #d6a84f;
+      --fx-light: #f5f9fd;
+      --fx-border: #dfe8f1;
+      --fx-text: #17212b;
+      --fx-muted: #64748b;
+      --fx-white: #ffffff;
+      --fx-success: #16834d;
+      --fx-danger: #c0392b;
+
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--fx-text);
+      background: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .fx-vehicle-page *,
+    .fx-vehicle-page *::before,
+    .fx-vehicle-page *::after {
+      box-sizing: border-box;
+    }
+
+    .fx-vehicle-page a {
+      color: inherit;
+    }
+
+    .fx-vehicle-page img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .fx-container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    .fx-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(223,232,241,.8);
+    }
+
+    .fx-header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .fx-logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 24px;
+      color: var(--fx-navy);
+      letter-spacing: -.5px;
+    }
+
+    .fx-logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg,var(--fx-navy),var(--fx-blue));
+      color: #fff;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .fx-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .fx-nav a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .fx-nav a:hover {
+      color: var(--fx-blue);
+    }
+
+    .fx-header-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .fx-header-btn {
+      text-decoration: none;
+      padding: 11px 16px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .fx-header-call {
+      border: 1px solid var(--fx-border);
+      color: var(--fx-navy);
+      background: #fff;
+    }
+
+    .fx-header-apply {
+      background: var(--fx-blue);
+      color: #fff;
+    }
+
+    .fx-menu {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 26px;
+      cursor: pointer;
+      color: var(--fx-navy);
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .fx-vehicle-hero {
+      background:
+        radial-gradient(circle at 80% 10%, rgba(23,105,224,.12), transparent 30%),
+        linear-gradient(135deg,#f7fbff,#eef6ff);
+      padding: 75px 0 65px;
+    }
+
+    .fx-vehicle-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .fx-loan-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #e7f1ff;
+      color: var(--fx-blue-dark);
+      border: 1px solid #cfe2ff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .7px;
+    }
+
+    .fx-loan-badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--fx-gold);
+    }
+
+    .fx-hero-title {
+      margin: 20px 0 18px;
+      color: var(--fx-navy);
+      font-size: clamp(38px,5vw,61px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      max-width: 700px;
+    }
+
+    .fx-hero-description {
+      max-width: 680px;
+      color: var(--fx-muted);
+      font-size: 18px;
+      line-height: 1.85;
+      margin: 0 0 28px;
+    }
+
+    .fx-hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .fx-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 13px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 0;
+      font-size: 15px;
+      font-weight: 750;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .fx-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .fx-btn-primary {
+      background: var(--fx-blue);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(23,105,224,.2);
+    }
+
+    .fx-btn-primary:hover {
+      background: var(--fx-blue-dark);
+    }
+
+    .fx-btn-dark {
+      background: var(--fx-navy);
+      color: #fff;
+    }
+
+    .fx-btn-outline {
+      border: 1px solid var(--fx-border);
+      background: #fff;
+      color: var(--fx-navy);
+    }
+
+    .fx-hero-note {
+      margin-top: 16px;
+      color: #64748b;
+      font-size: 12px;
+    }
+
+    .fx-hero-image {
+      position: relative;
+    }
+
+    .fx-hero-image img {
+      height: 470px;
+      object-fit: cover;
+      border-radius: 25px;
+      box-shadow: 0 25px 55px rgba(11,42,74,.17);
+    }
+
+    .fx-image-card {
+      position: absolute;
+      left: -25px;
+      bottom: 25px;
+      background: #fff;
+      padding: 17px 20px;
+      border-radius: 15px;
+      box-shadow: 0 15px 35px rgba(11,42,74,.15);
+      max-width: 245px;
+    }
+
+    .fx-image-card strong {
+      display: block;
+      color: var(--fx-navy);
+      font-size: 15px;
+      margin-bottom: 3px;
+    }
+
+    .fx-image-card span {
+      color: var(--fx-muted);
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       TRUST STRIP
+    ========================================================= */
+
+    .fx-trust {
+      padding: 22px 0;
+      background: #fff;
+      border-bottom: 1px solid var(--fx-border);
+    }
+
+    .fx-trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .fx-trust-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      text-align: center;
+      padding: 17px;
+      border-right: 1px solid var(--fx-border);
+    }
+
+    .fx-trust-card:last-child {
+      border-right: 0;
+    }
+
+    .fx-trust-icon {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: #edf5ff;
+      color: var(--fx-blue);
+      font-weight: 800;
+    }
+
+    .fx-trust-card strong {
+      display: block;
+      color: var(--fx-navy);
+      font-size: 14px;
+    }
+
+    .fx-trust-card span {
+      display: block;
+      color: var(--fx-muted);
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       GENERAL SECTIONS
+    ========================================================= */
+
+    .fx-section {
+      padding: 78px 0;
+    }
+
+    .fx-section-light {
+      background: var(--fx-light);
+    }
+
+    .fx-section-heading {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 45px;
+    }
+
+    .fx-section-heading .eyebrow {
+      color: var(--fx-blue);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .fx-section-heading h2 {
+      margin: 10px 0 12px;
+      color: var(--fx-navy);
+      font-size: clamp(31px,4vw,45px);
+      line-height: 1.15;
+      letter-spacing: -1px;
+    }
+
+    .fx-section-heading p {
+      margin: 0;
+      color: var(--fx-muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* =========================================================
+       VEHICLE TYPES
+    ========================================================= */
+
+    .fx-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 22px;
+    }
+
+    .fx-card {
+      background: #fff;
+      border: 1px solid var(--fx-border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 8px 25px rgba(11,42,74,.045);
+    }
+
+    .fx-card:hover {
+      box-shadow: 0 15px 35px rgba(11,42,74,.08);
+    }
+
+    .fx-card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #edf5ff;
+      color: var(--fx-blue);
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .fx-card h3 {
+      color: var(--fx-navy);
+      font-size: 21px;
+      margin: 0 0 9px;
+    }
+
+    .fx-card p {
+      color: var(--fx-muted);
+      font-size: 14px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* =========================================================
+       TWO COLUMN CONTENT
+    ========================================================= */
+
+    .fx-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .fx-list-card {
+      background: #fff;
+      border: 1px solid var(--fx-border);
+      border-radius: 18px;
+      padding: 30px;
+    }
+
+    .fx-list-card h3 {
+      margin: 0 0 20px;
+      color: var(--fx-navy);
+      font-size: 23px;
+    }
+
+    .fx-check-list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .fx-check-list li {
+      position: relative;
+      padding: 10px 0 10px 29px;
+      color: #4b5b6b;
+      font-size: 14px;
+      border-bottom: 1px solid #edf1f5;
+    }
+
+    .fx-check-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .fx-check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      color: var(--fx-success);
+      font-weight: 800;
+    }
+
+    /* =========================================================
+       PROCESS
+    ========================================================= */
+
+    .fx-process {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 18px;
+    }
+
+    .fx-step {
+      position: relative;
+      background: #fff;
+      border: 1px solid var(--fx-border);
+      border-radius: 17px;
+      padding: 25px;
+    }
+
+    .fx-step-number {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--fx-navy);
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 17px;
+    }
+
+    .fx-step h3 {
+      margin: 0 0 8px;
+      color: var(--fx-navy);
+      font-size: 17px;
+    }
+
+    .fx-step p {
+      margin: 0;
+      color: var(--fx-muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       EMI CALCULATOR
+    ========================================================= */
+
+    .fx-calculator-wrap {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background: #fff;
+      border: 1px solid var(--fx-border);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(11,42,74,.07);
+    }
+
+    .fx-calculator-form {
+      padding: 32px;
+    }
+
+    .fx-calculator-result {
+      padding: 32px;
+      background: linear-gradient(145deg,var(--fx-navy),var(--fx-navy-2));
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .fx-field {
+      margin-bottom: 17px;
+    }
+
+    .fx-field label {
+      display: block;
+      color: var(--fx-navy);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .fx-field input,
+    .fx-field select,
+    .fx-field textarea {
+      width: 100%;
+      border: 1px solid var(--fx-border);
+      background: #fff;
+      border-radius: 10px;
+      padding: 13px 14px;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .fx-field input:focus,
+    .fx-field select:focus,
+    .fx-field textarea:focus {
+      border-color: var(--fx-blue);
+      box-shadow: 0 0 0 3px rgba(23,105,224,.09);
+    }
+
+    .fx-result-label {
+      color: #c8d8e9;
+      font-size: 13px;
+      margin-bottom: 7px;
+    }
+
+    .fx-result-emi {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 25px;
+    }
+
+    .fx-result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+      font-size: 13px;
+    }
+
+    .fx-result-row span:first-child {
+      color: #c8d8e9;
+    }
+
+    /* =========================================================
+       APPLICATION
+    ========================================================= */
+
+    .fx-application {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      border: 1px solid var(--fx-border);
+      border-radius: 22px;
+      padding: 35px;
+      box-shadow: 0 15px 40px rgba(11,42,74,.07);
+    }
+
+    .fx-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 17px;
+    }
+
+    .fx-field-full {
+      grid-column: 1 / -1;
+    }
+
+    .fx-consent {
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+      margin: 4px 0 18px;
+      color: var(--fx-muted);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .fx-consent input {
+      margin-top: 3px;
+    }
+
+    .fx-form-message {
+      display: none;
+      margin-bottom: 18px;
+      padding: 13px 15px;
+      border-radius: 10px;
+      font-size: 13px;
+    }
+
+    .fx-form-message.success {
+      display: block;
+      background: #eaf8f0;
+      color: #11663d;
+      border: 1px solid #bde8d0;
+    }
+
+    .fx-form-message.error {
+      display: block;
+      background: #fff0ee;
+      color: #9c2e22;
+      border: 1px solid #f1c4be;
+    }
+
+    .fx-submit-loading {
+      opacity: .7;
+      pointer-events: none;
+    }
+
+    /* =========================================================
+       FAQ
+    ========================================================= */
+
+    .fx-faq {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .fx-faq-item {
+      background: #fff;
+      border: 1px solid var(--fx-border);
+      border-radius: 13px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .fx-faq-question {
+      width: 100%;
+      border: 0;
+      background: #fff;
+      padding: 18px 20px;
+      text-align: left;
+      font: inherit;
+      font-weight: 700;
+      color: var(--fx-navy);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .fx-faq-answer {
+      display: none;
+      padding: 0 20px 20px;
+      color: var(--fx-muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .fx-faq-item.active .fx-faq-answer {
+      display: block;
+    }
+
+    .fx-faq-plus {
+      font-size: 21px;
+      flex: 0 0 auto;
+    }
+
+    /* =========================================================
+       CTA
+    ========================================================= */
+
+    .fx-final-cta {
+      padding: 80px 0;
+      background:
+        radial-gradient(circle at 80% 20%,rgba(214,168,79,.18),transparent 25%),
+        linear-gradient(135deg,var(--fx-navy),#0d4774);
+      color: #fff;
+      text-align: center;
+    }
+
+    .fx-final-cta h2 {
+      max-width: 750px;
+      margin: 0 auto 15px;
+      font-size: clamp(30px,4vw,44px);
+      line-height: 1.15;
+    }
+
+    .fx-final-cta p {
+      max-width: 750px;
+      margin: 0 auto 28px;
+      color: #d7e5f2;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .fx-final-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .fx-btn-white {
+      background: #fff;
+      color: var(--fx-navy);
+    }
+
+    .fx-btn-whatsapp {
+      background: #1aa260;
+      color: #fff;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .fx-footer {
+      background: #071b30;
+      color: #fff;
+      padding: 45px 0 80px;
+    }
+
+    .fx-footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 35px;
+    }
+
+    .fx-footer h3,
+    .fx-footer h4 {
+      margin: 0 0 12px;
+    }
+
+    .fx-footer h3 {
+      font-size: 24px;
+    }
+
+    .fx-footer h4 {
+      font-size: 14px;
+    }
+
+    .fx-footer p,
+    .fx-footer a {
+      color: #b8c8d7;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .fx-footer a {
+      text-decoration: none;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .fx-footer a:hover {
+      color: #fff;
+    }
+
+    .fx-footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      margin-top: 30px;
+      padding-top: 20px;
+      color: #8fa5b9;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       WHATSAPP / MOBILE BAR
+    ========================================================= */
+
+    .fx-whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 1100;
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #1aa260;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 12px 30px rgba(0,0,0,.18);
+    }
+
+    .fx-mobile-bar {
+      display: none;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 900px) {
+
+      .fx-nav,
+      .fx-header-actions {
+        display: none;
+      }
+
+      .fx-menu {
+        display: block;
+      }
+
+      .fx-vehicle-grid,
+      .fx-two-col,
+      .fx-calculator-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .fx-card-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .fx-process {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .fx-hero-image img {
+        height: 390px;
+      }
+
+      .fx-image-card {
+        left: 15px;
+      }
+
+      .fx-footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+
+      .fx-container {
+        width: min(100% - 28px,1180px);
+      }
+
+      .fx-header-inner {
+        min-height: 68px;
+      }
+
+      .fx-logo {
+        font-size: 21px;
+      }
+
+      .fx-logo-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      .fx-vehicle-hero {
+        padding: 50px 0 45px;
+      }
+
+      .fx-hero-title {
+        font-size: 39px;
+        letter-spacing: -1.3px;
+      }
+
+      .fx-hero-description {
+        font-size: 16px;
+      }
+
+      .fx-hero-image img {
+        height: 300px;
+        border-radius: 19px;
+      }
+
+      .fx-image-card {
+        position: static;
+        margin-top: 13px;
+        max-width: none;
+      }
+
+      .fx-trust-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .fx-trust-card {
+        border-right: 0;
+        border-bottom: 1px solid var(--fx-border);
+      }
+
+      .fx-trust-card:last-child {
+        border-bottom: 0;
+      }
+
+      .fx-section {
+        padding: 55px 0;
+      }
+
+      .fx-card-grid,
+      .fx-process {
+        grid-template-columns: 1fr;
+      }
+
+      .fx-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .fx-field-full {
+        grid-column: auto;
+      }
+
+      .fx-application,
+      .fx-calculator-form,
+      .fx-calculator-result {
+        padding: 24px;
+      }
+
+      .fx-result-emi {
+        font-size: 34px;
+      }
+
+      .fx-footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .fx-whatsapp {
+        display: none;
+      }
+
+      .fx-mobile-bar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1200;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1.25fr;
+        background: #fff;
+        border-top: 1px solid var(--fx-border);
+        box-shadow: 0 -8px 25px rgba(11,42,74,.10);
+      }
+
+      .fx-mobile-bar a {
+        padding: 13px 7px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--fx-navy);
+        border-right: 1px solid var(--fx-border);
+      }
+
+      .fx-mobile-bar a:last-child {
+        border-right: 0;
+        background: var(--fx-blue);
+        color: #fff;
+      }
+
+      .fx-footer {
+        padding-bottom: 90px;
+      }
+    }
+  </style>
+
+  <!-- FAQ STRUCTURED DATA -->
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Can I enquire about a used vehicle loan?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Vehicle finance may be available for eligible pre-owned vehicles, subject to the lender's vehicle age, valuation, applicant profile and other applicable conditions."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Who can enquire for vehicle finance?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Salaried individuals, self-employed applicants, professionals and business owners may enquire. Final eligibility is determined by the relevant lender."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"What documents may be required?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Depending on the lender and applicant profile, identity proof, address proof, income documents, bank statements and vehicle-related documents may be required."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Does Fundvexxa guarantee loan approval?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No. Fundvexxa provides enquiry and application guidance. Final approval, loan amount, interest rate, tenure, charges and terms are determined by the relevant lender."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+
+<body>
+
+<div class="fx-vehicle-page">
+
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
+
+  <header class="fx-header">
+
+```
+<div class="fx-container fx-header-inner">
+
+  <a href="index.html" class="fx-logo" aria-label="Fundvexxa Home">
+    <span class="fx-logo-mark">F</span>
+    Fundvexxa
+  </a>
+
+  <nav class="fx-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="fx-header-actions">
+    <a
+      href="tel:+917290977231"
+      class="fx-header-btn fx-header-call"
+    >
+      Call
+    </a>
+
+    <a
+      href="#vehicle-apply"
+      class="fx-header-btn fx-header-apply"
+    >
+      Apply Now
+    </a>
+  </div>
+
+  <button
+    class="fx-menu"
+    type="button"
+    aria-label="Open menu"
+    onclick="toggleVehicleMenu()"
+  >
+    ☰
+  </button>
 
 </div>
+```
+
+  </header>
+
+  <!-- MOBILE MENU -->
+
+  <div
+    id="fxMobileMenu"
+    style="
+      display:none;
+      background:#fff;
+      border-bottom:1px solid #dfe8f1;
+      padding:15px 20px;
+    "
+  >
+    <div class="fx-container">
+      <a href="index.html" style="display:block;padding:9px 0;text-decoration:none;">Home</a>
+      <a href="services.html" style="display:block;padding:9px 0;text-decoration:none;">Services</a>
+      <a href="about.html" style="display:block;padding:9px 0;text-decoration:none;">About</a>
+      <a href="contact.html" style="display:block;padding:9px 0;text-decoration:none;">Contact</a>
+      <a href="#vehicle-apply" style="display:block;padding:9px 0;text-decoration:none;color:#1769e0;font-weight:700;">Apply Now</a>
+    </div>
+  </div>
+
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
+
+  <section class="fx-vehicle-hero">
+
+```
+<div class="fx-container">
+
+  <div class="fx-vehicle-grid">
+
+    <div>
+
+      <span class="fx-loan-badge">
+        VEHICLE FINANCE ASSISTANCE
+      </span>
+
+      <h1 class="fx-hero-title">
+        Drive Your Next Vehicle With The Right Finance Guidance
+      </h1>
+
+      <p class="fx-hero-description">
+        Planning to purchase a new or pre-owned car, bike or commercial
+        vehicle? Fundvexxa helps you understand vehicle finance options,
+        prepare your enquiry and navigate the application process.
+      </p>
+
+      <div class="fx-hero-buttons">
+
+        <a
+          href="#vehicle-apply"
+          class="fx-btn fx-btn-primary"
+        >
+          Check Your Options
+        </a>
+
+        <a
+          href="tel:+917290977231"
+          class="fx-btn fx-btn-dark"
+        >
+          Call an Expert
+        </a>
+
+        <a
+          href="https://wa.me/917290977231?text=Hello%20Fundvexxa%2C%20I%20want%20to%20enquire%20about%20vehicle%20finance."
+          class="fx-btn fx-btn-outline"
+          target="_blank"
+          rel="noopener"
+        >
+          WhatsApp
+        </a>
+
+      </div>
+
+      <p class="fx-hero-note">
+        Eligibility, interest rate, loan amount, tenure and charges are
+        subject to the relevant lender's assessment and applicable terms.
+      </p>
+
+    </div>
+
+
+    <div class="fx-hero-image">
+
+      <img
+        src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=1400"
+        alt="Car representing vehicle finance"
+        fetchpriority="high"
+      >
+
+      <div class="fx-image-card">
+        <strong>New & Pre-Owned Vehicles</strong>
+        <span>
+          Car, two-wheeler and commercial vehicle finance enquiries.
+        </span>
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
+```
 
-<div class="vehicle-image">
+  </section>
 
-<img
-src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg"
-alt="Vehicle Loan">
+  <!-- =======================================================
+       TRUST
+  ======================================================== -->
 
-</div>
+  <section class="fx-trust">
 
-</div>
+```
+<div class="fx-container">
 
-</div>
+  <div class="fx-trust-grid">
 
-</section>
+    <div class="fx-trust-card">
+      <div class="fx-trust-icon">01</div>
+      <div>
+        <strong>Profile-Based Guidance</strong>
+        <span>Understand suitable finance routes</span>
+      </div>
+    </div>
 
-<!-- TRUST SECTION -->
+    <div class="fx-trust-card">
+      <div class="fx-trust-icon">02</div>
+      <div>
+        <strong>New & Pre-Owned</strong>
+        <span>Multiple vehicle categories</span>
+      </div>
+    </div>
 
-<section class="vehicle-trust">
+    <div class="fx-trust-card">
+      <div class="fx-trust-icon">03</div>
+      <div>
+        <strong>Application Support</strong>
+        <span>Guidance from enquiry onwards</span>
+      </div>
+    </div>
 
-<div class="container">
-
-<div class="trust-grid">
-
-<div class="trust-card">
-
-<h3>
-India Wide
-</h3>
-
-<p>
-Vehicle Loan Assistance
-</p>
-
-</div>
-
-<div class="trust-card">
-
-<h3>
-New & Used
-</h3>
-
-<p>
-Vehicle Funding Support
-</p>
+  </div>
 
 </div>
+```
 
-<div class="trust-card">
+  </section>
 
-<h3>
-Expert Team
-</h3>
+  <!-- =======================================================
+       VEHICLE TYPES
+  ======================================================== -->
 
-<p>
-Professional Guidance
-</p>
+  <section class="fx-section">
+
+```
+<div class="fx-container">
+
+  <div class="fx-section-heading">
+
+    <span class="eyebrow">
+      Vehicle Categories
+    </span>
+
+    <h2>
+      Finance Enquiries For Different Vehicle Needs
+    </h2>
+
+    <p>
+      Explore finance assistance based on the type of vehicle you are
+      planning to purchase.
+    </p>
+
+  </div>
+
+
+  <div class="fx-card-grid">
+
+    <article class="fx-card">
+
+      <div class="fx-card-icon">CAR</div>
+
+      <h3>
+        Car Finance
+      </h3>
+
+      <p>
+        Enquire about financing for eligible new and pre-owned passenger
+        cars, subject to lender policies and applicant assessment.
+      </p>
+
+    </article>
+
+
+    <article class="fx-card">
+
+      <div class="fx-card-icon">BIKE</div>
+
+      <h3>
+        Two-Wheeler Finance
+      </h3>
+
+      <p>
+        Explore financing options for eligible motorcycles and scooters
+        based on your profile and the lender's applicable criteria.
+      </p>
+
+    </article>
+
+
+    <article class="fx-card">
+
+      <div class="fx-card-icon">CV</div>
+
+      <h3>
+        Commercial Vehicle
+      </h3>
+
+      <p>
+        Finance enquiries for eligible commercial vehicles used for
+        transportation, logistics and business operations.
+      </p>
+
+    </article>
+
+  </div>
 
 </div>
+```
+
+  </section>
+
+  <!-- =======================================================
+       BENEFITS
+  ======================================================== -->
+
+  <section class="fx-section fx-section-light">
+
+```
+<div class="fx-container">
+
+  <div class="fx-section-heading">
+
+    <span class="eyebrow">
+      Why Vehicle Finance
+    </span>
+
+    <h2>
+      Plan Your Vehicle Purchase With Better Financial Visibility
+    </h2>
+
+    <p>
+      Financing can help eligible customers spread the cost of a vehicle
+      purchase over a defined repayment period instead of paying the full
+      purchase price upfront.
+    </p>
+
+  </div>
+
+
+  <div class="fx-card-grid">
+
+    <article class="fx-card">
+      <div class="fx-card-icon">01</div>
+      <h3>Structured Repayment</h3>
+      <p>
+        Repayment is structured according to the sanctioned loan terms,
+        helping customers plan their monthly cash flow.
+      </p>
+    </article>
+
+    <article class="fx-card">
+      <div class="fx-card-icon">02</div>
+      <h3>Vehicle Ownership</h3>
+      <p>
+        Eligible customers can arrange financing for their intended
+        vehicle purchase subject to lender approval.
+      </p>
+    </article>
+
+    <article class="fx-card">
+      <div class="fx-card-icon">03</div>
+      <h3>Business Mobility</h3>
+      <p>
+        Commercial vehicles may support transportation and operational
+        requirements for eligible businesses.
+      </p>
+    </article>
+
+    <article class="fx-card">
+      <div class="fx-card-icon">04</div>
+      <h3>Financial Planning</h3>
+      <p>
+        An EMI estimate can help you understand the potential monthly
+        repayment before making a financing decision.
+      </p>
+    </article>
+
+    <article class="fx-card">
+      <div class="fx-card-icon">05</div>
+      <h3>Professional Guidance</h3>
+      <p>
+        Get assistance in understanding the enquiry, documentation and
+        application journey.
+      </p>
+    </article>
+
+    <article class="fx-card">
+      <div class="fx-card-icon">06</div>
+      <h3>Multiple Vehicle Types</h3>
+      <p>
+        Car, two-wheeler and commercial vehicle enquiries can be submitted
+        through the same initial assistance process.
+      </p>
+    </article>
+
+  </div>
 
 </div>
+```
+
+  </section>
+
+  <!-- =======================================================
+       ELIGIBILITY + DOCUMENTS
+  ======================================================== -->
+
+  <section class="fx-section">
+
+```
+<div class="fx-container">
+
+  <div class="fx-section-heading">
+
+    <span class="eyebrow">
+      Eligibility & Documents
+    </span>
+
+    <h2>
+      Who May Enquire?
+    </h2>
+
+    <p>
+      Final eligibility is determined by the relevant lender based on
+      income, credit profile, vehicle details, documentation and other
+      applicable criteria.
+    </p>
+
+  </div>
+
+
+  <div class="fx-two-col">
+
+    <div class="fx-list-card">
+
+      <h3>
+        Common Applicant Profiles
+      </h3>
+
+      <ul class="fx-check-list">
+
+        <li>
+          Salaried employees with qualifying income profiles
+        </li>
+
+        <li>
+          Self-employed individuals with verifiable income
+        </li>
+
+        <li>
+          Business owners with relevant financial records
+        </li>
+
+        <li>
+          Professionals with qualifying income profiles
+        </li>
+
+        <li>
+          Applicants purchasing eligible personal vehicles
+        </li>
+
+        <li>
+          Eligible businesses requiring commercial vehicles
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <div class="fx-list-card">
+
+      <h3>
+        Documents That May Be Required
+      </h3>
+
+      <ul class="fx-check-list">
+
+        <li>
+          Identity and address proof
+        </li>
+
+        <li>
+          PAN and other documents where required by the lender
+        </li>
+
+        <li>
+          Salary slips or income documents
+        </li>
+
+        <li>
+          Bank statements
+        </li>
+
+        <li>
+          ITR / business financial documents where applicable
+        </li>
+
+        <li>
+          Vehicle quotation and vehicle-related details
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
 
 </div>
+```
 
-</section>
+  </section>
 
-<!-- VEHICLE TYPES -->
+  <!-- =======================================================
+       PROCESS
+  ======================================================== -->
 
-<section class="section">
+  <section class="fx-section fx-section-light">
 
-<div class="container">
+```
+<div class="fx-container">
 
-<div class="section-title">
+  <div class="fx-section-heading">
 
-<h2>
-Vehicle Financing Solutions
-</h2>
+    <span class="eyebrow">
+      Simple Process
+    </span>
 
-<p>
-Flexible financing options designed for personal and business transportation needs.
-</p>
+    <h2>
+      How Vehicle Finance Assistance Works
+    </h2>
+
+    <p>
+      A simple enquiry-led process designed to help you understand the
+      next steps.
+    </p>
+
+  </div>
+
+
+  <div class="fx-process">
+
+    <div class="fx-step">
+      <div class="fx-step-number">1</div>
+      <h3>Submit Enquiry</h3>
+      <p>
+        Share your basic contact and vehicle requirement details.
+      </p>
+    </div>
+
+    <div class="fx-step">
+      <div class="fx-step-number">2</div>
+      <h3>Profile Discussion</h3>
+      <p>
+        Our team discusses your requirement and relevant basic details.
+      </p>
+    </div>
+
+    <div class="fx-step">
+      <div class="fx-step-number">3</div>
+      <h3>Documentation</h3>
+      <p>
+        Required documents may be requested according to the lender and
+        applicant profile.
+      </p>
+    </div>
+
+    <div class="fx-step">
+      <div class="fx-step-number">4</div>
+      <h3>Lender Decision</h3>
+      <p>
+        The relevant lender evaluates the application and communicates its
+        decision and applicable terms.
+      </p>
+    </div>
+
+  </div>
 
 </div>
+```
 
-<div class="vehicle-card-grid">
+  </section>
 
-<div class="vehicle-card">
+  <!-- =======================================================
+       EMI CALCULATOR
+  ======================================================== -->
 
-<h3>
-Car Loan
-</h3>
+  <section class="fx-section">
 
-<p>
-Financing solutions for new and pre-owned cars to help individuals and families purchase their preferred vehicle.
-</p>
+```
+<div class="fx-container">
 
-</div>
+  <div class="fx-section-heading">
 
-<div class="vehicle-card">
+    <span class="eyebrow">
+      Planning Tool
+    </span>
 
-<h3>
-Bike Loan
-</h3>
+    <h2>
+      Vehicle Loan EMI Calculator
+    </h2>
 
-<p>
-Affordable financing options for motorcycles and scooters with convenient repayment structures.
-</p>
+    <p>
+      Use this calculator for an indicative EMI estimate. Actual EMI,
+      interest rate, fees and repayment terms depend on the sanctioned
+      loan terms.
+    </p>
 
-</div>
+  </div>
 
-<div class="vehicle-card">
 
-<h3>
-Commercial Vehicle
-</h3>
+  <div class="fx-calculator-wrap">
 
-<p>
-Funding support for business transportation requirements including commercial vehicles.
-</p>
+    <div class="fx-calculator-form">
 
-</div>
+      <div class="fx-field">
 
-</div>
+        <label for="fxLoanAmount">
+          Loan Amount (₹)
+        </label>
 
-</div>
+        <input
+          id="fxLoanAmount"
+          type="number"
+          min="10000"
+          step="1000"
+          value="500000"
+        >
 
-</section>
+      </div>
 
-<style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+      <div class="fx-field">
 
-body{
-font-family:Arial,sans-serif;
-overflow-x:hidden;
-}
+        <label for="fxInterestRate">
+          Annual Interest Rate (%)
+        </label>
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:0 20px;
-}
+        <input
+          id="fxInterestRate"
+          type="number"
+          min="0"
+          max="50"
+          step="0.1"
+          value="10"
+        >
 
-img{
-max-width:100%;
-height:auto;
-display:block;
-}
+      </div>
 
-.vehicle-hero{
-padding:90px 0;
-background:#f8fbff;
-}
 
-.vehicle-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
+      <div class="fx-field">
 
-.loan-badge{
-display:inline-block;
-padding:10px 18px;
-background:#eaf2ff;
-color:#0d6efd;
-border-radius:30px;
-font-weight:700;
-}
+        <label for="fxTenure">
+          Tenure (Years)
+        </label>
 
-.vehicle-content h1{
-font-size:58px;
-line-height:1.15;
-margin:20px 0;
-color:#111827;
-}
+        <input
+          id="fxTenure"
+          type="number"
+          min="1"
+          max="10"
+          step="1"
+          value="5"
+        >
 
-.vehicle-content p{
-font-size:20px;
-line-height:1.9;
-color:#666;
-margin-bottom:30px;
-}
+      </div>
 
-.hero-buttons{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
 
-.btn-primary,
-.btn-secondary{
-padding:16px 30px;
-border-radius:12px;
-text-decoration:none;
-font-weight:700;
-}
+      <button
+        type="button"
+        id="fxCalculateBtn"
+        class="fx-btn fx-btn-primary"
+        style="width:100%;"
+      >
+        Calculate EMI
+      </button>
 
-.btn-primary{
-background:#0d6efd;
-color:white;
-}
+    </div>
 
-.btn-secondary{
-background:#111827;
-color:white;
-}
 
-.vehicle-image img{
-border-radius:25px;
-box-shadow:0 15px 35px rgba(0,0,0,.12);
-}
+    <div class="fx-calculator-result">
 
-.vehicle-trust{
-padding:30px 0;
-}
+      <span class="fx-result-label">
+        Estimated Monthly EMI
+      </span>
 
-.trust-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
+      <div
+        id="fxEmiResult"
+        class="fx-result-emi"
+      >
+        ₹10,624
+      </div>
 
-.trust-card{
-background:white;
-padding:30px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
+      <div class="fx-result-row">
+        <span>Loan Amount</span>
+        <strong id="fxPrincipalResult">₹5,00,000</strong>
+      </div>
 
-.trust-card h3{
-font-size:28px;
-margin-bottom:10px;
-}
+      <div class="fx-result-row">
+        <span>Total Interest</span>
+        <strong id="fxInterestResult">₹1,37,440</strong>
+      </div>
 
-.trust-card p{
-font-size:18px;
-}
+      <div class="fx-result-row">
+        <span>Total Repayment</span>
+        <strong id="fxTotalResult">₹6,37,440</strong>
+      </div>
 
-.section{
-padding:80px 0;
-}
+      <p style="margin-top:20px;color:#b9ccdf;font-size:11px;">
+        Indicative calculation only. It is not a sanction, quote or
+        guarantee of any lender's terms.
+      </p>
 
-.section-title{
-text-align:center;
-margin-bottom:50px;
-}
+    </div>
 
-.section-title h2{
-font-size:46px;
-margin-bottom:15px;
-}
-
-.section-title p{
-font-size:20px;
-line-height:1.8;
-max-width:850px;
-margin:auto;
-}
-
-.vehicle-card-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-}
-
-.vehicle-card{
-background:white;
-padding:35px;
-border-radius:24px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-.vehicle-card h3{
-font-size:28px;
-margin-bottom:15px;
-}
-
-.vehicle-card p{
-font-size:18px;
-line-height:1.8;
-color:#666;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.vehicle-grid,
-.trust-grid,
-.vehicle-card-grid{
-grid-template-columns:1fr;
-}
-
-.vehicle-content h1{
-font-size:38px;
-}
-
-.vehicle-content p{
-font-size:18px;
-}
-
-.section-title h2{
-font-size:34px;
-}
-
-.section-title p{
-font-size:18px;
-}
-
-.vehicle-card,
-.trust-card{
-padding:28px;
-}
-
-.btn-primary,
-.btn-secondary{
-width:100%;
-text-align:center;
-}
-
-}
-
-</style>
-
-<!-- BENEFITS SECTION -->
-
-<section class="section" style="background:#f8fbff;">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Benefits Of Vehicle Loan
-</h2>
-
-<p>
-Vehicle financing helps individuals and businesses purchase vehicles without putting pressure on their savings. It allows customers to own a vehicle while managing payments comfortably.
-</p>
+  </div>
 
 </div>
+```
 
-<div class="vehicle-card-grid">
+  </section>
 
-<div class="vehicle-card">
+  <!-- =======================================================
+       APPLICATION FORM
+  ======================================================== -->
 
-<h3>
-Easy Ownership
-</h3>
+  <section
+    class="fx-section fx-section-light"
+    id="vehicle-apply"
+  >
 
-<p>
-Purchase your preferred vehicle today and repay in convenient installments instead of paying the entire amount upfront.
-</p>
+```
+<div class="fx-container">
+
+  <div class="fx-section-heading">
+
+    <span class="eyebrow">
+      Vehicle Finance Enquiry
+    </span>
+
+    <h2>
+      Tell Us About Your Vehicle Requirement
+    </h2>
+
+    <p>
+      Submit your basic details. Our team can contact you to understand
+      your requirement and explain the next steps.
+    </p>
+
+  </div>
+
+
+  <div class="fx-application">
+
+    <div
+      id="fxFormMessage"
+      class="fx-form-message"
+      role="alert"
+      aria-live="polite"
+    ></div>
+
+
+    <form id="vehicleLeadForm">
+
+      <div class="fx-form-grid">
+
+        <div class="fx-field">
+
+          <label for="vehicleName">
+            Full Name *
+          </label>
+
+          <input
+            id="vehicleName"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+            maxlength="80"
+            placeholder="Enter your full name"
+          >
+
+        </div>
+
+
+        <div class="fx-field">
+
+          <label for="vehicleMobile">
+            Mobile Number *
+          </label>
+
+          <input
+            id="vehicleMobile"
+            name="mobile"
+            type="tel"
+            autocomplete="tel"
+            required
+            maxlength="15"
+            placeholder="10-digit mobile number"
+          >
+
+        </div>
+
+
+        <div class="fx-field">
+
+          <label for="vehicleEmail">
+            Email
+          </label>
+
+          <input
+            id="vehicleEmail"
+            name="email"
+            type="email"
+            autocomplete="email"
+            maxlength="120"
+            placeholder="you@example.com"
+          >
+
+        </div>
+
+
+        <div class="fx-field">
+
+          <label for="vehicleCity">
+            City *
+          </label>
+
+          <input
+            id="vehicleCity"
+            name="city"
+            type="text"
+            required
+            maxlength="80"
+            placeholder="Your city"
+          >
+
+        </div>
+
+
+        <div class="fx-field">
+
+          <label for="vehicleType">
+            Vehicle Type *
+          </label>
+
+          <select
+            id="vehicleType"
+            name="vehicleType"
+            required
+          >
+            <option value="">Select vehicle type</option>
+            <option value="Car - New">Car - New</option>
+            <option value="Car - Pre-Owned">Car - Pre-Owned</option>
+            <option value="Two-Wheeler">Two-Wheeler</option>
+            <option value="Commercial Vehicle">Commercial Vehicle</option>
+          </select>
+
+        </div>
+
+
+        <div class="fx-field">
+
+          <label for="vehicleBudget">
+            Approx. Vehicle Budget
+          </label>
+
+          <input
+            id="vehicleBudget"
+            name="vehicleBudget"
+            type="number"
+            min="0"
+            step="1000"
+            placeholder="e.g. 800000"
+          >
+
+        </div>
+
+
+        <div class="fx-field">
+
+          <label for="vehicleEmployment">
+            Applicant Type
+          </label>
+
+          <select
+            id="vehicleEmployment"
+            name="applicantType"
+          >
+            <option value="">Select</option>
+            <option value="Salaried">Salaried</option>
+            <option value="Self Employed">Self Employed</option>
+            <option value="Business Owner">Business Owner</option>
+            <option value="Professional">Professional</option>
+            <option value="Other">Other</option>
+          </select>
+
+        </div>
+
+
+        <div class="fx-field">
+
+          <label for="vehicleLoanRequirement">
+            Approx. Finance Requirement
+          </label>
+
+          <input
+            id="vehicleLoanRequirement"
+            name="loanAmount"
+            type="number"
+            min="0"
+            step="1000"
+            placeholder="e.g. 600000"
+          >
+
+        </div>
+
+
+        <div class="fx-field fx-field-full">
+
+          <label for="vehicleMessage">
+            Requirement / Message
+          </label>
+
+          <textarea
+            id="vehicleMessage"
+            name="message"
+            rows="4"
+            maxlength="500"
+            placeholder="Tell us briefly about the vehicle you are planning to purchase."
+          ></textarea>
+
+        </div>
+
+      </div>
+
+
+      <label class="fx-consent">
+
+        <input
+          type="checkbox"
+          id="vehicleConsent"
+          required
+        >
+
+        <span>
+          I agree that Fundvexxa may contact me regarding this enquiry.
+          I understand that submitting an enquiry does not guarantee loan
+          approval or any specific lender terms.
+        </span>
+
+      </label>
+
+
+      <button
+        id="vehicleSubmitBtn"
+        type="submit"
+        class="fx-btn fx-btn-primary"
+        style="width:100%;"
+      >
+        <span id="vehicleSubmitText">
+          Submit Vehicle Finance Enquiry
+        </span>
+      </button>
+
+    </form>
+
+  </div>
 
 </div>
+```
 
-<div class="vehicle-card">
+  </section>
 
-<h3>
-Flexible Repayment
-</h3>
+  <!-- =======================================================
+       FAQ
+  ======================================================== -->
 
-<p>
-Multiple repayment options help borrowers choose a suitable payment structure based on their financial profile.
-</p>
+  <section class="fx-section">
+
+```
+<div class="fx-container">
+
+  <div class="fx-section-heading">
+
+    <span class="eyebrow">
+      FAQ
+    </span>
+
+    <h2>
+      Frequently Asked Questions
+    </h2>
+
+    <p>
+      Important information before submitting your vehicle finance
+      enquiry.
+    </p>
+
+  </div>
+
+
+  <div class="fx-faq">
+
+    <div class="fx-faq-item">
+
+      <button
+        type="button"
+        class="fx-faq-question"
+        aria-expanded="false"
+      >
+        <span>
+          Can I enquire about a used vehicle loan?
+        </span>
+
+        <span class="fx-faq-plus">
+          +
+        </span>
+
+      </button>
+
+      <div class="fx-faq-answer">
+        Vehicle finance may be available for eligible pre-owned vehicles.
+        Vehicle age, valuation, applicant profile and lender policy can
+        affect eligibility.
+      </div>
+
+    </div>
+
+
+    <div class="fx-faq-item">
+
+      <button
+        type="button"
+        class="fx-faq-question"
+        aria-expanded="false"
+      >
+        <span>
+          Who can enquire for vehicle finance?
+        </span>
+
+        <span class="fx-faq-plus">
+          +
+        </span>
+
+      </button>
+
+      <div class="fx-faq-answer">
+        Salaried employees, self-employed individuals, professionals and
+        business owners may enquire. Final eligibility is determined by
+        the relevant lender.
+      </div>
+
+    </div>
+
+
+    <div class="fx-faq-item">
+
+      <button
+        type="button"
+        class="fx-faq-question"
+        aria-expanded="false"
+      >
+        <span>
+          What documents may be required?
+        </span>
+
+        <span class="fx-faq-plus">
+          +
+        </span>
+
+      </button>
+
+      <div class="fx-faq-answer">
+        Depending on the lender and applicant profile, identity proof,
+        address proof, income documents, bank statements and vehicle
+        documents may be requested.
+      </div>
+
+    </div>
+
+
+    <div class="fx-faq-item">
+
+      <button
+        type="button"
+        class="fx-faq-question"
+        aria-expanded="false"
+      >
+        <span>
+          Does Fundvexxa guarantee vehicle loan approval?
+        </span>
+
+        <span class="fx-faq-plus">
+          +
+        </span>
+
+      </button>
+
+      <div class="fx-faq-answer">
+        No. Fundvexxa provides enquiry and application guidance. Final
+        approval, amount, interest rate, tenure, charges and other terms
+        are determined by the relevant lender.
+      </div>
+
+    </div>
+
+
+    <div class="fx-faq-item">
+
+      <button
+        type="button"
+        class="fx-faq-question"
+        aria-expanded="false"
+      >
+        <span>
+          How do I start my enquiry?
+        </span>
+
+        <span class="fx-faq-plus">
+          +
+        </span>
+
+      </button>
+
+      <div class="fx-faq-answer">
+        Fill in the enquiry form with your basic details and vehicle
+        requirement. Our team can then contact you regarding the next
+        steps.
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
+```
 
-<div class="vehicle-card">
+  </section>
 
-<h3>
-Business Growth
-</h3>
+  <!-- =======================================================
+       FINAL CTA
+  ======================================================== -->
 
-<p>
-Commercial vehicles can support transportation, logistics and business expansion requirements.
-</p>
+  <section class="fx-final-cta">
 
-</div>
+```
+<div class="fx-container">
 
-<div class="vehicle-card">
+  <h2>
+    Planning To Buy Your Next Vehicle?
+  </h2>
 
-<h3>
-Preserve Savings
-</h3>
+  <p>
+    Share your requirement with Fundvexxa and get professional guidance
+    on the vehicle finance enquiry process.
+  </p>
 
-<p>
-Maintain your savings and emergency funds while arranging finance for vehicle purchases.
-</p>
+  <div class="fx-final-buttons">
 
-</div>
+    <a
+      href="#vehicle-apply"
+      class="fx-btn fx-btn-white"
+    >
+      Submit Enquiry
+    </a>
 
-<div class="vehicle-card">
+    <a
+      href="https://wa.me/917290977231?text=Hello%20Fundvexxa%2C%20I%20want%20vehicle%20finance%20assistance."
+      class="fx-btn fx-btn-whatsapp"
+      target="_blank"
+      rel="noopener"
+    >
+      WhatsApp Us
+    </a>
 
-<h3>
-Professional Support
-</h3>
+    <a
+      href="tel:+917290977231"
+      class="fx-btn"
+      style="background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);"
+    >
+      +91 72909 77231
+    </a>
 
-<p>
-Guidance throughout enquiry, documentation and application processes for a smoother experience.
-</p>
-
-</div>
-
-<div class="vehicle-card">
-
-<h3>
-Nationwide Assistance
-</h3>
-
-<p>
-Vehicle finance support available across multiple cities and regions in India.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ELIGIBILITY -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Who Can Apply?
-</h2>
-
-<p>
-Vehicle financing solutions may be available to eligible individuals, professionals and business owners subject to profile assessment and documentation requirements.
-</p>
+  </div>
 
 </div>
+```
 
-<div class="vehicle-card-grid">
+  </section>
 
-<div class="vehicle-card">
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
 
-<h3>
-Salaried Employees
-</h3>
+  <footer class="fx-footer">
 
-<p>
-Private sector employees, government employees and working professionals with stable income profiles.
-</p>
+```
+<div class="fx-container">
 
-</div>
+  <div class="fx-footer-grid">
 
-<div class="vehicle-card">
+    <div>
 
-<h3>
-Self Employed
-</h3>
+      <h3>
+        Fundvexxa
+      </h3>
 
-<p>
-Self-employed individuals with regular income and business activity records.
-</p>
+      <p>
+        Professional assistance for vehicle finance, business finance,
+        personal finance and selected financial services.
+      </p>
 
-</div>
+    </div>
 
-<div class="vehicle-card">
 
-<h3>
-Business Owners
-</h3>
+    <div>
 
-<p>
-Business owners planning to purchase personal or commercial vehicles for operational requirements.
-</p>
+      <h4>
+        Quick Links
+      </h4>
 
-</div>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
 
-<div class="vehicle-card">
+    </div>
 
-<h3>
-Professionals
-</h3>
 
-<p>
-Doctors, consultants, architects and other professionals with qualifying profiles.
-</p>
+    <div>
 
-</div>
+      <h4>
+        Contact
+      </h4>
 
-<div class="vehicle-card">
+      <a href="tel:+917290977231">
+        +91 72909 77231
+      </a>
 
-<h3>
-Fleet Operators
-</h3>
+      <a href="mailto:fundvexxasupport@gmail.com">
+        fundvexxasupport@gmail.com
+      </a>
 
-<p>
-Individuals or businesses managing transportation services and commercial vehicle operations.
-</p>
+      <a
+        href="https://wa.me/917290977231"
+        target="_blank"
+        rel="noopener"
+      >
+        WhatsApp
+      </a>
 
-</div>
+    </div>
 
-<div class="vehicle-card">
+  </div>
 
-<h3>
-First-Time Buyers
-</h3>
 
-<p>
-Customers purchasing their first vehicle and looking for structured financing support.
-</p>
+  <div class="fx-footer-bottom">
 
-</div>
+    <div>
+      © <span id="fxCurrentYear"></span> Fundvexxa. All rights reserved.
+    </div>
 
-</div>
+    <div style="margin-top:7px;">
+      Disclaimer: Fundvexxa provides assistance and enquiry support.
+      We do not guarantee loan approval, interest rate, loan amount,
+      tenure or disbursement. Final eligibility, sanction, pricing,
+      charges, documentation and terms are determined by the relevant
+      lender / regulated entity.
+    </div>
 
-</div>
+    <div style="margin-top:7px;">
+      Applicants should review the lender's applicable Key Facts
+      Statement (KFS), Annual Percentage Rate (APR), fees, charges and
+      loan agreement before accepting any offer.
+    </div>
 
-</section>
-
-<!-- DOCUMENTS REQUIRED -->
-
-<section class="section" style="background:#f8fbff;">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Documents Required
-</h2>
-
-<p>
-Basic documentation requirements may vary depending on applicant profile, vehicle type and financing institution.
-</p>
+  </div>
 
 </div>
+```
 
-<div class="vehicle-card-grid">
+  </footer>
 
-<div class="vehicle-card">
-
-<h3>
-Identity Proof
-</h3>
-
-<p>
-Aadhaar Card, PAN Card, Passport, Driving Licence or other accepted identity documents.
-</p>
-
-</div>
-
-<div class="vehicle-card">
-
-<h3>
-Address Proof
-</h3>
-
-<p>
-Utility bills, Aadhaar Card, Passport, Rental Agreement or valid residential proof.
-</p>
-
-</div>
-
-<div class="vehicle-card">
-
-<h3>
-Income Proof
-</h3>
-
-<p>
-Salary slips, bank statements, ITR documents or professional income records.
-</p>
-
-</div>
-
-<div class="vehicle-card">
-
-<h3>
-Bank Statements
-</h3>
-
-<p>
-Recent banking history may be required during profile evaluation and assessment.
-</p>
-
-</div>
-
-<div class="vehicle-card">
-
-<h3>
-Photographs
-</h3>
-
-<p>
-Recent passport-size photographs may be requested during documentation.
-</p>
-
-</div>
-
-<div class="vehicle-card">
-
-<h3>
-Vehicle Details
-</h3>
-
-<p>
-Quotation, vehicle information and purchase-related details may be required.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- WHY CHOOSE US -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Why Choose Fundvexxa?
-</h2>
-
-<p>
-We focus on providing professional guidance and transparent support throughout the vehicle financing journey.
-</p>
-
-</div>
-
-<div class="trust-grid">
-
-<div class="trust-card">
-
-<h3>
-Experienced Team
-</h3>
-
-<p>
-Professional support from enquiry to application assistance.
-</p>
-
-</div>
-
-<div class="trust-card">
-
-<h3>
-Transparent Process
-</h3>
-
-<p>
-Clear communication and proper guidance at every stage.
-</p>
-
-</div>
-
-<div class="trust-card">
-
-<h3>
-Customer Focused
-</h3>
-
-<p>
-Dedicated assistance designed to improve customer experience.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- APPLY FORM -->
-
-<section class="section" id="vehicle-apply" style="background:#f8fbff;">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Apply For Vehicle Loan
-</h2>
-
-<p>
-Submit your details and our team will contact you shortly.
-</p>
-
-</div>
-
-<div style="
-max-width:850px;
-margin:auto;
-background:#fff;
-padding:35px;
-border-radius:25px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-">
-
-<form>
-
-<input
-type="text"
-placeholder="Full Name"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:12px;
-font-size:16px;
-">
-
-<input
-type="tel"
-placeholder="Mobile Number"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:12px;
-font-size:16px;
-">
-
-<input
-type="text"
-placeholder="City"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:12px;
-font-size:16px;
-">
-
-<select
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:12px;
-font-size:16px;
-">
-
-<option>Select Vehicle Type</option>
-<option>Car Loan</option>
-<option>Bike Loan</option>
-<option>Commercial Vehicle</option>
-
-</select>
-
-<textarea
-rows="5"
-placeholder="Vehicle Requirement"
-style="
-width:100%;
-padding:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:12px;
-font-size:16px;
-"></textarea>
-
-<button
-type="submit"
-style="
-width:100%;
-padding:18px;
-background:#0d6efd;
-color:white;
-border:none;
-border-radius:12px;
-font-size:17px;
-font-weight:700;
-cursor:pointer;
-">
-Request Callback
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- FAQ -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Frequently Asked Questions
-</h2>
-
-<p>
-Common questions related to vehicle financing assistance.
-</p>
-
-</div>
-
-<div class="vehicle-card">
-
-<h3>
-Can I apply for a used vehicle loan?
-</h3>
-
-<p>
-Yes, financing solutions may be available for eligible new and pre-owned vehicles depending on profile assessment.
-</p>
-
-</div>
-
-<br>
-
-<div class="vehicle-card">
-
-<h3>
-What documents are generally required?
-</h3>
-
-<p>
-Identity proof, address proof, income proof, bank statements and vehicle details may be required.
-</p>
-
-</div>
-
-<br>
-
-<div class="vehicle-card">
-
-<h3>
-Who can apply?
-</h3>
-
-<p>
-Salaried employees, self-employed individuals, professionals and business owners may apply subject to eligibility.
-</p>
-
-</div>
-
-<br>
-
-<div class="vehicle-card">
-
-<h3>
-How do I start?
-</h3>
-
-<p>
-Fill the enquiry form and our team will contact you for further guidance.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- FINAL CTA -->
-
-<section style="
-padding:90px 0;
-background:linear-gradient(135deg,#0d6efd,#0046b8);
-text-align:center;
-color:white;
-">
-
-<div class="container">
-
-<h2 style="
-font-size:42px;
-margin-bottom:20px;
-">
-Ready To Buy Your Dream Vehicle?
-</h2>
-
-<p style="
-max-width:800px;
-margin:auto;
-font-size:18px;
-line-height:1.8;
-margin-bottom:30px;
-">
-Whether it's a car, bike or commercial vehicle, our team is ready to assist you with professional vehicle financing guidance.
-</p>
+  <!-- FLOATING WHATSAPP -->
 
 <a
-href="tel:+917290977231"
-style="
-display:inline-block;
-padding:16px 35px;
-background:white;
-color:#0d6efd;
-border-radius:12px;
-text-decoration:none;
-font-weight:700;
-">
-Talk To Expert
+href="https://wa.me/917290977231?text=Hello%20Fundvexxa%2C%20I%20want%20vehicle%20finance%20assistance."
+class="fx-whatsapp"
+target="_blank"
+rel="noopener"
+aria-label="Chat with Fundvexxa on WhatsApp"
+title="WhatsApp"
+
+>
+
+```
+WA
+```
+
+  </a>
+
+  <!-- MOBILE CTA -->
+
+  <div class="fx-mobile-bar">
+
+```
+<a href="tel:+917290977231">
+  ☎ Call
 </a>
 
-</div>
+<a
+  href="https://wa.me/917290977231?text=Hello%20Fundvexxa%2C%20I%20want%20vehicle%20finance%20assistance."
+  target="_blank"
+  rel="noopener"
+>
+  WhatsApp
+</a>
 
-</section>
+<a href="#vehicle-apply">
+  Apply Now
+</a>
+```
 
-<!-- POPUP FORM -->
-
-<div id="vehiclePopup" style="
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.65);
-justify-content:center;
-align-items:center;
-z-index:9999;
-padding:20px;
-">
-
-<div style="
-background:white;
-width:100%;
-max-width:420px;
-padding:30px;
-border-radius:20px;
-position:relative;
-">
-
-<span onclick="closeVehiclePopup()"
-style="
-position:absolute;
-right:15px;
-top:10px;
-font-size:28px;
-cursor:pointer;
-">
-×
-</span>
-
-<h3 style="
-margin-bottom:20px;
-text-align:center;
-">
-Free Vehicle Loan Consultation
-</h3>
-
-<input
-type="text"
-placeholder="Full Name"
-style="
-width:100%;
-padding:14px;
-margin-bottom:12px;
-border:1px solid #ddd;
-border-radius:10px;
-">
-
-<input
-type="tel"
-placeholder="Mobile Number"
-style="
-width:100%;
-padding:14px;
-margin-bottom:12px;
-border:1px solid #ddd;
-border-radius:10px;
-">
-
-<button
-style="
-width:100%;
-padding:15px;
-background:#0d6efd;
-color:white;
-border:none;
-border-radius:10px;
-font-weight:700;
-cursor:pointer;
-">
-Request Callback
-</button>
+  </div>
 
 </div>
 
-</div>
+<!-- =========================================================
+     FIREBASE + PAGE LOGIC
+========================================================= -->
 
-<script>
+<script type="module">
 
-let vehiclePopupShown=false;
+  import {
+    initializeApp
+  } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
-setTimeout(function(){
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp
+  } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-if(!vehiclePopupShown){
 
-document.getElementById("vehiclePopup").style.display="flex";
-vehiclePopupShown=true;
+  /* =========================================================
+     FIREBASE CONFIG
+  ========================================================= */
 
-}
+  const firebaseConfig = {
+    apiKey: "AIzaSyArcvyvNAOKipPZB0YEseN9_k-8JznQ",
+    authDomain: "smile-business-os.firebaseapp.com",
+    projectId: "smile-business-os",
+    storageBucket: "smile-business-os.firebasestorage.app",
+    messagingSenderId: "114356400630",
+    appId: "1:114356400630:web:96fc9d07baaf3a504c17d7",
+    measurementId: "G-73WD9V05ZZ"
+  };
 
-},10000);
 
-window.addEventListener("scroll",function(){
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
-if(window.scrollY>700 && !vehiclePopupShown){
 
-document.getElementById("vehiclePopup").style.display="flex";
-vehiclePopupShown=true;
+  /* =========================================================
+     HELPERS
+  ========================================================= */
 
-}
+  const formatINR = (number) => {
 
-});
+    return new Intl.NumberFormat(
+      "en-IN",
+      {
+        style: "currency",
+        currency: "INR",
+        maximumFractionDigits: 0
+      }
+    ).format(number);
 
-function closeVehiclePopup(){
+  };
 
-document.getElementById("vehiclePopup").style.display="none";
 
-}
+  /* =========================================================
+     EMI CALCULATOR
+  ========================================================= */
+
+  const loanAmountInput =
+    document.getElementById("fxLoanAmount");
+
+  const interestRateInput =
+    document.getElementById("fxInterestRate");
+
+  const tenureInput =
+    document.getElementById("fxTenure");
+
+  const emiResult =
+    document.getElementById("fxEmiResult");
+
+  const principalResult =
+    document.getElementById("fxPrincipalResult");
+
+  const interestResult =
+    document.getElementById("fxInterestResult");
+
+  const totalResult =
+    document.getElementById("fxTotalResult");
+
+
+  function calculateVehicleEMI() {
+
+    const principal =
+      Number(loanAmountInput.value);
+
+    const annualRate =
+      Number(interestRateInput.value);
+
+    const years =
+      Number(tenureInput.value);
+
+    if (
+      !Number.isFinite(principal) ||
+      principal <= 0 ||
+      !Number.isFinite(annualRate) ||
+      annualRate < 0 ||
+      !Number.isFinite(years) ||
+      years <= 0
+    ) {
+
+      return;
+
+    }
+
+
+    const months =
+      Math.round(years * 12);
+
+    const monthlyRate =
+      annualRate / 12 / 100;
+
+
+    let emi;
+
+
+    if (monthlyRate === 0) {
+
+      emi = principal / months;
+
+    } else {
+
+      const factor =
+        Math.pow(
+          1 + monthlyRate,
+          months
+        );
+
+      emi =
+        principal *
+        monthlyRate *
+        factor /
+        (factor - 1);
+
+    }
+
+
+    const totalPayment =
+      emi * months;
+
+    const totalInterest =
+      totalPayment - principal;
+
+
+    emiResult.textContent =
+      formatINR(emi);
+
+    principalResult.textContent =
+      formatINR(principal);
+
+    interestResult.textContent =
+      formatINR(totalInterest);
+
+    totalResult.textContent =
+      formatINR(totalPayment);
+
+  }
+
+
+  document
+    .getElementById("fxCalculateBtn")
+    .addEventListener(
+      "click",
+      calculateVehicleEMI
+    );
+
+
+  [
+    loanAmountInput,
+    interestRateInput,
+    tenureInput
+  ].forEach(input => {
+
+    input.addEventListener(
+      "input",
+      calculateVehicleEMI
+    );
+
+  });
+
+
+  calculateVehicleEMI();
+
+
+  /* =========================================================
+     MOBILE MENU
+  ========================================================= */
+
+  window.toggleVehicleMenu = function() {
+
+    const menu =
+      document.getElementById("fxMobileMenu");
+
+    menu.style.display =
+      menu.style.display === "block"
+        ? "none"
+        : "block";
+
+  };
+
+
+  /* Close mobile menu after navigation */
+
+  document
+    .querySelectorAll("#fxMobileMenu a")
+    .forEach(link => {
+
+      link.addEventListener(
+        "click",
+        () => {
+
+          document.getElementById(
+            "fxMobileMenu"
+          ).style.display = "none";
+
+        }
+      );
+
+    });
+
+
+  /* =========================================================
+     FAQ
+  ========================================================= */
+
+  document
+    .querySelectorAll(".fx-faq-question")
+    .forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          const item =
+            button.closest(".fx-faq-item");
+
+          const isActive =
+            item.classList.contains("active");
+
+
+          document
+            .querySelectorAll(".fx-faq-item")
+            .forEach(otherItem => {
+
+              otherItem.classList.remove("active");
+
+              const otherButton =
+                otherItem.querySelector(
+                  ".fx-faq-question"
+                );
+
+              otherButton.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+              const plus =
+                otherButton.querySelector(
+                  ".fx-faq-plus"
+                );
+
+              plus.textContent = "+";
+
+            });
+
+
+          if (!isActive) {
+
+            item.classList.add("active");
+
+            button.setAttribute(
+              "aria-expanded",
+              "true"
+            );
+
+            button.querySelector(
+              ".fx-faq-plus"
+            ).textContent = "−";
+
+          }
+
+        }
+      );
+
+    });
+
+
+  /* =========================================================
+     VEHICLE LEAD FORM
+  ========================================================= */
+
+  const vehicleForm =
+    document.getElementById(
+      "vehicleLeadForm"
+    );
+
+  const formMessage =
+    document.getElementById(
+      "fxFormMessage"
+    );
+
+  const submitButton =
+    document.getElementById(
+      "vehicleSubmitBtn"
+    );
+
+  const submitText =
+    document.getElementById(
+      "vehicleSubmitText"
+    );
+
+
+  function showFormMessage(
+    type,
+    message
+  ) {
+
+    formMessage.className =
+      "fx-form-message " + type;
+
+    formMessage.textContent =
+      message;
+
+    formMessage.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
+    });
+
+  }
+
+
+  vehicleForm.addEventListener(
+    "submit",
+    async (event) => {
+
+      event.preventDefault();
+
+
+      const name =
+        document.getElementById(
+          "vehicleName"
+        ).value.trim();
+
+      const mobile =
+        document.getElementById(
+          "vehicleMobile"
+        ).value.trim();
+
+      const email =
+        document.getElementById(
+          "vehicleEmail"
+        ).value.trim();
+
+      const city =
+        document.getElementById(
+          "vehicleCity"
+        ).value.trim();
+
+      const vehicleType =
+        document.getElementById(
+          "vehicleType"
+        ).value;
+
+      const vehicleBudget =
+        document.getElementById(
+          "vehicleBudget"
+        ).value;
+
+      const applicantType =
+        document.getElementById(
+          "vehicleEmployment"
+        ).value;
+
+      const loanAmount =
+        document.getElementById(
+          "vehicleLoanRequirement"
+        ).value;
+
+      const message =
+        document.getElementById(
+          "vehicleMessage"
+        ).value.trim();
+
+
+      /* Basic validation */
+
+      if (
+        !name ||
+        name.length < 2
+      ) {
+
+        showFormMessage(
+          "error",
+          "Please enter your full name."
+        );
+
+        return;
+
+      }
+
+
+      const cleanMobile =
+        mobile.replace(/\D/g,"");
+
+
+      if (
+        cleanMobile.length !== 10
+      ) {
+
+        showFormMessage(
+          "error",
+          "Please enter a valid 10-digit mobile number."
+        );
+
+        return;
+
+      }
+
+
+      if (!city) {
+
+        showFormMessage(
+          "error",
+          "Please enter your city."
+        );
+
+        return;
+
+      }
+
+
+      if (!vehicleType) {
+
+        showFormMessage(
+          "error",
+          "Please select your vehicle type."
+        );
+
+        return;
+
+      }
+
+
+      submitButton.classList.add(
+        "fx-submit-loading"
+      );
+
+      submitText.textContent =
+        "Submitting...";
+
+
+      try {
+
+        await addDoc(
+          collection(db,"leads"),
+          {
+
+            name: name,
+
+            fullName: name,
+
+            phone: cleanMobile,
+
+            mobile: cleanMobile,
+
+            email: email || "",
+
+            city: city,
+
+            vehicleType: vehicleType,
+
+            vehicleBudget:
+              vehicleBudget
+                ? Number(vehicleBudget)
+                : null,
+
+            applicantType:
+              applicantType || "",
+
+            amount:
+              loanAmount
+                ? Number(loanAmount)
+                : null,
+
+            loanAmount:
+              loanAmount
+                ? Number(loanAmount)
+                : null,
+
+            category: "vehicle-loan",
+
+            loanType: "Vehicle Loan",
+
+            requirement:
+              vehicleType,
+
+            message: message,
+
+            source: "vehicle-loan-page",
+
+            page: "vehicle-loan.html",
+
+            status: "new",
+
+            createdAt:
+              serverTimestamp(),
+
+            updatedAt:
+              serverTimestamp()
+
+          }
+        );
+
+
+        showFormMessage(
+          "success",
+          "Thank you! Your vehicle finance enquiry has been submitted successfully. Our team will contact you regarding the next steps."
+        );
+
+
+        vehicleForm.reset();
+
+
+      } catch (error) {
+
+        console.error(
+          "Vehicle lead error:",
+          error
+        );
+
+
+        showFormMessage(
+          "error",
+          "We could not submit your enquiry right now. Please try again or contact us directly on +91 72909 77231."
+        );
+
+      } finally {
+
+        submitButton.classList.remove(
+          "fx-submit-loading"
+        );
+
+        submitText.textContent =
+          "Submit Vehicle Finance Enquiry";
+
+      }
+
+    }
+  );
+
+
+  /* =========================================================
+     CURRENT YEAR
+  ========================================================= */
+
+  document.getElementById(
+    "fxCurrentYear"
+  ).textContent =
+    new Date().getFullYear();
 
 </script>
 
-<!-- FOOTER CTA -->
-
-<section style="
-padding:60px 0;
-background:#111827;
-color:white;
-text-align:center;
-">
-
-<div class="container">
-
-<h3 style="
-font-size:30px;
-margin-bottom:15px;
-">
-Fundvexxa
-</h3>
-
-<p style="
-max-width:700px;
-margin:auto;
-font-size:17px;
-line-height:1.8;
-color:#d1d5db;
-">
-Vehicle Loan, Personal Loan, Business Loan, Education Loan and Financial Services available across India with professional assistance.
-</p>
-
-</div>
-
-</section>
+</body>
+</html>
