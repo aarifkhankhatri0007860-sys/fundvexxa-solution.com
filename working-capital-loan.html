@@ -1,1041 +1,4519 @@
-<!-- WORKING CAPITAL LOAN HERO -->
+<!DOCTYPE html>
 
-<section class="hero-section">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
-<div class="container">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
 
-<div class="hero-content">
+>
 
-<span class="hero-badge">
-WORKING CAPITAL LOAN
-</span>
+  <title>
+    Working Capital Loan Assistance for MSMEs | Fundvexxa
+  </title>
 
-<h1 class="hero-title">
-Keep Your Business Running Without Cash Flow Stress
-</h1>
+<meta
+name="description"
+content="Explore working capital finance assistance for MSMEs, manufacturers, retailers, traders and service businesses. Fundvexxa provides professional enquiry and application guidance."
 
-<p class="hero-text">
-Inventory purchase karna hai? Supplier payment due hai? Staff salary aur daily business expenses manage karne hain? Working Capital Loan aapke business ko smooth operations aur growth ke liye financial support provide kar sakta hai.
-</p>
+>
 
-<div class="hero-buttons">
+<meta
+name="keywords"
+content="working capital loan, working capital finance, MSME working capital loan, business working capital loan, cash flow finance, Fundvexxa"
 
-<a href="#apply" class="btn-primary">
-Apply Now
+>
+
+<meta
+name="theme-color"
+content="#0b2a4a"
+
+>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =========================================================
+       FUNDVEXXA WORKING CAPITAL PAGE
+       Scoped CSS — does not affect other website pages
+    ========================================================= */
+
+    .fx-wc-page{
+
+      --navy:#0b2a4a;
+      --navy-2:#123f65;
+      --blue:#1769e0;
+      --blue-dark:#0d4fa8;
+      --gold:#d5a84c;
+
+      --light:#f5f9fd;
+      --light-blue:#edf5ff;
+
+      --text:#17212b;
+      --muted:#64748b;
+
+      --border:#dfe8f1;
+      --white:#ffffff;
+
+      --green:#15804a;
+      --red:#b42318;
+
+      font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+      color:var(--text);
+      background:#fff;
+
+      line-height:1.6;
+
+      overflow-x:hidden;
+    }
+
+
+    .fx-wc-page *,
+    .fx-wc-page *::before,
+    .fx-wc-page *::after{
+
+      box-sizing:border-box;
+
+    }
+
+
+    .fx-wc-page img{
+
+      display:block;
+      max-width:100%;
+
+    }
+
+
+    .fx-wc-page a{
+
+      color:inherit;
+
+    }
+
+
+    .fx-wc-container{
+
+      width:min(
+        1180px,
+        calc(100% - 40px)
+      );
+
+      margin:0 auto;
+
+    }
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    .fx-wc-header{
+
+      position:sticky;
+
+      top:0;
+
+      z-index:1000;
+
+      background:rgba(
+        255,
+        255,
+        255,
+        .96
+      );
+
+      backdrop-filter:blur(12px);
+
+      border-bottom:
+        1px solid
+        rgba(
+          223,
+          232,
+          241,
+          .9
+        );
+
+    }
+
+
+    .fx-wc-header-inner{
+
+      min-height:76px;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:space-between;
+
+      gap:25px;
+
+    }
+
+
+    .fx-wc-logo{
+
+      display:flex;
+
+      align-items:center;
+
+      gap:10px;
+
+      text-decoration:none;
+
+      color:var(--navy);
+
+      font-size:24px;
+
+      font-weight:800;
+
+      letter-spacing:-.5px;
+
+    }
+
+
+    .fx-wc-logo-mark{
+
+      width:38px;
+      height:38px;
+
+      display:grid;
+
+      place-items:center;
+
+      border-radius:11px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--navy),
+          var(--blue)
+        );
+
+      color:#fff;
+
+      font-size:18px;
+
+      font-weight:800;
+
+    }
+
+
+    .fx-wc-nav{
+
+      display:flex;
+
+      align-items:center;
+
+      gap:24px;
+
+    }
+
+
+    .fx-wc-nav a{
+
+      text-decoration:none;
+
+      font-size:14px;
+
+      font-weight:600;
+
+      color:#334155;
+
+    }
+
+
+    .fx-wc-nav a:hover{
+
+      color:var(--blue);
+
+    }
+
+
+    .fx-wc-header-actions{
+
+      display:flex;
+
+      gap:10px;
+
+    }
+
+
+    .fx-wc-header-btn{
+
+      display:inline-flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      min-height:40px;
+
+      padding:9px 15px;
+
+      border-radius:9px;
+
+      text-decoration:none;
+
+      font-size:13px;
+
+      font-weight:700;
+
+    }
+
+
+    .fx-wc-header-call{
+
+      border:
+        1px solid
+        var(--border);
+
+      color:var(--navy);
+
+      background:#fff;
+
+    }
+
+
+    .fx-wc-header-apply{
+
+      color:#fff;
+
+      background:var(--blue);
+
+    }
+
+
+    .fx-wc-menu{
+
+      display:none;
+
+      border:0;
+
+      background:none;
+
+      color:var(--navy);
+
+      font-size:26px;
+
+      cursor:pointer;
+
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .fx-wc-hero{
+
+      padding:76px 0 68px;
+
+      background:
+
+        radial-gradient(
+          circle at 85% 15%,
+          rgba(
+            23,
+            105,
+            224,
+            .13
+          ),
+          transparent 30%
+        ),
+
+        linear-gradient(
+          135deg,
+          #f8fbff,
+          #edf6ff
+        );
+
+    }
+
+
+    .fx-wc-hero-grid{
+
+      display:grid;
+
+      grid-template-columns:
+        1.05fr
+        .95fr;
+
+      gap:60px;
+
+      align-items:center;
+
+    }
+
+
+    .fx-wc-badge{
+
+      display:inline-flex;
+
+      align-items:center;
+
+      gap:8px;
+
+      padding:8px 14px;
+
+      border-radius:999px;
+
+      color:var(--blue-dark);
+
+      background:#e7f1ff;
+
+      border:
+        1px solid
+        #cfe2ff;
+
+      font-size:12px;
+
+      font-weight:800;
+
+      letter-spacing:.7px;
+
+    }
+
+
+    .fx-wc-badge::before{
+
+      content:"";
+
+      width:7px;
+      height:7px;
+
+      border-radius:50%;
+
+      background:var(--gold);
+
+    }
+
+
+    .fx-wc-hero h1{
+
+      margin:20px 0 18px;
+
+      color:var(--navy);
+
+      font-size:
+        clamp(
+          38px,
+          5vw,
+          60px
+        );
+
+      line-height:1.08;
+
+      letter-spacing:-2px;
+
+    }
+
+
+    .fx-wc-hero-text{
+
+      max-width:690px;
+
+      margin:0 0 28px;
+
+      color:var(--muted);
+
+      font-size:18px;
+
+      line-height:1.85;
+
+    }
+
+
+    .fx-wc-buttons{
+
+      display:flex;
+
+      flex-wrap:wrap;
+
+      gap:12px;
+
+    }
+
+
+    .fx-wc-btn{
+
+      display:inline-flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      min-height:50px;
+
+      padding:13px 22px;
+
+      border-radius:10px;
+
+      text-decoration:none;
+
+      border:0;
+
+      font-size:14px;
+
+      font-weight:750;
+
+      cursor:pointer;
+
+      transition:.2s ease;
+
+    }
+
+
+    .fx-wc-btn:hover{
+
+      transform:translateY(-1px);
+
+    }
+
+
+    .fx-wc-btn-primary{
+
+      background:var(--blue);
+
+      color:#fff;
+
+      box-shadow:
+        0 10px 24px
+        rgba(
+          23,
+          105,
+          224,
+          .2
+        );
+
+    }
+
+
+    .fx-wc-btn-primary:hover{
+
+      background:var(--blue-dark);
+
+    }
+
+
+    .fx-wc-btn-dark{
+
+      background:var(--navy);
+
+      color:#fff;
+
+    }
+
+
+    .fx-wc-btn-outline{
+
+      color:var(--navy);
+
+      background:#fff;
+
+      border:
+        1px solid
+        var(--border);
+
+    }
+
+
+    .fx-wc-hero-note{
+
+      margin-top:15px;
+
+      color:#708196;
+
+      font-size:11px;
+
+      line-height:1.6;
+
+    }
+
+
+    .fx-wc-hero-image{
+
+      position:relative;
+
+    }
+
+
+    .fx-wc-hero-image img{
+
+      width:100%;
+
+      height:460px;
+
+      object-fit:cover;
+
+      border-radius:25px;
+
+      box-shadow:
+        0 25px 55px
+        rgba(
+          11,
+          42,
+          74,
+          .16
+        );
+
+    }
+
+
+    .fx-wc-image-card{
+
+      position:absolute;
+
+      left:-22px;
+
+      bottom:24px;
+
+      max-width:260px;
+
+      padding:17px 19px;
+
+      background:#fff;
+
+      border-radius:15px;
+
+      box-shadow:
+        0 15px 35px
+        rgba(
+          11,
+          42,
+          74,
+          .15
+        );
+
+    }
+
+
+    .fx-wc-image-card strong{
+
+      display:block;
+
+      color:var(--navy);
+
+      font-size:14px;
+
+      margin-bottom:3px;
+
+    }
+
+
+    .fx-wc-image-card span{
+
+      display:block;
+
+      color:var(--muted);
+
+      font-size:11px;
+
+      line-height:1.6;
+
+    }
+
+
+    /* =========================================================
+       TRUST STRIP
+    ========================================================= */
+
+    .fx-wc-trust{
+
+      padding:22px 0;
+
+      background:#fff;
+
+      border-bottom:
+        1px solid
+        var(--border);
+
+    }
+
+
+    .fx-wc-trust-grid{
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(
+          4,
+          1fr
+        );
+
+    }
+
+
+    .fx-wc-trust-item{
+
+      padding:15px;
+
+      text-align:center;
+
+      border-right:
+        1px solid
+        var(--border);
+
+    }
+
+
+    .fx-wc-trust-item:last-child{
+
+      border-right:0;
+
+    }
+
+
+    .fx-wc-trust-item strong{
+
+      display:block;
+
+      color:var(--navy);
+
+      font-size:14px;
+
+      margin-bottom:4px;
+
+    }
+
+
+    .fx-wc-trust-item span{
+
+      color:var(--muted);
+
+      font-size:11px;
+
+    }
+
+
+    /* =========================================================
+       SECTIONS
+    ========================================================= */
+
+    .fx-wc-section{
+
+      padding:78px 0;
+
+    }
+
+
+    .fx-wc-section-light{
+
+      background:var(--light);
+
+    }
+
+
+    .fx-wc-heading{
+
+      max-width:850px;
+
+      margin:
+        0 auto
+        45px;
+
+      text-align:center;
+
+    }
+
+
+    .fx-wc-eyebrow{
+
+      color:var(--blue);
+
+      font-size:12px;
+
+      font-weight:800;
+
+      letter-spacing:1px;
+
+      text-transform:uppercase;
+
+    }
+
+
+    .fx-wc-heading h2{
+
+      margin:
+        9px
+        0
+        12px;
+
+      color:var(--navy);
+
+      font-size:
+        clamp(
+          31px,
+          4vw,
+          45px
+        );
+
+      line-height:1.15;
+
+      letter-spacing:-1px;
+
+    }
+
+
+    .fx-wc-heading p{
+
+      margin:0;
+
+      color:var(--muted);
+
+      font-size:16px;
+
+      line-height:1.85;
+
+    }
+
+
+    /* =========================================================
+       PROBLEM / USE CASE CARDS
+    ========================================================= */
+
+    .fx-wc-grid-4{
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(
+          4,
+          1fr
+        );
+
+      gap:20px;
+
+    }
+
+
+    .fx-wc-card{
+
+      background:#fff;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:18px;
+
+      padding:27px;
+
+      box-shadow:
+        0 8px 25px
+        rgba(
+          11,
+          42,
+          74,
+          .04
+        );
+
+    }
+
+
+    .fx-wc-card:hover{
+
+      box-shadow:
+        0 15px 35px
+        rgba(
+          11,
+          42,
+          74,
+          .08
+        );
+
+    }
+
+
+    .fx-wc-card-icon{
+
+      width:46px;
+      height:46px;
+
+      display:grid;
+
+      place-items:center;
+
+      border-radius:12px;
+
+      margin-bottom:17px;
+
+      background:var(--light-blue);
+
+      color:var(--blue);
+
+      font-size:11px;
+
+      font-weight:800;
+
+    }
+
+
+    .fx-wc-card h3{
+
+      margin:
+        0
+        0
+        9px;
+
+      color:var(--navy);
+
+      font-size:19px;
+
+    }
+
+
+    .fx-wc-card p{
+
+      margin:0;
+
+      color:var(--muted);
+
+      font-size:13px;
+
+      line-height:1.8;
+
+    }
+
+
+    /* =========================================================
+       BUSINESS TYPES
+    ========================================================= */
+
+    .fx-wc-grid-3{
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          1fr
+        );
+
+      gap:22px;
+
+    }
+
+
+    /* =========================================================
+       TWO COLUMN
+    ========================================================= */
+
+    .fx-wc-two-col{
+
+      display:grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap:25px;
+
+    }
+
+
+    .fx-wc-list-box{
+
+      background:#fff;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:18px;
+
+      padding:30px;
+
+    }
+
+
+    .fx-wc-list-box h3{
+
+      margin:
+        0
+        0
+        18px;
+
+      color:var(--navy);
+
+      font-size:22px;
+
+    }
+
+
+    .fx-wc-list{
+
+      list-style:none;
+
+      padding:0;
+
+      margin:0;
+
+    }
+
+
+    .fx-wc-list li{
+
+      position:relative;
+
+      padding:
+        10px
+        0
+        10px
+        28px;
+
+      border-bottom:
+        1px solid
+        #edf1f5;
+
+      color:#4b5b6b;
+
+      font-size:13px;
+
+    }
+
+
+    .fx-wc-list li:last-child{
+
+      border-bottom:0;
+
+    }
+
+
+    .fx-wc-list li::before{
+
+      content:"✓";
+
+      position:absolute;
+
+      left:0;
+
+      top:10px;
+
+      color:var(--green);
+
+      font-weight:800;
+
+    }
+
+
+    /* =========================================================
+       FUNDING TYPES
+    ========================================================= */
+
+    .fx-wc-funding-card{
+
+      position:relative;
+
+      overflow:hidden;
+
+    }
+
+
+    .fx-wc-funding-card::after{
+
+      content:"";
+
+      position:absolute;
+
+      right:-35px;
+
+      top:-35px;
+
+      width:100px;
+
+      height:100px;
+
+      border-radius:50%;
+
+      background:
+        rgba(
+          23,
+          105,
+          224,
+          .06
+        );
+
+    }
+
+
+    .fx-wc-funding-card h3{
+
+      position:relative;
+
+      z-index:1;
+
+    }
+
+
+    /* =========================================================
+       PROCESS
+    ========================================================= */
+
+    .fx-wc-process{
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(
+          4,
+          1fr
+        );
+
+      gap:18px;
+
+    }
+
+
+    .fx-wc-step{
+
+      background:#fff;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:17px;
+
+      padding:25px;
+
+    }
+
+
+    .fx-wc-step-number{
+
+      width:38px;
+      height:38px;
+
+      display:grid;
+
+      place-items:center;
+
+      border-radius:50%;
+
+      background:var(--navy);
+
+      color:#fff;
+
+      font-size:13px;
+
+      font-weight:800;
+
+      margin-bottom:15px;
+
+    }
+
+
+    .fx-wc-step h3{
+
+      margin:
+        0
+        0
+        7px;
+
+      color:var(--navy);
+
+      font-size:17px;
+
+    }
+
+
+    .fx-wc-step p{
+
+      margin:0;
+
+      color:var(--muted);
+
+      font-size:12px;
+
+      line-height:1.75;
+
+    }
+
+
+    /* =========================================================
+       APPLICATION FORM
+    ========================================================= */
+
+    .fx-wc-application{
+
+      max-width:900px;
+
+      margin:auto;
+
+      background:#fff;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:22px;
+
+      padding:35px;
+
+      box-shadow:
+        0 15px 40px
+        rgba(
+          11,
+          42,
+          74,
+          .07
+        );
+
+    }
+
+
+    .fx-wc-form-grid{
+
+      display:grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap:0 17px;
+
+    }
+
+
+    .fx-wc-field{
+
+      margin-bottom:17px;
+
+    }
+
+
+    .fx-wc-field-full{
+
+      grid-column:
+        1 /
+        -1;
+
+    }
+
+
+    .fx-wc-field label{
+
+      display:block;
+
+      margin-bottom:7px;
+
+      color:var(--navy);
+
+      font-size:13px;
+
+      font-weight:700;
+
+    }
+
+
+    .fx-wc-field input,
+    .fx-wc-field select,
+    .fx-wc-field textarea{
+
+      width:100%;
+
+      padding:13px 14px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:10px;
+
+      outline:none;
+
+      background:#fff;
+
+      font-family:inherit;
+
+      font-size:14px;
+
+    }
+
+
+    .fx-wc-field input:focus,
+    .fx-wc-field select:focus,
+    .fx-wc-field textarea:focus{
+
+      border-color:var(--blue);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(
+          23,
+          105,
+          224,
+          .09
+        );
+
+    }
+
+
+    .fx-wc-consent{
+
+      display:flex;
+
+      align-items:flex-start;
+
+      gap:9px;
+
+      margin:
+        3px
+        0
+        18px;
+
+      color:var(--muted);
+
+      font-size:11px;
+
+      line-height:1.6;
+
+    }
+
+
+    .fx-wc-consent input{
+
+      margin-top:3px;
+
+    }
+
+
+    .fx-wc-form-message{
+
+      display:none;
+
+      padding:13px 15px;
+
+      margin-bottom:18px;
+
+      border-radius:10px;
+
+      font-size:13px;
+
+    }
+
+
+    .fx-wc-form-message.success{
+
+      display:block;
+
+      color:#11663d;
+
+      background:#eaf8f0;
+
+      border:
+        1px solid
+        #bde8d0;
+
+    }
+
+
+    .fx-wc-form-message.error{
+
+      display:block;
+
+      color:#9c2e22;
+
+      background:#fff0ee;
+
+      border:
+        1px solid
+        #f1c4be;
+
+    }
+
+
+    .fx-wc-submit-loading{
+
+      opacity:.7;
+
+      pointer-events:none;
+
+    }
+
+
+    /* =========================================================
+       FAQ
+    ========================================================= */
+
+    .fx-wc-faq{
+
+      max-width:850px;
+
+      margin:auto;
+
+    }
+
+
+    .fx-wc-faq-item{
+
+      background:#fff;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:13px;
+
+      margin-bottom:12px;
+
+      overflow:hidden;
+
+    }
+
+
+    .fx-wc-faq-question{
+
+      width:100%;
+
+      border:0;
+
+      background:#fff;
+
+      padding:18px 20px;
+
+      display:flex;
+
+      justify-content:space-between;
+
+      align-items:center;
+
+      gap:15px;
+
+      text-align:left;
+
+      cursor:pointer;
+
+      font:inherit;
+
+      font-weight:700;
+
+      color:var(--navy);
+
+    }
+
+
+    .fx-wc-faq-answer{
+
+      display:none;
+
+      padding:
+        0
+        20px
+        20px;
+
+      color:var(--muted);
+
+      font-size:13px;
+
+      line-height:1.8;
+
+    }
+
+
+    .fx-wc-faq-item.active
+    .fx-wc-faq-answer{
+
+      display:block;
+
+    }
+
+
+    .fx-wc-faq-plus{
+
+      font-size:20px;
+
+      flex:0 0 auto;
+
+    }
+
+
+    /* =========================================================
+       CTA
+    ========================================================= */
+
+    .fx-wc-cta{
+
+      padding:80px 0;
+
+      background:
+
+        radial-gradient(
+          circle at 80% 15%,
+          rgba(
+            213,
+            168,
+            76,
+            .18
+          ),
+          transparent 25%
+        ),
+
+        linear-gradient(
+          135deg,
+          var(--navy),
+          #0d4774
+        );
+
+      text-align:center;
+
+      color:#fff;
+
+    }
+
+
+    .fx-wc-cta h2{
+
+      max-width:780px;
+
+      margin:
+        0
+        auto
+        15px;
+
+      font-size:
+        clamp(
+          31px,
+          4vw,
+          44px
+        );
+
+      line-height:1.15;
+
+    }
+
+
+    .fx-wc-cta p{
+
+      max-width:760px;
+
+      margin:
+        0
+        auto
+        28px;
+
+      color:#d7e5f2;
+
+      font-size:16px;
+
+      line-height:1.8;
+
+    }
+
+
+    .fx-wc-cta-buttons{
+
+      display:flex;
+
+      justify-content:center;
+
+      flex-wrap:wrap;
+
+      gap:12px;
+
+    }
+
+
+    .fx-wc-btn-white{
+
+      color:var(--navy);
+
+      background:#fff;
+
+    }
+
+
+    .fx-wc-btn-whatsapp{
+
+      color:#fff;
+
+      background:#1aa260;
+
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .fx-wc-footer{
+
+      padding:45px 0 80px;
+
+      background:#071b30;
+
+      color:#fff;
+
+    }
+
+
+    .fx-wc-footer-grid{
+
+      display:grid;
+
+      grid-template-columns:
+        1.4fr
+        1fr
+        1fr;
+
+      gap:35px;
+
+    }
+
+
+    .fx-wc-footer h3{
+
+      margin:
+        0
+        0
+        12px;
+
+      font-size:24px;
+
+    }
+
+
+    .fx-wc-footer h4{
+
+      margin:
+        0
+        0
+        12px;
+
+      font-size:14px;
+
+    }
+
+
+    .fx-wc-footer p,
+    .fx-wc-footer a{
+
+      color:#b8c8d7;
+
+      font-size:13px;
+
+      line-height:1.8;
+
+    }
+
+
+    .fx-wc-footer a{
+
+      display:block;
+
+      margin-bottom:4px;
+
+      text-decoration:none;
+
+    }
+
+
+    .fx-wc-footer a:hover{
+
+      color:#fff;
+
+    }
+
+
+    .fx-wc-footer-bottom{
+
+      margin-top:30px;
+
+      padding-top:20px;
+
+      border-top:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          .1
+        );
+
+      color:#8fa5b9;
+
+      font-size:11px;
+
+      line-height:1.7;
+
+    }
+
+
+    /* =========================================================
+       WHATSAPP + MOBILE CTA
+    ========================================================= */
+
+    .fx-wc-whatsapp{
+
+      position:fixed;
+
+      right:20px;
+
+      bottom:20px;
+
+      z-index:1100;
+
+      width:54px;
+
+      height:54px;
+
+      display:grid;
+
+      place-items:center;
+
+      border-radius:50%;
+
+      background:#1aa260;
+
+      color:#fff;
+
+      text-decoration:none;
+
+      font-size:11px;
+
+      font-weight:800;
+
+      box-shadow:
+        0 12px 30px
+        rgba(
+          0,
+          0,
+          0,
+          .18
+        );
+
+    }
+
+
+    .fx-wc-mobile-bar{
+
+      display:none;
+
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media(max-width:950px){
+
+      .fx-wc-nav,
+      .fx-wc-header-actions{
+
+        display:none;
+
+      }
+
+
+      .fx-wc-menu{
+
+        display:block;
+
+      }
+
+
+      .fx-wc-hero-grid,
+      .fx-wc-two-col{
+
+        grid-template-columns:1fr;
+
+      }
+
+
+      .fx-wc-grid-4{
+
+        grid-template-columns:
+          repeat(
+            2,
+            1fr
+          );
+
+      }
+
+
+      .fx-wc-grid-3{
+
+        grid-template-columns:
+          repeat(
+            2,
+            1fr
+          );
+
+      }
+
+
+      .fx-wc-process{
+
+        grid-template-columns:
+          repeat(
+            2,
+            1fr
+          );
+
+      }
+
+
+      .fx-wc-hero-image img{
+
+        height:390px;
+
+      }
+
+
+      .fx-wc-image-card{
+
+        left:15px;
+
+      }
+
+
+      .fx-wc-footer-grid{
+
+        grid-template-columns:
+          1fr
+          1fr;
+
+      }
+
+    }
+
+
+    @media(max-width:640px){
+
+      .fx-wc-container{
+
+        width:
+          min(
+            100% - 28px,
+            1180px
+          );
+
+      }
+
+
+      .fx-wc-header-inner{
+
+        min-height:68px;
+
+      }
+
+
+      .fx-wc-logo{
+
+        font-size:21px;
+
+      }
+
+
+      .fx-wc-logo-mark{
+
+        width:34px;
+        height:34px;
+
+      }
+
+
+      .fx-wc-hero{
+
+        padding:
+          50px
+          0
+          45px;
+
+      }
+
+
+      .fx-wc-hero h1{
+
+        font-size:39px;
+
+        letter-spacing:-1.3px;
+
+      }
+
+
+      .fx-wc-hero-text{
+
+        font-size:16px;
+
+      }
+
+
+      .fx-wc-hero-image img{
+
+        height:290px;
+
+        border-radius:19px;
+
+      }
+
+
+      .fx-wc-image-card{
+
+        position:static;
+
+        max-width:none;
+
+        margin-top:13px;
+
+      }
+
+
+      .fx-wc-trust-grid{
+
+        grid-template-columns:1fr;
+
+      }
+
+
+      .fx-wc-trust-item{
+
+        border-right:0;
+
+        border-bottom:
+          1px solid
+          var(--border);
+
+      }
+
+
+      .fx-wc-trust-item:last-child{
+
+        border-bottom:0;
+
+      }
+
+
+      .fx-wc-section{
+
+        padding:55px 0;
+
+      }
+
+
+      .fx-wc-grid-4,
+      .fx-wc-grid-3,
+      .fx-wc-process{
+
+        grid-template-columns:1fr;
+
+      }
+
+
+      .fx-wc-form-grid{
+
+        grid-template-columns:1fr;
+
+      }
+
+
+      .fx-wc-field-full{
+
+        grid-column:auto;
+
+      }
+
+
+      .fx-wc-application{
+
+        padding:24px;
+
+      }
+
+
+      .fx-wc-footer-grid{
+
+        grid-template-columns:1fr;
+
+      }
+
+
+      .fx-wc-whatsapp{
+
+        display:none;
+
+      }
+
+
+      .fx-wc-mobile-bar{
+
+        position:fixed;
+
+        left:0;
+        right:0;
+        bottom:0;
+
+        z-index:1200;
+
+        display:grid;
+
+        grid-template-columns:
+          1fr
+          1fr
+          1.25fr;
+
+        background:#fff;
+
+        border-top:
+          1px solid
+          var(--border);
+
+        box-shadow:
+          0 -8px 25px
+          rgba(
+            11,
+            42,
+            74,
+            .10
+          );
+
+      }
+
+
+      .fx-wc-mobile-bar a{
+
+        padding:13px 7px;
+
+        text-align:center;
+
+        text-decoration:none;
+
+        color:var(--navy);
+
+        font-size:11px;
+
+        font-weight:800;
+
+        border-right:
+          1px solid
+          var(--border);
+
+      }
+
+
+      .fx-wc-mobile-bar a:last-child{
+
+        border-right:0;
+
+        background:var(--blue);
+
+        color:#fff;
+
+      }
+
+
+      .fx-wc-footer{
+
+        padding-bottom:90px;
+
+      }
+
+    }
+
+  </style>
+
+  <!-- =======================================================
+       FAQ SCHEMA
+  ======================================================== -->
+
+  <script type="application/ld+json">
+
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+
+      {
+        "@type":"Question",
+        "name":"What is working capital finance?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Working capital finance is used by eligible businesses to manage short-term business requirements such as inventory, receivables-related cash flow gaps and other operating needs, subject to lender terms."
+        }
+      },
+
+      {
+        "@type":"Question",
+        "name":"Who can enquire for working capital finance?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"MSMEs, manufacturers, retailers, traders, wholesalers and other eligible businesses may enquire. Final eligibility depends on the lender and the applicant's business and financial profile."
+        }
+      },
+
+      {
+        "@type":"Question",
+        "name":"What documents are generally required?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Depending on the lender and business profile, KYC, business registration, GST records, bank statements, ITRs and financial statements may be requested."
+        }
+      },
+
+      {
+        "@type":"Question",
+        "name":"Can working capital finance be used for inventory?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Eligible working capital facilities may be used for permitted business operating requirements such as inventory and other short-term business needs, according to the sanctioned facility terms."
+        }
+      },
+
+      {
+        "@type":"Question",
+        "name":"Does Fundvexxa guarantee approval?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No. Fundvexxa provides enquiry and application guidance. Final approval, amount, interest rate, tenure, charges and other terms are decided by the relevant lender."
+        }
+      }
+
+    ]
+  }
+
+  </script>
+
+</head>
+
+<body>
+
+<div class="fx-wc-page">
+
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
+
+  <header class="fx-wc-header">
+
+```
+<div class="fx-wc-container fx-wc-header-inner">
+
+
+  <a
+    href="index.html"
+    class="fx-wc-logo"
+    aria-label="Fundvexxa Home"
+  >
+
+    <span class="fx-wc-logo-mark">
+      F
+    </span>
+
+    Fundvexxa
+
+  </a>
+
+
+  <nav
+    class="fx-wc-nav"
+    aria-label="Main navigation"
+  >
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="services.html">
+      Services
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+  </nav>
+
+
+  <div class="fx-wc-header-actions">
+
+    <a
+      href="tel:+917290977231"
+      class="fx-wc-header-btn fx-wc-header-call"
+    >
+      Call
+    </a>
+
+    <a
+      href="#apply-now"
+      class="fx-wc-header-btn fx-wc-header-apply"
+    >
+      Apply Now
+    </a>
+
+  </div>
+
+
+  <button
+    type="button"
+    class="fx-wc-menu"
+    aria-label="Open menu"
+    onclick="toggleWCMenu()"
+  >
+    ☰
+  </button>
+
+
+</div>
+```
+
+  </header>
+
+  <!-- MOBILE MENU -->
+
+  <div
+    id="fxWCMenu"
+    style="
+      display:none;
+      background:#fff;
+      border-bottom:1px solid #dfe8f1;
+      padding:12px 0;
+    "
+  >
+
+```
+<div class="fx-wc-container">
+
+  <a
+    href="index.html"
+    style="
+      display:block;
+      padding:9px 0;
+      text-decoration:none;
+    "
+  >
+    Home
+  </a>
+
+  <a
+    href="services.html"
+    style="
+      display:block;
+      padding:9px 0;
+      text-decoration:none;
+    "
+  >
+    Services
+  </a>
+
+  <a
+    href="about.html"
+    style="
+      display:block;
+      padding:9px 0;
+      text-decoration:none;
+    "
+  >
+    About
+  </a>
+
+  <a
+    href="contact.html"
+    style="
+      display:block;
+      padding:9px 0;
+      text-decoration:none;
+    "
+  >
+    Contact
+  </a>
+
+  <a
+    href="#apply-now"
+    style="
+      display:block;
+      padding:9px 0;
+      text-decoration:none;
+      color:#1769e0;
+      font-weight:700;
+    "
+  >
+    Apply Now
+  </a>
+
+</div>
+```
+
+  </div>
+
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
+
+  <section class="fx-wc-hero">
+
+```
+<div class="fx-wc-container">
+
+  <div class="fx-wc-hero-grid">
+
+
+    <div>
+
+      <span class="fx-wc-badge">
+        WORKING CAPITAL FINANCE
+      </span>
+
+
+      <h1>
+        Keep Your Business Moving With The Right Working Capital Support
+      </h1>
+
+
+      <p class="fx-wc-hero-text">
+
+        Inventory purchase, supplier payments, receivables gap or
+        day-to-day operating requirements? Fundvexxa helps eligible
+        businesses understand working capital finance options and
+        navigate the enquiry and application process.
+
+      </p>
+
+
+      <div class="fx-wc-buttons">
+
+        <a
+          href="#apply-now"
+          class="fx-wc-btn fx-wc-btn-primary"
+        >
+          Check Your Options
+        </a>
+
+
+        <a
+          href="tel:+917290977231"
+          class="fx-wc-btn fx-wc-btn-dark"
+        >
+          Talk To Expert
+        </a>
+
+
+        <a
+          href="https://wa.me/917290977231?text=Hello%20Fundvexxa%2C%20I%20want%20to%20enquire%20about%20working%20capital%20finance."
+          class="fx-wc-btn fx-wc-btn-outline"
+          target="_blank"
+          rel="noopener"
+        >
+          WhatsApp
+        </a>
+
+      </div>
+
+
+      <p class="fx-wc-hero-note">
+
+        Final eligibility, facility type, sanctioned amount, pricing,
+        tenure, security requirements and charges are subject to the
+        relevant lender's assessment and applicable terms.
+
+      </p>
+
+    </div>
+
+
+    <div class="fx-wc-hero-image">
+
+      <img
+        src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1400"
+        alt="Business professionals discussing working capital and business finance"
+        fetchpriority="high"
+      >
+
+
+      <div class="fx-wc-image-card">
+
+        <strong>
+          Built For Business Cash Flow Needs
+        </strong>
+
+        <span>
+          Enquiries for inventory, supplier payments, operating needs
+          and other eligible working capital requirements.
+        </span>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- =======================================================
+       TRUST
+  ======================================================== -->
+
+  <section class="fx-wc-trust">
+
+```
+<div class="fx-wc-container">
+
+  <div class="fx-wc-trust-grid">
+
+
+    <div class="fx-wc-trust-item">
+
+      <strong>
+        MSME Focus
+      </strong>
+
+      <span>
+        Business-oriented finance enquiries
+      </span>
+
+    </div>
+
+
+    <div class="fx-wc-trust-item">
+
+      <strong>
+        Multiple Business Types
+      </strong>
+
+      <span>
+        Manufacturing, retail, trading & services
+      </span>
+
+    </div>
+
+
+    <div class="fx-wc-trust-item">
+
+      <strong>
+        Professional Guidance
+      </strong>
+
+      <span>
+        Enquiry and application assistance
+      </span>
+
+    </div>
+
+
+    <div class="fx-wc-trust-item">
+
+      <strong>
+        Transparent Communication
+      </strong>
+
+      <span>
+        Clear next-step guidance
+      </span>
+
+    </div>
+
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- =======================================================
+       BUSINESS CHALLENGES
+  ======================================================== -->
+
+  <section class="fx-wc-section">
+
+```
+<div class="fx-wc-container">
+
+
+  <div class="fx-wc-heading">
+
+    <span class="fx-wc-eyebrow">
+      BUSINESS CASH FLOW
+    </span>
+
+    <h2>
+      When Working Capital Support May Be Useful
+    </h2>
+
+    <p>
+      Businesses can face temporary gaps between expenses, inventory
+      purchases and customer collections. Suitable working capital
+      facilities can help eligible businesses manage permitted
+      short-term requirements.
+    </p>
+
+  </div>
+
+
+  <div class="fx-wc-grid-4">
+
+
+    <article class="fx-wc-card">
+
+      <div class="fx-wc-card-icon">
+        STOCK
+      </div>
+
+      <h3>
+        Inventory Purchase
+      </h3>
+
+      <p>
+        Stock purchase requirements when business demand increases or
+        inventory needs to be replenished.
+      </p>
+
+    </article>
+
+
+    <article class="fx-wc-card">
+
+      <div class="fx-wc-card-icon">
+        SUPPLY
+      </div>
+
+      <h3>
+        Supplier Payments
+      </h3>
+
+      <p>
+        Manage eligible supplier-related payment requirements while
+        waiting for customer collections.
+      </p>
+
+    </article>
+
+
+    <article class="fx-wc-card">
+
+      <div class="fx-wc-card-icon">
+        OPS
+      </div>
+
+      <h3>
+        Operating Expenses
+      </h3>
+
+      <p>
+        Support for permitted short-term operating requirements according
+        to the sanctioned facility.
+      </p>
+
+    </article>
+
+
+    <article class="fx-wc-card">
+
+      <div class="fx-wc-card-icon">
+        ORDER
+      </div>
+
+      <h3>
+        Business Orders
+      </h3>
+
+      <p>
+        Additional working capital may help eligible businesses handle
+        inventory and operating requirements related to larger orders.
+      </p>
+
+    </article>
+
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- =======================================================
+       WHY WORKING CAPITAL
+  ======================================================== -->
+
+  <section class="fx-wc-section fx-wc-section-light">
+
+```
+<div class="fx-wc-container">
+
+
+  <div class="fx-wc-heading">
+
+    <span class="fx-wc-eyebrow">
+      BUSINESS BENEFITS
+    </span>
+
+    <h2>
+      Why Businesses Explore Working Capital Finance
+    </h2>
+
+    <p>
+      Working capital finance can provide eligible businesses with a
+      structured way to manage short-term funding requirements.
+    </p>
+
+  </div>
+
+
+  <div class="fx-wc-grid-4">
+
+
+    <article class="fx-wc-card">
+
+      <div class="fx-wc-card-icon">
+        01
+      </div>
+
+      <h3>
+        Cash Flow Management
+      </h3>
+
+      <p>
+        Helps eligible businesses manage timing differences between
+        outgoing expenses and incoming customer payments.
+      </p>
+
+    </article>
+
+
+    <article class="fx-wc-card">
+
+      <div class="fx-wc-card-icon">
+        02
+      </div>
+
+      <h3>
+        Inventory Planning
+      </h3>
+
+      <p>
+        Suitable funding can help manage eligible inventory-related
+        working capital requirements.
+      </p>
+
+    </article>
+
+
+    <article class="fx-wc-card">
+
+      <div class="fx-wc-card-icon">
+        03
+      </div>
+
+      <h3>
+        Supplier Management
+      </h3>
+
+      <p>
+        Working capital facilities can support permitted supplier-related
+        business payments according to lender terms.
+      </p>
+
+    </article>
+
+
+    <article class="fx-wc-card">
+
+      <div class="fx-wc-card-icon">
+        04
+      </div>
+
+      <h3>
+        Growth Readiness
+      </h3>
+
+      <p>
+        Better cash-flow planning can help eligible businesses prepare
+        for orders and operational requirements.
+      </p>
+
+    </article>
+
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- =======================================================
+       WHO CAN APPLY
+  ======================================================== -->
+
+  <section class="fx-wc-section">
+
+```
+<div class="fx-wc-container">
+
+
+  <div class="fx-wc-heading">
+
+    <span class="fx-wc-eyebrow">
+      BUSINESS PROFILES
+    </span>
+
+    <h2>
+      Which Businesses Can Enquire?
+    </h2>
+
+    <p>
+      Working capital finance is generally considered based on the
+      business's financial profile, banking history, turnover, repayment
+      capacity and lender-specific criteria.
+    </p>
+
+  </div>
+
+
+  <div class="fx-wc-grid-3">
+
+
+    <article class="fx-wc-card">
+
+      <div class="fx-wc-card-icon">
+        MSME
+      </div>
+
+      <h3>
+        MSME Businesses
+      </h3>
+
+      <p>
+        Eligible micro, small and medium businesses looking for support
+        with short-term operating requirements.
+      </p>
+
+    </article>
+
+
+    <article class="fx-wc-card">
+
+      <div class="fx-wc-card-icon">
+        MFG
+      </div>
+
+      <h3>
+        Manufacturing Units
+      </h3>
+
+      <p>
+        Businesses managing raw material, production and inventory-related
+        working capital requirements.
+      </p>
+
+    </article>
+
+
+    <article class="fx-wc-card">
+
+      <div class="fx-wc-card-icon">
+        RET
+      </div>
+
+      <h3>
+        Retail Businesses
+      </h3>
+
+      <p>
+        Retailers requiring working capital for inventory and day-to-day
+        eligible business requirements.
+      </p>
+
+    </article>
+
+
+    <article class="fx-wc-card">
+
+      <div class="fx-wc-card-icon">
+        TRADE
+      </div>
+
+      <h3>
+        Traders & Wholesalers
+      </h3>
+
+      <p>
+        Businesses managing stock cycles, supplier payments and customer
+        collection periods.
+      </p>
+
+    </article>
+
+
+    <article class="fx-wc-card">
+
+      <div class="fx-wc-card-icon">
+        SERVICE
+      </div>
+
+      <h3>
+        Service Businesses
+      </h3>
+
+      <p>
+        Eligible service businesses with documented cash-flow and
+        operational requirements.
+      </p>
+
+    </article>
+
+
+    <article class="fx-wc-card">
+
+      <div class="fx-wc-card-icon">
+        OTHER
+      </div>
+
+      <h3>
+        Other Eligible Businesses
+      </h3>
+
+      <p>
+        Other businesses may enquire depending on lender policy,
+        financial records and facility requirements.
+      </p>
+
+    </article>
+
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- =======================================================
+       FUNDING OPTIONS
+  ======================================================== -->
+
+  <section class="fx-wc-section fx-wc-section-light">
+
+```
+<div class="fx-wc-container">
+
+
+  <div class="fx-wc-heading">
+
+    <span class="fx-wc-eyebrow">
+      POSSIBLE ROUTES
+    </span>
+
+    <h2>
+      Working Capital Funding Routes
+    </h2>
+
+    <p>
+      The appropriate facility depends on business profile, cash-flow
+      pattern, receivables, lender policy and the intended use of funds.
+    </p>
+
+  </div>
+
+
+  <div class="fx-wc-grid-3">
+
+
+    <article class="fx-wc-card fx-wc-funding-card">
+
+      <h3>
+        Working Capital Loan
+      </h3>
+
+      <p>
+        A business finance route that may be considered for eligible
+        short-term working capital requirements.
+      </p>
+
+    </article>
+
+
+    <article class="fx-wc-card fx-wc-funding-card">
+
+      <h3>
+        Cash Credit / Overdraft
+      </h3>
+
+      <p>
+        Some lenders offer revolving working capital facilities subject
+        to assessment, sanctioned limits and applicable terms.
+      </p>
+
+    </article>
+
+
+    <article class="fx-wc-card fx-wc-funding-card">
+
+      <h3>
+        Receivables / Invoice Finance
+      </h3>
+
+      <p>
+        Eligible MSMEs may also explore receivables-based routes such as
+        invoice discounting or TReDS where applicable.
+      </p>
+
+    </article>
+
+
+  </div>
+
+
+  <div
+    style="
+      max-width:850px;
+      margin:25px auto 0;
+      padding:16px 18px;
+      border-radius:12px;
+      background:#fff;
+      border:1px solid #dfe8f1;
+      color:#64748b;
+      font-size:12px;
+      line-height:1.7;
+    "
+  >
+
+    <strong style="color:#0b2a4a;">
+      Note:
+    </strong>
+
+    TReDS is an electronic platform for discounting MSME receivables
+    from supplies to eligible buyers. It can help address delayed
+    payments and improve liquidity. Availability depends on applicable
+    eligibility and platform/lender requirements.
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- =======================================================
+       DOCUMENTS
+  ======================================================== -->
+
+  <section class="fx-wc-section">
+
+```
+<div class="fx-wc-container">
+
+
+  <div class="fx-wc-heading">
+
+    <span class="fx-wc-eyebrow">
+      DOCUMENTATION
+    </span>
+
+    <h2>
+      Documents Commonly Required
+    </h2>
+
+    <p>
+      Exact documentation varies by lender, business constitution,
+      facility type and applicant profile.
+    </p>
+
+  </div>
+
+
+  <div class="fx-wc-two-col">
+
+
+    <div class="fx-wc-list-box">
+
+      <h3>
+        Business & Financial Documents
+      </h3>
+
+      <ul class="fx-wc-list">
+
+        <li>
+          GST registration and applicable GST returns
+        </li>
+
+        <li>
+          Udyam / business registration documents where applicable
+        </li>
+
+        <li>
+          Recent business bank statements
+        </li>
+
+        <li>
+          ITR returns
+        </li>
+
+        <li>
+          Profit & Loss statement
+        </li>
+
+        <li>
+          Balance sheet / financial statements where applicable
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <div class="fx-wc-list-box">
+
+      <h3>
+        KYC & Constitution Documents
+      </h3>
+
+      <ul class="fx-wc-list">
+
+        <li>
+          PAN and identity documents
+        </li>
+
+        <li>
+          Address proof
+        </li>
+
+        <li>
+          Proprietorship / partnership documents where applicable
+        </li>
+
+        <li>
+          Company incorporation and constitutional documents where applicable
+        </li>
+
+        <li>
+          Business address proof
+        </li>
+
+        <li>
+          Additional lender-specific documents if required
+        </li>
+
+      </ul>
+
+    </div>
+
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- =======================================================
+       PROCESS
+  ======================================================== -->
+
+  <section class="fx-wc-section fx-wc-section-light">
+
+```
+<div class="fx-wc-container">
+
+
+  <div class="fx-wc-heading">
+
+    <span class="fx-wc-eyebrow">
+      SIMPLE PROCESS
+    </span>
+
+    <h2>
+      How The Working Capital Enquiry Works
+    </h2>
+
+    <p>
+      Submit your basic requirement first. Detailed financial information
+      can be requested later through the appropriate process.
+    </p>
+
+  </div>
+
+
+  <div class="fx-wc-process">
+
+
+    <div class="fx-wc-step">
+
+      <div class="fx-wc-step-number">
+        1
+      </div>
+
+      <h3>
+        Submit Enquiry
+      </h3>
+
+      <p>
+        Share basic business and funding requirement details.
+      </p>
+
+    </div>
+
+
+    <div class="fx-wc-step">
+
+      <div class="fx-wc-step-number">
+        2
+      </div>
+
+      <h3>
+        Requirement Discussion
+      </h3>
+
+      <p>
+        Our team discusses the business requirement and basic profile.
+      </p>
+
+    </div>
+
+
+    <div class="fx-wc-step">
+
+      <div class="fx-wc-step-number">
+        3
+      </div>
+
+      <h3>
+        Documentation
+      </h3>
+
+      <p>
+        Relevant documents may be requested based on the applicable
+        finance route.
+      </p>
+
+    </div>
+
+
+    <div class="fx-wc-step">
+
+      <div class="fx-wc-step-number">
+        4
+      </div>
+
+      <h3>
+        Lender Assessment
+      </h3>
+
+      <p>
+        The relevant lender evaluates the application and communicates
+        applicable terms.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- =======================================================
+       APPLICATION FORM
+  ======================================================== -->
+
+  <section
+    class="fx-wc-section"
+    id="apply-now"
+  >
+
+```
+<div class="fx-wc-container">
+
+
+  <div class="fx-wc-heading">
+
+    <span class="fx-wc-eyebrow">
+      BUSINESS FINANCE ENQUIRY
+    </span>
+
+    <h2>
+      Tell Us About Your Working Capital Requirement
+    </h2>
+
+    <p>
+      Start with basic information. Our team can contact you to
+      understand the requirement and explain the next steps.
+    </p>
+
+  </div>
+
+
+  <div class="fx-wc-application">
+
+
+    <div
+      id="fxWCFormMessage"
+      class="fx-wc-form-message"
+      role="alert"
+      aria-live="polite"
+    ></div>
+
+
+    <form id="workingCapitalForm">
+
+
+      <div class="fx-wc-form-grid">
+
+
+        <div class="fx-wc-field">
+
+          <label for="wcName">
+            Full Name *
+          </label>
+
+          <input
+            id="wcName"
+            type="text"
+            required
+            maxlength="80"
+            autocomplete="name"
+            placeholder="Enter full name"
+          >
+
+        </div>
+
+
+        <div class="fx-wc-field">
+
+          <label for="wcMobile">
+            Mobile Number *
+          </label>
+
+          <input
+            id="wcMobile"
+            type="tel"
+            required
+            maxlength="15"
+            autocomplete="tel"
+            placeholder="10-digit mobile number"
+          >
+
+        </div>
+
+
+        <div class="fx-wc-field">
+
+          <label for="wcEmail">
+            Email
+          </label>
+
+          <input
+            id="wcEmail"
+            type="email"
+            maxlength="120"
+            autocomplete="email"
+            placeholder="you@example.com"
+          >
+
+        </div>
+
+
+        <div class="fx-wc-field">
+
+          <label for="wcCity">
+            City *
+          </label>
+
+          <input
+            id="wcCity"
+            type="text"
+            required
+            maxlength="80"
+            placeholder="Business city"
+          >
+
+        </div>
+
+
+        <div class="fx-wc-field">
+
+          <label for="wcBusinessType">
+            Business Type *
+          </label>
+
+          <select
+            id="wcBusinessType"
+            required
+          >
+
+            <option value="">
+              Select business type
+            </option>
+
+            <option value="Manufacturing">
+              Manufacturing
+            </option>
+
+            <option value="Retail">
+              Retail
+            </option>
+
+            <option value="Trading / Wholesale">
+              Trading / Wholesale
+            </option>
+
+            <option value="Service Business">
+              Service Business
+            </option>
+
+            <option value="Other">
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="fx-wc-field">
+
+          <label for="wcVintage">
+            Business Vintage
+          </label>
+
+          <select id="wcVintage">
+
+            <option value="">
+              Select
+            </option>
+
+            <option value="Below 1 Year">
+              Below 1 Year
+            </option>
+
+            <option value="1-3 Years">
+              1–3 Years
+            </option>
+
+            <option value="3-5 Years">
+              3–5 Years
+            </option>
+
+            <option value="5+ Years">
+              5+ Years
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="fx-wc-field">
+
+          <label for="wcTurnover">
+            Approx. Annual Turnover
+          </label>
+
+          <select id="wcTurnover">
+
+            <option value="">
+              Select range
+            </option>
+
+            <option value="Below ₹25 Lakh">
+              Below ₹25 Lakh
+            </option>
+
+            <option value="₹25 Lakh - ₹1 Crore">
+              ₹25 Lakh – ₹1 Crore
+            </option>
+
+            <option value="₹1 Crore - ₹5 Crore">
+              ₹1 Crore – ₹5 Crore
+            </option>
+
+            <option value="₹5 Crore+">
+              ₹5 Crore+
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="fx-wc-field">
+
+          <label for="wcAmount">
+            Approx. Funding Requirement
+          </label>
+
+          <input
+            id="wcAmount"
+            type="number"
+            min="0"
+            step="1000"
+            placeholder="e.g. 1000000"
+          >
+
+        </div>
+
+
+        <div class="fx-wc-field">
+
+          <label for="wcPurpose">
+            Main Requirement *
+          </label>
+
+          <select
+            id="wcPurpose"
+            required
+          >
+
+            <option value="">
+              Select requirement
+            </option>
+
+            <option value="Inventory Purchase">
+              Inventory Purchase
+            </option>
+
+            <option value="Supplier Payment">
+              Supplier Payment
+            </option>
+
+            <option value="Operating Expenses">
+              Operating Expenses
+            </option>
+
+            <option value="Order / Business Cycle">
+              Order / Business Cycle
+            </option>
+
+            <option value="Receivables / Invoice Finance">
+              Receivables / Invoice Finance
+            </option>
+
+            <option value="Other">
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="fx-wc-field">
+
+          <label for="wcGST">
+            GST Registered?
+          </label>
+
+          <select id="wcGST">
+
+            <option value="">
+              Select
+            </option>
+
+            <option value="Yes">
+              Yes
+            </option>
+
+            <option value="No">
+              No
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="fx-wc-field fx-wc-field-full">
+
+          <label for="wcMessage">
+            Business Requirement / Message
+          </label>
+
+          <textarea
+            id="wcMessage"
+            rows="4"
+            maxlength="600"
+            placeholder="Briefly describe your business and working capital requirement."
+          ></textarea>
+
+        </div>
+
+
+      </div>
+
+
+      <label class="fx-wc-consent">
+
+        <input
+          id="wcConsent"
+          type="checkbox"
+          required
+        >
+
+        <span>
+          I agree that Fundvexxa may contact me regarding this enquiry.
+          I understand that submitting this form does not guarantee loan
+          approval, funding amount, rate, tenure or disbursement.
+        </span>
+
+      </label>
+
+
+      <button
+        id="wcSubmitButton"
+        type="submit"
+        class="fx-wc-btn fx-wc-btn-primary"
+        style="width:100%;"
+      >
+
+        <span id="wcSubmitText">
+          Submit Working Capital Enquiry
+        </span>
+
+      </button>
+
+
+    </form>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- =======================================================
+       FAQ
+  ======================================================== -->
+
+  <section class="fx-wc-section fx-wc-section-light">
+
+```
+<div class="fx-wc-container">
+
+
+  <div class="fx-wc-heading">
+
+    <span class="fx-wc-eyebrow">
+      FAQ
+    </span>
+
+    <h2>
+      Frequently Asked Questions
+    </h2>
+
+    <p>
+      Common questions about working capital finance enquiries.
+    </p>
+
+  </div>
+
+
+  <div class="fx-wc-faq">
+
+
+    <div class="fx-wc-faq-item">
+
+      <button
+        type="button"
+        class="fx-wc-faq-question"
+        aria-expanded="false"
+      >
+
+        <span>
+          What is working capital finance?
+        </span>
+
+        <span class="fx-wc-faq-plus">
+          +
+        </span>
+
+      </button>
+
+
+      <div class="fx-wc-faq-answer">
+
+        Working capital finance is used by eligible businesses to manage
+        permitted short-term business requirements such as inventory,
+        receivables-related cash-flow gaps and operating needs, subject
+        to the sanctioned facility terms.
+
+      </div>
+
+    </div>
+
+
+    <div class="fx-wc-faq-item">
+
+      <button
+        type="button"
+        class="fx-wc-faq-question"
+        aria-expanded="false"
+      >
+
+        <span>
+          Who can enquire for working capital finance?
+        </span>
+
+        <span class="fx-wc-faq-plus">
+          +
+        </span>
+
+      </button>
+
+
+      <div class="fx-wc-faq-answer">
+
+        MSMEs, manufacturers, retailers, traders, wholesalers and
+        eligible service businesses may enquire. Final eligibility
+        depends on the relevant lender and the business's financial
+        profile.
+
+      </div>
+
+    </div>
+
+
+    <div class="fx-wc-faq-item">
+
+      <button
+        type="button"
+        class="fx-wc-faq-question"
+        aria-expanded="false"
+      >
+
+        <span>
+          Can working capital finance be used for inventory?
+        </span>
+
+        <span class="fx-wc-faq-plus">
+          +
+        </span>
+
+      </button>
+
+
+      <div class="fx-wc-faq-answer">
+
+        Eligible working capital facilities may be used for permitted
+        inventory and operating requirements according to the facility
+        terms and lender policy.
+
+      </div>
+
+    </div>
+
+
+    <div class="fx-wc-faq-item">
+
+      <button
+        type="button"
+        class="fx-wc-faq-question"
+        aria-expanded="false"
+      >
+
+        <span>
+          What documents are generally required?
+        </span>
+
+        <span class="fx-wc-faq-plus">
+          +
+        </span>
+
+      </button>
+
+
+      <div class="fx-wc-faq-answer">
+
+        Depending on the lender and business profile, KYC documents,
+        GST records, business registration, bank statements, ITRs and
+        financial statements may be requested.
+
+      </div>
+
+    </div>
+
+
+    <div class="fx-wc-faq-item">
+
+      <button
+        type="button"
+        class="fx-wc-faq-question"
+        aria-expanded="false"
+      >
+
+        <span>
+          Does Fundvexxa guarantee approval?
+        </span>
+
+        <span class="fx-wc-faq-plus">
+          +
+        </span>
+
+      </button>
+
+
+      <div class="fx-wc-faq-answer">
+
+        No. Fundvexxa provides enquiry and application guidance. Final
+        approval, amount, interest rate, tenure, security requirements,
+        charges and other terms are determined by the relevant lender.
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- =======================================================
+       FINAL CTA
+  ======================================================== -->
+
+  <section class="fx-wc-cta">
+
+```
+<div class="fx-wc-container">
+
+
+  <h2>
+    Need Working Capital Support For Your Business?
+  </h2>
+
+
+  <p>
+
+    Inventory, supplier payments, operating requirements or receivables
+    management — share your requirement and our team can guide you
+    through the next steps.
+
+  </p>
+
+
+  <div class="fx-wc-cta-buttons">
+
+
+    <a
+      href="#apply-now"
+      class="fx-wc-btn fx-wc-btn-white"
+    >
+      Submit Enquiry
+    </a>
+
+
+    <a
+      href="https://wa.me/917290977231?text=Hello%20Fundvexxa%2C%20I%20need%20working%20capital%20finance%20assistance."
+      class="fx-wc-btn fx-wc-btn-whatsapp"
+      target="_blank"
+      rel="noopener"
+    >
+      WhatsApp Us
+    </a>
+
+
+    <a
+      href="tel:+917290977231"
+      class="fx-wc-btn"
+      style="
+        background:rgba(255,255,255,.1);
+        color:#fff;
+        border:1px solid rgba(255,255,255,.25);
+      "
+    >
+      +91 72909 77231
+    </a>
+
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer class="fx-wc-footer">
+
+```
+<div class="fx-wc-container">
+
+
+  <div class="fx-wc-footer-grid">
+
+
+    <div>
+
+      <h3>
+        Fundvexxa
+      </h3>
+
+      <p>
+
+        Professional assistance for business finance, working capital,
+        vehicle finance, personal finance and selected financial
+        services.
+
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Quick Links
+      </h4>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="about.html">
+        About Us
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+      <a href="business-loan.html">
+        Business Loan
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Contact
+      </h4>
+
+      <a href="tel:+917290977231">
+        +91 72909 77231
+      </a>
+
+      <a href="mailto:fundvexxasupport@gmail.com">
+        fundvexxasupport@gmail.com
+      </a>
+
+      <a
+        href="https://wa.me/917290977231"
+        target="_blank"
+        rel="noopener"
+      >
+        WhatsApp
+      </a>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="fx-wc-footer-bottom">
+
+    <div>
+      © <span id="fxWCYear"></span> Fundvexxa. All rights reserved.
+    </div>
+
+
+    <div style="margin-top:7px;">
+
+      Disclaimer: Fundvexxa provides enquiry and application assistance.
+      We do not guarantee loan approval, interest rate, sanctioned
+      amount, tenure, security terms or disbursement. Final eligibility,
+      pricing, charges, documentation and facility terms are determined
+      by the relevant lender / regulated entity.
+
+    </div>
+
+
+    <div style="margin-top:7px;">
+
+      Applicants should review the lender's applicable Key Facts
+      Statement (KFS), Annual Percentage Rate (APR), fees, charges and
+      facility agreement before accepting any finance offer, where
+      applicable.
+
+    </div>
+
+  </div>
+
+</div>
+```
+
+  </footer>
+
+  <!-- =======================================================
+       FLOATING WHATSAPP
+  ======================================================== -->
+
+<a
+href="https://wa.me/917290977231?text=Hello%20Fundvexxa%2C%20I%20need%20working%20capital%20finance%20assistance."
+class="fx-wc-whatsapp"
+target="_blank"
+rel="noopener"
+aria-label="Chat with Fundvexxa on WhatsApp"
+
+>
+
+```
+WA
+```
+
+  </a>
+
+  <!-- =======================================================
+       MOBILE CTA
+  ======================================================== -->
+
+  <div class="fx-wc-mobile-bar">
+
+```
+<a href="tel:+917290977231">
+  ☎ Call
 </a>
 
-<a href="tel:+917290977231" class="btn-secondary">
-Talk To Expert
+
+<a
+  href="https://wa.me/917290977231?text=Hello%20Fundvexxa%2C%20I%20need%20working%20capital%20finance%20assistance."
+  target="_blank"
+  rel="noopener"
+>
+  WhatsApp
 </a>
 
-</div>
 
-</div>
-
-<div class="hero-image">
-
-<img
-src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
-alt="Working Capital Loan">
-
-</div>
-
-</div>
-
-</section>
-
-<!-- BUSINESS STATS -->
-
-<section class="stats-section">
-
-<div class="container">
-
-<div class="stats-grid">
-
-<div class="stat-card">
-
-<h3>₹5 Cr+</h3>
-
-<p>
-Funding Options
-</p>
-
-</div>
-
-<div class="stat-card">
-
-<h3>24-48 Hrs</h3>
-
-<p>
-Quick Response
-</p>
-
-</div>
-
-<div class="stat-card">
-
-<h3>MSME</h3>
-
-<p>
-Business Focused
-</p>
-
-</div>
-
-<div class="stat-card">
-
-<h3>India Wide</h3>
-
-<p>
-Service Network
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- BUSINESS PROBLEMS -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Facing These Business Challenges?
-</h2>
-
-<p>
-Most growing businesses face temporary cash flow gaps. Working capital financing can help manage these situations effectively.
-</p>
-
-</div>
-
-<div class="card-grid">
-
-<div class="info-card">
-
-<h3>
-Inventory Purchase
-</h3>
-
-<p>
-Customer demand hai lekin stock purchase ke liye immediate funds ki requirement hai.
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>
-Supplier Payments
-</h3>
-
-<p>
-Supplier payment due hai aur customer payments abhi receive nahi hui hain.
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>
-Staff Salaries
-</h3>
-
-<p>
-Monthly salary commitments aur operational expenses ko manage karna hai.
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>
-Seasonal Demand
-</h3>
-
-<p>
-Festive season ya bulk orders ke liye additional inventory purchase karni hai.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:Arial,sans-serif;
-overflow-x:hidden;
-background:#f8fafc;
-}
-
-img{
-max-width:100%;
-display:block;
-height:auto;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:0 22px;
-}
-
-.hero-section{
-padding:70px 0;
-background:#fff;
-}
-
-.hero-badge{
-display:inline-block;
-padding:10px 18px;
-background:#eaf2ff;
-color:#0d6efd;
-font-size:14px;
-font-weight:700;
-border-radius:50px;
-margin-bottom:18px;
-}
-
-.hero-title{
-font-size:58px;
-font-weight:800;
-line-height:1.15;
-color:#111827;
-margin-bottom:22px;
-}
-
-.hero-text{
-font-size:20px;
-line-height:1.9;
-color:#555;
-margin-bottom:30px;
-}
-
-.hero-buttons{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.btn-primary,
-.btn-secondary{
-padding:18px 30px;
-border-radius:12px;
-font-weight:700;
-text-decoration:none;
-font-size:17px;
-}
-
-.btn-primary{
-background:#0d6efd;
-color:white;
-}
-
-.btn-secondary{
-background:#111827;
-color:white;
-}
-
-.hero-image{
-margin-top:40px;
-}
-
-.hero-image img{
-width:100%;
-border-radius:24px;
-}
-
-.stats-section{
-padding:30px 0 70px;
-}
-
-.stats-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
-}
-
-.stat-card{
-background:white;
-padding:35px;
-border-radius:24px;
-text-align:center;
-box-shadow:0 10px 30px rgba(0,0,0,.06);
-}
-
-.stat-card h3{
-font-size:38px;
-color:#0d6efd;
-margin-bottom:10px;
-}
-
-.stat-card p{
-font-size:18px;
-color:#555;
-}
-
-.section{
-padding:90px 0;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:50px;
-}
-
-.section-title h2{
-font-size:48px;
-line-height:1.2;
-margin-bottom:20px;
-}
-
-.section-title p{
-font-size:20px;
-line-height:1.9;
-color:#666;
-max-width:850px;
-margin:auto;
-}
-
-.card-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:25px;
-}
-
-.info-card{
-background:white;
-padding:35px;
-border-radius:24px;
-box-shadow:0 10px 30px rgba(0,0,0,.06);
-}
-
-.info-card h3{
-font-size:30px;
-margin-bottom:15px;
-color:#111827;
-}
-
-.info-card p{
-font-size:18px;
-line-height:1.9;
-color:#555;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.hero-title{
-font-size:42px;
-}
-
-.hero-text{
-font-size:19px;
-}
-
-.hero-buttons{
-flex-direction:column;
-}
-
-.btn-primary,
-.btn-secondary{
-width:100%;
-text-align:center;
-}
-
-.stats-grid{
-grid-template-columns:1fr;
-}
-
-.card-grid{
-grid-template-columns:1fr;
-}
-
-.stat-card{
-padding:30px;
-}
-
-.info-card{
-padding:30px;
-}
-
-.section-title h2{
-font-size:36px;
-}
-
-.section-title p{
-font-size:18px;
-}
-
-.info-card h3{
-font-size:26px;
-}
-
-.info-card p{
-font-size:18px;
-}
-
-.stat-card h3{
-font-size:34px;
-}
-
-}
-
-</style>
-
-
-<!-- WHY WORKING CAPITAL LOAN -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Why Businesses Choose Working Capital Funding
-</h2>
-
-<p>
-Working Capital Loan sirf ek loan nahi hai. Yeh business ko daily operations smoothly chalane, growth opportunities capture karne aur cash flow pressure ko manage karne mein help karta hai.
-</p>
-
-</div>
-
-<div class="card-grid">
-
-<div class="info-card">
-
-<h3>
-Business Continuity
-</h3>
-
-<p>
-Cash flow gap hone par bhi business operations, inventory purchase aur daily activities continue rakhne mein support mil sakta hai.
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>
-Better Supplier Management
-</h3>
-
-<p>
-Suppliers ko timely payment karne se business relationships strong rehte hain aur inventory flow smooth bana rehta hai.
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>
-Growth Opportunities
-</h3>
-
-<p>
-Bulk orders, new contracts aur expansion opportunities ko miss karne ki zarurat nahi padti.
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>
-Financial Flexibility
-</h3>
-
-<p>
-Short-term working capital requirements ko manage karke business owners future planning par focus kar sakte hain.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- WHO CAN APPLY -->
-
-<section class="section" style="background:#ffffff;">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Who Can Apply?
-</h2>
-
-<p>
-Different types of businesses working capital funding explore kar sakte hain depending on their business profile and requirements.
-</p>
-
-</div>
-
-<div class="card-grid">
-
-<div class="info-card">
-
-<h3>
-MSME Businesses
-</h3>
-
-<p>
-Small aur medium enterprises jo inventory, salary ya operational expenses manage karna chahte hain.
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>
-Manufacturing Units
-</h3>
-
-<p>
-Raw material purchase, production cost aur working expenses ke liye funding support.
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>
-Retail Businesses
-</h3>
-
-<p>
-Stock purchase, seasonal demand aur daily business operations ke liye support.
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>
-Traders & Wholesalers
-</h3>
-
-<p>
-Inventory management aur supplier payment requirements ko support karne ke liye.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- DOCUMENTS -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Documents Commonly Required
-</h2>
-
-<p>
-Business profile aur lender requirements ke hisab se documents vary kar sakte hain.
-</p>
-
-</div>
-
-<div class="card-grid">
-
-<div class="info-card">
-
-<h3>
-Business PAN
-</h3>
-
-<p>
-Business aur proprietor/company related PAN documentation.
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>
-Aadhaar Card
-</h3>
-
-<p>
-Identity verification aur KYC requirements ke liye.
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>
-Bank Statements
-</h3>
-
-<p>
-Recent business banking transactions assessment ke liye.
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>
-GST Documents
-</h3>
-
-<p>
-GST registration aur returns where applicable.
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>
-Income Records
-</h3>
-
-<p>
-ITR, Profit & Loss Statement ya relevant financial records.
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>
-Business Proof
-</h3>
-
-<p>
-Udyam, Shop Act, Trade License ya applicable registration documents.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- BENEFITS SECTION -->
-
-<section class="section" style="background:#ffffff;">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Key Benefits For Business Owners
-</h2>
-
-<p>
-A healthy cash flow business growth aur stability dono ke liye important hota hai.
-</p>
-
-</div>
-
-<div class="stats-grid">
-
-<div class="stat-card">
-
-<h3>
-Growth
-</h3>
-
-<p>
-Business expansion opportunities support karne mein help.
-</p>
-
-</div>
-
-<div class="stat-card">
-
-<h3>
-Stability
-</h3>
-
-<p>
-Temporary cash flow pressure ko manage karne mein support.
-</p>
-
-</div>
-
-<div class="stat-card">
-
-<h3>
-Operations
-</h3>
-
-<p>
-Daily business activities smoothly continue rakhne mein help.
-</p>
-
-</div>
-
-<div class="stat-card">
-
-<h3>
-Confidence
-</h3>
-
-<p>
-Business owners ko future planning aur growth par focus karne ka confidence.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- WHY SMILE FINANCIAL SOLUTION -->
-
-<section class="wc-section bg-light">
-
-<div class="container">
-
-<div class="section-header">
-
-<span class="section-tag">
-WHY CHOOSE US
-</span>
-
-<h2>
-Trusted Working Capital Loan Assistance For Growing Businesses
-</h2>
-
-<p>
-Fundvexxa business owners ko funding options samjhane, documentation support dene aur suitable financial solutions identify karne me help karta hai. Hamara focus fast communication aur professional guidance par rehta hai.
-</p>
-
-</div>
-
-<div class="benefit-grid">
-
-<div class="benefit-card">
-<h3>Dedicated Support</h3>
-<p>
-Application se lekar final process tak dedicated assistance.
-</p>
-</div>
-
-<div class="benefit-card">
-<h3>MSME Focused</h3>
-<p>
-Small aur medium businesses ki funding requirements ko samajhne wali team.
-</p>
-</div>
-
-<div class="benefit-card">
-<h3>Quick Communication</h3>
-<p>
-Timely updates aur responsive customer support.
-</p>
-</div>
-
-<div class="benefit-card">
-<h3>India Wide Service</h3>
-<p>
-Different industries aur locations ke businesses ke liye assistance.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- DOCUMENTS -->
-
-<section class="wc-section">
-
-<div class="container">
-
-<div class="section-header">
-
-<span class="section-tag">
-DOCUMENTS REQUIRED
-</span>
-
-<h2>
-Commonly Required Documents
-</h2>
-
-<p>
-Actual document requirement lender aur applicant profile ke hisab se different ho sakti hai.
-</p>
-
-</div>
-
-<div class="document-grid">
-
-<div class="document-card">
-
-<h3>Business Documents</h3>
-
-<ul>
-<li>GST Certificate</li>
-<li>Udyam Registration</li>
-<li>Business Proof</li>
-<li>Partnership / Company Documents</li>
-</ul>
-
-</div>
-
-<div class="document-card">
-
-<h3>Financial Documents</h3>
-
-<ul>
-<li>Bank Statements</li>
-<li>ITR Returns</li>
-<li>Profit & Loss Statement</li>
-<li>Balance Sheet</li>
-</ul>
-
-</div>
-
-<div class="document-card">
-
-<h3>KYC Documents</h3>
-
-<ul>
-<li>Aadhaar Card</li>
-<li>PAN Card</li>
-<li>Address Proof</li>
-<li>Passport Size Photo</li>
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CTA SECTION -->
-
-<section class="cta-section">
-
-<div class="container">
-
-<h2>
-Need Working Capital Support For Your Business?
-</h2>
-
-<p>
-Inventory, supplier payment, salary management ya daily business expenses ke liye professional assistance prapt karein.
-</p>
-
-<div class="cta-buttons">
-
-<a href="#apply-now" class="btn-primary">
-Apply Now
+<a href="#apply-now">
+  Apply Now
 </a>
+```
 
-<a href="tel:+917290977231" class="btn-dark">
-Talk To Expert
-</a>
-
-</div>
+  </div>
 
 </div>
 
-</section>
+<!-- =========================================================
+     FIREBASE + PAGE LOGIC
+========================================================= -->
 
-<!-- MOBILE OPTIMIZATION -->
+<script type="module">
 
-<style>
 
-.wc-section{
-padding:70px 0;
-}
+  import {
+    initializeApp
+  } from
+  "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
-.section-header{
-text-align:center;
-margin-bottom:40px;
-}
 
-.section-tag{
-display:inline-block;
-padding:8px 18px;
-background:#eef5ff;
-color:#0d6efd;
-font-size:14px;
-font-weight:700;
-border-radius:30px;
-margin-bottom:15px;
-}
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp
+  } from
+  "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-.section-header h2{
-font-size:42px;
-line-height:1.3;
-font-weight:800;
-color:#111827;
-margin-bottom:18px;
-}
 
-.section-header p{
-font-size:20px;
-line-height:1.9;
-color:#555;
-max-width:900px;
-margin:auto;
-}
+  /* =========================================================
+     FIREBASE CONFIG
+  ========================================================= */
 
-.benefit-grid,
-.document-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:25px;
-}
+  const firebaseConfig = {
 
-.benefit-card,
-.document-card{
-background:#fff;
-padding:35px;
-border-radius:24px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
+    apiKey:
+      "AIzaSyArcvyvNAOKipPZB0YEseN9_k-8JznQ",
 
-.benefit-card h3,
-.document-card h3{
-font-size:24px;
-margin-bottom:15px;
-color:#111827;
-}
+    authDomain:
+      "smile-business-os.firebaseapp.com",
 
-.benefit-card p,
-.document-card li{
-font-size:18px;
-line-height:1.8;
-color:#555;
-}
+    projectId:
+      "smile-business-os",
 
-.document-card ul{
-padding-left:20px;
-}
+    storageBucket:
+      "smile-business-os.firebasestorage.app",
 
-.bg-light{
-background:#f8fbff;
-}
+    messagingSenderId:
+      "114356400630",
 
-.cta-section{
-padding:90px 0;
-background:linear-gradient(135deg,#0d6efd,#0056d6);
-text-align:center;
-color:#fff;
-}
+    appId:
+      "1:114356400630:web:96fc9d07baaf3a504c17d7",
 
-.cta-section h2{
-font-size:46px;
-margin-bottom:20px;
-line-height:1.3;
-}
+    measurementId:
+      "G-73WD9V05ZZ"
 
-.cta-section p{
-font-size:20px;
-line-height:1.9;
-max-width:900px;
-margin:auto auto 30px;
-}
+  };
 
-.cta-buttons{
-display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-}
 
-@media(max-width:768px){
+  const app =
+    initializeApp(
+      firebaseConfig
+    );
 
-.wc-section{
-padding:55px 0;
-}
 
-.section-header h2{
-font-size:34px;
-line-height:1.4;
-}
+  const db =
+    getFirestore(app);
 
-.section-header p{
-font-size:18px;
-line-height:1.9;
-}
 
-.benefit-grid,
-.document-grid{
-grid-template-columns:1fr;
-gap:18px;
-}
+  /* =========================================================
+     MOBILE MENU
+  ========================================================= */
 
-.benefit-card,
-.document-card{
-padding:28px;
-border-radius:20px;
-}
+  window.toggleWCMenu =
+    function(){
 
-.benefit-card h3,
-.document-card h3{
-font-size:24px;
-}
+      const menu =
+        document.getElementById(
+          "fxWCMenu"
+        );
 
-.benefit-card p,
-.document-card li{
-font-size:17px;
-line-height:1.9;
-}
 
-.cta-section h2{
-font-size:34px;
-}
+      menu.style.display =
+        menu.style.display === "block"
+          ? "none"
+          : "block";
 
-.cta-section p{
-font-size:18px;
-}
+    };
 
-.cta-buttons a{
-width:100%;
-text-align:center;
-}
 
-}
+  document
+    .querySelectorAll(
+      "#fxWCMenu a"
+    )
+    .forEach(
+      link => {
 
-</style>
+        link.addEventListener(
+          "click",
+          () => {
+
+            document.getElementById(
+              "fxWCMenu"
+            ).style.display =
+              "none";
+
+          }
+        );
+
+      }
+    );
+
+
+  /* =========================================================
+     FAQ
+  ========================================================= */
+
+  document
+    .querySelectorAll(
+      ".fx-wc-faq-question"
+    )
+    .forEach(
+      button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            const item =
+              button.closest(
+                ".fx-wc-faq-item"
+              );
+
+
+            const currentlyActive =
+              item.classList.contains(
+                "active"
+              );
+
+
+            document
+              .querySelectorAll(
+                ".fx-wc-faq-item"
+              )
+              .forEach(
+                otherItem => {
+
+                  otherItem.classList.remove(
+                    "active"
+                  );
+
+
+                  const otherButton =
+                    otherItem.querySelector(
+                      ".fx-wc-faq-question"
+                    );
+
+
+                  otherButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                  );
+
+
+                  const plus =
+                    otherButton.querySelector(
+                      ".fx-wc-faq-plus"
+                    );
+
+
+                  plus.textContent =
+                    "+";
+
+                }
+              );
+
+
+            if(
+              !currentlyActive
+            ){
+
+              item.classList.add(
+                "active"
+              );
+
+
+              button.setAttribute(
+                "aria-expanded",
+                "true"
+              );
+
+
+              button.querySelector(
+                ".fx-wc-faq-plus"
+              ).textContent =
+                "−";
+
+            }
+
+          }
+        );
+
+      }
+    );
+
+
+  /* =========================================================
+     FORM ELEMENTS
+  ========================================================= */
+
+  const form =
+    document.getElementById(
+      "workingCapitalForm"
+    );
+
+
+  const formMessage =
+    document.getElementById(
+      "fxWCFormMessage"
+    );
+
+
+  const submitButton =
+    document.getElementById(
+      "wcSubmitButton"
+    );
+
+
+  const submitText =
+    document.getElementById(
+      "wcSubmitText"
+    );
+
+
+  function showMessage(
+    type,
+    message
+  ){
+
+    formMessage.className =
+      "fx-wc-form-message " +
+      type;
+
+
+    formMessage.textContent =
+      message;
+
+
+    formMessage.scrollIntoView({
+      behavior:"smooth",
+      block:"nearest"
+    });
+
+  }
+
+
+  /* =========================================================
+     FORM SUBMISSION
+  ========================================================= */
+
+  form.addEventListener(
+    "submit",
+    async event => {
+
+      event.preventDefault();
+
+
+      const name =
+        document
+          .getElementById(
+            "wcName"
+          )
+          .value
+          .trim();
+
+
+      const mobile =
+        document
+          .getElementById(
+            "wcMobile"
+          )
+          .value
+          .trim();
+
+
+      const email =
+        document
+          .getElementById(
+            "wcEmail"
+          )
+          .value
+          .trim();
+
+
+      const city =
+        document
+          .getElementById(
+            "wcCity"
+          )
+          .value
+          .trim();
+
+
+      const businessType =
+        document
+          .getElementById(
+            "wcBusinessType"
+          )
+          .value;
+
+
+      const businessVintage =
+        document
+          .getElementById(
+            "wcVintage"
+          )
+          .value;
+
+
+      const turnover =
+        document
+          .getElementById(
+            "wcTurnover"
+          )
+          .value;
+
+
+      const amount =
+        document
+          .getElementById(
+            "wcAmount"
+          )
+          .value;
+
+
+      const purpose =
+        document
+          .getElementById(
+            "wcPurpose"
+          )
+          .value;
+
+
+      const gstRegistered =
+        document
+          .getElementById(
+            "wcGST"
+          )
+          .value;
+
+
+      const message =
+        document
+          .getElementById(
+            "wcMessage"
+          )
+          .value
+          .trim();
+
+
+      /* -------------------------------------------------------
+         VALIDATION
+      ------------------------------------------------------- */
+
+      if(
+        !name ||
+        name.length < 2
+      ){
+
+        showMessage(
+          "error",
+          "Please enter your full name."
+        );
+
+        return;
+
+      }
+
+
+      const cleanMobile =
+        mobile.replace(
+          /\D/g,
+          ""
+        );
+
+
+      if(
+        cleanMobile.length !== 10
+      ){
+
+        showMessage(
+          "error",
+          "Please enter a valid 10-digit mobile number."
+        );
+
+        return;
+
+      }
+
+
+      if(!city){
+
+        showMessage(
+          "error",
+          "Please enter your business city."
+        );
+
+        return;
+
+      }
+
+
+      if(!businessType){
+
+        showMessage(
+          "error",
+          "Please select your business type."
+        );
+
+        return;
+
+      }
+
+
+      if(!purpose){
+
+        showMessage(
+          "error",
+          "Please select your main funding requirement."
+        );
+
+        return;
+
+      }
+
+
+      /* -------------------------------------------------------
+         LOADING
+      ------------------------------------------------------- */
+
+      submitButton.classList.add(
+        "fx-wc-submit-loading"
+      );
+
+
+      submitText.textContent =
+        "Submitting...";
+
+
+      try{
+
+
+        /* -----------------------------------------------------
+           FIRESTORE LEAD
+        ----------------------------------------------------- */
+
+        await addDoc(
+          collection(
+            db,
+            "leads"
+          ),
+          {
+
+            name:
+              name,
+
+            fullName:
+              name,
+
+            phone:
+              cleanMobile,
+
+            mobile:
+              cleanMobile,
+
+            email:
+              email || "",
+
+            city:
+              city,
+
+            businessName:
+              "",
+
+            businessType:
+              businessType,
+
+            businessVintage:
+              businessVintage || "",
+
+            annualTurnover:
+              turnover || "",
+
+            amount:
+              amount
+                ? Number(amount)
+                : null,
+
+            loanAmount:
+              amount
+                ? Number(amount)
+                : null,
+
+            category:
+              "working-capital",
+
+            loanType:
+              "Working Capital Loan",
+
+            requirement:
+              purpose,
+
+            gstRegistered:
+              gstRegistered || "",
+
+            message:
+              message,
+
+            source:
+              "working-capital-page",
+
+            page:
+              "working-capital-loan.html",
+
+            status:
+              "new",
+
+            createdAt:
+              serverTimestamp(),
+
+            updatedAt:
+              serverTimestamp()
+
+          }
+        );
+
+
+        /* -----------------------------------------------------
+           SUCCESS
+        ----------------------------------------------------- */
+
+        showMessage(
+          "success",
+          "Thank you! Your working capital enquiry has been submitted successfully. Our team will contact you regarding the next steps."
+        );
+
+
+        form.reset();
+
+
+      }
+      catch(error){
+
+        console.error(
+          "Working capital lead error:",
+          error
+        );
+
+
+        showMessage(
+          "error",
+          "We could not submit your enquiry right now. Please try again or contact Fundvexxa directly on +91 72909 77231."
+        );
+
+      }
+      finally{
+
+        submitButton.classList.remove(
+          "fx-wc-submit-loading"
+        );
+
+
+        submitText.textContent =
+          "Submit Working Capital Enquiry";
+
+      }
+
+    }
+  );
+
+
+  /* =========================================================
+     CURRENT YEAR
+  ========================================================= */
+
+  document.getElementById(
+    "fxWCYear"
+  ).textContent =
+    new Date().getFullYear();
+
+
+</script>
+
+</body>
+</html>
