@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Check Eligibility | Fundvexxa</title>
+
+  <meta
+    name="description"
+    content="Check your preliminary eligibility for business loan, Mudra loan, working capital and other funding options with Fundvexxa."
+  />
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:#f4f9ff;
+      color:#15263d;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .topbar{
+      background:#071d36;
+      color:#fff;
+      padding:9px 20px;
+      font-size:14px;
+    }
+
+    .topbar-inner{
+      max-width:1180px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    header{
+      background:#fff;
+      border-bottom:1px solid #e5edf6;
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+
+    .navbar{
+      max-width:1180px;
+      margin:auto;
+      padding:16px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      font-size:25px;
+      font-weight:800;
+      color:#0b2b50;
+    }
+
+    .brand span{
+      color:#c89b3c;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:22px;
+      align-items:center;
+      font-size:15px;
+      font-weight:600;
+    }
+
+    .nav-links a:hover{
+      color:#176ed1;
+    }
+
+    .nav-btn{
+      background:#0f63bd;
+      color:#fff !important;
+      padding:10px 16px;
+      border-radius:8px;
+    }
+
+    .hero{
+      padding:70px 20px 45px;
+      background:
+        linear-gradient(135deg, rgba(7,29,54,.95), rgba(15,99,189,.84)),
+        url("https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1600");
+      background-size:cover;
+      background-position:center;
+      color:#fff;
+    }
+
+    .hero-inner{
+      max-width:1000px;
+      margin:auto;
+      text-align:center;
+    }
+
+    .hero-tag{
+      display:inline-block;
+      background:rgba(255,255,255,.13);
+      border:1px solid rgba(255,255,255,.25);
+      padding:7px 15px;
+      border-radius:100px;
+      margin-bottom:16px;
+      font-size:14px;
+    }
+
+    .hero h1{
+      font-size:45px;
+      line-height:1.15;
+      margin-bottom:15px;
+    }
+
+    .hero p{
+      max-width:780px;
+      margin:auto;
+      color:#e6eef7;
+      font-size:17px;
+    }
+
+    .main{
+      max-width:1080px;
+      margin:45px auto;
+      padding:0 20px;
+    }
+
+    .layout{
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid #e2ebf5;
+      border-radius:18px;
+      box-shadow:0 10px 35px rgba(18,52,86,.08);
+      padding:30px;
+    }
+
+    .card h2{
+      color:#0b2b50;
+      margin-bottom:8px;
+      font-size:27px;
+    }
+
+    .sub{
+      color:#63758a;
+      font-size:14px;
+      margin-bottom:25px;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+    }
+
+    .field.full{
+      grid-column:1/-1;
+    }
+
+    label{
+      font-size:14px;
+      font-weight:700;
+      color:#243d59;
+    }
+
+    input,
+    select,
+    textarea{
+      width:100%;
+      padding:13px 14px;
+      border:1px solid #cad8e7;
+      border-radius:9px;
+      font-size:15px;
+      outline:none;
+      background:#fff;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus{
+      border-color:#146bc6;
+      box-shadow:0 0 0 3px rgba(20,107,198,.1);
+    }
+
+    textarea{
+      min-height:100px;
+      resize:vertical;
+    }
+
+    .check-row{
+      grid-column:1/-1;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      font-size:13px;
+      color:#5f7186;
+    }
+
+    .check-row input{
+      width:auto;
+      margin-top:4px;
+    }
+
+    .submit-btn{
+      grid-column:1/-1;
+      border:0;
+      background:linear-gradient(135deg,#0d5fae,#1477d4);
+      color:#fff;
+      font-size:16px;
+      font-weight:700;
+      padding:14px 22px;
+      border-radius:10px;
+      cursor:pointer;
+    }
+
+    .submit-btn:hover{
+      opacity:.93;
+    }
+
+    .side-title{
+      font-size:21px;
+      margin-bottom:18px;
+      color:#0b2b50;
+    }
+
+    .benefit{
+      display:flex;
+      gap:13px;
+      margin-bottom:18px;
+    }
+
+    .icon{
+      min-width:38px;
+      height:38px;
+      border-radius:9px;
+      background:#eaf4ff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#0e64bc;
+      font-weight:800;
+    }
+
+    .benefit h3{
+      font-size:15px;
+      margin-bottom:3px;
+    }
+
+    .benefit p{
+      color:#6b7c90;
+      font-size:13px;
+    }
+
+    .notice{
+      margin-top:25px;
+      background:#fff8e8;
+      border:1px solid #f0d99a;
+      padding:15px;
+      border-radius:10px;
+      font-size:13px;
+      color:#665222;
+    }
+
+    .result{
+      margin-top:25px;
+      display:none;
+      padding:22px;
+      border-radius:14px;
+      background:#eff8ff;
+      border:1px solid #badcff;
+    }
+
+    .result h3{
+      color:#09599f;
+      margin-bottom:8px;
+    }
+
+    .result p{
+      color:#42586f;
+      font-size:14px;
+    }
+
+    .result-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:17px;
+    }
+
+    .result-actions a{
+      padding:10px 16px;
+      border-radius:8px;
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .whatsapp{
+      background:#21a366;
+      color:#fff;
+    }
+
+    .call{
+      background:#0f63bd;
+      color:#fff;
+    }
+
+    .services{
+      margin-top:50px;
+    }
+
+    .services h2{
+      text-align:center;
+      color:#0b2b50;
+      font-size:28px;
+      margin-bottom:25px;
+    }
+
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .service{
+      background:#fff;
+      border:1px solid #e1ebf5;
+      border-radius:13px;
+      padding:20px;
+    }
+
+    .service h3{
+      font-size:16px;
+      margin-bottom:6px;
+      color:#123556;
+    }
+
+    .service p{
+      font-size:13px;
+      color:#6a7c90;
+      margin-bottom:12px;
+    }
+
+    .service a{
+      color:#0c64bd;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    footer{
+      margin-top:55px;
+      background:#071d36;
+      color:#d8e3ed;
+      padding:42px 20px 25px;
+    }
+
+    .footer-inner{
+      max-width:1180px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1.4fr 1fr 1fr;
+      gap:35px;
+    }
+
+    footer h3,
+    footer h4{
+      color:#fff;
+      margin-bottom:12px;
+    }
+
+    footer p,
+    footer a{
+      font-size:14px;
+      color:#c2d0df;
+    }
+
+    .footer-links{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .copyright{
+      max-width:1180px;
+      margin:30px auto 0;
+      padding-top:20px;
+      border-top:1px solid rgba(255,255,255,.12);
+      font-size:12px;
+      color:#9eb1c3;
+    }
+
+    .mobile-cta{
+      display:none;
+    }
+
+    @media(max-width:850px){
+      .nav-links{
+        display:none;
+      }
+
+      .hero h1{
+        font-size:34px;
+      }
+
+      .layout{
+        grid-template-columns:1fr;
+      }
+
+      .service-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .footer-inner{
+        grid-template-columns:1fr;
+      }
+
+      .mobile-cta{
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        position:fixed;
+        left:0;
+        right:0;
+        bottom:0;
+        z-index:999;
+        background:#fff;
+        box-shadow:0 -5px 20px rgba(0,0,0,.12);
+      }
+
+      .mobile-cta a{
+        text-align:center;
+        padding:13px 5px;
+        font-weight:700;
+        font-size:13px;
+        border-right:1px solid #e0e7ef;
+      }
+
+      .mobile-cta .apply{
+        background:#0f63bd;
+        color:#fff;
+      }
+
+      body{
+        padding-bottom:48px;
+      }
+    }
+
+    @media(max-width:560px){
+      .form-grid{
+        grid-template-columns:1fr;
+      }
+
+      .field.full,
+      .check-row,
+      .submit-btn{
+        grid-column:auto;
+      }
+
+      .card{
+        padding:22px 17px;
+      }
+
+      .hero{
+        padding:55px 18px 38px;
+      }
+
+      .hero h1{
+        font-size:30px;
+      }
+
+      .service-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div>Business & Financial Consultancy · Delhi · Maharashtra</div>
+
+      <div>
+        fundvexxasupport@gmail.com · +91 72909 77231
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="navbar">
+
+      <a href="index.html" class="brand">
+        Fund<span>vexxa</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="success-stories.html">Success Stories</a>
+        <a href="faq.html">FAQ</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="contact.html" class="nav-btn">Talk to an Expert</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <section class="hero">
+
+    <div class="hero-inner">
+
+      <div class="hero-tag">
+        Preliminary Funding Eligibility
+      </div>
+
+      <h1>Check My Eligibility</h1>
+
+      <p>
+        Share a few basic details about your requirement and understand which
+        funding category may be relevant for your profile.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <main class="main">
+
+    <div class="layout">
+
+      <section class="card">
+
+        <h2>Tell us about your requirement</h2>
+
+        <p class="sub">
+          This is only a preliminary assessment. Final approval is subject to
+          lender or institution eligibility, documentation and assessment.
+        </p>
+
+
+        <form id="eligibilityForm">
+
+          <div class="form-grid">
+
+            <div class="field">
+
+              <label for="name">
+                Full Name *
+              </label>
+
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Enter your full name"
+                required
+              />
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="mobile">
+                Mobile Number *
+              </label>
+
+              <input
+                id="mobile"
+                name="mobile"
+                type="tel"
+                maxlength="10"
+                pattern="[6-9][0-9]{9}"
+                placeholder="10-digit mobile number"
+                required
+              />
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="city">
+                City *
+              </label>
+
+              <input
+                id="city"
+                name="city"
+                type="text"
+                placeholder="Your city"
+                required
+              />
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="requirement">
+                Funding Requirement *
+              </label>
+
+              <select id="requirement" name="requirement" required>
+
+                <option value="">
+                  Select requirement
+                </option>
+
+                <option value="Business Loan">
+                  Business Loan
+                </option>
+
+                <option value="Working Capital">
+                  Working Capital / CC / OD
+                </option>
+
+                <option value="Mudra Loan">
+                  Mudra Loan Assistance
+                </option>
+
+                <option value="PMEGP">
+                  PMEGP Assistance
+                </option>
+
+                <option value="MSME Loan">
+                  MSME Funding
+                </option>
+
+                <option value="Personal Loan">
+                  Personal Loan
+                </option>
+
+                <option value="Loan Against Property">
+                  Loan Against Property
+                </option>
+
+                <option value="Startup Funding">
+                  Startup / Corporate Funding
+                </option>
+
+                <option value="Other">
+                  Other Requirement
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="amount">
+                Approx. Amount Required *
+              </label>
+
+              <input
+                id="amount"
+                name="amount"
+                type="number"
+                min="10000"
+                placeholder="Example: 500000"
+                required
+              />
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="profile">
+                Applicant Profile *
+              </label>
+
+              <select id="profile" name="profile" required>
+
+                <option value="">
+                  Select profile
+                </option>
+
+                <option value="Business Owner">
+                  Business Owner
+                </option>
+
+                <option value="Self Employed">
+                  Self Employed
+                </option>
+
+                <option value="Salaried">
+                  Salaried
+                </option>
+
+                <option value="Startup">
+                  Startup
+                </option>
+
+                <option value="Professional">
+                  Professional
+                </option>
+
+                <option value="Other">
+                  Other
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="vintage">
+                Business Vintage
+              </label>
+
+              <select id="vintage" name="vintage">
+
+                <option value="">
+                  Select if applicable
+                </option>
+
+                <option value="New Business">
+                  New Business / Proposed Business
+                </option>
+
+                <option value="Below 1 Year">
+                  Below 1 Year
+                </option>
+
+                <option value="1-2 Years">
+                  1–2 Years
+                </option>
+
+                <option value="2-5 Years">
+                  2–5 Years
+                </option>
+
+                <option value="5+ Years">
+                  5+ Years
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="income">
+                Approx. Monthly Income / Turnover
+              </label>
+
+              <input
+                id="income"
+                name="income"
+                type="number"
+                min="0"
+                placeholder="Optional"
+              />
+
+            </div>
+
+
+            <div class="field full">
+
+              <label for="purpose">
+                Funding Purpose
+              </label>
+
+              <textarea
+                id="purpose"
+                name="purpose"
+                placeholder="Example: working capital, stock purchase, machinery, expansion, business setup..."
+              ></textarea>
+
+            </div>
+
+
+            <div class="check-row">
+
+              <input
+                type="checkbox"
+                id="consent"
+                required
+              />
+
+              <label for="consent">
+                I agree that Fundvexxa may contact me regarding my enquiry.
+                I understand that this is a preliminary assessment and does
+                not guarantee funding or approval.
+              </label>
+
+            </div>
+
+
+            <button class="submit-btn" type="submit">
+              Check Preliminary Eligibility
+            </button>
+
+          </div>
+
+        </form>
+
+
+        <div
+          id="result"
+          class="result"
+          aria-live="polite"
+        >
+
+          <h3 id="resultTitle">
+            Preliminary Route Identified
+          </h3>
+
+          <p id="resultText"></p>
+
+          <div class="result-actions">
+
+            <a
+              id="whatsappBtn"
+              class="whatsapp"
+              href="#"
+              target="_blank"
+              rel="noopener"
+            >
+              Continue on WhatsApp
+            </a>
+
+            <a
+              href="tel:+917290977231"
+              class="call"
+            >
+              Call Expert
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <aside class="card">
+
+        <h2 class="side-title">
+          What happens next?
+        </h2>
+
+
+        <div class="benefit">
+
+          <div class="icon">1</div>
+
+          <div>
+            <h3>Share basic information</h3>
+            <p>
+              Tell us about your profile and funding requirement.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="icon">2</div>
+
+          <div>
+            <h3>Understand possible route</h3>
+            <p>
+              We identify potentially relevant funding categories.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="icon">3</div>
+
+          <div>
+            <h3>Documentation discussion</h3>
+            <p>
+              Required documents depend on the relevant scheme, lender and
+              applicant profile.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="icon">4</div>
+
+          <div>
+            <h3>Institution assessment</h3>
+            <p>
+              Final approval and terms are decided by the relevant lender or
+              institution.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="notice">
+
+          <strong>Important:</strong><br>
+
+          Fundvexxa provides financial and business consultancy/support.
+          Preliminary eligibility displayed on this page is informational
+          and is not a loan sanction or guarantee.
+
+        </div>
+
+      </aside>
+
+    </div>
+
+
+
+    <section class="services">
+
+      <h2>
+        Explore Funding Options
+      </h2>
+
+      <div class="service-grid">
+
+        <div class="service">
+          <h3>Business Loan</h3>
+          <p>
+            Funding support for eligible business requirements.
+          </p>
+          <a href="business-loan.html">
+            Explore →
+          </a>
+        </div>
+
+
+        <div class="service">
+          <h3>Working Capital</h3>
+          <p>
+            Explore CC, OD and other working-capital requirements.
+          </p>
+          <a href="working-capital-loan.html">
+            Explore →
+          </a>
+        </div>
+
+
+        <div class="service">
+          <h3>Mudra Loan</h3>
+          <p>
+            Assistance for applicants exploring eligible Mudra funding.
+          </p>
+          <a href="mudra-loan.html">
+            Explore →
+          </a>
+        </div>
+
+
+        <div class="service">
+          <h3>All Services</h3>
+          <p>
+            Explore financial and business-support services.
+          </p>
+          <a href="services.html">
+            View Services →
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+
+        <h3>Fundvexxa</h3>
+
+        <p>
+          Business and financial consultancy supporting businesses,
+          entrepreneurs and organisations with funding and business-growth
+          requirements.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>Company</h4>
+
+        <div class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="faq.html">FAQ</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <h4>Contact</h4>
+
+        <div class="footer-links">
+          <a href="tel:+917290977231">
+            +91 72909 77231
+          </a>
+
+          <a href="mailto:fundvexxasupport@gmail.com">
+            fundvexxasupport@gmail.com
+          </a>
+
+          <a
+            href="https://wa.me/917290977231"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+      © 2026 Fundvexxa. All rights reserved.
+
+      Funding is subject to eligibility, documentation and final approval by
+      the relevant lender or institution.
+
+    </div>
+
+  </footer>
+
+
+
+  <div class="mobile-cta">
+
+    <a href="tel:+917290977231">
+      Call
+    </a>
+
+    <a
+      href="https://wa.me/917290977231"
+      target="_blank"
+      rel="noopener"
+    >
+      WhatsApp
+    </a>
+
+    <a href="#eligibilityForm" class="apply">
+      Check
+    </a>
+
+  </div>
+
+
+
+  <script>
+
+    const form = document.getElementById("eligibilityForm");
+
+    const result = document.getElementById("result");
+
+    const resultTitle =
+      document.getElementById("resultTitle");
+
+    const resultText =
+      document.getElementById("resultText");
+
+    const whatsappBtn =
+      document.getElementById("whatsappBtn");
+
+
+    form.addEventListener("submit", function(event){
+
+      event.preventDefault();
+
+
+      const name =
+        document.getElementById("name").value.trim();
+
+      const mobile =
+        document.getElementById("mobile").value.trim();
+
+      const city =
+        document.getElementById("city").value.trim();
+
+      const requirement =
+        document.getElementById("requirement").value;
+
+      const amount =
+        document.getElementById("amount").value;
+
+      const profile =
+        document.getElementById("profile").value;
+
+      const vintage =
+        document.getElementById("vintage").value;
+
+      const purpose =
+        document.getElementById("purpose").value.trim();
+
+
+      let routeMessage = "";
+
+
+      if(requirement === "Mudra Loan"){
+
+        routeMessage =
+          "Based on the requirement selected, Mudra Loan Assistance may be a relevant route to explore. Final eligibility depends on the applicable scheme guidelines, business activity, documentation and lender assessment.";
+
+      }
+
+      else if(requirement === "Working Capital"){
+
+        routeMessage =
+          "Your requirement may be suitable for working-capital options such as a working-capital loan, CC/OD or another lender-specific facility depending on your business profile and cash flow.";
+
+      }
+
+      else if(requirement === "Business Loan"){
+
+        routeMessage =
+          "A business loan may be a relevant funding route based on your requirement. Eligibility, amount, rate and tenure will depend on business profile, documents and lender assessment.";
+
+      }
+
+      else if(requirement === "PMEGP"){
+
+        routeMessage =
+          "PMEGP assistance may be worth exploring if your proposed activity and applicant profile meet the applicable scheme requirements. Scheme eligibility and subsidy are subject to official rules and institutional assessment.";
+
+      }
+
+      else if(requirement === "Personal Loan"){
+
+        routeMessage =
+          "A personal loan may be explored based on income, existing obligations, credit profile and lender eligibility criteria.";
+
+      }
+
+      else{
+
+        routeMessage =
+          "Based on the information provided, a Fundvexxa advisor can review your requirement and help you understand potentially relevant funding routes and commonly required documentation.";
+
+      }
+
+
+      resultTitle.textContent =
+        "Preliminary Route Identified";
+
+
+      resultText.textContent =
+        routeMessage;
+
+
+      const message =
+        "Hello Fundvexxa,%0A%0A" +
+
+        "I completed the preliminary eligibility check.%0A%0A" +
+
+        "Name: " + encodeURIComponent(name) + "%0A" +
+
+        "Mobile: " + encodeURIComponent(mobile) + "%0A" +
+
+        "City: " + encodeURIComponent(city) + "%0A" +
+
+        "Requirement: " + encodeURIComponent(requirement) + "%0A" +
+
+        "Amount Required: ₹" + encodeURIComponent(amount) + "%0A" +
+
+        "Profile: " + encodeURIComponent(profile) + "%0A" +
+
+        "Business Vintage: " + encodeURIComponent(vintage || "Not specified") + "%0A" +
+
+        "Purpose: " + encodeURIComponent(purpose || "Not specified");
+
+
+      whatsappBtn.href =
+        "https://wa.me/917290977231?text=" + message;
+
+
+      result.style.display = "block";
+
+
+      result.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
