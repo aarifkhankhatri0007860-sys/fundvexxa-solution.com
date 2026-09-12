@@ -1,0 +1,11 @@
+{
+  "name": "Fundvexxa",
+  "short_name": "Fundvexxa",
+  "description": "Fundvexxa business and financial consultancy platform",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d4f86",
+  "orientation": "portrait-primary",
+  "icons": []
+}
