@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -27,6 +26,12 @@
   >
 
   <meta name="theme-color" content="#0d4f86">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Fundvexxa">
+  <meta name="application-name" content="Fundvexxa">
+  <link rel="manifest" href="manifest.webmanifest">
 
   <!-- Open Graph / Social SEO -->
   <meta
@@ -634,6 +639,22 @@
       margin-top:2px;
     }
 
+
+    .consent-row{
+      display:flex;
+      align-items:flex-start;
+      gap:8px;
+      margin:2px 0 4px;
+      color:var(--muted);
+      font-size:11px;
+      line-height:1.5;
+    }
+    .consent-row input{
+      margin-top:3px;
+      accent-color:var(--primary);
+      flex:0 0 auto;
+    }
+
     .form-message.success{
       color:var(--green);
     }
@@ -881,6 +902,36 @@
       background:transparent;
     }
 
+
+    .app-disclosure{
+      padding:28px 0;
+      background:#f7fafc;
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+    }
+    .app-disclosure strong{
+      color:var(--primary-dark);
+      font-size:13px;
+    }
+    .app-disclosure p{
+      margin-top:7px;
+      max-width:1000px;
+      color:var(--muted);
+      font-size:11px;
+      line-height:1.65;
+    }
+    .app-disclosure-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:10px;
+    }
+    .app-disclosure-links a{
+      color:var(--primary);
+      font-size:11px;
+      font-weight:700;
+    }
+
     /* =========================
        FOOTER
     ========================= */
@@ -1054,6 +1105,148 @@
       cursor:pointer;
       color:var(--primary-dark);
       font-size:10px;
+    }
+
+
+    /* =========================
+       APP LAYER
+       Keeps the existing website intact while adding an app-like mobile shell.
+    ========================= */
+    .app-quickbar{
+      display:none;
+    }
+
+    .app-bottom-nav{
+      display:none;
+    }
+
+    .app-menu-backdrop{
+      display:none;
+    }
+
+    @media(max-width:600px){
+      body{
+        padding-bottom:74px;
+      }
+
+      .app-bottom-nav{
+        position:fixed;
+        left:0;
+        right:0;
+        bottom:0;
+        z-index:2000;
+        display:grid;
+        grid-template-columns:repeat(5,1fr);
+        gap:2px;
+        padding:8px 8px calc(8px + env(safe-area-inset-bottom));
+        background:rgba(255,255,255,.97);
+        border-top:1px solid var(--border);
+        box-shadow:0 -8px 24px rgba(16,55,88,.10);
+        backdrop-filter:blur(10px);
+      }
+
+      .app-bottom-nav a,
+      .app-bottom-nav button{
+        appearance:none;
+        border:0;
+        background:transparent;
+        color:#607287;
+        min-height:52px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:3px;
+        font:600 10px Inter,Arial,sans-serif;
+        cursor:pointer;
+        border-radius:10px;
+      }
+
+      .app-bottom-nav a:active,
+      .app-bottom-nav button:active{
+        background:var(--primary-light);
+      }
+
+      .app-bottom-nav .app-icon{
+        font-size:18px;
+        line-height:1;
+      }
+
+      .app-bottom-nav .app-apply{
+        color:#fff;
+        background:var(--primary);
+        margin-top:-20px;
+        height:58px;
+        border-radius:50%;
+        border:5px solid #fff;
+        box-shadow:0 5px 16px rgba(13,79,134,.24);
+      }
+
+      .app-bottom-nav .app-apply .app-icon{
+        font-size:20px;
+      }
+
+      .app-bottom-nav .active{
+        color:var(--primary);
+      }
+
+      .app-quickbar{
+        display:flex;
+        overflow-x:auto;
+        gap:8px;
+        padding:10px 14px;
+        background:#f8fbfe;
+        border-bottom:1px solid var(--border);
+        scrollbar-width:none;
+      }
+
+      .app-quickbar::-webkit-scrollbar{display:none;}
+
+      .app-quickbar a{
+        flex:0 0 auto;
+        white-space:nowrap;
+        padding:8px 12px;
+        border:1px solid var(--border);
+        border-radius:999px;
+        background:#fff;
+        color:var(--primary-dark);
+        font-size:11px;
+        font-weight:700;
+      }
+
+      .app-menu-backdrop{
+        position:fixed;
+        inset:0;
+        z-index:1990;
+        background:rgba(7,32,54,.36);
+      }
+
+      .app-menu-backdrop.open{
+        display:block;
+      }
+
+      .navlinks.open{
+        z-index:2001;
+        position:fixed;
+        left:14px;
+        right:14px;
+        top:70px;
+        max-height:calc(100vh - 150px);
+        overflow:auto;
+      }
+
+      .menu-btn{
+        min-width:44px;
+        min-height:44px;
+      }
+    }
+
+    @media(min-width:601px){
+      .app-bottom-nav,
+      .app-quickbar,
+      .app-menu-backdrop{
+        display:none !important;
+      }
     }
 
     /* =========================
@@ -1262,6 +1455,16 @@ HEADER
 
 </header>
 
+<!-- Mobile app quick actions: existing website content remains unchanged. -->
+<div class="app-quickbar" aria-label="Quick actions">
+  <a href="eligibility.html">Check Eligibility</a>
+  <a href="services.html">Funding Options</a>
+  <a href="track.html">Track Application</a>
+  <a href="contact.html">Talk to Expert</a>
+</div>
+
+<div class="app-menu-backdrop" id="appMenuBackdrop" aria-hidden="true"></div>
+
 
 <!-- =========================
 HERO
@@ -1345,23 +1548,23 @@ TRUST
   <div class="container trust-grid">
 
     <div class="trust-item">
-      <strong>6+ Years</strong>
-      <span>Business support experience</span>
+      <strong>Requirement-led</strong>
+      <span>Funding & business support</span>
     </div>
 
     <div class="trust-item">
-      <strong>1M+</strong>
-      <span>Customers supported*</span>
+      <strong>Multiple</strong>
+      <span>Funding categories</span>
     </div>
 
     <div class="trust-item">
-      <strong>98%</strong>
-      <span>Success ratio*</span>
+      <strong>Structured</strong>
+      <span>Application support</span>
     </div>
 
     <div class="trust-item">
-      <strong>2 Locations</strong>
-      <span>Delhi & Maharashtra</span>
+      <strong>Human + Digital</strong>
+      <span>Support when you need it</span>
     </div>
 
   </div>
@@ -1818,6 +2021,10 @@ ELIGIBILITY
           placeholder="Tell us briefly about your requirement"
         ></textarea>
 
+        <label class="consent-row">
+          <input type="checkbox" id="leadConsent" required>
+          <span>I agree that Fundvexxa may contact me regarding my enquiry and that my information will be handled according to the Privacy Policy.</span>
+        </label>
 
         <button
           type="submit"
@@ -2237,6 +2444,27 @@ FINAL CTA
 
 
 <!-- =========================
+COMPLIANCE / DISCLOSURE
+========================= -->
+<section class="app-disclosure">
+  <div class="container">
+    <strong>Important information</strong>
+    <p>
+      Fundvexxa is a business and financial consultancy/platform. Unless a specific lender or partner is expressly identified,
+      Fundvexxa is not the lender and does not itself sanction or disburse loans. Funding decisions, interest/rates, fees,
+      tenure and final approval are determined by the relevant bank, NBFC, government scheme or financial institution,
+      subject to its applicable criteria and documentation.
+    </p>
+    <div class="app-disclosure-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="grievance.html">Grievance</a>
+      <a href="partner-disclosure.html">Partner Disclosure</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
 FOOTER
 ========================= -->
 
@@ -2348,6 +2576,32 @@ FOOTER
 
 </footer>
 
+
+<!-- =========================
+MOBILE APP NAVIGATION
+========================= -->
+<nav class="app-bottom-nav" aria-label="App navigation">
+  <a href="index.html" class="active">
+    <span class="app-icon">⌂</span>
+    <span>Home</span>
+  </a>
+  <a href="services.html">
+    <span class="app-icon">▣</span>
+    <span>Funding</span>
+  </a>
+  <a href="eligibility.html" class="app-apply">
+    <span class="app-icon">＋</span>
+    <span>Apply</span>
+  </a>
+  <a href="track.html">
+    <span class="app-icon">◷</span>
+    <span>Track</span>
+  </a>
+  <button type="button" id="appMenuButton" aria-label="Open menu">
+    <span class="app-icon">☰</span>
+    <span>Menu</span>
+  </button>
+</nav>
 
 <!-- =========================
 CHATBOT
@@ -2482,6 +2736,15 @@ FIREBASE + FORM
      HOME LEAD FORM
   ===================================== */
 
+  // Capture an agent referral code without exposing or changing the existing page flow.
+  (function(){
+    const params = new URLSearchParams(window.location.search);
+    const ref = params.get("ref");
+    if(ref && /^[A-Za-z0-9_-]{3,32}$/.test(ref)){
+      localStorage.setItem("fundvexxa_ref", ref);
+    }
+  })();
+
   const form =
     document.getElementById("homeLeadForm");
 
@@ -2512,8 +2775,10 @@ FIREBASE + FORM
     const message =
       document.getElementById("leadMessage").value.trim();
 
+    const consent =
+      document.getElementById("leadConsent");
 
-    if(!name || !phone || !requirement){
+    if(!name || !phone || !requirement || !consent.checked){
 
       messageBox.className =
         "form-message error";
@@ -2568,6 +2833,9 @@ FIREBASE + FORM
           message: message,
 
           source: "Website - Home",
+          consentCaptured: true,
+          consentAt: new Date().toISOString(),
+          referralCode: localStorage.getItem("fundvexxa_ref") || "",
 
           status: "New",
 
@@ -2645,22 +2913,43 @@ FIREBASE + FORM
     document.getElementById("navLinks");
 
 
-  menuBtn.addEventListener("click", () => {
+  const appMenuButton =
+    document.getElementById("appMenuButton");
 
-    navLinks.classList.toggle("open");
+  const appMenuBackdrop =
+    document.getElementById("appMenuBackdrop");
 
-  });
+  function closeAppMenu(){
+    navLinks.classList.remove("open");
+    if(appMenuBackdrop){
+      appMenuBackdrop.classList.remove("open");
+      appMenuBackdrop.setAttribute("aria-hidden","true");
+    }
+  }
 
+  function toggleAppMenu(){
+    const isOpen = navLinks.classList.toggle("open");
+    if(appMenuBackdrop){
+      appMenuBackdrop.classList.toggle("open", isOpen);
+      appMenuBackdrop.setAttribute("aria-hidden", String(!isOpen));
+    }
+  }
+
+  if(menuBtn){
+    menuBtn.addEventListener("click", toggleAppMenu);
+  }
+
+  if(appMenuButton){
+    appMenuButton.addEventListener("click", toggleAppMenu);
+  }
+
+  if(appMenuBackdrop){
+    appMenuBackdrop.addEventListener("click", closeAppMenu);
+  }
 
   navLinks.querySelectorAll("a")
     .forEach(link => {
-
-      link.addEventListener("click", () => {
-
-        navLinks.classList.remove("open");
-
-      });
-
+      link.addEventListener("click", closeAppMenu);
     });
 
 </script>
