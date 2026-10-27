@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0d4f86">
+<meta name="description" content="Contact Fundvexxa to get an update on your loan enquiry or funding application.">
+<title>Track Application | Fundvexxa</title>
+<style>
+:root{--navy:#0d4f86;--dark:#083b65;--green:#159447;--ink:#172b43;--muted:#66768a;--line:#e3eaf2;--bg:#f3f7fb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Arial,sans-serif}
+header{background:white;border-bottom:1px solid var(--line);padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:24px;font-weight:800;color:var(--navy);text-decoration:none;letter-spacing:-.6px}.logo span{color:var(--green)}
+header a.back{color:var(--navy);text-decoration:none;font-weight:700}
+main{max-width:720px;margin:38px auto;padding:0 18px 40px}
+.hero{background:linear-gradient(135deg,#0d4f86,#083b65);color:white;border-radius:24px;padding:30px 26px;margin-bottom:20px}
+.eyebrow{color:#b8f0ce;text-transform:uppercase;letter-spacing:1.5px;font-size:12px;font-weight:800}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:10px 0}
+.hero p{color:#e4eef8;margin-bottom:0}
+.card{background:white;border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 10px 35px #173b5c0a}
+label{display:block;font-weight:700;margin:15px 0 6px}
+input{width:100%;padding:14px;border:1px solid #cad6e3;border-radius:11px;font:inherit;outline-color:var(--navy)}
+button{width:100%;margin-top:20px;padding:15px;border:0;border-radius:12px;background:var(--green);color:white;font-size:16px;font-weight:800;cursor:pointer}
+.note{font-size:13px;color:var(--muted)}.notice{background:#eff7ff;border:1px solid #d6e9fb;border-radius:12px;padding:14px;margin-top:18px;font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.step{background:white;border:1px solid var(--line);border-radius:14px;padding:14px;font-size:13px}
+.step b{display:block;color:var(--navy);margin-bottom:5px}
+footer{text-align:center;padding:20px;color:var(--muted);font-size:13px}
+@media(max-width:520px){main{margin:22px auto}.hero{padding:24px 20px}.card{padding:19px}.steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<a class="logo" href="index.html">Fund<span>vexxa</span></a>
+<a class="back" href="index.html">← Home</a>
+</header>
+<main>
+<section class="hero">
+<div class="eyebrow">Application support</div>
+<h1>Let's check your application update.</h1>
+<p>Share your reference ID and registered mobile number to request an update from the Fundvexxa team.</p>
+</section>
+<section class="card">
+<h2 style="margin-top:0">Request an application update</h2>
+<form id="trackForm">
+<label for="ref">Application / Reference ID</label>
+<input id="ref" name="ref" maxlength="100" placeholder="Enter your reference ID" required>
+<label for="mobile">Registered mobile number</label>
+<input id="mobile" name="mobile" inputmode="numeric" autocomplete="tel" maxlength="10" pattern="[0-9]{10}" placeholder="10-digit mobile number" required>
+<p class="note">Your details will be included in a WhatsApp message to our support team. Do not enter OTPs, passwords, or bank PINs.</p>
+<button type="submit">Request update on WhatsApp →</button>
+</form>
+<div class="notice"><strong>Important:</strong> Live status lookup is not enabled on this page yet. This form sends an update request to our team; it does not independently verify or display your application status.</div>
+</section>
+<div class="steps">
+<div class="step"><b>01 · Enter details</b>Use the reference ID you received after submitting your enquiry.</div>
+<div class="step"><b>02 · Send request</b>WhatsApp opens with your message for you to review and send.</div>
+<div class="step"><b>03 · Team response</b>The team can help confirm the latest available update.</div>
+</div>
+</main>
+<footer>© <span id="year"></span> Fundvexxa · <a href="privacy-policy.html">Privacy Policy</a> · <a href="contact.html">Contact</a></footer>
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("trackForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const ref=document.getElementById("ref").value.trim();
+ const mobile=document.getElementById("mobile").value.trim();
+ if(!ref||!/^[0-9]{10}$/.test(mobile)){alert("Enter a reference ID and valid 10-digit mobile number.");return}
+ const msg="Hello Fundvexxa, I would like to request an update on my application.\nReference ID: "+ref+"\nRegistered mobile: "+mobile;
+ window.open("https://wa.me/917290977231?text="+encodeURIComponent(msg),"_blank","noopener");
+});
+</script>
+</body>
+</html>

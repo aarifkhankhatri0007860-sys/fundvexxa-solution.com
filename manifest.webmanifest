@@ -7,5 +7,12 @@
   "background_color": "#ffffff",
   "theme_color": "#0d4f86",
   "orientation": "portrait-primary",
-  "icons": []
+  "icons": [
+    {
+      "src": "./assets/fundvexxa-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
 }
