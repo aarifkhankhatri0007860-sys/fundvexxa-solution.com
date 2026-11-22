@@ -23,6 +23,10 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}a{text-decoratio
 .auth-screen{position:fixed;inset:0;z-index:10000;background:#f4f7fb;display:flex;align-items:center;justify-content:center;padding:20px}.auth-screen.hidden{display:none}.auth-box{width:min(420px,100%);background:#fff;border:1px solid var(--border);border-radius:19px;padding:30px;box-shadow:var(--shadow)}.auth-brand{color:var(--navy);font-size:25px;font-weight:800}.auth-box h2{margin-top:20px;color:var(--navy)}.auth-box p{color:var(--muted);font-size:11px;margin:5px 0 20px}.auth-error{color:var(--red);background:#fff1f1;border-radius:8px;padding:10px;font-size:10px;margin-top:10px;display:none}.overlay{display:none;position:fixed;inset:0;z-index:900;background:rgba(0,0,0,.45)}.overlay.show{display:block}
 @media(max-width:1200px){.stats{grid-template-columns:repeat(3,1fr)}}@media(max-width:900px){.sidebar{transform:translateX(-100%);transition:.3s}.sidebar.open{transform:translateX(0)}.main{margin-left:0;width:100%}.mobile-menu{display:block}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.topbar{padding:0 13px}.top-title p{display:none}.content{padding:14px}.stats{gap:9px}.stat{padding:15px}.panel-head{display:block}.tools{margin-top:12px}.search{min-width:100%;width:100%}.detail-grid,.form-grid{grid-template-columns:1fr}.detail.full,.full{grid-column:auto}}
 </style>
+<link rel="stylesheet" href="assets/fundvexxa-premium.css">
+<meta name="theme-color" content="#102b50">
+<link rel="icon" href="assets/fundvexxa-icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
 </head>
 <body>
 
@@ -322,5 +326,6 @@ document.querySelectorAll(".menu-item").forEach(b=>b.onclick=()=>openScreen(b.da
 window.closeModal=id=>$(id).classList.remove("show");document.querySelectorAll(".modal").forEach(m=>m.onclick=e=>{if(e.target===m)m.classList.remove("show")});
 const sidebar=$("sidebar"),overlay=$("overlay");$("mobileMenu").onclick=()=>{sidebar.classList.add("open");overlay.classList.add("show")};overlay.onclick=closeSidebar;function closeSidebar(){sidebar.classList.remove("open");overlay.classList.remove("show")}
 </script>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
 </body>
 </html>

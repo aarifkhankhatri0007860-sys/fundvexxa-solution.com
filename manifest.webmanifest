@@ -1,18 +1,37 @@
 {
+  "id": "/",
   "name": "Fundvexxa",
   "short_name": "Fundvexxa",
-  "description": "Fundvexxa business and financial consultancy platform",
-  "start_url": "./index.html",
+  "description": "Financial solutions, business services and partner opportunities from Fundvexxa Corp.",
+  "start_url": "/index.html?source=pwa",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0d4f86",
   "orientation": "portrait-primary",
+  "background_color": "#f8faff",
+  "theme_color": "#102b50",
+  "categories": [
+    "finance",
+    "business",
+    "productivity"
+  ],
   "icons": [
     {
-      "src": "./assets/fundvexxa-icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "/assets/fundvexxa-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "/assets/fundvexxa-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/fundvexxa-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

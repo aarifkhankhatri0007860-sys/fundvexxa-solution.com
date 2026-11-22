@@ -19,6 +19,10 @@ h2{color:var(--navy);font-size:21px;margin:0 0 8px}p{margin-top:8px}
 .notice{background:#eff7ff;border-left:4px solid var(--navy);padding:14px;border-radius:8px}
 a{color:var(--navy)}footer{text-align:center;color:var(--muted);font-size:13px;padding:20px}
 </style>
+<link rel="stylesheet" href="assets/fundvexxa-premium.css">
+<meta name="theme-color" content="#102b50">
+<link rel="icon" href="assets/fundvexxa-icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
 </head>
 <body>
 <header><a class="logo" href="index.html">Fund<span>vexxa</span></a><a class="back" href="index.html">← Home</a></header>
@@ -57,5 +61,6 @@ a{color:var(--navy)}footer{text-align:center;color:var(--muted);font-size:13px;p
 </main>
 <footer>© <span id="year"></span> Fundvexxa · <a href="terms.html">Terms</a> · <a href="privacy-policy.html">Privacy Policy</a></footer>
 <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
-</body>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+<div class="fvx-global-links" style="padding:16px 4%;background:#102b50;color:white;text-align:center;font-size:13px"><a style="color:#f1d99f;margin:0 8px" href="partner-network.html">Partner Network</a><a style="color:#f1d99f;margin:0 8px" href="agent-benefits.html">Agent Benefits</a><a style="color:#f1d99f;margin:0 8px" href="agent-training.html">Training</a><a style="color:#f1d99f;margin:0 8px" href="agent-referrals.html">Referral & Team</a><a style="color:#f1d99f;margin:0 8px" href="agent-payouts.html">Payout Policy</a><a style="color:#f1d99f;margin:0 8px" href="careers.html">Careers</a><a style="color:#f1d99f;margin:0 8px" href="support.html">Support</a></div><div class="fvx-mobile-cta"><a href="become-agent.html">Become an Agent</a><a href="contact.html">Get Assistance</a></div><script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script></body>
 </html>

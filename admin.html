@@ -6,9 +6,14 @@
 <title>Fundvexxa Admin CRM</title>
 <meta http-equiv="refresh" content="0;url=admin-crm.html">
 <script>location.replace("admin-crm.html");</script>
+<link rel="stylesheet" href="assets/fundvexxa-premium.css">
+<meta name="theme-color" content="#102b50">
+<link rel="icon" href="assets/fundvexxa-icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
 </head>
 <body style="font-family:Arial;padding:40px;background:#f5f7fa;color:#0b1f3a">
 <h2>Opening Fundvexxa CRM…</h2>
 <p>If the CRM does not open automatically, <a href="admin-crm.html">Open CRM</a>.</p>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
 </body>
 </html>
