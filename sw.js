@@ -1,4 +1,4 @@
-const CACHE="fundvexxa-shell-v5";
+const CACHE="fundvexxa-shell-v6";
 const CORE=["/","/index.html","/manifest.webmanifest","/assets/fundvexxa-icon.svg","/assets/fundvexxa-premium.css","/assets/fundvexxa-pages.css"];
 const PRIVATE=/(^|\/)(admin|dashboard|leads|login|register|agent-dashboard|agent-payouts|agent-referrals|track)(\/|$)/i;
 self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).catch(()=>{}));self.skipWaiting()});
