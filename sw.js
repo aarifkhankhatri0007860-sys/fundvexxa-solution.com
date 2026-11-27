@@ -1,6 +1,17 @@
-const CACHE="fundvexxa-shell-v3";
-const CORE=["/","/index.html","/manifest.webmanifest","/assets/fundvexxa-icon.svg","/assets/fundvexxa-192.png","/assets/fundvexxa-512.png","/assets/fundvexxa-premium.css"];
-const PRIVATE=/(admin|dashboard|leads|login|register|agent|track|membership)/i;
-self.addEventListener("install",e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).catch(()=>{}));self.skipWaiting()});
-self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
-self.addEventListener("fetch",e=>{const r=e.request,u=new URL(r.url);if(r.method!=="GET"||u.origin!==location.origin)return;if(PRIVATE.test(u.pathname))return;if(r.mode==="navigate"){e.respondWith(fetch(r).then(res=>{if(res.ok){const copy=res.clone();caches.open(CACHE).then(c=>c.put(r,copy))}return res}).catch(()=>caches.match(r).then(x=>x||caches.match("/index.html"))));return}e.respondWith(caches.match(r).then(cached=>{const net=fetch(r).then(res=>{if(res.ok&&res.type==="basic"){const copy=res.clone();caches.open(CACHE).then(c=>c.put(r,copy))}return res}).catch(()=>cached);return cached||net}))});
+const CACHE="fundvexxa-shell-v6";
+const CORE=["/","/index.html","/manifest.webmanifest","/assets/fundvexxa-icon.svg","/assets/fundvexxa-premium.css","/assets/fundvexxa-pages.css"];
+const PRIVATE=/(^|\/)(admin|dashboard|leads|login|register|agent-dashboard|agent-payouts|agent-referrals|track)(\/|$)/i;
+self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).catch(()=>{}));self.skipWaiting()});
+self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))));self.clients.claim()});
+self.addEventListener("fetch",event=>{
+ const request=event.request,url=new URL(request.url);
+ if(request.method!=="GET"||url.origin!==self.location.origin||PRIVATE.test(url.pathname))return;
+ if(request.mode==="navigate"){
+  event.respondWith(fetch(request).then(response=>{if(response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(request,copy))}return response}).catch(()=>caches.match(request).then(cached=>cached||caches.match("/index.html")));
+  return;
+ }
+ event.respondWith(caches.match(request).then(cached=>{
+  const network=fetch(request).then(response=>{if(response.ok&&response.type==="basic"){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(request,copy))}return response}).catch(()=>cached);
+  return cached||network;
+ }));
+});
