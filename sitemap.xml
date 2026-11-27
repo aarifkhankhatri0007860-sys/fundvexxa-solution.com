@@ -1,44 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-<url>
-<loc>https://fundvexxa-solution-com.vercel.app/</loc>
-</url>
-
-<url>
-<loc>https://fundvexxa-solution-com.vercel.app/business-loan.html</loc>
-</url>
-
-<url>
-<loc>https://fundvexxa-solution-com.vercel.app/msme-loan.html</loc>
-</url>
-
-<url>
-<loc>https://fundvexxa-solution-com.vercel.app/mudra-loan.html</loc>
-</url>
-
-<url>
-<loc>https://fundvexxa-solution-com.vercel.app/working-capital-loan.html</loc>
-</url>
-
-<url>
-<loc>https://fundvexxa-solution-com.vercel.app/startup-corporate-funding.html</loc>
-</url>
-
-<url>
-<loc>https://fundvexxa-solution-com.vercel.app/personal-loan.html</loc>
-</url>
-
-<url>
-<loc>https://fundvexxa-solution-com.vercel.app/home-loan.html</loc>
-</url>
-
-<url>
-<loc>https://fundvexxa-solution-com.vercel.app/vehicle-loan.html</loc>
-</url>
-
-<url>
-<loc>https://fundvexxa-solution-com.vercel.app/services.html</loc>
-</url>
-
+  <url><loc>https://fundvexxa-solution-com.vercel.app/</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/about.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/services.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/business-loan.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/msme-loan.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/mudra-loan.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/pmegp-loan-assistance.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/government-schemes.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/working-capital-loan.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/corporate-funding.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/startup-corporate-funding.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/personal-loan.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/home-loan.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/vehicle-loan.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/loan-against-property.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/calculator.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/eligibility.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/become-agent.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/membership.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/partner-network.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/partner-disclosure.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/faq.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/contact.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/privacy-policy.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/terms.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/grievance.html</loc></url>
+  <url><loc>https://fundvexxa-solution-com.vercel.app/support.html</loc></url>
 </urlset>
