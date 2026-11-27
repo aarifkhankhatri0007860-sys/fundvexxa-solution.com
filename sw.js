@@ -1,5 +1,5 @@
-const CACHE="fundvexxa-shell-v4";
-const CORE=["/","/index.html","/manifest.webmanifest","/assets/fundvexxa-icon.svg","/assets/fundvexxa-premium.css"];
+const CACHE="fundvexxa-shell-v5";
+const CORE=["/","/index.html","/manifest.webmanifest","/assets/fundvexxa-icon.svg","/assets/fundvexxa-premium.css","/assets/fundvexxa-pages.css"];
 const PRIVATE=/(^|\/)(admin|dashboard|leads|login|register|agent-dashboard|agent-payouts|agent-referrals|track)(\/|$)/i;
 self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).catch(()=>{}));self.skipWaiting()});
 self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))));self.clients.claim()});
